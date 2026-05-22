@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AuraLogic | AI Business Automation & Web Design — Riverdale, GA</title>
+<meta name="description" content="AuraLogic helps Metro Atlanta small businesses automate missed calls, appointments, reviews, and leads — plus custom websites delivered in 48 hours. Serving Riverdale, Clayton County, and Henry County, GA."/>
+<meta name="keywords" content="business automation Atlanta, web design Riverdale GA, AI automation small business, missed call text back Atlanta, appointment reminders Georgia, local business website design, Clayton County web design, Henry County digital marketing"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="AuraLogic"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="AuraLogic | AI-Powered Business Automation & Web Design"/>
+<meta property="og:description" content="Stop losing leads. AuraLogic builds AI automation systems and custom websites for Metro Atlanta small businesses — delivered in 48 hours."/>
+<meta property="og:locale" content="en_US"/>
+<meta name="theme-color" content="#0A0A0A"/>
+<!-- FONTS — loaded via @import so they work on ANY domain without a separate link tag -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+:root{
+  --gold:#C9A84C;
+  --gold-l:#E8C97A;
+  --gold-d:#8A6A28;
+  --gold-bg:rgba(201,168,76,0.06);
+  --gold-border:rgba(201,168,76,0.2);
+  --black:#0A0A0A;
+  --black2:#111111;
+  --black3:#181818;
+  --black4:#222222;
+  --white:#F5F2EC;
+  --white2:#C8C4BC;
+  --muted:#888880;
+  --green:#2D6A4F;
+  --green-l:#52B788;
+  --red:#C1121F;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --radius:4px;
+  --transition:0.22s ease;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--black);color:var(--white);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:var(--sans);cursor:pointer}
+input,textarea,select{font-family:var(--sans)}
+
+/* ============================================
+   UTILITY
+   ============================================ */
+.container{max-width:1120px;margin:0 auto;padding:0 2rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.gold{color:var(--gold)}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.section-label{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.divider{width:44px;height:1px;background:var(--gold);margin-bottom:1.5rem}
+.section-title{font-family:var(--serif);font-size:clamp(1.9rem,3.8vw,3rem);font-weight:600;line-height:1.12;margin-bottom:1.25rem}
+.section-sub{font-size:1rem;font-weight:300;color:var(--white2);line-height:1.75;max-width:540px}
+.btn{display:inline-block;padding:0.85rem 2rem;font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:var(--transition);border:none;text-align:center;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold-l)}
+.btn-outline-gold{background:transparent;border:1px solid var(--gold-border);color:var(--gold)}
+.btn-outline-gold:hover{background:var(--gold-bg);border-color:var(--gold)}
+.btn-outline-white{background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--white2)}
+.btn-outline-white:hover{border-color:rgba(255,255,255,0.35);color:var(--white)}
+
+/* ============================================
+   NAV
+   ============================================ */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.95);border-bottom:1px solid rgba(201,168,76,0.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav-logo{font-family:var(--serif);font-size:1.45rem;font-weight:600;color:var(--gold);letter-spacing:0.04em}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:0.8rem;font-weight:300;letter-spacing:0.08em;text-transform:uppercase;color:var(--white2);transition:color var(--transition)}
+.nav-links a:hover{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.cart-btn{background:none;border:1px solid var(--gold-border);color:var(--gold);padding:0.5rem 1rem;font-size:0.75rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;position:relative;transition:var(--transition)}
+.cart-btn:hover{background:var(--gold-bg)}
+.cart-count{position:absolute;top:-8px;right:-8px;width:18px;height:18px;background:var(--gold);color:var(--black);font-size:0.65rem;font-weight:500;border-radius:50%;display:flex;align-items:center;justify-content:center;display:none}
+.cart-count.active{display:flex}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:1px;background:var(--white);transition:var(--transition)}
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--black);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family:var(--serif);font-size:2rem;color:var(--white);transition:color var(--transition)}
+.mobile-nav a:hover{color:var(--gold)}
+.mobile-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.4rem}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:8rem 2rem 5rem;position:relative}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 50% 38%,rgba(201,168,76,0.055) 0%,transparent 65%);pointer-events:none}
+.hero-tag{display:inline-block;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-border);padding:0.35rem 1rem;margin-bottom:2rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,7vw,5.5rem);font-weight:600;line-height:1.06;max-width:860px;margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1.05rem;font-weight:300;color:var(--white2);max-width:520px;line-height:1.75;margin-bottom:2.75rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.hero-proof{display:flex;gap:3rem;margin-top:4.5rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,0.055);flex-wrap:wrap;justify-content:center}
+.proof-item{text-align:center}
+.proof-num{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold)}
+.proof-label{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-top:0.2rem}
+.scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.4rem;color:var(--muted);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;animation:float 2.2s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+.scroll-cue-line{width:1px;height:28px;background:linear-gradient(to bottom,var(--gold-d),transparent)}
+
+/* ============================================
+   PROBLEM
+   ============================================ */
+.problem{padding:6rem 0;background:var(--black2)}
+.problem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.problem-body p{font-size:1rem;font-weight:300;color:var(--white2);line-height:1.8;margin-bottom:1.1rem}
+.problem-body strong{color:var(--white);font-weight:500}
+.pain-list{display:flex;flex-direction:column;gap:0.85rem}
+.pain-item{background:var(--black3);border:1px solid rgba(255,255,255,0.055);padding:1.1rem 1.25rem;display:flex;gap:1rem;align-items:flex-start}
+.pain-icon{width:34px;height:34px;background:rgba(201,168,76,0.07);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.9rem}
+.pain-item h4{font-size:0.9rem;font-weight:500;color:var(--white);margin-bottom:0.2rem}
+.pain-item p{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+/* ============================================
+   FREE AUDIT
+   ============================================ */
+.audit{padding:5rem 0;background:var(--black3);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1)}
+.audit-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.audit-tag{display:inline-block;background:rgba(201,168,76,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.3rem 0.9rem;margin-bottom:1rem}
+.audit-checks{display:flex;flex-direction:column;gap:0.75rem;margin:2rem 0}
+.audit-check{display:flex;gap:0.75rem;align-items:center;font-size:0.9rem;font-weight:300;color:var(--white2)}
+.audit-check-icon{width:22px;height:22px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.7rem;color:var(--black);font-weight:700}
+.audit-box{background:var(--black);border:1px solid var(--gold-border);padding:2.5rem}
+.audit-box h3{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--white);margin-bottom:0.5rem}
+.audit-box p{font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.65;margin-bottom:1.75rem}
+.audit-value{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem;padding:0.85rem 1rem;background:var(--gold-bg);border:1px solid var(--gold-border)}
+.audit-value-price{font-family:var(--serif);font-size:1.8rem;color:var(--gold);text-decoration:line-through;opacity:0.5}
+.audit-value-free{font-family:var(--serif);font-size:1.8rem;color:var(--gold)}
+.audit-value-label{font-size:0.75rem;color:var(--muted);font-weight:300;line-height:1.4}
+.audit-cta{display:block;width:100%;background:var(--gold);color:var(--black);padding:1rem;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-align:center;border:none;cursor:pointer;transition:var(--transition)}
+.audit-cta:hover{background:var(--gold-l)}
+.audit-note{font-size:0.72rem;color:var(--muted);text-align:center;margin-top:0.75rem}
+
+/* ============================================
+   SERVICES — No prices shown until signup
+   ============================================ */
+.services{padding:6rem 0;background:var(--black)}
+.services-intro{margin-bottom:4rem}
+.category-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-d);margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem}
+.category-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.055)}
+.packages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(255,255,255,0.04);margin-bottom:4rem}
+.pkg-card{background:var(--black);padding:2rem 1.75rem;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:background var(--transition)}
+.pkg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);opacity:0;transition:opacity var(--transition)}
+.pkg-card:hover{background:var(--black2)}
+.pkg-card:hover::before{opacity:1}
+.pkg-card.featured-pkg{border:1px solid rgba(201,168,76,0.3)}
+.pkg-card.featured-pkg::before{opacity:1}
+.pkg-badge{display:inline-block;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;background:rgba(201,168,76,0.09);color:var(--gold);padding:0.22rem 0.7rem;margin-bottom:1rem;border:1px solid var(--gold-border)}
+.pkg-badge.best{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.pkg-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--white);margin-bottom:0.6rem;line-height:1.2}
+.pkg-pain{font-size:0.8rem;font-weight:500;color:var(--gold);margin-bottom:0.75rem;font-style:italic;line-height:1.4}
+.pkg-desc{font-size:0.85rem;font-weight:300;color:var(--muted);line-height:1.65;margin-bottom:1.25rem;flex:1}
+.pkg-bullets{margin-bottom:1.5rem}
+.pkg-bullets li{font-size:0.8rem;color:var(--white2);padding:0.28rem 0;padding-left:1rem;position:relative;font-weight:300}
+.pkg-bullets li::before{content:'—';position:absolute;left:0;color:var(--gold-d);font-size:0.72rem;top:0.35rem}
+.pkg-price-reveal{display:none;background:var(--gold-bg);border:1px solid var(--gold-border);padding:0.75rem 1rem;margin-bottom:1.25rem;text-align:center}
+.pkg-price-reveal.show{display:block}
+.pkg-price-main{font-family:var(--serif);font-size:1.75rem;font-weight:600;color:var(--gold)}
+.pkg-price-sub{font-size:0.72rem;color:var(--muted);margin-top:0.1rem}
+.pkg-cta{width:100%;border:1px solid var(--gold-border);background:transparent;color:var(--gold);padding:0.8rem;font-size:0.75rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:var(--transition);margin-top:auto}
+.pkg-cta:hover,.pkg-cta.in-cart{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.pkg-cta.in-cart{cursor:default}
+
+/* ============================================
+   HOW IT WORKS
+   ============================================ */
+.how{padding:6rem 0;background:var(--black2)}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:4rem;counter-reset:step}
+.step-card{padding:2rem;border:1px solid rgba(255,255,255,0.055);position:relative;counter-increment:step}
+.step-card::after{content:counter(step,decimal-leading-zero);font-family:var(--serif);font-size:3.5rem;font-weight:600;color:rgba(201,168,76,0.08);position:absolute;top:1rem;right:1.25rem;line-height:1}
+.step-icon{font-size:1.4rem;margin-bottom:1.25rem}
+.step-card h3{font-size:1rem;font-weight:500;color:var(--white);margin-bottom:0.5rem}
+.step-card p{font-size:0.83rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* ============================================
+   ABOUT + TESTIMONY
+   ============================================ */
+.about{padding:6rem 0;background:var(--black3)}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-text p{font-size:1rem;font-weight:300;color:var(--white2);line-height:1.8;margin-bottom:1.1rem}
+.testimony{background:var(--black);border:1px solid var(--gold-border);padding:2.5rem;position:relative}
+.testimony::before{content:'\201C';font-family:var(--serif);font-size:6rem;color:rgba(201,168,76,0.12);position:absolute;top:-1rem;left:1.5rem;line-height:1;pointer-events:none}
+.testimony-stars{color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:1.25rem}
+.testimony-text{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--white);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+.testimony-author{display:flex;align-items:center;gap:1rem}
+.testimony-avatar{width:44px;height:44px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--black);flex-shrink:0}
+.testimony-name{font-size:0.9rem;font-weight:500;color:var(--white)}
+.testimony-role{font-size:0.75rem;color:var(--muted);margin-top:0.15rem}
+.testimony-result{display:inline-block;background:rgba(82,183,136,0.1);border:1px solid rgba(82,183,136,0.25);color:#52B788;font-size:0.72rem;font-weight:500;padding:0.25rem 0.75rem;margin-top:0.75rem;letter-spacing:0.05em}
+
+/* ============================================
+   WHY
+   ============================================ */
+.why{padding:6rem 0;background:var(--black)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.04);margin-top:4rem}
+.why-item{background:var(--black);padding:2.25rem 2rem}
+.why-num{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:rgba(201,168,76,0.18)}
+.why-item h3{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--white);margin:0.5rem 0 0.5rem}
+.why-item p{font-size:0.85rem;color:var(--muted);font-weight:300;line-height:1.65}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact{padding:6rem 0;background:var(--black2);border-top:1px solid rgba(201,168,76,0.08)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-details{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.5rem}
+.contact-row{display:flex;gap:1rem;align-items:flex-start}
+.c-icon{width:38px;height:38px;border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.9rem}
+.c-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.15rem}
+.c-value{font-size:0.9rem;color:var(--white);font-weight:300}
+.c-value a:hover{color:var(--gold)}
+.cform{background:var(--black);border:1px solid rgba(255,255,255,0.06);padding:2.5rem}
+.cform h3{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--white);margin-bottom:1.5rem}
+.fg{margin-bottom:1.1rem}
+.fg label{display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--black2);border:1px solid rgba(255,255,255,0.07);color:var(--white);padding:0.8rem 0.9rem;font-family:var(--sans);font-size:0.875rem;font-weight:300;outline:none;transition:border-color var(--transition);-webkit-appearance:none;border-radius:0}
+.fg select option{background:var(--black2)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:rgba(201,168,76,0.35)}
+.fg textarea{resize:vertical;min-height:100px}
+.cform-btn{width:100%;background:var(--gold);color:var(--black);border:none;padding:0.95rem;font-family:var(--sans);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:var(--transition)}
+.cform-btn:hover{background:var(--gold-l)}
+.cform-success{display:none;text-align:center;padding:1.5rem 0}
+.cform-success-icon{font-size:2rem;margin-bottom:0.5rem}
+.cform-success-text{font-family:var(--serif);font-size:1.2rem;color:var(--gold)}
+.cform-success-sub{font-size:0.85rem;color:var(--muted);margin-top:0.5rem}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer{background:var(--black3);border-top:1px solid rgba(255,255,255,0.04);padding:3rem 2rem;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--gold);margin-bottom:0.4rem}
+.footer-tag{font-size:0.78rem;color:var(--muted);font-weight:300;margin-bottom:1.5rem}
+.footer-nav{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.footer-nav a{font-size:0.78rem;color:var(--muted);font-weight:300;transition:color var(--transition)}
+.footer-nav a:hover{color:var(--gold)}
+.footer-copy{font-size:0.72rem;color:rgba(255,255,255,0.18)}
+
+/* ============================================
+   SIGNUP MODAL
+   ============================================ */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:500;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--black2);border:1px solid var(--gold-border);width:100%;max-width:480px;padding:2.5rem;position:relative;animation:modalIn 0.25s ease}
+@keyframes modalIn{from{opacity:0;transform:scale(0.95) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-close{position:absolute;top:1rem;right:1.25rem;background:none;border:none;color:var(--muted);font-size:1.2rem;line-height:1;cursor:pointer;transition:color var(--transition)}
+.modal-close:hover{color:var(--white)}
+.modal-box h2{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--white);margin-bottom:0.4rem}
+.modal-box .modal-sub{font-size:0.85rem;color:var(--muted);font-weight:300;margin-bottom:1.75rem;line-height:1.5}
+.modal-selected-pkg{background:var(--gold-bg);border:1px solid var(--gold-border);padding:0.6rem 1rem;margin-bottom:1.5rem;font-size:0.82rem;color:var(--gold)}
+.modal-form .fg{margin-bottom:1rem}
+.modal-form input{width:100%;background:var(--black3);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:0.8rem 0.9rem;font-family:var(--sans);font-size:0.875rem;font-weight:300;outline:none;transition:border-color var(--transition);border-radius:0}
+.modal-form input:focus{border-color:rgba(201,168,76,0.35)}
+.modal-submit{width:100%;background:var(--gold);color:var(--black);border:none;padding:0.95rem;font-family:var(--sans);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:var(--transition);margin-top:0.25rem}
+.modal-submit:hover{background:var(--gold-l)}
+.modal-privacy{font-size:0.7rem;color:var(--muted);text-align:center;margin-top:0.75rem;line-height:1.5}
+
+/* ============================================
+   CART SIDEBAR
+   ============================================ */
+.cart-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:400}
+.cart-overlay.open{display:block}
+.cart-sidebar{position:fixed;top:0;right:0;bottom:0;width:min(400px,100vw);background:var(--black2);border-left:1px solid rgba(255,255,255,0.06);z-index:401;transform:translateX(100%);transition:transform 0.3s ease;display:flex;flex-direction:column}
+.cart-sidebar.open{transform:translateX(0)}
+.cart-head{padding:1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between}
+.cart-head h2{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--white)}
+.cart-x{background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;transition:color var(--transition)}
+.cart-x:hover{color:var(--white)}
+.cart-items{flex:1;overflow-y:auto;padding:1.25rem 1.5rem}
+.cart-empty{text-align:center;padding:3rem 0;color:var(--muted);font-size:0.9rem;font-weight:300}
+.cart-item{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.cart-item-name{font-size:0.9rem;font-weight:500;color:var(--white);margin-bottom:0.2rem}
+.cart-item-detail{font-size:0.75rem;color:var(--muted)}
+.cart-item-price{font-family:var(--serif);font-size:1.1rem;color:var(--gold);white-space:nowrap;flex-shrink:0}
+.cart-remove{display:block;font-size:0.65rem;color:var(--muted);cursor:pointer;margin-top:0.25rem;background:none;border:none;text-transform:uppercase;letter-spacing:0.08em;transition:color var(--transition);text-align:left}
+.cart-remove:hover{color:#e55}
+.cart-footer{padding:1.5rem;border-top:1px solid rgba(255,255,255,0.06)}
+.cart-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.25rem}
+.cart-total-label{font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em}
+.cart-total-val{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--gold)}
+.cart-checkout-btn{width:100%;background:var(--gold);color:var(--black);border:none;padding:1rem;font-family:var(--sans);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:var(--transition)}
+.cart-checkout-btn:hover{background:var(--gold-l)}
+.cart-checkout-btn:disabled{opacity:0.4;cursor:default}
+.cart-note{font-size:0.72rem;color:var(--muted);text-align:center;margin-top:0.6rem;line-height:1.5}
+
+/* ============================================
+   CHECKOUT MODAL
+   ============================================ */
+.checkout-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:600;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
+.checkout-modal.open{display:flex}
+.checkout-box{background:var(--black2);border:1px solid var(--gold-border);width:100%;max-width:600px;padding:2.5rem;animation:modalIn 0.25s ease;my:auto}
+.checkout-box h2{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--white);margin-bottom:0.4rem}
+.checkout-sub{font-size:0.85rem;color:var(--muted);margin-bottom:1.75rem}
+.order-summary{background:var(--black3);border:1px solid rgba(255,255,255,0.055);padding:1.25rem;margin-bottom:1.5rem}
+.order-summary h4{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.order-row{display:flex;justify-content:space-between;align-items:baseline;padding:0.4rem 0;font-size:0.875rem}
+.order-row-name{color:var(--white2);font-weight:300}
+.order-row-price{font-family:var(--serif);font-size:1rem;color:var(--gold)}
+.order-divider{height:1px;background:rgba(255,255,255,0.05);margin:0.75rem 0}
+.order-total-row{display:flex;justify-content:space-between;align-items:baseline}
+.order-total-label{font-size:0.8rem;color:var(--white);font-weight:500;text-transform:uppercase;letter-spacing:0.06em}
+.order-total-price{font-family:var(--serif);font-size:1.4rem;color:var(--gold)}
+.checkout-confirm-btn{width:100%;background:var(--gold);color:var(--black);border:none;padding:1rem;font-family:var(--sans);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:var(--transition);margin-top:0.5rem}
+.checkout-confirm-btn:hover{background:var(--gold-l)}
+.checkout-back{display:block;width:100%;text-align:center;font-size:0.75rem;color:var(--muted);margin-top:0.75rem;cursor:pointer;background:none;border:none;transition:color var(--transition)}
+.checkout-back:hover{color:var(--white)}
+.checkout-disclaimer{font-size:0.72rem;color:var(--muted);text-align:center;margin-top:1rem;line-height:1.6}
+
+/* ============================================
+   INTAKE FORM (post-checkout)
+   ============================================ */
+.intake-section{display:none;padding:5rem 0;background:var(--black);border-top:3px solid var(--gold)}
+.intake-section.show{display:block}
+.intake-success-hero{text-align:center;margin-bottom:4rem}
+.intake-check{width:64px;height:64px;background:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:1.75rem}
+.intake-success-hero h2{font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--white);margin-bottom:0.5rem}
+.intake-success-hero p{font-size:0.9rem;color:var(--muted);font-weight:300;max-width:500px;margin:0 auto}
+.intake-form-wrap{max-width:700px;margin:0 auto}
+.intake-section-head{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--gold);margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:1px solid var(--gold-border)}
+.intake-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.intake-fg{margin-bottom:1rem}
+.intake-fg label{display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
+.intake-fg input,.intake-fg textarea,.intake-fg select{width:100%;background:var(--black2);border:1px solid rgba(255,255,255,0.07);color:var(--white);padding:0.8rem 0.9rem;font-family:var(--sans);font-size:0.875rem;font-weight:300;outline:none;transition:border-color var(--transition);border-radius:0;-webkit-appearance:none}
+.intake-fg select option{background:var(--black2)}
+.intake-fg input:focus,.intake-fg textarea:focus,.intake-fg select:focus{border-color:rgba(201,168,76,0.35)}
+.intake-fg textarea{resize:vertical;min-height:90px}
+.intake-submit{background:var(--gold);color:var(--black);border:none;padding:1rem 3rem;font-family:var(--sans);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:var(--transition)}
+.intake-submit:hover{background:var(--gold-l)}
+.intake-done{display:none;text-align:center;padding:3rem;background:var(--gold-bg);border:1px solid var(--gold-border)}
+.intake-done h3{font-family:var(--serif);font-size:1.5rem;color:var(--gold);margin-bottom:0.5rem}
+.intake-done p{font-size:0.875rem;color:var(--muted);font-weight:300}
+
+/* ============================================
+   BANNER
+   ============================================ */
+.unlock-banner{display:none;background:var(--gold);color:var(--black);text-align:center;padding:0.6rem;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;position:sticky;top:60px;z-index:199}
+.unlock-banner.show{display:block}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media(max-width:768px){
+  .nav-links,.nav-right .nav-links{display:none}
+  .hamburger{display:flex}
+  .problem-wrap,.audit-inner,.about-inner,.contact-inner,.why-grid{grid-template-columns:1fr}
+  .intake-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.3rem}
+  .hero-proof{gap:1.5rem}
+  .packages-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+  nav{padding:1rem 1.25rem}
+  section{padding:4rem 0}
+  .container{padding:0 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="AuraLogic Home">AuraLogic</a>
+  <ul class="nav-links" aria-label="Site links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#audit">Free Audit</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" onclick="openCart()" aria-label="View cart">
+      Cart
+      <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+    </button>
+    <button class="hamburger" aria-label="Open navigation" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-close" onclick="document.getElementById('mobileNav').classList.remove('open')" aria-label="Close navigation">✕</button>
+  <a href="#services" onclick="document.getElementById('mobileNav').classList.remove('open')">Services</a>
+  <a href="#audit" onclick="document.getElementById('mobileNav').classList.remove('open')">Free Audit</a>
+  <a href="#about" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+  <a href="#contact" onclick="document.getElementById('mobileNav').classList.remove('open')">Contact</a>
+</div>
+
+<!-- Unlock banner shown after signup -->
+<div class="unlock-banner" id="unlockBanner">
+  ✓ Pricing unlocked — add any service to your cart below
+</div>
+
+<!-- ===================== HERO ===================== -->
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <span class="hero-tag">Riverdale, GA · Metro Atlanta</span>
+  <h1 id="hero-title">Your business,<br/>running on <em>autopilot.</em></h1>
+  <p class="hero-sub">AuraLogic builds custom websites and AI-powered automation systems for local businesses — so you stop losing leads, missed calls, and clients to competitors who respond faster.</p>
+  <div class="hero-btns">
+    <a href="#audit" class="btn btn-gold">Get My Free Audit</a>
+    <a href="#services" class="btn btn-outline-white">See Our Services</a>
+  </div>
+  <div class="hero-proof">
+    <div class="proof-item"><div class="proof-num">48hr</div><div class="proof-label">Avg. Delivery</div></div>
+    <div class="proof-item"><div class="proof-num">$0</div><div class="proof-label">Strategy Call</div></div>
+    <div class="proof-item"><div class="proof-num">100%</div><div class="proof-label">Done-For-You</div></div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><div class="scroll-cue-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- ===================== PROBLEM ===================== -->
+<section class="problem" aria-labelledby="problem-title">
+  <div class="container">
+    <div class="problem-wrap">
+      <div class="fade-in">
+        <div class="section-label">The Reality</div>
+        <div class="divider" aria-hidden="true"></div>
+        <h2 class="section-title" id="problem-title">Most local businesses are <em>bleeding money</em> — without knowing it.</h2>
+        <div class="problem-body">
+          <p>Every unanswered call that doesn't get a follow-up. Every customer who found your Instagram but couldn't book anywhere. Every happy client who never left a review because nobody asked. Every lead that went cold because life got busy.</p>
+          <p><strong>This isn't your fault.</strong> You're running a business. But your competitors who set up automated systems are winning the customers you're losing every single week.</p>
+          <p><strong>AuraLogic closes those gaps.</strong> We build the systems that run in the background — 24 hours a day, 7 days a week — so your business keeps growing even when you're with a client, off the clock, or asleep.</p>
+        </div>
+      </div>
+      <div class="pain-list fade-in">
+        <div class="pain-item">
+          <div class="pain-icon" aria-hidden="true">📞</div>
+          <div>
+            <h4>Missed Calls = Lost Revenue</h4>
+            <p>62% of customers won't call back if you don't answer. That's money going directly to your competitor.</p>
+          </div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon" aria-hidden="true">📅</div>
+          <div>
+            <h4>Manual Booking Wastes 10+ Hours a Week</h4>
+            <p>Back-and-forth DMs just to schedule an appointment is exhausting — and it costs you focus every single day.</p>
+          </div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon" aria-hidden="true">⭐</div>
+          <div>
+            <h4>No Reviews = Invisible on Google</h4>
+            <p>Businesses with 50+ reviews get 4x more clicks. Most owners never ask — and most customers never volunteer.</p>
+          </div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon" aria-hidden="true">🏠</div>
+          <div>
+            <h4>Rented Land Is One Ban Away</h4>
+            <p>Instagram, Booksy, and Yelp can remove or restrict your business overnight. You own nothing. Your website is yours forever.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FREE AUDIT ===================== -->
+<section class="audit" id="audit" aria-labelledby="audit-title">
+  <div class="container">
+    <div class="audit-inner">
+      <div class="fade-in">
+        <div class="audit-tag">100% Free · No Obligation</div>
+        <div class="section-label">Free Digital Audit</div>
+        <div class="divider" aria-hidden="true"></div>
+        <h2 class="section-title" id="audit-title">We'll tell you <em>exactly</em> what's costing your business customers right now.</h2>
+        <p class="section-sub">In 15 minutes we'll do a full review of your digital presence and give you a clear, honest picture of where you're losing people — and what it would take to fix it. No pitch. No pressure. Just real insight.</p>
+        <div class="audit-checks">
+          <div class="audit-check"><div class="audit-check-icon" aria-hidden="true">✓</div>Website speed &amp; mobile performance</div>
+          <div class="audit-check"><div class="audit-check-icon" aria-hidden="true">✓</div>Google Business Profile completeness</div>
+          <div class="audit-check"><div class="audit-check-icon" aria-hidden="true">✓</div>Review count, rating &amp; recency</div>
+          <div class="audit-check"><div class="audit-check-icon" aria-hidden="true">✓</div>Booking &amp; contact flow audit</div>
+          <div class="audit-check"><div class="audit-check-icon" aria-hidden="true">✓</div>Social media &amp; Instagram presence</div>
+          <div class="audit-check"><div class="audit-check-icon" aria-hidden="true">✓</div>Competitor comparison in your area</div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="audit-box">
+          <h3>Book Your Free Audit</h3>
+          <p>Pick a 15-minute slot that works for you. We'll review your business before the call so every minute counts.</p>
+          <div class="audit-value">
+            <div class="audit-value-price" aria-hidden="true">$150</div>
+            <div class="audit-value-free">FREE</div>
+            <div class="audit-value-label">Digital Health Audit<br/>Limited spots available each week</div>
+          </div>
+          <a href="https://cal.com/destinee-auralogic/free-audit" target="_blank" rel="noopener noreferrer" class="audit-cta" role="button">
+            Book My Free Audit →
+          </a>
+          <p class="audit-note">Opens Cal.com · Pick any available time · No credit card needed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="services-intro fade-in">
+      <div class="section-label">Our Services</div>
+      <div class="divider" aria-hidden="true"></div>
+      <h2 class="section-title" id="services-title">Everything your business needs — <em>delivered in 48 hours.</em></h2>
+      <p class="section-sub">Click any service to get started. We'll capture your info, unlock pricing, and get you into the cart — then walk you through every step.</p>
+    </div>
+
+    <!-- WEB DESIGN -->
+    <div class="category-label fade-in">Web Design &amp; Digital Presence</div>
+    <div class="packages-grid" role="list">
+
+      <article class="pkg-card" role="listitem">
+        <div class="pkg-badge">One-Time</div>
+        <h3>Digital Starter Kit</h3>
+        <p class="pkg-pain">"I just need a real website people can actually find me on."</p>
+        <p class="pkg-desc">You're directing people to your Instagram or a Booksy link — and losing half of them before they ever contact you. This gives you a clean, fast, professional single-page website that's live in 48 hours and yours to keep forever.</p>
+        <ul class="pkg-bullets">
+          <li>Custom single-page design — not a template</li>
+          <li>Mobile-first, loads in under 2 seconds</li>
+          <li>Contact form &amp; click-to-call button</li>
+          <li>Local SEO foundation built in</li>
+          <li>Deployed live within 48 hours</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-starter">
+          <div class="pkg-price-main">$297</div>
+          <div class="pkg-price-sub">one-time payment · live in 48 hours</div>
+        </div>
+        <button class="pkg-cta" id="cta-starter" onclick="handlePackageCTA('starter','Digital Starter Kit','$297 one-time',297,0,true)">Get Started</button>
+      </article>
+
+      <article class="pkg-card" role="listitem">
+        <div class="pkg-badge">One-Time</div>
+        <h3>Business Website</h3>
+        <p class="pkg-pain">"My business deserves more than one page — I want a real digital home."</p>
+        <p class="pkg-desc">You've outgrown a single page. You need a full site — services, gallery, booking, about, and contact — that tells your story and converts visitors into paying customers. Built from scratch for your business.</p>
+        <ul class="pkg-bullets">
+          <li>Full multi-page branded design</li>
+          <li>Service menu, gallery, &amp; about page</li>
+          <li>Booking system integration</li>
+          <li>Google Maps &amp; contact flow</li>
+          <li>Live &amp; deployed within 48 hours</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-website">
+          <div class="pkg-price-main">$497</div>
+          <div class="pkg-price-sub">one-time payment · live in 48 hours</div>
+        </div>
+        <button class="pkg-cta" id="cta-website" onclick="handlePackageCTA('website','Business Website','$497 one-time',497,0,true)">Get Started</button>
+      </article>
+
+      <article class="pkg-card" role="listitem">
+        <div class="pkg-badge">One-Time</div>
+        <h3>E-Commerce Store</h3>
+        <p class="pkg-pain">"I want to sell my products online and stop doing everything in DMs."</p>
+        <p class="pkg-desc">Selling through Instagram DMs and Cash App is costing you time, credibility, and sales. Get a full online store with professional checkout so your products sell around the clock — without you managing every transaction manually.</p>
+        <ul class="pkg-bullets">
+          <li>Full store with Stripe checkout</li>
+          <li>Product listings &amp; inventory management</li>
+          <li>Customer accounts &amp; order tracking</li>
+          <li>Mobile-optimized shopping experience</li>
+          <li>Shipping &amp; tax configuration</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-ecommerce">
+          <div class="pkg-price-main">$797</div>
+          <div class="pkg-price-sub">one-time payment · live in 48 hours</div>
+        </div>
+        <button class="pkg-cta" id="cta-ecommerce" onclick="handlePackageCTA('ecommerce','E-Commerce Store','$797 one-time',797,0,true)">Get Started</button>
+      </article>
+    </div>
+
+    <!-- AI AUTOMATION -->
+    <div class="category-label fade-in">AI Automation Services</div>
+    <div class="packages-grid" role="list">
+
+      <article class="pkg-card" role="listitem">
+        <div class="pkg-badge">Monthly</div>
+        <h3>Missed Call Text-Back</h3>
+        <p class="pkg-pain">"I miss calls when I'm with clients — and those people never come back."</p>
+        <p class="pkg-desc">Every missed call gets an automatic text within 30 seconds — before they dial the next number on Google. "Hey, sorry we missed you! How can we help?" Simple, fast, and completely hands-free. The single highest-ROI automation for any service business.</p>
+        <ul class="pkg-bullets">
+          <li>Instant auto-reply SMS on every missed call</li>
+          <li>Custom message written specifically for you</li>
+          <li>Active 24/7 including after hours</li>
+          <li>Set up and live within 24 hours</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-textback">
+          <div class="pkg-price-main">$97<span style="font-size:1rem">/mo</span></div>
+          <div class="pkg-price-sub">no setup fee · cancel anytime</div>
+        </div>
+        <button class="pkg-cta" id="cta-textback" onclick="handlePackageCTA('textback','Missed Call Text-Back','$97/month',0,97,false)">Get Started</button>
+      </article>
+
+      <article class="pkg-card" role="listitem">
+        <div class="pkg-badge">Setup + Monthly</div>
+        <h3>Appointment Reminders</h3>
+        <p class="pkg-pain">"My no-show rate is killing my income and I can't keep chasing people."</p>
+        <p class="pkg-desc">No-shows are the silent tax on every service business. Automated reminders sent 48 hours and 2 hours before every appointment — with a one-click reschedule option. Most clients see a 40–60% drop in no-shows within the first month.</p>
+        <ul class="pkg-bullets">
+          <li>Automated SMS &amp; email reminders</li>
+          <li>Confirmation &amp; rescheduling flows</li>
+          <li>Works with your existing booking system</li>
+          <li>No-show follow-up sequence included</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-reminders">
+          <div class="pkg-price-main">$147<span style="font-size:1rem"> setup</span></div>
+          <div class="pkg-price-sub">then $97/month · cancel anytime</div>
+        </div>
+        <button class="pkg-cta" id="cta-reminders" onclick="handlePackageCTA('reminders','Appointment Reminders','$147 setup + $97/mo',147,97,false)">Get Started</button>
+      </article>
+
+      <article class="pkg-card" role="listitem">
+        <div class="pkg-badge">Setup + Monthly</div>
+        <h3>Lead Capture &amp; CRM</h3>
+        <p class="pkg-pain">"I get inquiries all day but half of them fall through the cracks."</p>
+        <p class="pkg-desc">Every inquiry — website form, DM, phone call, social media — flows into one organized pipeline. Automatic follow-up messages go out so no lead ever goes cold while you're busy. You see every prospect in one place and know exactly where they stand.</p>
+        <ul class="pkg-bullets">
+          <li>Centralized lead dashboard</li>
+          <li>Auto follow-up message sequences</li>
+          <li>Website &amp; social media integration</li>
+          <li>Pipeline tracking &amp; status updates</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-crm">
+          <div class="pkg-price-main">$197<span style="font-size:1rem"> setup</span></div>
+          <div class="pkg-price-sub">then $127/month · cancel anytime</div>
+        </div>
+        <button class="pkg-cta" id="cta-crm" onclick="handlePackageCTA('crm','Lead Capture & CRM','$197 setup + $127/mo',197,127,false)">Get Started</button>
+      </article>
+
+      <article class="pkg-card" role="listitem">
+        <div class="pkg-badge">Setup + Monthly</div>
+        <h3>Review Automation</h3>
+        <p class="pkg-pain">"My competitors have 200 reviews and I have 12. I don't know how to close that gap."</p>
+        <p class="pkg-desc">After every appointment, your customers automatically get a text: "How was your experience?" Happy clients get routed straight to your Google review page. Unhappy ones get caught privately so you can address it before it becomes a public post. Runs completely without you.</p>
+        <ul class="pkg-bullets">
+          <li>Post-service review request texts</li>
+          <li>Smart routing — happy to Google, issues caught privately</li>
+          <li>Google &amp; Yelb funnels</li>
+          <li>Monthly reputation tracking</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-reviews">
+          <div class="pkg-price-main">$197<span style="font-size:1rem"> setup</span></div>
+          <div class="pkg-price-sub">then $97/month · cancel anytime</div>
+        </div>
+        <button class="pkg-cta" id="cta-reviews" onclick="handlePackageCTA('reviews','Review Automation','$197 setup + $97/mo',197,97,false)">Get Started</button>
+      </article>
+
+      <article class="pkg-card featured-pkg" role="listitem">
+        <div class="pkg-badge best">Best Value</div>
+        <h3>Full Business Autopilot</h3>
+        <p class="pkg-pain">"I want ALL of it — I'm done losing leads, missing calls, and begging for reviews."</p>
+        <p class="pkg-desc">Every automation above, bundled at a fraction of the individual price. Missed call text-back, appointment reminders, lead CRM, and review automation — all running simultaneously. Your business follows up, books, and collects reviews while you focus on delivering great work.</p>
+        <ul class="pkg-bullets">
+          <li>All 4 automation systems included</li>
+          <li>Priority setup — live within 48 hours</li>
+          <li>One dashboard — everything visible</li>
+          <li>Monthly performance monitoring</li>
+          <li>Dedicated support line</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-autopilot">
+          <div class="pkg-price-main">$497<span style="font-size:1rem"> setup</span></div>
+          <div class="pkg-price-sub">then $197/month · cancel anytime</div>
+        </div>
+        <button class="pkg-cta" id="cta-autopilot" onclick="handlePackageCTA('autopilot','Full Business Autopilot','$497 setup + $197/mo',497,197,false)">Get Started</button>
+      </article>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="category-label fade-in">Content &amp; Reputation</div>
+    <div class="packages-grid" role="list">
+      <article class="pkg-card" role="listitem">
+        <div class="pkg-badge">Monthly</div>
+        <h3>Content Engine</h3>
+        <p class="pkg-pain">"I know I need to post consistently but I never have time — and when I do, I don't know what to say."</p>
+        <p class="pkg-desc">30 days of branded social media content, delivered to you every month — captions, graphics, hashtags, and a full posting calendar. Made for your business, your voice, your audience. You just copy, paste, and post.</p>
+        <ul class="pkg-bullets">
+          <li>30 custom posts per month</li>
+          <li>Branded graphics &amp; captions</li>
+          <li>Hashtag strategy &amp; posting calendar</li>
+          <li>Instagram, Facebook &amp; TikTok</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-content">
+          <div class="pkg-price-main">$497<span style="font-size:1rem">/mo</span></div>
+          <div class="pkg-price-sub">monthly retainer · cancel anytime</div>
+        </div>
+        <button class="pkg-cta" id="cta-content" onclick="handlePackageCTA('content','Content Engine','$497/month',0,497,false)">Get Started</button>
+      </article>
+
+      <article class="pkg-card" role="listitem">
+        <div class="pkg-badge">Best Value Bundle</div>
+        <h3>Full Upgrade Bundle</h3>
+        <p class="pkg-pain">"I want the whole digital package — website, reviews, scheduling, and content taken care of."</p>
+        <p class="pkg-desc">Our most comprehensive done-for-you package. Custom website, automated review system, smart scheduling, and a month of social content — all built and managed for you. Maximum visibility with minimal effort on your end.</p>
+        <ul class="pkg-bullets">
+          <li>Full custom website</li>
+          <li>Review Booster automation</li>
+          <li>Smart scheduling system</li>
+          <li>Content Engine (30 posts/month)</li>
+        </ul>
+        <div class="pkg-price-reveal" id="price-fullupgrade">
+          <div class="pkg-price-main">$697<span style="font-size:1rem"> setup</span></div>
+          <div class="pkg-price-sub">then $127/month · cancel anytime</div>
+        </div>
+        <button class="pkg-cta" id="cta-fullupgrade" onclick="handlePackageCTA('fullupgrade','Full Upgrade Bundle','$697 setup + $127/mo',697,127,false)">Get Started</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="how" aria-labelledby="how-title">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <div class="section-label" style="text-align:center">Our Process</div>
+      <div class="divider" style="margin:0.5rem auto 1.5rem" aria-hidden="true"></div>
+      <h2 class="section-title" id="how-title" style="text-align:center">From <em>zero to live</em> in 48 hours.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card fade-in">
+        <div class="step-icon" aria-hidden="true">📞</div>
+        <h3>Free Strategy Call</h3>
+        <p>15 minutes. We learn your business, identify your biggest revenue gaps, and recommend exactly what you need — nothing more, nothing less.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-icon" aria-hidden="true">📋</div>
+        <h3>You Fill Out Onboarding</h3>
+        <p>After placing your order, you complete a simple intake form. We gather everything we need — branding, services, goals — so we can build it right the first time.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-icon" aria-hidden="true">🔨</div>
+        <h3>We Build Everything</h3>
+        <p>We build your website, automation flows, or both — custom to your business. No generic templates. Everything is made specifically for you.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-icon" aria-hidden="true">🚀</div>
+        <h3>Go Live in 48 Hours</h3>
+        <p>We deploy, connect, and test everything. Your business starts capturing leads and following up automatically — from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT + TESTIMONY ===================== -->
+<section class="about" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-inner">
+      <div class="fade-in">
+        <div class="section-label">About AuraLogic</div>
+        <div class="divider" aria-hidden="true"></div>
+        <h2 class="section-title" id="about-title">Built by someone who <em>knows your struggle.</em></h2>
+        <div class="about-text">
+          <p>AuraLogic was built in Riverdale, Georgia — not a downtown office, not a venture-backed startup. Right here in Metro Atlanta, watching local business owners hustle harder than anyone and still lose clients to businesses that had better systems.</p>
+          <p>The problem was never the quality of the work. It was the invisible gaps — the calls that weren't answered, the follow-ups that didn't happen, the reviews that were never asked for. Those gaps were costing real money every single week.</p>
+          <p>That's why AuraLogic exists. We use AI to build the automation and web systems that used to cost $10,000+ and take months — and we deliver them in 48 hours at prices that actually make sense for a local business. Not because we cut corners, but because we built a faster, smarter way to do it.</p>
+          <p>We serve barbershops, salons, restaurants, boutiques, cleaning companies, and every owner-operated business in Clayton County, Henry County, and greater Metro Atlanta who is ready to stop losing leads they've already earned.</p>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="testimony" role="blockquote">
+          <div class="testimony-stars" aria-label="5 star rating">★★★★★</div>
+          <p class="testimony-text">"Before AuraLogic I was losing customers every single week and didn't even know it. My phone would ring while I'm in the middle of a cut — I can't answer it — and that was it. They moved on. I didn't even have a real website, just my Instagram and a Booksy page I barely kept up. Within 48 hours of signing up, I had a live website, my missed call text-back running, and my appointment reminders set up. First week alone I booked three clients who texted back after missing my calls. I've been in business six years and nobody ever showed me I was leaving money on the table like that. Now I just focus on my craft and the system handles the rest."</p>
+          <div class="testimony-author">
+            <div class="testimony-avatar" aria-hidden="true">MT</div>
+            <div>
+              <div class="testimony-name">Marcus T.</div>
+              <div class="testimony-role">Owner · Precision Cuts Barbershop, Atlanta, GA</div>
+            </div>
+          </div>
+          <div class="testimony-result">+3 new bookings in week 1 · No-shows down 55%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY ===================== -->
+<section class="why" aria-labelledby="why-title">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Why AuraLogic</div>
+      <div class="divider" aria-hidden="true"></div>
+      <h2 class="section-title" id="why-title">Built for businesses that <em>can't afford to wait.</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item fade-in"><div class="why-num" aria-hidden="true">01</div><h3>48-Hour Delivery</h3><p>Traditional agencies take 4–8 weeks. We deliver websites and full automation systems within 48 hours — because every day without a system is another day losing leads.</p></div>
+      <div class="why-item fade-in"><div class="why-num" aria-hidden="true">02</div><h3>Local to Metro Atlanta</h3><p>We're based in Riverdale and we specialize in Clayton County and Henry County businesses. We know your market, your competition, and your customers.</p></div>
+      <div class="why-item fade-in"><div class="why-num" aria-hidden="true">03</div><h3>AI-Powered Speed</h3><p>We use cutting-edge AI tools to build faster and smarter than any traditional agency — passing the savings directly to you. Enterprise quality at local-business pricing.</p></div>
+      <div class="why-item fade-in"><div class="why-num" aria-hidden="true">04</div><h3>100% Done-For-You</h3><p>Zero tech skills required. We handle design, build, setup, deployment, and ongoing management. You run your business — we run your systems.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="fade-in">
+        <div class="section-label">Get In Touch</div>
+        <div class="divider" aria-hidden="true"></div>
+        <h2 class="section-title" id="contact-title">Let's build something that <em>works for you.</em></h2>
+        <p class="section-sub">Book a free 15-minute strategy call or send a message. We'll tell you exactly what your business needs — no pressure, no pitch, just honest advice.</p>
+        <div class="contact-details">
+          <div class="contact-row">
+            <div class="c-icon" aria-hidden="true">📧</div>
+            <div><div class="c-label">Email</div><div class="c-value"><a href="mailto:auralogiccontact@gmail.com">auralogiccontact@gmail.com</a></div></div>
+          </div>
+          <div class="contact-row">
+            <div class="c-icon" aria-hidden="true">📞</div>
+            <div><div class="c-label">Phone</div><div class="c-value"><a href="tel:+15168051222">(516) 805-1222</a></div></div>
+          </div>
+          <div class="contact-row">
+            <div class="c-icon" aria-hidden="true">📍</div>
+            <div><div class="c-label">Location</div><div class="c-value">Riverdale, Georgia<br/><span style="color:var(--muted);font-size:0.82rem">Serving Metro Atlanta · Clayton &amp; Henry County</span></div></div>
+          </div>
+          <div class="contact-row">
+            <div class="c-icon" aria-hidden="true">📅</div>
+            <div><div class="c-label">Book a Free Audit</div><div class="c-value"><a href="https://cal.com/destinee-auralogic/free-audit" target="_blank" rel="noopener" style="color:var(--gold)">Book Your Free Audit →</a></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="cform">
+          <h3>Send a Message</h3>
+          <div id="cfWrap">
+            
+            <div class="fg"><label for="cf-name">Your Name</label><input type="text" id="cf-name" placeholder="First &amp; Last Name" autocomplete="name"/></div>
+            <div class="fg"><label for="cf-biz">Business Name</label><input type="text" id="cf-biz" placeholder="e.g. Sharp Cuts Barbershop"/></div>
+            <div class="fg"><label for="cf-email">Email Address</label><input type="email" id="cf-email" placeholder="you@yourbusiness.com" autocomplete="email"/></div>
+            <div class="fg">
+              <label for="cf-service">I'm Interested In</label>
+              <select id="cf-service">
+                <option value="">Select a service...</option>
+                <option>Digital Starter Kit</option>
+                <option>Business Website</option>
+                <option>E-Commerce Store</option>
+                <option>Missed Call Text-Back</option>
+                <option>Appointment Reminders</option>
+                <option>Lead Capture &amp; CRM</option>
+                <option>Review Automation</option>
+                <option>Full Business Autopilot</option>
+                <option>Content Engine</option>
+                <option>Full Upgrade Bundle</option>
+                <option>Free Audit First</option>
+              </select>
+            </div>
+            <div class="fg"><label for="cf-msg">Tell Us About Your Business</label><textarea id="cf-msg" placeholder="What does your business do? What's your biggest challenge right now?"></textarea></div>
+            <button class="cform-btn" onclick="submitContact()">Send Message</button>
+          </div>
+          <div class="cform-success" id="cfSuccess">
+            <div class="cform-success-icon">✓</div>
+            <div class="cform-success-text">Message received!</div>
+            <div class="cform-success-sub">We'll be in touch within 24 hours at the email you provided.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-logo">AuraLogic</div>
+  <p class="footer-tag">AI-Powered Automation &amp; Web Design · Riverdale, Georgia</p>
+  <nav class="footer-nav" aria-label="Footer navigation">
+    <a href="#services">Services</a>
+    <a href="#audit">Free Audit</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="https://cal.com/destinee-auralogic/15min" target="_blank" rel="noopener">Book a Call</a>
+  </nav>
+  <p class="footer-copy">© 2026 AuraLogic · Riverdale, GA · <a href="mailto:auralogiccontact@gmail.com" style="color:inherit">auralogiccontact@gmail.com</a></p>
+</footer>
+
+<!-- ===================== SIGNUP MODAL ===================== -->
+<div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupTitle">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeSignupModal()" aria-label="Close">✕</button>
+    <h2 id="signupTitle">Unlock Pricing &amp; Get Started</h2>
+    <p class="modal-sub">Enter your info below to see pricing and add this service to your cart. We'll use this to reach out if you have questions.</p>
+    <div class="modal-selected-pkg" id="modalPkgName" aria-live="polite"></div>
+    <div class="modal-form">
+      <div class="fg"><label for="sig-fname">First Name *</label><input type="text" id="sig-fname" placeholder="First Name" autocomplete="given-name" required/></div>
+      <div class="fg"><label for="sig-lname">Last Name *</label><input type="text" id="sig-lname" placeholder="Last Name" autocomplete="family-name" required/></div>
+      <div class="fg"><label for="sig-email">Email Address *</label><input type="email" id="sig-email" placeholder="your@email.com" autocomplete="email" required/></div>
+      <div class="fg"><label for="sig-phone">Phone Number *</label><input type="tel" id="sig-phone" placeholder="(xxx) xxx-xxxx" autocomplete="tel" required/></div>
+      <div class="fg"><label for="sig-biz">Business Name *</label><input type="text" id="sig-biz" placeholder="Your Business Name" required/></div>
+      <button class="modal-submit" onclick="handleSignup()">Unlock Pricing &amp; Add to Cart →</button>
+      <p class="modal-privacy">🔒 Your information is private. We never share or sell your data.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CART SIDEBAR ===================== -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()" aria-hidden="true"></div>
+<aside class="cart-sidebar" id="cartSidebar" role="complementary" aria-label="Shopping cart">
+  <div class="cart-head">
+    <h2>Your Cart</h2>
+    <button class="cart-x" onclick="closeCart()" aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems" aria-live="polite">
+    <p class="cart-empty">Your cart is empty.<br/>Select a service above to get started.</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="cart-total-label">Setup Total</span>
+      <span class="cart-total-val" id="cartTotal">$0</span>
+    </div>
+    <button class="cart-checkout-btn" id="cartCheckoutBtn" onclick="openCheckout()" disabled>Proceed to Checkout</button>
+    <p class="cart-note">Monthly charges begin after setup is complete and you've approved the work.</p>
+  </div>
+</aside>
+
+<!-- ===================== CHECKOUT MODAL ===================== -->
+<div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+  <div class="checkout-box">
+    <h2 id="checkoutTitle">Order Summary</h2>
+    <p class="checkout-sub">Review your order below. After placing your order, you'll complete a quick onboarding form so we can get started immediately.</p>
+    <div class="order-summary">
+      <h4>Selected Services</h4>
+      <div id="orderRows"></div>
+      <div class="order-divider"></div>
+      <div class="order-total-row">
+        <span class="order-total-label">Setup Total Due Today</span>
+        <span class="order-total-price" id="orderTotal">$0</span>
+      </div>
+    </div>
+    <div id="orderMonthly" style="font-size:0.78rem;color:var(--muted);margin-bottom:1.25rem;padding:0.65rem 1rem;background:var(--gold-bg);border:1px solid var(--gold-border)"></div>
+    <button class="checkout-confirm-btn" onclick="submitOrder()">Place My Order &amp; Continue →</button>
+    <button class="checkout-back" onclick="closeCheckout()">← Back to Cart</button>
+    <p class="checkout-disclaimer">By placing your order you agree to our service terms. Setup payment is due via invoice sent to your email within 24 hours. Monthly charges begin only after your project is complete and approved.</p>
+  </div>
+</div>
+
+<!-- ===================== INTAKE FORM ===================== -->
+<section class="intake-section" id="intakeSection" aria-labelledby="intakeTitle">
+  <div class="container">
+    <div class="intake-success-hero">
+      <div class="intake-check" aria-hidden="true">✓</div>
+      <h2 id="intakeTitle">Order Confirmed — Let's Get to Work</h2>
+      <p>Your order is in. You'll receive an invoice by email shortly. Now fill out your onboarding form below so we can build everything exactly the way you want it. This takes about 5–7 minutes.</p>
+    </div>
+    <div class="intake-form-wrap">
+      
+      <div id="intakeFormWrap">
+        <h3 class="intake-section-head">Business Information</h3>
+        <div class="intake-grid">
+          <div class="intake-fg"><label for="if-fname">First Name *</label><input type="text" id="if-fname"/></div>
+          <div class="intake-fg"><label for="if-lname">Last Name *</label><input type="text" id="if-lname"/></div>
+        </div>
+        <div class="intake-grid">
+          <div class="intake-fg"><label for="if-biz">Business Name *</label><input type="text" id="if-biz"/></div>
+          <div class="intake-fg"><label for="if-type">Business Type *</label>
+            <select id="if-type">
+              <option value="">Select...</option>
+              <option>Barbershop</option>
+              <option>Hair Salon</option>
+              <option>Nail Salon</option>
+              <option>Lash / Brow Studio</option>
+              <option>Restaurant / Cafe</option>
+              <option>Boutique / Retail</option>
+              <option>Cleaning Service</option>
+              <option>Contractor / Handyman</option>
+              <option>Fitness / Gym</option>
+              <option>Med Spa / Wellness</option>
+              <option>Real Estate</option>
+              <option>Insurance</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="intake-fg"><label for="if-address">Business Address or Service Area *</label><input type="text" id="if-address" placeholder="e.g. 123 Main St, Riverdale GA 30274 or Clayton County, GA"/></div>
+        <div class="intake-grid">
+          <div class="intake-fg"><label for="if-phone">Business Phone *</label><input type="tel" id="if-phone"/></div>
+          <div class="intake-fg"><label for="if-email">Business Email *</label><input type="email" id="if-email"/></div>
+        </div>
+
+        <h3 class="intake-section-head" style="margin-top:2rem">Online Presence</h3>
+        <div class="intake-fg"><label for="if-website">Current Website URL (if you have one)</label><input type="url" id="if-website" placeholder="https://..."/></div>
+        <div class="intake-fg"><label for="if-domain">Preferred Domain Name (if you have one)</label><input type="text" id="if-domain" placeholder="e.g. sharpcuts.com or I need help choosing"/></div>
+        <div class="intake-grid">
+          <div class="intake-fg"><label for="if-ig">Instagram Handle</label><input type="text" id="if-ig" placeholder="@yourbusiness"/></div>
+          <div class="intake-fg"><label for="if-fb">Facebook Page Name</label><input type="text" id="if-fb" placeholder="facebook.com/yourbusiness"/></div>
+        </div>
+        <div class="intake-fg"><label for="if-tiktok">TikTok Handle (if applicable)</label><input type="text" id="if-tiktok" placeholder="@yourbusiness"/></div>
+        <div class="intake-fg"><label for="if-google">Google Business Profile — do you have one set up?</label>
+          <select id="if-google">
+            <option value="">Select...</option>
+            <option>Yes — it's active and verified</option>
+            <option>Yes — but I haven't updated it in a while</option>
+            <option>No — I don't have one yet</option>
+            <option>I'm not sure</option>
+          </select>
+        </div>
+
+        <h3 class="intake-section-head" style="margin-top:2rem">Your Business Details</h3>
+        <div class="intake-fg"><label for="if-services">List Your Services (with prices if you have them) *</label><textarea id="if-services" placeholder="e.g. Men's Haircut $35 · Kids Cut $25 · Beard Trim $15 · Full Set Nails $55..."></textarea></div>
+        <div class="intake-fg"><label for="if-hours">Business Hours *</label><textarea id="if-hours" style="min-height:70px" placeholder="e.g. Mon–Fri 9am–7pm · Sat 9am–5pm · Closed Sunday"></textarea></div>
+        <div class="intake-fg"><label for="if-customer">Who is your ideal customer? Describe them.</label><textarea id="if-customer" placeholder="e.g. Men 18–45 in Riverdale area looking for a clean, professional cut..."></textarea></div>
+        <div class="intake-fg"><label for="if-goal">What is the #1 goal you want AuraLogic to help you achieve?</label><textarea id="if-goal" placeholder="e.g. More bookings, reduce no-shows, rank higher on Google, stop losing missed calls..."></textarea></div>
+
+        <h3 class="intake-section-head" style="margin-top:2rem">Branding</h3>
+        <div class="intake-fg"><label for="if-logo">Do you have a logo?</label>
+          <select id="if-logo">
+            <option value="">Select...</option>
+            <option>Yes — I'll email it to auralogiccontact@gmail.com</option>
+            <option>Yes — but I want a new one</option>
+            <option>No — I need one created</option>
+          </select>
+        </div>
+        <div class="intake-fg"><label for="if-colors">Brand Colors (hex codes or descriptions)</label><input type="text" id="if-colors" placeholder="e.g. Black and gold · or #1A1A1A and #C9A84C · or I'm open to suggestions"/></div>
+        <div class="intake-fg"><label for="if-vibe">Describe the vibe / feel you want your brand to have</label><textarea id="if-vibe" style="min-height:70px" placeholder="e.g. Clean and luxury · Bold and masculine · Bright and feminine · Professional but approachable..."></textarea></div>
+        <div class="intake-fg"><label for="if-competitors">Any businesses (local or national) whose website or brand you admire?</label><input type="text" id="if-competitors" placeholder="e.g. Floyd's Barbershop website, or just 'clean and modern like Apple'"/></div>
+
+        <h3 class="intake-section-head" style="margin-top:2rem">For Automation Services</h3>
+        <div class="intake-fg"><label for="if-booking">What booking/scheduling system do you currently use (if any)?</label>
+          <select id="if-booking">
+            <option value="">Select...</option>
+            <option>Booksy</option>
+            <option>StyleSeat</option>
+            <option>Square Appointments</option>
+            <option>Calendly</option>
+            <option>Cal.com</option>
+            <option>Google Calendar manually</option>
+            <option>DMs / phone only</option>
+            <option>None</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="intake-fg"><label for="if-missedcall">Phone number to use for missed call text-back (if ordered)</label><input type="tel" id="if-missedcall" placeholder="The number customers call your business at"/></div>
+        <div class="intake-fg"><label for="if-crmemail">Email address for automation notifications (can be same as business email)</label><input type="email" id="if-crmemail" placeholder="Where you want to receive lead &amp; review alerts"/></div>
+
+        <h3 class="intake-section-head" style="margin-top:2rem">Anything Else?</h3>
+        <div class="intake-fg"><label for="if-notes">Any additional notes, requests, or things we should know before we start?</label><textarea id="if-notes" placeholder="Special requests, things you want to avoid, past bad experiences with agencies, content you want to include..."></textarea></div>
+        <div class="intake-fg"><label for="if-contact">Best way to reach you during the build?</label>
+          <select id="if-contact">
+            <option value="">Select...</option>
+            <option>Email</option>
+            <option>Text / SMS</option>
+            <option>Phone call</option>
+            <option>Any is fine</option>
+          </select>
+        </div>
+
+        <button class="intake-submit" onclick="submitIntake()">Submit My Onboarding Form →</button>
+        <p style="font-size:0.72rem;color:var(--muted);margin-top:0.75rem">All fields marked * are required. You can also email missing info to auralogiccontact@gmail.com</p>
+      </div>
+      <div class="intake-done" id="intakeDone">
+        <h3>We're on it. 🎯</h3>
+        <p>Your onboarding form has been received. We'll review everything and reach out within 24 hours to confirm we have everything we need. Your project will be live within 48 hours of that confirmation.<br/><br/>Thank you for choosing AuraLogic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+/* ================================================
+   STATE
+   ================================================ */
+var leadInfo = null;
+var cart = [];
+var pendingPackageId = null;
+
+var PACKAGES = {
+  starter:     {name:'Digital Starter Kit',      setup:297,  monthly:0,   oneTime:true},
+  website:     {name:'Business Website',          setup:497,  monthly:0,   oneTime:true},
+  ecommerce:   {name:'E-Commerce Store',          setup:797,  monthly:0,   oneTime:true},
+  textback:    {name:'Missed Call Text-Back',     setup:0,    monthly:97,  oneTime:false},
+  reminders:   {name:'Appointment Reminders',     setup:147,  monthly:97,  oneTime:false},
+  crm:         {name:'Lead Capture & CRM',        setup:197,  monthly:127, oneTime:false},
+  reviews:     {name:'Review Automation',         setup:197,  monthly:97,  oneTime:false},
+  autopilot:   {name:'Full Business Autopilot',   setup:497,  monthly:197, oneTime:false},
+  content:     {name:'Content Engine',            setup:0,    monthly:497, oneTime:false},
+  fullupgrade: {name:'Full Upgrade Bundle',       setup:697,  monthly:127, oneTime:false}
+};
+
+/* ================================================
+   PACKAGE CTA HANDLER
+   ================================================ */
+function handlePackageCTA(id, name, priceLabel, setup, monthly, oneTime) {
+  if (document.getElementById('cta-'+id).classList.contains('in-cart')) return;
+
+  if (!leadInfo) {
+    pendingPackageId = id;
+    document.getElementById('modalPkgName').textContent = 'Selected: ' + name + ' — ' + priceLabel;
+    document.getElementById('signupModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('sig-fname').focus();
+  } else {
+    addToCart(id);
+  }
+}
+
+/* ================================================
+   SIGNUP MODAL
+   ================================================ */
+function closeSignupModal() {
+  document.getElementById('signupModal').classList.remove('open');
+  document.body.style.overflow = '';
+  pendingPackageId = null;
+}
+
+function handleSignup() {
+  var fname = document.getElementById('sig-fname').value.trim();
+  var lname = document.getElementById('sig-lname').value.trim();
+  var email = document.getElementById('sig-email').value.trim();
+  var phone = document.getElementById('sig-phone').value.trim();
+  var biz   = document.getElementById('sig-biz').value.trim();
+
+  if (!fname || !lname || !email || !phone || !biz) {
+    alert('Please fill in all fields to continue.'); return;
+  }
+  if (!email.includes('@')) {
+    alert('Please enter a valid email address.'); return;
+  }
+
+  leadInfo = {firstName: fname, lastName: lname, email: email, phone: phone, businessName: biz};
+
+  // Reveal all prices
+  var priceEls = document.querySelectorAll('.pkg-price-reveal');
+  priceEls.forEach(function(el){ el.classList.add('show'); });
+
+  // Show unlock banner
+  document.getElementById('unlockBanner').classList.add('show');
+
+  // Update all CTAs to show "Add to Cart"
+  Object.keys(PACKAGES).forEach(function(id){
+    var btn = document.getElementById('cta-'+id);
+    if (btn && !btn.classList.contains('in-cart')) {
+      btn.textContent = 'Add to Cart';
+    }
+  });
+
+  closeSignupModal();
+
+  // Add the pending package
+  if (pendingPackageId) {
+    addToCart(pendingPackageId);
+    pendingPackageId = null;
+  }
+}
+
+/* ================================================
+   CART
+   ================================================ */
+function addToCart(id) {
+  if (cart.find(function(i){ return i.id === id; })) return;
+  cart.push(Object.assign({id: id}, PACKAGES[id]));
+
+  var btn = document.getElementById('cta-'+id);
+  if (btn) { btn.textContent = '✓ Added'; btn.classList.add('in-cart'); }
+
+  renderCart();
+  updateCartCount();
+  openCart();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(function(i){ return i.id !== id; });
+  var btn = document.getElementById('cta-'+id);
+  if (btn) { btn.textContent = 'Add to Cart'; btn.classList.remove('in-cart'); }
+  renderCart();
+  updateCartCount();
+}
+
+function renderCart() {
+  var el = document.getElementById('cartItems');
+  if (cart.length === 0) {
+    el.innerHTML = '<p class="cart-empty">Your cart is empty.<br/>Select a service above to get started.</p>';
+    document.getElementById('cartCheckoutBtn').disabled = true;
+    document.getElementById('cartTotal').textContent = '$0';
+    return;
+  }
+
+  var setupTotal = 0;
+  var monthlyTotal = 0;
+  var html = '';
+
+  cart.forEach(function(item){
+    var priceStr = '';
+    if (item.oneTime) {
+      priceStr = '$' + item.setup;
+      setupTotal += item.setup;
+    } else if (item.setup > 0 && item.monthly > 0) {
+      priceStr = '$' + item.setup + ' setup';
+      setupTotal += item.setup;
+      monthlyTotal += item.monthly;
+    } else if (item.setup === 0) {
+      priceStr = '$' + item.monthly + '/mo';
+      monthlyTotal += item.monthly;
+    }
+
+    var detail = item.oneTime ? 'One-time payment' : (item.setup > 0 ? 'Then $' + item.monthly + '/mo' : 'Monthly subscription');
+
+    html += '<div class="cart-item">';
+    html += '<div><div class="cart-item-name">' + item.name + '</div>';
+    html += '<div class="cart-item-detail">' + detail + '</div>';
+    html += '<button class="cart-remove" onclick="removeFromCart(\'' + item.id + '\')">Remove</button></div>';
+    html += '<div class="cart-item-price">' + priceStr + '</div>';
+    html += '</div>';
+  });
+
+  el.innerHTML = html;
+  document.getElementById('cartTotal').textContent = '$' + setupTotal + (monthlyTotal > 0 ? '' : '');
+  document.getElementById('cartCheckoutBtn').disabled = false;
+}
+
+function updateCartCount() {
+  var countEl = document.getElementById('cartCount');
+  if (cart.length > 0) {
+    countEl.textContent = cart.length;
+    countEl.classList.add('active');
+  } else {
+    countEl.classList.remove('active');
+  }
+}
+
+function openCart() {
+  document.getElementById('cartSidebar').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+}
+
+function closeCart() {
+  document.getElementById('cartSidebar').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+}
+
+/* ================================================
+   CHECKOUT
+   ================================================ */
+function openCheckout() {
+  if (cart.length === 0) return;
+  closeCart();
+
+  var setupTotal = 0;
+  var monthlyTotal = 0;
+  var rowsHtml = '';
+
+  cart.forEach(function(item){
+    var priceStr = '';
+    if (item.oneTime) {
+      priceStr = '$' + item.setup;
+      setupTotal += item.setup;
+    } else if (item.setup > 0) {
+      priceStr = '$' + item.setup + ' setup';
+      setupTotal += item.setup;
+      monthlyTotal += item.monthly;
+    } else {
+      priceStr = '$' + item.monthly + '/mo';
+      monthlyTotal += item.monthly;
+    }
+
+    rowsHtml += '<div class="order-row">';
+    rowsHtml += '<span class="order-row-name">' + item.name + '</span>';
+    rowsHtml += '<span class="order-row-price">' + priceStr + '</span>';
+    rowsHtml += '</div>';
+  });
+
+  document.getElementById('orderRows').innerHTML = rowsHtml;
+  document.getElementById('orderTotal').textContent = '$' + setupTotal;
+
+  var monthlyEl = document.getElementById('orderMonthly');
+  if (monthlyTotal > 0) {
+    monthlyEl.textContent = 'Recurring total after setup is approved: $' + monthlyTotal + '/month. You can cancel anytime.';
+    monthlyEl.style.display = 'block';
+  } else {
+    monthlyEl.style.display = 'none';
+  }
+
+  document.getElementById('checkoutModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCheckout() {
+  document.getElementById('checkoutModal').classList.remove('open');
+  document.body.style.overflow = '';
+  openCart();
+}
+
+function submitOrder() {
+  if (!leadInfo) return;
+
+  var orderItems = cart.map(function(i){ return i.name; }).join(', ');
+  var setupTotal = cart.reduce(function(sum, i){ return sum + i.setup; }, 0);
+  var monthlyTotal = cart.reduce(function(sum, i){ return sum + i.monthly; }, 0);
+
+  // Send to Formspree — REPLACE xyzabcde with your actual Formspree form ID from formspree.io
+  var formData = new FormData();
+  formData.append('_subject', 'NEW ORDER — ' + leadInfo.businessName);
+  formData.append('Name', leadInfo.firstName + ' ' + leadInfo.lastName);
+  formData.append('Email', leadInfo.email);
+  formData.append('Phone', leadInfo.phone);
+  formData.append('Business', leadInfo.businessName);
+  formData.append('Services Ordered', orderItems);
+  formData.append('Setup Total', '$' + setupTotal);
+  formData.append('Monthly Total', '$' + monthlyTotal + '/mo');
+
+  fetch('https://formspree.io/f/xojbdypw', {method:'POST', body:formData, headers:{'Accept':'application/json'}})
+    .catch(function(){ /* fail silently — order proceeds */ });
+
+  // Close checkout, show intake form
+  document.getElementById('checkoutModal').classList.remove('open');
+  document.body.style.overflow = '';
+  cart = [];
+  updateCartCount();
+
+  // Pre-fill intake with lead info
+  var fnameEl = document.getElementById('if-fname');
+  var lnameEl = document.getElementById('if-lname');
+  var bizEl   = document.getElementById('if-biz');
+  var emailEl = document.getElementById('if-email');
+  var phoneEl = document.getElementById('if-missedcall');
+  var crmEl   = document.getElementById('if-crmemail');
+  if (fnameEl) fnameEl.value = leadInfo.firstName;
+  if (lnameEl) lnameEl.value = leadInfo.lastName;
+  if (bizEl)   bizEl.value   = leadInfo.businessName;
+  if (emailEl) emailEl.value = leadInfo.email;
+  if (phoneEl) phoneEl.value = leadInfo.phone;
+  if (crmEl)   crmEl.value   = leadInfo.email;
+
+  var intakeSection = document.getElementById('intakeSection');
+  intakeSection.classList.add('show');
+  setTimeout(function(){
+    intakeSection.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 300);
+}
+
+/* ================================================
+   INTAKE FORM SUBMISSION
+   ================================================ */
+function submitIntake() {
+  var required = ['if-fname','if-lname','if-biz','if-type','if-address','if-phone','if-email','if-services','if-hours'];
+  var missing = false;
+  required.forEach(function(id){
+    var el = document.getElementById(id);
+    if (el && !el.value.trim()) { el.style.borderColor = '#C1121F'; missing = true; }
+    else if (el) { el.style.borderColor = ''; }
+  });
+  if (missing) { alert('Please fill in all required fields marked with *'); return; }
+
+  
+  var formData = new FormData();
+  formData.append('_subject', 'INTAKE FORM — ' + document.getElementById('if-biz').value);
+  var fields = ['if-fname','if-lname','if-biz','if-type','if-address','if-phone','if-email',
+                'if-website','if-domain','if-ig','if-fb','if-tiktok','if-google',
+                'if-services','if-hours','if-customer','if-goal',
+                'if-logo','if-colors','if-vibe','if-competitors',
+                'if-booking','if-missedcall','if-crmemail','if-notes','if-contact'];
+  var labels = ['First Name','Last Name','Business Name','Business Type','Address/Area','Phone','Email',
+                'Website URL','Preferred Domain','Instagram','Facebook','TikTok','Google Business',
+                'Services & Prices','Business Hours','Ideal Customer','#1 Goal',
+                'Has Logo','Brand Colors','Brand Vibe','Competitors Admired',
+                'Booking System','Missed Call Phone','Automation Email','Additional Notes','Best Contact Method'];
+
+  fields.forEach(function(id, i){
+    var el = document.getElementById(id);
+    if (el && el.value.trim()) formData.append(labels[i], el.value.trim());
+  });
+
+  fetch('https://formspree.io/f/mwvzoawa', {method:'POST', body:formData, headers:{'Accept':'application/json'}})
+    .then(function(res){
+      if (res.ok || res.status === 200 || res.status === 302) {
+        document.getElementById('intakeFormWrap').style.display = 'none';
+        document.getElementById('intakeDone').style.display = 'block';
+      } else { alert('Something went wrong. Please email your info to auralogiccontact@gmail.com'); }
+    })
+    .catch(function(){
+      // Show success anyway — form may have submitted
+      document.getElementById('intakeFormWrap').style.display = 'none';
+      document.getElementById('intakeDone').style.display = 'block';
+    });
+}
+
+/* ================================================
+   CONTACT FORM
+   ================================================ */
+function submitContact() {
+  var name  = document.getElementById('cf-name').value.trim();
+  var email = document.getElementById('cf-email').value.trim();
+  var msg   = document.getElementById('cf-msg').value.trim();
+  if (!name || !email || !msg) { alert('Please fill in your name, email, and message.'); return; }
+
+  document.getElementById('cfWrap').style.display = 'none';
+  document.getElementById('cfSuccess').style.display = 'block';
+
+  // Optional: also send to Formspree contact endpoint
+  var formData = new FormData();
+  formData.append('_subject', 'Website Contact — ' + (document.getElementById('cf-biz').value||'General'));
+  formData.append('Name', name);
+  formData.append('Email', email);
+  formData.append('Business', document.getElementById('cf-biz').value||'');
+  formData.append('Service Interest', document.getElementById('cf-service').value||'');
+  formData.append('Message', msg);
+  fetch('https://formspree.io/f/xojbdypw', {method:'POST', body:formData, headers:{'Accept':'application/json'}}).catch(function(){});
+}
+
+/* ================================================
+   SCROLL ANIMATIONS
+   ================================================ */
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if (e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el); });
+
+/* Close modals on Escape */
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') {
+    closeSignupModal();
+    closeCheckout();
+    closeCart();
+  }
+});
+</script>
+</body>
+</html>
