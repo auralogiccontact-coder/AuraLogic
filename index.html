@@ -1,5 +1,4 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -141,9 +140,50 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 2rem;display:
 .promo-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;margin-bottom:2.75rem}
 .promo-chip{background:var(--black3);border:1px solid rgba(255,255,255,0.07);color:var(--white2);font-size:0.82rem;font-weight:300;padding:0.6rem 1.25rem}
 .promo-chip span{color:var(--gold);margin-right:0.4rem}
-.promo-cta{display:inline-block;background:var(--gold);color:var(--black);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.75rem;transition:var(--transition)}
+.promo-cta{display:inline-block;background:var(--gold);color:var(--black);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:1rem 2.75rem;transition:var(--transition);border:none;cursor:pointer}
 .promo-cta:hover{background:var(--gold-l)}
 .promo-fine{font-size:0.72rem;color:var(--muted);margin-top:1.25rem}
+
+/* Promo Modal */
+.promo-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:700;align-items:center;justify-content:center;padding:1rem}
+.promo-modal-overlay.open{display:flex}
+.promo-modal-box{background:var(--black2);border:1px solid var(--gold-border);width:100%;max-width:500px;padding:2.5rem;position:relative;animation:modalIn 0.25s ease}
+.promo-modal-close{position:absolute;top:1rem;right:1.25rem;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;transition:color var(--transition)}
+.promo-modal-close:hover{color:var(--white)}
+.promo-modal-box h2{font-family:var(--serif);font-size:1.55rem;font-weight:600;color:var(--white);margin-bottom:0.35rem}
+.promo-modal-box .pm-sub{font-size:0.85rem;color:var(--muted);font-weight:300;margin-bottom:1.5rem;line-height:1.55}
+
+/* Code entry step */
+.pm-code-step{}
+.pm-code-row{display:flex;gap:0;margin-bottom:0.75rem}
+.pm-code-input{flex:1;background:var(--black3);border:1px solid rgba(255,255,255,0.08);border-right:none;color:var(--white);padding:0.85rem 1rem;font-family:monospace;font-size:1rem;letter-spacing:0.12em;text-transform:uppercase;outline:none;transition:border-color var(--transition)}
+.pm-code-input:focus{border-color:rgba(201,168,76,0.35)}
+.pm-code-input::placeholder{letter-spacing:0.05em;text-transform:none;font-family:var(--sans);font-size:0.875rem}
+.pm-code-btn{background:var(--gold);color:var(--black);border:none;padding:0.85rem 1.5rem;font-family:var(--sans);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:var(--transition)}
+.pm-code-btn:hover{background:var(--gold-l)}
+.pm-code-error{font-size:0.78rem;color:#e55;display:none;margin-bottom:0.5rem}
+.pm-code-error.show{display:block}
+
+/* Form step */
+.pm-form-step{display:none}
+.pm-form-step.show{display:block}
+.pm-unlocked-badge{display:flex;align-items:center;gap:0.6rem;background:rgba(82,183,136,0.1);border:1px solid rgba(82,183,136,0.25);color:#52B788;font-size:0.78rem;font-weight:500;padding:0.6rem 1rem;margin-bottom:1.5rem}
+.pm-fg{margin-bottom:1rem}
+.pm-fg label{display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
+.pm-fg input,.pm-fg select,.pm-fg textarea{width:100%;background:var(--black3);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:0.8rem 0.9rem;font-family:var(--sans);font-size:0.875rem;font-weight:300;outline:none;transition:border-color var(--transition);border-radius:0;-webkit-appearance:none}
+.pm-fg select option{background:var(--black2)}
+.pm-fg input:focus,.pm-fg select:focus,.pm-fg textarea:focus{border-color:rgba(201,168,76,0.35)}
+.pm-fg textarea{resize:vertical;min-height:80px}
+.pm-submit{width:100%;background:var(--gold);color:var(--black);border:none;padding:1rem;font-family:var(--sans);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:var(--transition);margin-top:0.25rem}
+.pm-submit:hover{background:var(--gold-l)}
+.pm-privacy{font-size:0.7rem;color:var(--muted);text-align:center;margin-top:0.6rem}
+
+/* Success step */
+.pm-success-step{display:none;text-align:center;padding:1rem 0}
+.pm-success-step.show{display:block}
+.pm-success-icon{width:56px;height:56px;background:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.5rem}
+.pm-success-step h3{font-family:var(--serif);font-size:1.5rem;color:var(--gold);margin-bottom:0.5rem}
+.pm-success-step p{font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.6}
 
 .services{padding:6rem 0;background:var(--black)}
 .services-intro{margin-bottom:4rem}
@@ -459,7 +499,7 @@ footer{background:var(--black3);border-top:1px solid rgba(255,255,255,0.04);padd
     <div class="promo-inner fade-in">
       <div class="promo-badge">Limited Time Offer</div>
       <h2 id="promo-title">Get a Free Website Mockup<br/><em>Built for Your Business</em></h2>
-      <p class="promo-sub">Use the code below when you reach out and we'll build a custom mockup of what your business could look like online — completely free, no strings attached.</p>
+      <p class="promo-sub">Have a promo code? Enter it below to unlock your free custom mockup request — we'll build a preview of your site and send it to you within 48 hours, no cost, no commitment.</p>
       <div class="promo-code-wrap">
         <div class="promo-code-label">Promo Code</div>
         <div class="promo-code">AURALOCAL</div>
@@ -469,11 +509,65 @@ footer{background:var(--black3);border-top:1px solid rgba(255,255,255,0.04);padd
         <div class="promo-chip"><span>✓</span> Delivered within 48 hours</div>
         <div class="promo-chip"><span>✓</span> Zero cost, zero commitment</div>
       </div>
-      <a href="#contact" class="promo-cta">Claim My Free Mockup →</a>
+      <button class="promo-cta" onclick="openPromoModal()">Claim My Free Mockup →</button>
       <p class="promo-fine">Limited spots available each month · Metro Atlanta businesses only</p>
     </div>
   </div>
 </section>
+
+<!-- ===================== PROMO MODAL ===================== -->
+<div class="promo-modal-overlay" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoModalTitle">
+  <div class="promo-modal-box">
+    <button class="promo-modal-close" onclick="closePromoModal()" aria-label="Close">✕</button>
+
+    <!-- Step 1: Code entry -->
+    <div id="pmCodeStep" class="pm-code-step">
+      <h2 id="promoModalTitle">Enter Your Promo Code</h2>
+      <p class="pm-sub">Type in your promo code to unlock the free mockup request form.</p>
+      <div class="pm-code-row">
+        <input type="text" class="pm-code-input" id="pmCodeInput" placeholder="Enter promo code..." maxlength="20" onkeydown="if(event.key==='Enter')checkPromoCode()"/>
+        <button class="pm-code-btn" onclick="checkPromoCode()">Unlock</button>
+      </div>
+      <div class="pm-code-error" id="pmCodeError">That code doesn't look right. Try <strong>AURALOCAL</strong>.</div>
+    </div>
+
+    <!-- Step 2: Mockup request form -->
+    <div id="pmFormStep" class="pm-form-step">
+      <h2>Free Mockup Request</h2>
+      <p class="pm-sub">Fill out the info below and we'll build a custom mockup of your business website and send it to you within 48 hours.</p>
+      <div class="pm-unlocked-badge">✓ Promo code applied — AURALOCAL</div>
+      <div class="pm-fg"><label for="pm-name">Your Name *</label><input type="text" id="pm-name" placeholder="First &amp; Last Name"/></div>
+      <div class="pm-fg"><label for="pm-biz">Business Name *</label><input type="text" id="pm-biz" placeholder="e.g. Diamond Cuts Barber Studio"/></div>
+      <div class="pm-fg"><label for="pm-type">Type of Business *</label>
+        <select id="pm-type">
+          <option value="">Select...</option>
+          <option>Barbershop</option>
+          <option>Hair Salon</option>
+          <option>Nail Salon</option>
+          <option>Lash / Brow Studio</option>
+          <option>Restaurant / Cafe</option>
+          <option>Boutique / Retail</option>
+          <option>Cleaning Service</option>
+          <option>Beauty / Wellness</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="pm-fg"><label for="pm-email">Email Address *</label><input type="email" id="pm-email" placeholder="Where should we send the mockup?"/></div>
+      <div class="pm-fg"><label for="pm-phone">Phone Number *</label><input type="tel" id="pm-phone" placeholder="(xxx) xxx-xxxx"/></div>
+      <div class="pm-fg"><label for="pm-ig">Instagram Handle (if you have one)</label><input type="text" id="pm-ig" placeholder="@yourbusiness"/></div>
+      <div class="pm-fg"><label for="pm-notes">Anything specific you want in the mockup?</label><textarea id="pm-notes" placeholder="Colors, style, pages, services to highlight — anything helps..."></textarea></div>
+      <button class="pm-submit" onclick="submitPromoForm()">Send My Mockup Request →</button>
+      <p class="pm-privacy">🔒 Your info is private. We'll only use it to build your mockup.</p>
+    </div>
+
+    <!-- Step 3: Success -->
+    <div id="pmSuccessStep" class="pm-success-step">
+      <div class="pm-success-icon">✓</div>
+      <h3>Request Received!</h3>
+      <p>We've got your info and we're already on it. Your free mockup will be delivered to your email within 48 hours.<br/><br/>Keep an eye on your inbox — and check spam just in case.</p>
+    </div>
+  </div>
+</div>
 
 <section class="services" id="services" aria-labelledby="services-title">
   <div class="container">
@@ -1071,13 +1165,81 @@ function submitContact() {
   fetch('https://formspree.io/f/xojbdypw', {method:'POST', body:formData, headers:{'Accept':'application/json'}}).catch(function(){});
 }
 
+/* ================================================
+   PROMO MODAL
+   ================================================ */
+function openPromoModal() {
+  document.getElementById('promoModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function(){ document.getElementById('pmCodeInput').focus(); }, 100);
+}
+
+function closePromoModal() {
+  document.getElementById('promoModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function checkPromoCode() {
+  var val = document.getElementById('pmCodeInput').value.trim().toUpperCase();
+  var errorEl = document.getElementById('pmCodeError');
+  if (val === 'AURALOCAL') {
+    errorEl.classList.remove('show');
+    document.getElementById('pmCodeStep').style.display = 'none';
+    document.getElementById('pmFormStep').classList.add('show');
+  } else {
+    errorEl.classList.add('show');
+    document.getElementById('pmCodeInput').style.borderColor = '#C1121F';
+    setTimeout(function(){ document.getElementById('pmCodeInput').style.borderColor = ''; }, 2000);
+  }
+}
+
+function submitPromoForm() {
+  var name  = document.getElementById('pm-name').value.trim();
+  var biz   = document.getElementById('pm-biz').value.trim();
+  var type  = document.getElementById('pm-type').value.trim();
+  var email = document.getElementById('pm-email').value.trim();
+  var phone = document.getElementById('pm-phone').value.trim();
+
+  if (!name || !biz || !type || !email || !phone) {
+    alert('Please fill in all required fields.'); return;
+  }
+  if (!email.includes('@')) {
+    alert('Please enter a valid email address.'); return;
+  }
+
+  var formData = new FormData();
+  formData.append('_subject', 'FREE MOCKUP REQUEST — ' + biz + ' [AURALOCAL]');
+  formData.append('Promo Code', 'AURALOCAL');
+  formData.append('Name', name);
+  formData.append('Business Name', biz);
+  formData.append('Business Type', type);
+  formData.append('Email', email);
+  formData.append('Phone', phone);
+  formData.append('Instagram', document.getElementById('pm-ig').value.trim() || 'Not provided');
+  formData.append('Notes / Style Requests', document.getElementById('pm-notes').value.trim() || 'None');
+
+  fetch('https://formspree.io/f/xojbdypw', {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function(res) {
+    document.getElementById('pmFormStep').classList.remove('show');
+    document.getElementById('pmSuccessStep').classList.add('show');
+  })
+  .catch(function() {
+    // Show success anyway
+    document.getElementById('pmFormStep').classList.remove('show');
+    document.getElementById('pmSuccessStep').classList.add('show');
+  });
+}
+
 var observer = new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, {threshold: 0.1});
 document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el); });
 
-document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeSignupModal(); closeCheckout(); closeCart(); } });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeSignupModal(); closeCheckout(); closeCart(); closePromoModal(); } });
 </script>
 </body>
 </html>
-
