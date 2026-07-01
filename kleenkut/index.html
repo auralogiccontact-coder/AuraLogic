@@ -1,1 +1,1723 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kleen KUT Barbershop & Salon — Jonesboro, GA</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --ink:       #080808;
+  --graphite:  #141414;
+  --panel:     #1A1A1A;
+  --border:    rgba(212,160,23,0.18);
+  --amber:     #D4A017;
+  --amber-lt:  #F0C040;
+  --amber-dk:  #9A7010;
+  --copper:    #B87333;
+  --smoke:     #7A7068;
+  --cream:     #F0E6D3;
+  --cream-dim: #A09080;
+  --white:     #FFFFFF;
+  --red:       #9B2020;
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { display:block; max-width:100%; }
+a { text-decoration:none; color:inherit; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
+
+/* ═══════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════ */
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--amber-dk); border-radius:2px; }
+
+/* ═══════════════════════════════════════════
+   POLE — fixed left strip
+═══════════════════════════════════════════ */
+.pole {
+  position:fixed; left:0; top:0; bottom:0; width:5px; z-index:2000;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--red)    0px, var(--red)    18px,
+    var(--white)  18px,var(--white)  30px,
+    var(--amber)  30px,var(--amber)  48px,
+    var(--white)  48px,var(--white)  60px
+  );
+  background-size: 5px 60px;
+  animation: pole 2.5s linear infinite;
+}
+@keyframes pole {
+  from { background-position: 0 0; }
+  to   { background-position: 0 60px; }
+}
+
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1500;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 32px 0 20px;
+  height: 64px;
+  background: rgba(8,8,8,0.97);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+}
+.nav-brand {
+  display:flex; align-items:center; gap:10px; padding-left:10px;
+}
+.nav-brand-text {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px; letter-spacing:3px; color:var(--amber); line-height:1;
+}
+.nav-brand-sub {
+  font-size:9px; letter-spacing:3px; color:var(--smoke);
+  text-transform:uppercase; margin-top:1px;
+}
+.nav-links {
+  display:flex; gap:28px; list-style:none;
+}
+.nav-links a {
+  font-size:11px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--cream-dim); font-weight:500; transition:color .25s;
+}
+.nav-links a:hover { color:var(--amber); }
+.nav-book-btn {
+  background:var(--amber); color:var(--ink);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:14px; letter-spacing:2px;
+  padding:10px 22px; transition:background .25s;
+}
+.nav-book-btn:hover { background:var(--amber-lt); }
+.hamburger {
+  display:none; flex-direction:column; gap:5px;
+  width:28px; cursor:pointer; padding:4px;
+}
+.hamburger span {
+  display:block; height:2px; background:var(--amber);
+  border-radius:1px; transition:all .3s;
+}
+.mobile-menu {
+  display:none; position:fixed; top:64px; left:0; right:0;
+  background:rgba(8,8,8,0.98); z-index:1400;
+  padding:24px 32px 32px; border-bottom:1px solid var(--border);
+  flex-direction:column; gap:0;
+}
+.mobile-menu.open { display:flex; }
+.mobile-menu a {
+  font-size:13px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--cream-dim); padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  font-weight:500;
+}
+.mobile-menu a:last-child { border-bottom:none; color:var(--amber); font-weight:600; }
+
+/* ═══════════════════════════════════════════
+   HERO — THE BRAND STATEMENT
+═══════════════════════════════════════════ */
+.hero {
+  min-height:100vh;
+  display:flex; align-items:center;
+  padding: 100px 5vw 60px 6vw;
+  position:relative; overflow:hidden;
+}
+
+/* Textured dark bg */
+.hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 40%, rgba(180,115,51,.10) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 70%, rgba(212,160,23,.06) 0%, transparent 60%),
+    var(--ink);
+}
+/* Diagonal ruled lines */
+.hero::after {
+  content:'';
+  position:absolute; inset:0; pointer-events:none;
+  background-image:
+    repeating-linear-gradient(
+      -55deg,
+      transparent, transparent 40px,
+      rgba(212,160,23,.03) 40px, rgba(212,160,23,.03) 41px
+    );
+}
+
+.hero-inner {
+  position:relative; z-index:2;
+  display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+  width:100%; max-width:1200px;
+}
+
+/* ── WORDMARK ── */
+.hero-wordmark {
+  display:flex; flex-direction:column; gap:0;
+}
+.wm-eyebrow {
+  font-size:10px; letter-spacing:5px; text-transform:uppercase;
+  color:var(--copper); font-weight:600;
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.wm-eyebrow::before {
+  content:''; width:28px; height:1px; background:var(--copper);
+}
+.wm-line1 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size: clamp(88px, 13vw, 160px);
+  line-height:.88; letter-spacing:6px;
+  color:var(--white);
+  text-shadow: 0 0 80px rgba(212,160,23,.12);
+  position:relative;
+}
+.wm-line2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size: clamp(88px, 13vw, 160px);
+  line-height:.88; letter-spacing:6px;
+  /* Amber fill with metallic sheen */
+  background: linear-gradient(160deg, var(--amber-lt) 0%, var(--amber) 40%, var(--copper) 70%, var(--amber) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+  position:relative;
+}
+/* Underline stroke under KUT */
+.wm-line2::after {
+  content:'';
+  position:absolute; bottom:-6px; left:0;
+  width:100%; height:3px;
+  background:linear-gradient(90deg, var(--amber), var(--copper), transparent);
+}
+.wm-tagline {
+  margin-top:22px;
+  font-size:14px; line-height:1.9; color:var(--cream-dim);
+  max-width:360px;
+}
+.wm-stats {
+  display:flex; gap:32px; margin-top:32px;
+  padding-top:28px; border-top:1px solid var(--border);
+}
+.ws-item {}
+.ws-num {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px; color:var(--amber); line-height:1;
+}
+.ws-label {
+  font-size:9px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--smoke); margin-top:3px;
+}
+.hero-ctas {
+  display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;
+}
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--amber); color:var(--ink);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:15px; letter-spacing:2px;
+  padding:14px 28px; transition:all .25s;
+}
+.btn-primary:hover { background:var(--amber-lt); transform:translateY(-2px); }
+.btn-ghost {
+  display:inline-flex; align-items:center; gap:8px;
+  color:var(--cream); font-size:11px; letter-spacing:2px;
+  text-transform:uppercase; font-weight:500;
+  border:1px solid var(--border); padding:14px 22px;
+  transition:all .25s;
+}
+.btn-ghost:hover { border-color:var(--amber); color:var(--amber); }
+
+/* ── HERO RIGHT: Barbershop Icon Panel ── */
+.hero-icons {
+  display:grid; grid-template-columns:1fr 1fr; gap:16px;
+}
+.icon-card {
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:28px 20px;
+  display:flex; flex-direction:column; align-items:center; gap:12px;
+  transition:border-color .3s, transform .3s;
+  text-align:center;
+}
+.icon-card:hover {
+  border-color:rgba(212,160,23,.5);
+  transform:translateY(-3px);
+}
+.icon-card svg { width:40px; height:40px; }
+.icon-card-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:15px; letter-spacing:2px; color:var(--white);
+}
+.icon-card-price {
+  font-size:11px; color:var(--amber); letter-spacing:1px;
+}
+/* feature card spans 2 cols */
+.icon-card.featured {
+  grid-column: span 2;
+  flex-direction:row; gap:20px; align-items:center; text-align:left;
+  padding:22px 28px;
+  background: linear-gradient(135deg, rgba(212,160,23,.08) 0%, rgba(180,115,51,.05) 100%);
+  border-color:rgba(212,160,23,.3);
+}
+.icon-card.featured svg { width:48px; height:48px; flex-shrink:0; }
+
+/* ═══════════════════════════════════════════
+   MARQUEE
+═══════════════════════════════════════════ */
+.marquee-bar {
+  background:var(--amber); overflow:hidden;
+  padding:12px 0; position:relative;
+}
+.marquee-track {
+  display:flex; gap:0; white-space:nowrap;
+  animation:scroll 22s linear infinite;
+}
+.marquee-track:hover { animation-play-state:paused; }
+.marquee-item {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:14px; letter-spacing:3px;
+  color:var(--ink); padding:0 28px;
+  display:inline-flex; align-items:center; gap:18px;
+}
+.marquee-item::after {
+  content:'✦'; font-size:8px; opacity:.5;
+}
+@keyframes scroll {
+  from { transform:translateX(0); }
+  to   { transform:translateX(-50%); }
+}
+
+/* ═══════════════════════════════════════════
+   SECTION SHELL
+═══════════════════════════════════════════ */
+.section {
+  padding: 90px 6vw;
+  position:relative;
+}
+.section-alt { background:var(--graphite); }
+.section-head { margin-bottom:52px; }
+.eyebrow {
+  font-size:10px; letter-spacing:4px; text-transform:uppercase;
+  color:var(--copper); font-weight:600;
+  display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow::before { content:''; width:24px; height:1px; background:var(--copper); }
+.section-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size: clamp(44px,6vw,80px);
+  line-height:.95; letter-spacing:3px; color:var(--white);
+}
+.section-title .amber {
+  background:linear-gradient(135deg, var(--amber-lt), var(--amber), var(--copper));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.section-lead {
+  font-size:15px; line-height:1.9; color:var(--cream-dim);
+  max-width:540px; margin-top:16px;
+}
+.split { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+
+/* ═══════════════════════════════════════════
+   ABOUT  
+═══════════════════════════════════════════ */
+.about-art {
+  position:relative; aspect-ratio:4/5;
+  background:var(--panel); border:1px solid var(--border);
+  overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+.about-art::before {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(212,160,23,.12) 0%, transparent 70%);
+}
+.about-badge {
+  position:absolute; bottom:-1px; right:-1px;
+  background:var(--amber); color:var(--ink);
+  padding:16px 22px;
+  font-family:'Bebas Neue',sans-serif; font-size:14px; letter-spacing:2px;
+}
+.feat-list { list-style:none; display:flex; flex-direction:column; gap:16px; margin-top:32px; }
+.feat-list li {
+  display:flex; align-items:flex-start; gap:14px;
+  padding-bottom:16px; border-bottom:1px solid rgba(255,255,255,.05);
+}
+.feat-list li:last-child { border-bottom:none; }
+.feat-icon {
+  width:38px; height:38px; flex-shrink:0;
+  background:rgba(212,160,23,.08);
+  border:1px solid rgba(212,160,23,.2);
+  display:flex; align-items:center; justify-content:center;
+}
+.feat-icon svg { width:18px; height:18px; }
+.feat-title { font-size:13px; font-weight:600; color:var(--white); margin-bottom:2px; }
+.feat-desc  { font-size:12px; color:var(--cream-dim); line-height:1.6; }
+
+/* ═══════════════════════════════════════════
+   SERVICES GRID
+═══════════════════════════════════════════ */
+.services-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+}
+.svc-card {
+  background:var(--panel);
+  padding:36px 28px;
+  border:1px solid transparent;
+  position:relative; overflow:hidden;
+  transition:border-color .3s, transform .3s;
+  cursor:default;
+}
+.svc-card:hover {
+  border-color:rgba(212,160,23,.35);
+  transform:translateY(-4px);
+}
+.svc-card::after {
+  content:'';
+  position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,var(--amber),var(--copper));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .4s;
+}
+.svc-card:hover::after { transform:scaleX(1); }
+.svc-icon { margin-bottom:18px; }
+.svc-icon svg { width:38px; height:38px; }
+.svc-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px; letter-spacing:2px; color:var(--white); margin-bottom:8px;
+}
+.svc-desc { font-size:13px; color:var(--cream-dim); line-height:1.7; margin-bottom:20px; }
+.svc-price {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px; color:var(--amber); letter-spacing:1px;
+}
+.svc-price span { font-size:12px; color:var(--smoke); font-family:'DM Sans',sans-serif; margin-right:4px; }
+
+/* ═══════════════════════════════════════════
+   BARBERS
+═══════════════════════════════════════════ */
+.barbers-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px;
+}
+.barber-card {
+  background:var(--panel); border:1px solid var(--border);
+  overflow:hidden; position:relative;
+  transition:border-color .3s;
+}
+.barber-card:hover { border-color:rgba(212,160,23,.4); }
+.barber-art {
+  aspect-ratio:3/4;
+  background:var(--graphite);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.barber-art::after {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(0deg, rgba(8,8,8,.9) 0%, rgba(8,8,8,.1) 60%, transparent 100%);
+}
+.barber-art svg { opacity:.2; width:90px; height:90px; }
+.barber-info {
+  position:absolute; bottom:0; left:0; right:0; padding:20px;
+  z-index:2;
+}
+.barber-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px; letter-spacing:2px; color:var(--white);
+}
+.barber-role { font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--amber); margin-top:2px; }
+.barber-specs { font-size:12px; color:var(--cream-dim); margin-top:6px; line-height:1.5; }
+
+/* ═══════════════════════════════════════════
+   REVIEWS
+═══════════════════════════════════════════ */
+.reviews-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:52px;
+}
+.review-card {
+  background:var(--panel); border:1px solid var(--border);
+  padding:28px; position:relative; overflow:hidden;
+}
+.review-card::before {
+  content:'"';
+  position:absolute; top:10px; right:18px;
+  font-family:'DM Serif Display',serif;
+  font-size:90px; color:rgba(212,160,23,.07); line-height:1;
+}
+.review-stars { color:var(--amber); font-size:13px; letter-spacing:2px; margin-bottom:14px; }
+.review-text { font-size:14px; line-height:1.85; color:var(--cream-dim); font-style:italic; margin-bottom:22px; }
+.review-author { display:flex; align-items:center; gap:12px; }
+.review-avatar {
+  width:38px; height:38px; border-radius:50%;
+  background:rgba(212,160,23,.12); border:1px solid rgba(212,160,23,.3);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Bebas Neue',sans-serif; font-size:14px; color:var(--amber);
+  flex-shrink:0;
+}
+.review-name { font-size:13px; font-weight:600; color:var(--white); }
+.review-src  { font-size:10px; color:var(--smoke); letter-spacing:1px; margin-top:2px; }
+
+/* Rating bar row */
+.rating-row {
+  display:flex; align-items:center; gap:12px;
+  font-size:12px; color:var(--cream-dim);
+}
+.rating-bar-wrap {
+  flex:1; height:5px; background:rgba(255,255,255,.06); border-radius:3px; overflow:hidden;
+}
+.rating-bar { height:100%; background:var(--amber); border-radius:3px; }
+.rating-summary {
+  margin-top:48px; display:flex; gap:48px; align-items:center;
+  padding:36px 40px; background:rgba(212,160,23,.04); border:1px solid var(--border);
+}
+.rs-big {
+  font-family:'Bebas Neue',sans-serif; font-size:80px; color:var(--amber);
+  line-height:1; flex-shrink:0;
+}
+.rs-stars { color:var(--amber); font-size:20px; margin:6px 0; }
+.rs-count { font-size:10px; letter-spacing:2px; color:var(--smoke); text-transform:uppercase; }
+.rs-bars { flex:1; display:flex; flex-direction:column; gap:10px; }
+
+/* ═══════════════════════════════════════════
+   ★ INLINE BOOKING SYSTEM ★
+═══════════════════════════════════════════ */
+.booking-section {
+  background: var(--graphite);
+  padding:90px 6vw;
+  position:relative; overflow:hidden;
+}
+.booking-section::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(212,160,23,.03) 39px, rgba(212,160,23,.03) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(212,160,23,.03) 39px, rgba(212,160,23,.03) 40px);
+}
+.booking-inner { position:relative; z-index:2; max-width:900px; margin:0 auto; }
+.booking-widget {
+  background:var(--panel); border:1px solid var(--border);
+  margin-top:48px; overflow:hidden;
+}
+
+/* Step progress bar */
+.booking-progress {
+  display:flex; border-bottom:1px solid var(--border);
+}
+.bp-step {
+  flex:1; padding:18px 16px; text-align:center;
+  font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:2px;
+  color:var(--smoke); border-right:1px solid var(--border);
+  cursor:pointer; transition:all .25s; position:relative;
+  display:flex; flex-direction:column; align-items:center; gap:4px;
+}
+.bp-step:last-child { border-right:none; }
+.bp-step .step-num {
+  width:26px; height:26px; border-radius:50%;
+  border:1px solid var(--smoke); display:flex; align-items:center; justify-content:center;
+  font-size:11px; transition:all .25s;
+}
+.bp-step.active { color:var(--amber); }
+.bp-step.active .step-num { background:var(--amber); border-color:var(--amber); color:var(--ink); }
+.bp-step.done { color:var(--copper); }
+.bp-step.done .step-num { background:var(--copper); border-color:var(--copper); color:var(--white); font-size:13px; }
+
+/* Step panels */
+.booking-step { display:none; padding:40px; }
+.booking-step.active { display:block; }
+
+/* Service picker */
+.svc-picker {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+}
+.svc-pick-btn {
+  background:rgba(255,255,255,.03); border:1px solid var(--border);
+  padding:20px 16px; cursor:pointer; text-align:center;
+  transition:all .25s; display:flex; flex-direction:column; align-items:center; gap:10px;
+}
+.svc-pick-btn:hover { border-color:rgba(212,160,23,.4); background:rgba(212,160,23,.04); }
+.svc-pick-btn.selected { border-color:var(--amber); background:rgba(212,160,23,.08); }
+.svc-pick-btn svg { width:32px; height:32px; }
+.svc-pick-name {
+  font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:1.5px; color:var(--white);
+}
+.svc-pick-price { font-size:11px; color:var(--amber); }
+
+/* Barber picker */
+.barber-picker { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.barber-pick-btn {
+  background:rgba(255,255,255,.03); border:1px solid var(--border);
+  padding:22px 16px; cursor:pointer; text-align:center;
+  transition:all .25s; display:flex; flex-direction:column; align-items:center; gap:8px;
+}
+.barber-pick-btn:hover { border-color:rgba(212,160,23,.4); }
+.barber-pick-btn.selected { border-color:var(--amber); background:rgba(212,160,23,.08); }
+.barber-avatar-pick {
+  width:56px; height:56px; border-radius:50%;
+  background:rgba(212,160,23,.1); border:2px solid rgba(212,160,23,.25);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--amber);
+}
+.barber-pick-name {
+  font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1.5px; color:var(--white);
+}
+.barber-pick-spec { font-size:11px; color:var(--cream-dim); line-height:1.4; }
+
+/* Calendar */
+.cal-wrap { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.cal-header {
+  display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;
+}
+.cal-month {
+  font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:2px; color:var(--white);
+}
+.cal-nav {
+  background:none; border:1px solid var(--border); color:var(--cream);
+  width:32px; height:32px; display:flex; align-items:center; justify-content:center;
+  font-size:14px; cursor:pointer; transition:all .25s;
+}
+.cal-nav:hover { border-color:var(--amber); color:var(--amber); }
+.cal-grid {
+  display:grid; grid-template-columns:repeat(7,1fr); gap:4px;
+}
+.cal-day-label {
+  text-align:center; font-size:9px; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--smoke); padding:6px 0;
+}
+.cal-day {
+  aspect-ratio:1; display:flex; align-items:center; justify-content:center;
+  font-size:13px; cursor:pointer; border:1px solid transparent;
+  transition:all .2s; color:var(--cream-dim);
+}
+.cal-day:not(.empty):hover { border-color:rgba(212,160,23,.4); color:var(--amber); }
+.cal-day.selected { background:var(--amber); color:var(--ink); font-weight:600; }
+.cal-day.today { border-color:rgba(212,160,23,.3); color:var(--amber); }
+.cal-day.empty { cursor:default; }
+.cal-day.past { opacity:.3; cursor:default; pointer-events:none; }
+
+/* Time slots */
+.time-label {
+  font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--copper); margin-bottom:12px; font-weight:600;
+}
+.times-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.time-btn {
+  background:rgba(255,255,255,.03); border:1px solid var(--border);
+  padding:12px 8px; font-size:13px; color:var(--cream-dim);
+  cursor:pointer; transition:all .2s; text-align:center;
+}
+.time-btn:hover { border-color:rgba(212,160,23,.4); color:var(--amber); }
+.time-btn.selected { background:var(--amber); border-color:var(--amber); color:var(--ink); font-weight:600; }
+.time-btn.booked { opacity:.3; cursor:not-allowed; text-decoration:line-through; }
+
+/* Confirm form */
+.confirm-wrap { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.booking-summary {
+  background:rgba(212,160,23,.04); border:1px solid rgba(212,160,23,.15); padding:24px;
+}
+.summary-title {
+  font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:2px;
+  color:var(--amber); margin-bottom:18px;
+}
+.summary-row {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  padding:10px 0; border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:13px;
+}
+.summary-row:last-child { border-bottom:none; }
+.summary-key { color:var(--smoke); }
+.summary-val { color:var(--white); font-weight:500; text-align:right; }
+.form-col { display:flex; flex-direction:column; gap:16px; }
+.form-group {}
+.form-label {
+  display:block; font-size:9px; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--smoke); margin-bottom:7px; font-weight:600;
+}
+.form-input {
+  width:100%; background:rgba(255,255,255,.04); border:1px solid var(--border);
+  color:var(--cream); padding:13px 14px; font-size:14px;
+  font-family:'DM Sans',sans-serif; outline:none; transition:border-color .25s;
+}
+.form-input:focus { border-color:var(--amber); }
+
+/* Step nav buttons */
+.step-nav {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:32px; padding-top:24px; border-top:1px solid var(--border);
+}
+.step-back {
+  font-size:11px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--smoke); cursor:pointer; transition:color .2s;
+  background:none; border:none; font-family:inherit;
+}
+.step-back:hover { color:var(--cream); }
+.step-next {
+  background:var(--amber); color:var(--ink);
+  font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:2px;
+  padding:13px 32px; cursor:pointer; transition:all .25s; border:none;
+}
+.step-next:hover { background:var(--amber-lt); }
+.step-next:disabled { opacity:.4; cursor:not-allowed; }
+
+/* Success state */
+.booking-success {
+  display:none; padding:60px 40px; text-align:center;
+}
+.booking-success.show { display:block; }
+.success-icon { margin:0 auto 24px; }
+.success-icon svg { width:64px; height:64px; }
+.success-title {
+  font-family:'Bebas Neue',sans-serif; font-size:48px; letter-spacing:3px; color:var(--amber); margin-bottom:12px;
+}
+.success-text { font-size:15px; color:var(--cream-dim); line-height:1.8; max-width:400px; margin:0 auto; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  background:#050505;
+  padding:70px 6vw 32px;
+  border-top:1px solid var(--border);
+}
+.footer-grid {
+  display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:52px;
+}
+.footer-logo {
+  font-family:'Bebas Neue',sans-serif; font-size:44px; letter-spacing:4px;
+  color:var(--amber); line-height:1; margin-bottom:14px;
+}
+.footer-tagline {
+  font-size:13px; line-height:1.9; color:var(--smoke); max-width:260px; margin-bottom:24px;
+}
+.socials { display:flex; gap:10px; }
+.social-btn {
+  width:38px; height:38px; border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  transition:all .25s;
+}
+.social-btn:hover { border-color:var(--amber); background:rgba(212,160,23,.1); }
+.social-btn svg { width:16px; height:16px; fill:var(--amber); }
+.footer-col-title {
+  font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:3px;
+  color:var(--amber); margin-bottom:20px;
+}
+.footer-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.footer-links a {
+  font-size:13px; color:var(--smoke); transition:color .2s;
+}
+.footer-links a:hover { color:var(--amber); }
+.footer-hours p { font-size:12px; color:var(--smoke); line-height:2; }
+.footer-hours .hi { color:var(--amber); font-weight:600; }
+.footer-bottom {
+  border-top:1px solid rgba(255,255,255,.05);
+  padding-top:24px; display:flex; justify-content:space-between; align-items:center;
+}
+.footer-copy { font-size:11px; color:rgba(255,255,255,.18); letter-spacing:.5px; }
+.footer-copy span { color:rgba(212,160,23,.4); }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — TABLET
+═══════════════════════════════════════════ */
+@media (max-width:1024px) {
+  .hero-inner { grid-template-columns:1fr; gap:40px; }
+  .hero-icons { grid-template-columns:repeat(4,1fr); }
+  .icon-card.featured { grid-column:span 4; }
+  .services-grid { grid-template-columns:repeat(2,1fr); }
+  .barbers-grid { grid-template-columns:repeat(2,1fr); }
+  .reviews-grid { grid-template-columns:1fr 1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .svc-picker { grid-template-columns:repeat(3,1fr); }
+  .split { grid-template-columns:1fr; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — MOBILE
+═══════════════════════════════════════════ */
+@media (max-width:768px) {
+  .nav-links { display:none; }
+  .nav-book-btn { display:none; }
+  .hamburger { display:flex; }
+  nav { padding:0 20px; }
+  .nav-brand { padding-left:14px; }
+  .nav-brand-text { font-size:22px; }
+
+  .hero { padding:88px 20px 52px; min-height:auto; }
+  .hero-inner { gap:36px; }
+  .wm-line1, .wm-line2 { font-size: clamp(72px, 18vw, 100px); letter-spacing:3px; }
+  .hero-icons { grid-template-columns:1fr 1fr; gap:10px; }
+  .icon-card.featured { grid-column:span 2; padding:18px 16px; }
+  .icon-card { padding:20px 12px; }
+  .icon-card svg { width:32px; height:32px; }
+  .wm-stats { gap:20px; }
+  .ws-num { font-size:28px; }
+
+  .section { padding:60px 20px; }
+  .booking-section { padding:60px 20px; }
+
+  .section-title { font-size: clamp(38px,10vw,54px); }
+
+  .services-grid { grid-template-columns:1fr; gap:2px; }
+  .svc-picker { grid-template-columns:1fr 1fr; gap:10px; }
+  .svc-pick-btn { padding:16px 10px; }
+
+  .barbers-grid { grid-template-columns:1fr; gap:14px; }
+  .barber-pick-btn { padding:16px 10px; }
+  .barber-picker { grid-template-columns:1fr 1fr 1fr; gap:8px; }
+
+  .reviews-grid { grid-template-columns:1fr; }
+  .rating-summary { flex-direction:column; gap:24px; padding:28px 20px; }
+
+  .booking-step { padding:24px 20px; }
+  .booking-progress { overflow-x:auto; }
+  .bp-step { min-width:80px; font-size:11px; padding:14px 10px; }
+  .cal-wrap { grid-template-columns:1fr; gap:24px; }
+  .confirm-wrap { grid-template-columns:1fr; }
+  .times-grid { grid-template-columns:repeat(4,1fr); }
+  .step-nav { flex-direction:column; gap:12px; }
+  .step-next { width:100%; text-align:center; }
+
+  .footer-grid { grid-template-columns:1fr; gap:36px; }
+  .footer-bottom { flex-direction:column; gap:10px; text-align:center; }
+
+  .hero-ctas { flex-direction:column; }
+  .btn-primary, .btn-ghost { justify-content:center; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- Barber pole -->
+<div class="pole"></div>
+
+<!-- ════════════════════════════════
+  NAV
+════════════════════════════════ -->
+<nav>
+  <div class="nav-brand">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="7" cy="7" r="5" stroke="#D4A017" stroke-width="1.5"/>
+      <circle cx="7" cy="21" r="5" stroke="#D4A017" stroke-width="1.5"/>
+      <line x1="11.2" y1="10.5" x2="25" y2="24" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="11.2" y1="17.5" x2="25" y2="4" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="nav-brand-text">Kleen KUT</div>
+      <div class="nav-brand-sub">Barbershop & Salon · Jonesboro, GA</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#barbers">Barbers</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#booking">Book</a></li>
+  </ul>
+  <a href="#booking" class="nav-book-btn">Book Now</a>
+  <div class="hamburger" id="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about"    onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#barbers"  onclick="closeMenu()">Barbers</a>
+  <a href="#reviews"  onclick="closeMenu()">Reviews</a>
+  <a href="#booking"  onclick="closeMenu()">✦ Book Your Cut</a>
+</div>
+
+<!-- ════════════════════════════════
+  HERO
+════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+
+    <!-- LEFT: Wordmark -->
+    <div class="hero-wordmark">
+      <div class="wm-eyebrow">Jonesboro's Premier Cut</div>
+      <div class="wm-line1">KLEEN</div>
+      <div class="wm-line2">KUT</div>
+      <p class="wm-tagline">
+        Where precision meets culture. Jonesboro's most trusted barbershop — master fades, clean lines, and a shop that treats you like family.
+      </p>
+      <div class="hero-ctas">
+        <a href="#booking" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          Book My Cut
+        </a>
+        <a href="#services" class="btn-ghost">View Services</a>
+      </div>
+      <div class="wm-stats">
+        <div class="ws-item"><div class="ws-num">4.8★</div><div class="ws-label">Google Rating</div></div>
+        <div class="ws-item"><div class="ws-num">93+</div><div class="ws-label">5-Star Reviews</div></div>
+        <div class="ws-item"><div class="ws-num">7</div><div class="ws-label">Days a Week</div></div>
+        <div class="ws-item"><div class="ws-num">10+</div><div class="ws-label">Yrs Serving</div></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Service Icon Cards -->
+    <div class="hero-icons">
+      <!-- Featured -->
+      <div class="icon-card featured">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="8" stroke="#D4A017" stroke-width="2"/>
+          <circle cx="12" cy="36" r="8" stroke="#D4A017" stroke-width="2"/>
+          <line x1="18.5" y1="17.5" x2="42" y2="41" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="18.5" y1="30.5" x2="42" y2="7" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="30" cy="24" r="2.5" fill="#B87333"/>
+        </svg>
+        <div>
+          <div class="icon-card-name">Precision Fade</div>
+          <div style="font-size:12px;color:var(--cream-dim);margin-top:4px;line-height:1.5;">Our signature service. Seamless skin-to-length blends tailored to your face.</div>
+          <div class="icon-card-price" style="margin-top:8px;">from $30</div>
+        </div>
+      </div>
+      <!-- Grid cards -->
+      <div class="icon-card">
+        <!-- Razor -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="16" width="32" height="10" rx="3" stroke="#D4A017" stroke-width="1.8"/>
+          <rect x="4" y="16" width="8" height="10" rx="3" fill="#D4A017" fill-opacity=".25" stroke="#D4A017" stroke-width="1.8"/>
+          <line x1="14" y1="16" x2="14" y2="26" stroke="#D4A017" stroke-width="1"/>
+          <line x1="20" y1="18" x2="20" y2="24" stroke="#D4A017" stroke-width=".6" opacity=".5"/>
+          <line x1="25" y1="18" x2="25" y2="24" stroke="#D4A017" stroke-width=".6" opacity=".5"/>
+          <line x1="30" y1="18" x2="30" y2="24" stroke="#D4A017" stroke-width=".6" opacity=".5"/>
+        </svg>
+        <div class="icon-card-name">Beard Sculpt</div>
+        <div class="icon-card-price">from $20</div>
+      </div>
+      <div class="icon-card">
+        <!-- Comb -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="12" width="32" height="8" rx="2" stroke="#D4A017" stroke-width="1.8"/>
+          <line x1="10" y1="20" x2="10" y2="30" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+          <line x1="15" y1="20" x2="15" y2="28" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+          <line x1="20" y1="20" x2="20" y2="30" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+          <line x1="25" y1="20" x2="25" y2="28" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+          <line x1="30" y1="20" x2="30" y2="30" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="icon-card-name">Classic Cut</div>
+        <div class="icon-card-price">from $25</div>
+      </div>
+      <div class="icon-card">
+        <!-- Barber pole mini -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="15" y="4" width="10" height="32" rx="3" stroke="#D4A017" stroke-width="1.8"/>
+          <line x1="15" y1="12" x2="25" y2="16" stroke="#9B2020" stroke-width="3" stroke-linecap="round"/>
+          <line x1="15" y1="20" x2="25" y2="24" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+          <line x1="15" y1="28" x2="25" y2="32" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="20" cy="4" rx="5" ry="2.5" fill="#D4A017" opacity=".4"/>
+          <ellipse cx="20" cy="36" rx="5" ry="2.5" fill="#D4A017" opacity=".4"/>
+        </svg>
+        <div class="icon-card-name">Edge Up</div>
+        <div class="icon-card-price">from $15</div>
+      </div>
+      <div class="icon-card">
+        <!-- Clippers -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="6" width="14" height="24" rx="4" stroke="#D4A017" stroke-width="1.8"/>
+          <rect x="6" y="26" width="18" height="6" rx="2" stroke="#D4A017" stroke-width="1.5" fill="#D4A017" fill-opacity=".1"/>
+          <line x1="9" y1="30" x2="9" y2="32" stroke="#D4A017" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="12" y1="30" x2="12" y2="32" stroke="#D4A017" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="15" y1="30" x2="15" y2="32" stroke="#D4A017" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="18" y1="30" x2="18" y2="32" stroke="#D4A017" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="21" y1="30" x2="21" y2="32" stroke="#D4A017" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="15" cy="14" r="3" stroke="#D4A017" stroke-width="1.2"/>
+          <line x1="28" y1="10" x2="36" y2="14" stroke="#B87333" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="28" y1="18" x2="36" y2="22" stroke="#B87333" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="icon-card-name">Kids Cut</div>
+        <div class="icon-card-price">from $20</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">Precision Fades</span>
+    <span class="marquee-item">Clean Lineups</span>
+    <span class="marquee-item">Hot Towel Shaves</span>
+    <span class="marquee-item">Beard Sculpting</span>
+    <span class="marquee-item">Kids Cuts</span>
+    <span class="marquee-item">Open 7 Days</span>
+    <span class="marquee-item">Walk-Ins Welcome</span>
+    <span class="marquee-item">Jonesboro GA</span>
+    <span class="marquee-item">Precision Fades</span>
+    <span class="marquee-item">Clean Lineups</span>
+    <span class="marquee-item">Hot Towel Shaves</span>
+    <span class="marquee-item">Beard Sculpting</span>
+    <span class="marquee-item">Kids Cuts</span>
+    <span class="marquee-item">Open 7 Days</span>
+    <span class="marquee-item">Walk-Ins Welcome</span>
+    <span class="marquee-item">Jonesboro GA</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+  ABOUT
+════════════════════════════════ -->
+<section class="section" id="about">
+  <div class="split">
+    <div class="about-art">
+      <!-- Illustrated barbershop chair / shop art -->
+      <svg viewBox="0 0 340 420" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stop-color="#D4A017" stop-opacity=".18"/>
+            <stop offset="100%" stop-color="#D4A017" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="340" height="420" fill="#141414"/>
+        <rect width="340" height="420" fill="url(#glow)"/>
+        <!-- Diagonal texture lines -->
+        <line x1="0" y1="420" x2="420" y2="0" stroke="#D4A017" stroke-width=".3" opacity=".12"/>
+        <line x1="-60" y1="420" x2="360" y2="0" stroke="#D4A017" stroke-width=".3" opacity=".08"/>
+        <line x1="60" y1="420" x2="480" y2="0" stroke="#D4A017" stroke-width=".3" opacity=".08"/>
+        <!-- Mirror frame -->
+        <rect x="70" y="28" width="200" height="140" rx="2" stroke="#D4A017" stroke-width="1.5" fill="none" opacity=".4"/>
+        <rect x="78" y="36" width="184" height="124" rx="1" fill="#0d0d0d" stroke="#D4A017" stroke-width=".5" opacity=".2"/>
+        <!-- Scissors in mirror -->
+        <g opacity=".35" transform="translate(140,55)">
+          <circle cx="14" cy="14" r="10" stroke="#D4A017" stroke-width="1.5" fill="none"/>
+          <circle cx="14" cy="42" r="10" stroke="#D4A017" stroke-width="1.5" fill="none"/>
+          <line x1="21" y1="21" x2="60" y2="60" stroke="#D4A017" stroke-width="2"/>
+          <line x1="21" y1="35" x2="60" y2="16" stroke="#D4A017" stroke-width="2"/>
+          <circle cx="40.5" cy="38.5" r="3" fill="#B87333" opacity=".7"/>
+        </g>
+        <!-- Chair body -->
+        <rect x="100" y="230" width="140" height="90" rx="8" fill="#1c1c1c" stroke="#D4A017" stroke-width="1" opacity=".6"/>
+        <!-- Chair back -->
+        <rect x="115" y="178" width="110" height="68" rx="6" fill="#1c1c1c" stroke="#D4A017" stroke-width="1" opacity=".6"/>
+        <!-- Headrest -->
+        <rect x="130" y="155" width="80" height="34" rx="16" fill="#1c1c1c" stroke="#D4A017" stroke-width="1" opacity=".6"/>
+        <!-- Armrests -->
+        <rect x="86" y="250" width="20" height="50" rx="5" fill="#1c1c1c" stroke="#D4A017" stroke-width=".8" opacity=".5"/>
+        <rect x="234" y="250" width="20" height="50" rx="5" fill="#1c1c1c" stroke="#D4A017" stroke-width=".8" opacity=".5"/>
+        <!-- Chair base / pedestal -->
+        <rect x="155" y="320" width="30" height="48" fill="#1c1c1c" stroke="#D4A017" stroke-width=".8" opacity=".5"/>
+        <ellipse cx="170" cy="370" rx="46" ry="9" fill="#D4A017" opacity=".12"/>
+        <!-- Star base spokes -->
+        <line x1="170" y1="370" x2="130" y2="392" stroke="#1c1c1c" stroke-width="5" stroke-linecap="round"/>
+        <line x1="170" y1="370" x2="210" y2="392" stroke="#1c1c1c" stroke-width="5" stroke-linecap="round"/>
+        <line x1="170" y1="370" x2="144" y2="398" stroke="#1c1c1c" stroke-width="5" stroke-linecap="round"/>
+        <line x1="170" y1="370" x2="196" y2="398" stroke="#1c1c1c" stroke-width="5" stroke-linecap="round"/>
+        <line x1="170" y1="370" x2="170" y2="400" stroke="#1c1c1c" stroke-width="5" stroke-linecap="round"/>
+        <!-- Comb on arm -->
+        <rect x="88" y="244" width="16" height="6" rx="1" fill="none" stroke="#D4A017" stroke-width=".8" opacity=".4"/>
+        <line x1="90" y1="250" x2="90" y2="258" stroke="#D4A017" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+        <line x1="93" y1="250" x2="93" y2="256" stroke="#D4A017" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+        <line x1="96" y1="250" x2="96" y2="258" stroke="#D4A017" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+        <line x1="99" y1="250" x2="99" y2="256" stroke="#D4A017" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+        <line x1="102" y1="250" x2="102" y2="258" stroke="#D4A017" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+        <!-- Barber pole side -->
+        <rect x="286" y="120" width="16" height="150" rx="4" fill="none" stroke="#D4A017" stroke-width="1" opacity=".35"/>
+        <line x1="286" y1="140" x2="302" y2="155" stroke="#9B2020" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+        <line x1="286" y1="165" x2="302" y2="180" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+        <line x1="286" y1="190" x2="302" y2="205" stroke="#D4A017" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+        <line x1="286" y1="215" x2="302" y2="230" stroke="#9B2020" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+        <line x1="286" y1="240" x2="302" y2="255" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+        <ellipse cx="294" cy="120" rx="8" ry="3" fill="#D4A017" opacity=".3"/>
+        <ellipse cx="294" cy="270" rx="8" ry="3" fill="#D4A017" opacity=".3"/>
+        <!-- Est. text -->
+        <text x="170" y="415" text-anchor="middle" font-family="sans-serif" font-size="9" letter-spacing="5" fill="#D4A017" fill-opacity=".25">EST. JONESBORO GA</text>
+      </svg>
+      <div class="about-badge">4.8★ RATED</div>
+    </div>
+    <div>
+      <div class="eyebrow">Our Story</div>
+      <h2 class="section-title">MORE THAN A<br><span class="amber">HAIRCUT.</span></h2>
+      <p class="section-lead">At Kleen KUT, we don't just cut hair — we build confidence. Located on Tara Boulevard in the heart of Jonesboro, our shop is where the community comes to look and feel their best.</p>
+      <ul class="feat-list">
+        <li>
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="#D4A017"><path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3h-3z"/></svg>
+          </div>
+          <div><div class="feat-title">Master-Level Barbers</div><div class="feat-desc">Every barber in our shop is a certified craftsman — years of experience behind every blade.</div></div>
+        </li>
+        <li>
+          <div class="feat-icon">
+            <!-- Clippers icon -->
+            <svg viewBox="0 0 24 24" fill="#D4A017"><path d="M7 2H5v2H3.5C2.67 4 2 4.67 2 5.5v15C2 21.33 2.67 22 3.5 22h9c.83 0 1.5-.67 1.5-1.5v-15C14 4.67 13.33 4 12.5 4H11V2H9v2H7V2zm5.5 5v11h-9V7h9z M4.5 8.5h7v1h-7z M4.5 11h7v1h-7z"/></svg>
+          </div>
+          <div><div class="feat-title">Walk-Ins Always Welcome</div><div class="feat-desc">No appointment needed. Pull up, sit down, and get in the chair — every day of the week.</div></div>
+        </li>
+        <li>
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="#D4A017"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          </div>
+          <div><div class="feat-title">Special Needs Friendly</div><div class="feat-desc">Our barbers are patient, kind, and experienced working with clients of all abilities.</div></div>
+        </li>
+        <li>
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24" fill="#D4A017"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div><div class="feat-title">Open 7 Days a Week</div><div class="feat-desc">10 AM – 7 PM, Monday through Sunday. We're here when you need us.</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  SERVICES
+════════════════════════════════ -->
+<section class="section section-alt" id="services">
+  <div class="section-head">
+    <div class="eyebrow">What We Offer</div>
+    <h2 class="section-title">OUR <span class="amber">SERVICES</span></h2>
+    <p class="section-lead">Every service is delivered with the precision Kleen KUT is known for — no rushing, no shortcuts.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="7" stroke="#D4A017" stroke-width="2"/>
+          <circle cx="10" cy="30" r="7" stroke="#D4A017" stroke-width="2"/>
+          <line x1="15.5" y1="15" x2="36" y2="35" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="25" x2="36" y2="5" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="25.5" cy="20" r="3" fill="#B87333"/>
+        </svg>
+      </div>
+      <div class="svc-name">Precision Fade</div>
+      <div class="svc-desc">Seamless skin-to-length blending, tailored to your unique face shape. Our most requested cut.</div>
+      <div class="svc-price"><span>from</span>$30</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <!-- Comb -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="10" width="32" height="9" rx="2.5" stroke="#D4A017" stroke-width="2"/>
+          <line x1="10" y1="19" x2="10" y2="31" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="16" y1="19" x2="16" y2="28" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="22" y1="19" x2="22" y2="31" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="28" y1="19" x2="28" y2="28" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="34" y1="19" x2="34" y2="31" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="svc-name">Classic Cut</div>
+      <div class="svc-desc">Tapers, crops, and timeless cuts executed with today's precision. Built to last 'til your next visit.</div>
+      <div class="svc-price"><span>from</span>$25</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <!-- Razor -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="15" width="32" height="12" rx="3.5" stroke="#D4A017" stroke-width="2"/>
+          <rect x="4" y="15" width="9" height="12" rx="3.5" fill="#D4A017" fill-opacity=".2" stroke="#D4A017" stroke-width="2"/>
+          <line x1="15" y1="15" x2="15" y2="27" stroke="#D4A017" stroke-width="1.2"/>
+          <line x1="21" y1="18" x2="21" y2="24" stroke="#D4A017" stroke-width=".8" opacity=".5"/>
+          <line x1="26" y1="18" x2="26" y2="24" stroke="#D4A017" stroke-width=".8" opacity=".5"/>
+          <line x1="31" y1="18" x2="31" y2="24" stroke="#D4A017" stroke-width=".8" opacity=".5"/>
+        </svg>
+      </div>
+      <div class="svc-name">Beard Sculpt</div>
+      <div class="svc-desc">Define and shape your beard with expert hands. Hot towel treatment included for every client.</div>
+      <div class="svc-price"><span>from</span>$20</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <!-- Clippers -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="5" width="14" height="22" rx="4" stroke="#D4A017" stroke-width="2"/>
+          <rect x="8" y="24" width="18" height="7" rx="2" stroke="#D4A017" stroke-width="1.5" fill="#D4A017" fill-opacity=".1"/>
+          <line x1="11" y1="28" x2="11" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="14" y1="28" x2="14" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="17" y1="28" x2="17" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="20" y1="28" x2="20" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="23" y1="28" x2="23" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="17" cy="14" r="3.5" stroke="#D4A017" stroke-width="1.5"/>
+          <line x1="30" y1="10" x2="37" y2="14" stroke="#B87333" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="30" y1="18" x2="37" y2="22" stroke="#B87333" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="svc-name">Kids Cut</div>
+      <div class="svc-desc">Patient and friendly service for the little ones. We make every kid feel comfortable and leave looking fresh.</div>
+      <div class="svc-price"><span>from</span>$20</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <!-- Hot towel / full service -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="18" width="28" height="16" rx="3" stroke="#D4A017" stroke-width="2"/>
+          <path d="M12 18 C12 12 16 10 20 12 C24 14 28 10 28 6" stroke="#D4A017" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <line x1="14" y1="24" x2="26" y2="24" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="28" x2="22" y2="28" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="svc-name">Full Package</div>
+      <div class="svc-desc">The complete experience: fade, edge up, beard sculpt, and hot towel finish. Come in looking good, leave legendary.</div>
+      <div class="svc-price"><span>from</span>$55</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <!-- Lineup / edge -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="6" y1="10" x2="34" y2="10" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="6" y1="10" x2="6" y2="34" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="6" y1="34" x2="28" y2="34" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="14" y1="18" x2="26" y2="18" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+          <line x1="14" y1="24" x2="22" y2="24" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+          <circle cx="32" cy="14" r="4" stroke="#B87333" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="svc-name">Edge Up & Line</div>
+      <div class="svc-desc">Sharp, razor-clean lines that frame your face. The detail that separates a good cut from a great one.</div>
+      <div class="svc-price"><span>from</span>$15</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  BARBERS
+════════════════════════════════ -->
+<section class="section" id="barbers">
+  <div class="section-head">
+    <div class="eyebrow">The Craft</div>
+    <h2 class="section-title">MEET YOUR <span class="amber">BARBERS</span></h2>
+    <p class="section-lead">Every chair at Kleen KUT is held by a master of the trade.</p>
+  </div>
+  <div class="barbers-grid">
+    <div class="barber-card">
+      <div class="barber-art">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="34" r="22" stroke="#D4A017" stroke-width="1.5" opacity=".4"/>
+          <path d="M15 95 Q50 66 85 95" stroke="#D4A017" stroke-width="1.5" fill="none" opacity=".4"/>
+          <circle cx="24" cy="20" r="9" stroke="#D4A017" stroke-width="1.2" fill="none" opacity=".2"/>
+          <circle cx="24" cy="44" r="9" stroke="#D4A017" stroke-width="1.2" fill="none" opacity=".2"/>
+          <line x1="31" y1="26" x2="72" y2="67" stroke="#D4A017" stroke-width="1.5" opacity=".2"/>
+          <line x1="31" y1="38" x2="72" y2="17" stroke="#D4A017" stroke-width="1.5" opacity=".2"/>
+        </svg>
+        <div class="barber-info">
+          <div class="barber-name">Earl Jones</div>
+          <div class="barber-role">Master Barber · Owner</div>
+          <div class="barber-specs">Fades · Custom Designs · Kids Cuts · Special Needs</div>
+        </div>
+      </div>
+    </div>
+    <div class="barber-card">
+      <div class="barber-art">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="34" r="22" stroke="#D4A017" stroke-width="1.5" opacity=".4"/>
+          <path d="M15 95 Q50 66 85 95" stroke="#D4A017" stroke-width="1.5" fill="none" opacity=".4"/>
+          <rect x="30" y="60" width="40" height="6" rx="2" fill="#D4A017" opacity=".1"/>
+        </svg>
+        <div class="barber-info">
+          <div class="barber-name">Qua Roberts</div>
+          <div class="barber-role">Senior Barber</div>
+          <div class="barber-specs">Skin Fades · Beard Sculpting · Lineups</div>
+        </div>
+      </div>
+    </div>
+    <div class="barber-card">
+      <div class="barber-art">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="34" r="22" stroke="#D4A017" stroke-width="1.5" opacity=".4"/>
+          <path d="M15 95 Q50 66 85 95" stroke="#D4A017" stroke-width="1.5" fill="none" opacity=".4"/>
+          <polygon points="50,18 54,30 68,30 57,38 61,50 50,42 39,50 43,38 32,30 46,30" fill="#D4A017" opacity=".08"/>
+        </svg>
+        <div class="barber-info">
+          <div class="barber-name">Randy Thompson</div>
+          <div class="barber-role">Master Barber</div>
+          <div class="barber-specs">Classic Cuts · Tapers · Hot Towel Shaves</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  REVIEWS
+════════════════════════════════ -->
+<section class="section section-alt" id="reviews">
+  <div class="section-head">
+    <div class="eyebrow">Client Love</div>
+    <h2 class="section-title">WHAT THEY <span class="amber">SAY</span></h2>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"This establishment is one of, if not the best in Atlanta. Earl is extremely talented — his work is like art! Everyone that works there is very talented. The vibe is next level."</p>
+      <div class="review-author">
+        <div class="review-avatar">RH</div>
+        <div><div class="review-name">Richard H.</div><div class="review-src">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Easily the most professional shop I've been to in the area. Barbers set appointments and are ON TIME. You get a great cut and you're not rushed. Qualo keeps me on point."</p>
+      <div class="review-author">
+        <div class="review-avatar">TJ</div>
+        <div><div class="review-name">T. Johnson</div><div class="review-src">Google Review</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"My son has special needs and has been going here for over 2 years. Earl is very kind and patient — he NEVER disappoints! I would recommend them to absolutely anyone."</p>
+      <div class="review-author">
+        <div class="review-avatar">SM</div>
+        <div><div class="review-name">S. Monroe</div><div class="review-src">Google Review</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="rating-summary">
+    <div>
+      <div class="rs-big">4.8</div>
+      <div class="rs-stars">★★★★★</div>
+      <div class="rs-count">93 Google Reviews</div>
+    </div>
+    <div class="rs-bars">
+      <div class="rating-row"><span style="width:22px;text-align:right;flex-shrink:0">5★</span><div class="rating-bar-wrap"><div class="rating-bar" style="width:88%"></div></div><span>88%</span></div>
+      <div class="rating-row"><span style="width:22px;text-align:right;flex-shrink:0">4★</span><div class="rating-bar-wrap"><div class="rating-bar" style="width:8%;background:var(--copper)"></div></div><span>8%</span></div>
+      <div class="rating-row"><span style="width:22px;text-align:right;flex-shrink:0">3★</span><div class="rating-bar-wrap"><div class="rating-bar" style="width:3%;background:var(--copper)"></div></div><span>3%</span></div>
+      <div class="rating-row"><span style="width:22px;text-align:right;flex-shrink:0">2★</span><div class="rating-bar-wrap"><div class="rating-bar" style="width:1%;background:var(--red)"></div></div><span>1%</span></div>
+      <div class="rating-row"><span style="width:22px;text-align:right;flex-shrink:0">1★</span><div class="rating-bar-wrap"><div class="rating-bar" style="width:0%"></div></div><span>0%</span></div>
+    </div>
+    <a href="#booking" class="btn-primary" style="flex-shrink:0;">Book Your Cut</a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  INLINE BOOKING SYSTEM
+════════════════════════════════ -->
+<section class="booking-section" id="booking">
+  <div class="booking-inner">
+    <div class="eyebrow">Appointments</div>
+    <h2 class="section-title">BOOK YOUR <span class="amber">SEAT</span></h2>
+    <p class="section-lead">Pick your service, choose your barber, select a time — done. No phone tag, no waiting. Just show up fresh.</p>
+
+    <div class="booking-widget">
+      <!-- Progress bar -->
+      <div class="booking-progress" id="bookingProgress">
+        <div class="bp-step active" data-step="1" onclick="goToStep(1)">
+          <div class="step-num">1</div>
+          <span>Service</span>
+        </div>
+        <div class="bp-step" data-step="2" onclick="goToStep(2)">
+          <div class="step-num">2</div>
+          <span>Barber</span>
+        </div>
+        <div class="bp-step" data-step="3" onclick="goToStep(3)">
+          <div class="step-num">3</div>
+          <span>Date & Time</span>
+        </div>
+        <div class="bp-step" data-step="4" onclick="goToStep(4)">
+          <div class="step-num">4</div>
+          <span>Confirm</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: Service -->
+      <div class="booking-step active" id="step1">
+        <p style="font-size:13px;color:var(--cream-dim);margin-bottom:24px;">Select the service you'd like to book:</p>
+        <div class="svc-picker">
+          <button class="svc-pick-btn" onclick="selectService(this,'Precision Fade','$30')">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="7" stroke="#D4A017" stroke-width="2"/>
+              <circle cx="10" cy="30" r="7" stroke="#D4A017" stroke-width="2"/>
+              <line x1="15.5" y1="15" x2="36" y2="35" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="15.5" y1="25" x2="36" y2="5" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <div class="svc-pick-name">Precision Fade</div>
+            <div class="svc-pick-price">from $30</div>
+          </button>
+          <button class="svc-pick-btn" onclick="selectService(this,'Classic Cut','$25')">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="10" width="32" height="9" rx="2.5" stroke="#D4A017" stroke-width="2"/>
+              <line x1="10" y1="19" x2="10" y2="31" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="16" y1="19" x2="16" y2="28" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="22" y1="19" x2="22" y2="31" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="28" y1="19" x2="28" y2="28" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="34" y1="19" x2="34" y2="31" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <div class="svc-pick-name">Classic Cut</div>
+            <div class="svc-pick-price">from $25</div>
+          </button>
+          <button class="svc-pick-btn" onclick="selectService(this,'Beard Sculpt','$20')">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="15" width="32" height="12" rx="3.5" stroke="#D4A017" stroke-width="2"/>
+              <rect x="4" y="15" width="9" height="12" rx="3.5" fill="#D4A017" fill-opacity=".2" stroke="#D4A017" stroke-width="2"/>
+              <line x1="15" y1="15" x2="15" y2="27" stroke="#D4A017" stroke-width="1.2"/>
+            </svg>
+            <div class="svc-pick-name">Beard Sculpt</div>
+            <div class="svc-pick-price">from $20</div>
+          </button>
+          <button class="svc-pick-btn" onclick="selectService(this,'Kids Cut','$20')">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="5" width="14" height="22" rx="4" stroke="#D4A017" stroke-width="2"/>
+              <rect x="8" y="24" width="18" height="7" rx="2" stroke="#D4A017" stroke-width="1.5" fill="#D4A017" fill-opacity=".1"/>
+              <line x1="11" y1="28" x2="11" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="14" y1="28" x2="14" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="17" y1="28" x2="17" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="20" y1="28" x2="20" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="23" y1="28" x2="23" y2="31" stroke="#D4A017" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            <div class="svc-pick-name">Kids Cut</div>
+            <div class="svc-pick-price">from $20</div>
+          </button>
+          <button class="svc-pick-btn" onclick="selectService(this,'Edge Up & Line','$15')">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="6" y1="10" x2="34" y2="10" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="6" y1="10" x2="6" y2="34" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="6" y1="34" x2="28" y2="34" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <div class="svc-pick-name">Edge Up</div>
+            <div class="svc-pick-price">from $15</div>
+          </button>
+          <button class="svc-pick-btn" onclick="selectService(this,'Full Package','$55')">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="18" width="28" height="16" rx="3" stroke="#D4A017" stroke-width="2"/>
+              <path d="M12 18 C12 12 16 10 20 12 C24 14 28 10 28 6" stroke="#D4A017" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+            <div class="svc-pick-name">Full Package</div>
+            <div class="svc-pick-price">from $55</div>
+          </button>
+        </div>
+        <div class="step-nav">
+          <div></div>
+          <button class="step-next" id="next1" disabled onclick="nextStep(2)">Choose Barber →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Barber -->
+      <div class="booking-step" id="step2">
+        <p style="font-size:13px;color:var(--cream-dim);margin-bottom:24px;">Who do you want in your corner?</p>
+        <div class="barber-picker">
+          <button class="barber-pick-btn" onclick="selectBarber(this,'Earl Jones')">
+            <div class="barber-avatar-pick">EJ</div>
+            <div class="barber-pick-name">Earl Jones</div>
+            <div class="barber-pick-spec">Owner · Fades · Kids · Designs</div>
+          </button>
+          <button class="barber-pick-btn" onclick="selectBarber(this,'Qua Roberts')">
+            <div class="barber-avatar-pick">QR</div>
+            <div class="barber-pick-name">Qua Roberts</div>
+            <div class="barber-pick-spec">Skin Fades · Beards · Lineups</div>
+          </button>
+          <button class="barber-pick-btn" onclick="selectBarber(this,'Randy Thompson')">
+            <div class="barber-avatar-pick">RT</div>
+            <div class="barber-pick-name">Randy Thompson</div>
+            <div class="barber-pick-spec">Classic Cuts · Shaves</div>
+          </button>
+        </div>
+        <div class="barber-pick-btn" style="margin-top:12px;width:100%;background:rgba(255,255,255,.02);border:1px dashed rgba(212,160,23,.2);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:16px;gap:8px;" onclick="selectBarber(this,'No Preference')">
+          <span style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--smoke);">No preference — any available barber</span>
+        </div>
+        <div class="step-nav">
+          <button class="step-back" onclick="nextStep(1)">← Back</button>
+          <button class="step-next" id="next2" disabled onclick="nextStep(3)">Pick Date & Time →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Date & Time -->
+      <div class="booking-step" id="step3">
+        <div class="cal-wrap">
+          <div>
+            <div class="cal-header">
+              <button class="cal-nav" onclick="changeMonth(-1)">‹</button>
+              <div class="cal-month" id="calMonth">July 2026</div>
+              <button class="cal-nav" onclick="changeMonth(1)">›</button>
+            </div>
+            <div class="cal-grid" id="calGrid">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+          <div>
+            <div class="time-label">Available Times</div>
+            <div class="times-grid" id="timesGrid">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button class="step-back" onclick="nextStep(2)">← Back</button>
+          <button class="step-next" id="next3" disabled onclick="nextStep(4)">Review & Confirm →</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Confirm -->
+      <div class="booking-step" id="step4">
+        <div class="confirm-wrap">
+          <div class="booking-summary">
+            <div class="summary-title">Your Appointment</div>
+            <div class="summary-row"><span class="summary-key">Service</span><span class="summary-val" id="sum-service">—</span></div>
+            <div class="summary-row"><span class="summary-key">Price</span><span class="summary-val" id="sum-price">—</span></div>
+            <div class="summary-row"><span class="summary-key">Barber</span><span class="summary-val" id="sum-barber">—</span></div>
+            <div class="summary-row"><span class="summary-key">Date</span><span class="summary-val" id="sum-date">—</span></div>
+            <div class="summary-row"><span class="summary-key">Time</span><span class="summary-val" id="sum-time">—</span></div>
+            <div class="summary-row" style="margin-top:8px;border-top:1px solid var(--border);padding-top:16px;">
+              <span style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--smoke);">Location</span>
+              <span class="summary-val" style="font-size:12px;">6592 Tara Blvd A<br>Jonesboro, GA 30236</span>
+            </div>
+          </div>
+          <div class="form-col">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input class="form-input" type="text" placeholder="Your name" id="nameInput"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input class="form-input" type="tel" placeholder="(XXX) XXX-XXXX" id="phoneInput"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email (optional)</label>
+              <input class="form-input" type="email" placeholder="For confirmation"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Notes for your barber</label>
+              <input class="form-input" type="text" placeholder="Reference photo, style notes, etc."/>
+            </div>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button class="step-back" onclick="nextStep(3)">← Back</button>
+          <button class="step-next" onclick="submitBooking()">✦ Confirm My Appointment</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="booking-success" id="bookingSuccess">
+        <div class="success-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" stroke="#D4A017" stroke-width="2"/>
+            <path d="M18 32 L27 42 L46 22" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="success-title">YOU'RE BOOKED!</div>
+        <p class="success-text">We'll see you soon. A confirmation will be sent to your phone. Show up fresh — we'll handle the rest.</p>
+        <div style="margin-top:28px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;color:var(--smoke);">6592 Tara Blvd A · Jonesboro, GA · (404) 543-8908</div>
+      </div>
+    </div>
+
+    <!-- Info strip below booking -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;">
+      <div style="background:var(--panel);border:1px solid var(--border);padding:22px;display:flex;gap:14px;align-items:flex-start;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#D4A017"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:4px;">Location</div><div style="font-size:13px;color:var(--cream-dim);line-height:1.6;">6592 Tara Blvd A<br>Jonesboro, GA 30236</div></div>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--border);padding:22px;display:flex;gap:14px;align-items:flex-start;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#D4A017"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:4px;">Hours</div><div style="font-size:13px;color:var(--cream-dim);line-height:1.6;">Mon – Sun<br>10:00 AM – 7:00 PM</div></div>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--border);padding:22px;display:flex;gap:14px;align-items:flex-start;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#D4A017"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:4px;">Phone</div><div style="font-size:13px;color:var(--cream-dim);line-height:1.6;">(404) 543-8908<br>Call or text anytime</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  FOOTER
+════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Kleen KUT</div>
+      <p class="footer-tagline">Jonesboro's premier barbershop. Precision cuts, master barbers, and a shop that treats every client like family — 7 days a week.</p>
+      <div class="socials">
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Google Maps">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#barbers">Barbers</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#booking">Book Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#booking">Precision Fade</a></li>
+        <li><a href="#booking">Classic Cut</a></li>
+        <li><a href="#booking">Beard Sculpt</a></li>
+        <li><a href="#booking">Kids Cut</a></li>
+        <li><a href="#booking">Full Package</a></li>
+        <li><a href="#booking">Edge Up & Line</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Visit Us</div>
+      <div class="footer-hours">
+        <p><span class="hi">Hours</span></p>
+        <p>Mon – Sun: 10AM – 7PM</p>
+        <p style="margin-top:14px;"><span class="hi">Address</span></p>
+        <p>6592 Tara Blvd A<br>Jonesboro, GA 30236</p>
+        <p style="margin-top:14px;"><span class="hi">Phone</span></p>
+        <p>(404) 543-8908</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Kleen KUT Barbershop & Salon · Jonesboro, GA</div>
+    <div class="footer-copy">Built by <span>AuraLogic</span> · AI-Powered Digital Agency</div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════
+  JAVASCRIPT
+════════════════════════════════ -->
+<script>
+/* ── Mobile menu ── */
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ── Booking state ── */
+const booking = { service:'', price:'', barber:'', date:'', time:'' };
+let calYear = 2026, calMonth = 6; // July = index 6
+
+/* ── Step navigation ── */
+function nextStep(step) {
+  document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step'+step).classList.add('active');
+  updateProgress(step);
+  if(step===3) renderCalendar();
+  if(step===4) fillSummary();
+}
+
+function goToStep(step) {
+  // Only allow going back
+  const currentActive = [...document.querySelectorAll('.booking-step')].findIndex(s=>s.classList.contains('active'))+1;
+  if(step < currentActive) nextStep(step);
+}
+
+function updateProgress(active) {
+  document.querySelectorAll('.bp-step').forEach((el,i) => {
+    el.classList.remove('active','done');
+    const s = i+1;
+    if(s < active)  { el.classList.add('done');   el.querySelector('.step-num').textContent='✓'; }
+    else if(s===active) el.classList.add('active');
+    else el.querySelector('.step-num').textContent=s;
+  });
+}
+
+/* ── Service selection ── */
+function selectService(btn, name, price) {
+  document.querySelectorAll('.svc-pick-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  booking.service = name; booking.price = price;
+  document.getElementById('next1').disabled = false;
+}
+
+/* ── Barber selection ── */
+function selectBarber(btn, name) {
+  document.querySelectorAll('.barber-pick-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  booking.barber = name;
+  document.getElementById('next2').disabled = false;
+}
+
+/* ── Calendar ── */
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DAYS   = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+
+function changeMonth(dir) {
+  calMonth += dir;
+  if(calMonth>11){calMonth=0;calYear++;}
+  if(calMonth<0){calMonth=11;calYear--;}
+  renderCalendar();
+}
+
+function renderCalendar() {
+  document.getElementById('calMonth').textContent = MONTHS[calMonth]+' '+calYear;
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML = '';
+  DAYS.forEach(d => {
+    const lbl=document.createElement('div'); lbl.className='cal-day-label'; lbl.textContent=d; grid.appendChild(lbl);
+  });
+  const firstDay = new Date(calYear,calMonth,1).getDay();
+  const daysInMonth = new Date(calYear,calMonth+1,0).getDate();
+  const today = new Date();
+  for(let i=0;i<firstDay;i++){
+    const e=document.createElement('div'); e.className='cal-day empty'; grid.appendChild(e);
+  }
+  for(let d=1;d<=daysInMonth;d++){
+    const cell=document.createElement('div'); cell.className='cal-day';
+    cell.textContent=d;
+    const thisDate=new Date(calYear,calMonth,d);
+    if(thisDate<new Date(today.getFullYear(),today.getMonth(),today.getDate())) cell.classList.add('past');
+    if(thisDate.toDateString()===today.toDateString()) cell.classList.add('today');
+    cell.addEventListener('click',function(){
+      if(this.classList.contains('past')||this.classList.contains('empty')) return;
+      document.querySelectorAll('.cal-day').forEach(c=>c.classList.remove('selected'));
+      this.classList.add('selected');
+      booking.date = MONTHS[calMonth]+' '+d+', '+calYear;
+      renderTimes();
+    });
+    grid.appendChild(cell);
+  }
+}
+
+function renderTimes() {
+  const grid = document.getElementById('timesGrid');
+  // Simulate some booked slots
+  const booked = ['11:00 AM','2:00 PM','4:30 PM'];
+  const slots = ['10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','12:30 PM','1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM','5:30 PM','6:00 PM','6:30 PM'];
+  grid.innerHTML='';
+  slots.forEach(t => {
+    const btn=document.createElement('button'); btn.className='time-btn'; btn.textContent=t;
+    if(booked.includes(t)){ btn.classList.add('booked'); btn.disabled=true; }
+    else {
+      btn.addEventListener('click',function(){
+        document.querySelectorAll('.time-btn').forEach(b=>b.classList.remove('selected'));
+        this.classList.add('selected');
+        booking.time=t;
+        document.getElementById('next3').disabled=false;
+      });
+    }
+    grid.appendChild(btn);
+  });
+}
+
+function fillSummary() {
+  document.getElementById('sum-service').textContent = booking.service;
+  document.getElementById('sum-price').textContent   = booking.price;
+  document.getElementById('sum-barber').textContent  = booking.barber;
+  document.getElementById('sum-date').textContent    = booking.date   || '—';
+  document.getElementById('sum-time').textContent    = booking.time   || '—';
+}
+
+function submitBooking() {
+  const name  = document.getElementById('nameInput').value.trim();
+  const phone = document.getElementById('phoneInput').value.trim();
+  if(!name||!phone){ alert('Please enter your name and phone number.'); return; }
+  // Hide steps, show success
+  document.querySelector('.booking-progress').style.display='none';
+  document.querySelectorAll('.booking-step').forEach(s=>s.style.display='none');
+  document.getElementById('bookingSuccess').classList.add('show');
+}
+
+// Init calendar
+renderCalendar();
+</script>
+</body>
+</html>
