@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HairVigorous Beauty & Barber — Jonesboro, GA</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Give+You+Glory&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --teal-deep:  #0A5851;
+  --teal:       #12A796;
+  --teal-lt:    #3EE8CC;
+  --ink:        #0E0E0E;
+  --charcoal:   #1C1C1C;
+  --cream:      #FFFFFF;
+  --cream-dim:  #F3F3F3;
+  --white:      #FFFFFF;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family:'Hanken Grotesk', sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img { display:block; max-width:100%; }
+a { text-decoration:none; color:inherit; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius:3px; }
+
+.script { font-family:'Give You Glory', cursive; }
+
+/* ═══════════════ NAV ═══════════════ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1500;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 5vw; height:78px;
+  background:rgba(247,242,233,0.96);
+  border-bottom:1px solid rgba(20,17,15,0.08);
+  backdrop-filter:blur(14px);
+}
+.nav-brand { display:flex; align-items:baseline; gap:2px; }
+.nav-brand .b1 { font-family:'Give You Glory',cursive; font-size:30px; color:var(--teal-deep); }
+.nav-brand .b2 { font-family:'Fraunces',serif; font-weight:700; font-size:22px; letter-spacing:1px; color:var(--ink); }
+.nav-links { display:flex; gap:32px; list-style:none; }
+.nav-links a {
+  font-size:12px; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--charcoal); font-weight:500; transition:color .25s;
+  position:relative; padding-bottom:4px;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:0; left:0; width:0; height:2px;
+  background:var(--ink); transition:width .25s;
+}
+.nav-links a:hover { color:var(--teal-deep); }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  background:var(--ink); color:var(--cream);
+  font-size:12px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600;
+  padding:12px 26px; border-radius:2px; transition:background .25s;
+}
+.nav-cta:hover { background:var(--teal-deep); }
+.hamburger { display:none; flex-direction:column; gap:5px; width:26px; cursor:pointer; }
+.hamburger span { display:block; height:2px; background:var(--ink); border-radius:1px; }
+.mobile-menu {
+  display:none; position:fixed; top:78px; left:0; right:0; z-index:1400;
+  background:var(--cream); padding:20px 6vw 30px; flex-direction:column;
+  border-bottom:1px solid rgba(20,17,15,0.08);
+}
+.mobile-menu.open { display:flex; }
+.mobile-menu a {
+  font-size:14px; letter-spacing:1.5px; text-transform:uppercase;
+  padding:14px 0; border-bottom:1px solid rgba(20,17,15,0.08); font-weight:500;
+}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero {
+  min-height:100vh; display:flex; align-items:center;
+  padding:110px 5vw 70px; position:relative; overflow:hidden;
+}
+.hero::before {
+  content:''; position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(ellipse 60% 75% at 90% 12%, rgba(18,167,150,0.16) 0%, transparent 62%),
+    radial-gradient(ellipse 45% 55% at 4% 90%, rgba(18,167,150,0.10) 0%, transparent 60%);
+}
+.salon-pattern {
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-repeat:repeat; background-size:170px 170px;
+}
+.salon-pattern-light {
+  opacity:0.45;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cg stroke='%2312A796' stroke-width='1.1' fill='none' stroke-linecap='round'%3E%3Ccircle cx='22' cy='22' r='5'/%3E%3Ccircle cx='22' cy='36' r='5'/%3E%3Cline x1='26' y1='26' x2='55' y2='55'/%3E%3Cline x1='26' y1='32' x2='55' y2='3'/%3E%3Cline x1='96' y1='12' x2='96' y2='44'/%3E%3Cline x1='103' y1='12' x2='103' y2='44'/%3E%3Cline x1='110' y1='12' x2='110' y2='44'/%3E%3Cline x1='117' y1='12' x2='117' y2='44'/%3E%3Cline x1='124' y1='12' x2='124' y2='44'/%3E%3Crect x='93' y='5' width='34' height='7' rx='2'/%3E%3Cpath d='M12,112 C24,100 36,124 48,112 C60,100 72,124 84,112'/%3E%3Cg transform='translate(120,108) scale(0.75)'%3E%3Ccircle cx='0' cy='0' r='5'/%3E%3Ccircle cx='0' cy='14' r='5'/%3E%3Cline x1='4' y1='4' x2='32' y2='32'/%3E%3Cline x1='4' y1='10' x2='32' y2='-18'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.salon-pattern-dark {
+  opacity:0.14;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cg stroke='%23FFFFFF' stroke-width='1.1' fill='none' stroke-linecap='round'%3E%3Ccircle cx='22' cy='22' r='5'/%3E%3Ccircle cx='22' cy='36' r='5'/%3E%3Cline x1='26' y1='26' x2='55' y2='55'/%3E%3Cline x1='26' y1='32' x2='55' y2='3'/%3E%3Cline x1='96' y1='12' x2='96' y2='44'/%3E%3Cline x1='103' y1='12' x2='103' y2='44'/%3E%3Cline x1='110' y1='12' x2='110' y2='44'/%3E%3Cline x1='117' y1='12' x2='117' y2='44'/%3E%3Cline x1='124' y1='12' x2='124' y2='44'/%3E%3Crect x='93' y='5' width='34' height='7' rx='2'/%3E%3Cpath d='M12,112 C24,100 36,124 48,112 C60,100 72,124 84,112'/%3E%3Cg transform='translate(120,108) scale(0.75)'%3E%3Ccircle cx='0' cy='0' r='5'/%3E%3Ccircle cx='0' cy='14' r='5'/%3E%3Cline x1='4' y1='4' x2='32' y2='32'/%3E%3Cline x1='4' y1='10' x2='32' y2='-18'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-symbols svg { position:absolute; }
+.hero-inner {
+  position:relative; z-index:2; display:grid; grid-template-columns:1.15fr 0.85fr;
+  gap:50px; align-items:center; width:100%; max-width:1240px; margin:0 auto;
+}
+.hero-strand {
+  position:absolute; right:8%; top:0; bottom:0; width:2px;
+  z-index:1; opacity:0.5;
+}
+.wm-eyebrow {
+  font-size:11px; letter-spacing:4px; text-transform:uppercase; font-weight:600;
+  color:var(--teal-deep); display:flex; align-items:center; gap:10px; margin-bottom:18px;
+}
+.wm-eyebrow::before { content:''; width:26px; height:1px; background:var(--ink); }
+.hero h1 {
+  font-family:'Fraunces',serif; font-weight:700;
+  font-size:clamp(48px,7vw,84px); line-height:0.98; color:var(--ink);
+  letter-spacing:-1px;
+}
+.hero h1 .hv-script {
+  font-family:'Give You Glory',cursive; font-weight:400; font-size:1.15em;
+  display:block; line-height:1.3; margin-bottom:-4px; padding-top:0.15em;
+  background:linear-gradient(100deg, var(--teal) 0%, var(--teal-lt) 45%, var(--ink) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  filter:drop-shadow(0 0 22px rgba(18,167,150,0.25));
+}
+.hero-tagline {
+  margin-top:26px; font-size:16px; line-height:1.85; color:var(--charcoal);
+  max-width:420px;
+}
+.hero-badges { display:flex; gap:22px; margin-top:34px; flex-wrap:wrap; }
+.hbadge { display:flex; align-items:center; gap:9px; }
+.hbadge .stars { color:var(--ink); font-size:14px; letter-spacing:1px; text-shadow:0 0 12px rgba(232,181,74,0.5); }
+.hbadge-text { font-size:12.5px; color:var(--charcoal); font-weight:500; }
+.hbadge-text b { color:var(--ink); }
+.hero-ctas { display:flex; gap:16px; margin-top:38px; flex-wrap:wrap; }
+.btn-primary {
+  background:linear-gradient(120deg, var(--teal-deep), var(--teal) 60%, var(--teal-lt));
+  color:var(--white);
+  font-size:13px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600;
+  padding:16px 32px; border-radius:2px; transition:box-shadow .3s, transform .2s;
+  box-shadow:0 8px 24px rgba(18,167,150,0.25);
+}
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(18,167,150,0.4); }
+.btn-ghost {
+  border:1.5px solid var(--ink); color:var(--ink);
+  font-size:13px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600;
+  padding:16px 32px; border-radius:2px; transition:all .25s;
+}
+.btn-ghost:hover { background:var(--ink); color:var(--ink); border-color:var(--ink); }
+
+/* Hero visual panel */
+.hero-panel {
+  position:relative; aspect-ratio:3/4; border-radius:4px; overflow:hidden;
+  background:
+    linear-gradient(155deg, var(--ink) 0%, var(--teal-deep) 38%, var(--teal) 72%, var(--teal-lt) 100%);
+  box-shadow:0 30px 70px -20px rgba(10,88,81,0.45);
+}
+.hero-panel::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 90%, rgba(232,181,74,0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 5%, rgba(241,101,79,0.20) 0%, transparent 55%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 26px);
+}
+.hero-panel-card {
+  position:absolute; bottom:24px; left:24px; right:24px;
+  background:rgba(20,17,15,0.85); backdrop-filter:blur(8px);
+  padding:22px 24px; border-radius:2px; border-left:3px solid var(--ink);
+}
+.hpc-title { font-family:'Fraunces',serif; font-size:19px; color:var(--cream); font-weight:600; }
+.hpc-sub { font-size:12px; color:var(--ink); letter-spacing:1px; margin-top:4px; text-transform:uppercase; }
+.hero-panel-mark {
+  position:absolute; top:26px; left:26px;
+  font-family:'Give You Glory',cursive; font-size:44px; color:rgba(255,255,255,0.9);
+}
+
+/* ═══════════════ SECTION SHARED ═══════════════ */
+section { padding:110px 5vw; position:relative; }
+.section-inner { max-width:1140px; margin:0 auto; position:relative; z-index:1; }
+.section-eyebrow {
+  font-size:11px; letter-spacing:4px; text-transform:uppercase; font-weight:600;
+  color:var(--teal-deep); display:flex; align-items:center; gap:10px; margin-bottom:16px;
+}
+.section-eyebrow::before { content:''; width:26px; height:1px; background:var(--ink); }
+.section-title {
+  font-family:'Fraunces',serif; font-weight:700; font-size:clamp(32px,4.2vw,52px);
+  color:var(--ink); line-height:1.05; letter-spacing:-0.5px; max-width:640px;
+}
+.section-title .hv-script {
+  font-family:'Give You Glory',cursive; font-weight:400;
+  background:linear-gradient(100deg, var(--teal-deep), var(--teal) 50%, var(--ink));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.services .section-title .hv-script,
+.contact-cta .section-title .hv-script {
+  background:linear-gradient(100deg, var(--teal-lt), var(--white) 55%, var(--teal-lt));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+
+/* ═══════════════ ABOUT ═══════════════ */
+.about { background:var(--white); }
+.about-grid { display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:start; }
+.about-visual {
+  aspect-ratio:4/5; border-radius:4px; position:relative; overflow:hidden;
+  background:linear-gradient(200deg, var(--white) 0%, var(--teal-lt) 45%, var(--ink) 130%);
+  box-shadow:0 24px 60px -18px rgba(14,14,14,0.25);
+}
+.about-visual::after {
+  content:''; position:absolute; inset:0;
+  background-image: radial-gradient(circle at 25% 15%, rgba(255,255,255,0.5) 0%, transparent 45%),
+                     radial-gradient(circle at 80% 80%, rgba(18,167,150,0.35) 0%, transparent 55%);
+}
+.about-visual-tag {
+  position:absolute; top:22px; right:22px; background:var(--ink); color:var(--ink);
+  font-size:11px; letter-spacing:2px; text-transform:uppercase; padding:8px 14px;
+}
+.about-text p { font-size:16px; line-height:1.9; color:var(--charcoal); margin-bottom:20px; max-width:540px; }
+.about-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px; }
+.astat-num { font-family:'Fraunces',serif; font-weight:700; font-size:36px; color:var(--teal-deep); }
+.astat-label { font-size:11.5px; letter-spacing:1px; text-transform:uppercase; color:var(--charcoal); margin-top:4px; }
+
+/* ═══════════════ SERVICES ═══════════════ */
+.services { background:var(--ink); color:var(--cream); }
+.services .section-eyebrow { color:var(--ink); }
+.services .section-title { color:var(--cream); }
+.svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:60px; background:rgba(255,255,255,0.08); }
+.svc-card {
+  background:var(--ink); padding:40px 32px; transition:background .3s, box-shadow .3s;
+  border-left:2px solid transparent;
+}
+.svc-card:hover { background:var(--charcoal); border-left:2px solid var(--ink); box-shadow:inset 0 0 40px rgba(18,167,150,0.08); }
+.svc-icon { width:38px; height:38px; margin-bottom:22px; color:var(--teal-lt); filter:drop-shadow(0 0 10px rgba(62,232,204,0.35)); }
+.svc-name { font-family:'Fraunces',serif; font-weight:600; font-size:20px; color:var(--cream); margin-bottom:10px; }
+.svc-desc { font-size:13.5px; line-height:1.7; color:rgba(247,242,233,0.6); }
+.svc-tag { display:inline-block; margin-top:16px; font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink); }
+
+/* ═══════════════ GALLERY ═══════════════ */
+.gallery { background:var(--cream); }
+.gal-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:56px; }
+.gal-tile {
+  aspect-ratio:1; border-radius:3px; position:relative; overflow:hidden;
+}
+.gal-tile:nth-child(1) { background:linear-gradient(155deg,var(--teal-deep),var(--teal-lt)); }
+.gal-tile:nth-child(2) { background:linear-gradient(155deg,var(--ink),var(--charcoal)); }
+.gal-tile:nth-child(3) { background:linear-gradient(155deg,var(--white),var(--teal-lt)); }
+.gal-tile:nth-child(4) { background:linear-gradient(155deg,var(--teal),var(--ink)); }
+.gal-tile:nth-child(5) { background:linear-gradient(155deg,var(--ink),var(--teal-lt)); }
+.gal-tile:nth-child(6) { background:linear-gradient(155deg,var(--teal-deep),var(--white)); }
+.gal-tile:nth-child(7) { background:linear-gradient(155deg,var(--charcoal),var(--teal)); }
+.gal-tile:nth-child(8) { background:linear-gradient(155deg,var(--teal-lt),var(--ink)); }
+.gal-tile::before {
+  content:''; position:absolute; inset:0;
+  background-image:repeating-linear-gradient(100deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 18px);
+}
+.gal-follow {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  margin-top:36px; font-size:13px; letter-spacing:1px; color:var(--charcoal);
+}
+.gal-follow b { color:var(--teal-deep); }
+
+/* ═══════════════ RATING BAND ═══════════════ */
+.rating-band {
+  background:linear-gradient(100deg, var(--teal-deep) 0%, var(--teal) 50%, var(--teal-lt) 100%);
+  padding:60px 5vw; text-align:center;
+}
+.rating-band-inner { max-width:640px; margin:0 auto; }
+.rb-stars { font-size:26px; color:var(--ink); letter-spacing:6px; }
+.rb-score { font-family:'Fraunces',serif; font-weight:700; font-size:44px; color:var(--ink); margin-top:10px; }
+.rb-sub { font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--charcoal); margin-top:6px; font-weight:600; }
+
+/* ═══════════════ VISIT / HOURS ═══════════════ */
+.visit { background:var(--white); }
+.visit-grid { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start; }
+.visit-card {
+  background:var(--cream); padding:44px; border-radius:4px; border-left:4px solid var(--teal-deep);
+}
+.vc-row { display:grid; grid-template-columns:110px 1fr; padding:16px 0; border-bottom:1px solid rgba(20,17,15,0.08); }
+.vc-row:last-child { border-bottom:none; }
+.vc-label { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal-deep); font-weight:600; }
+.vc-value { font-size:14.5px; color:var(--charcoal); line-height:1.6; }
+.hours-list { display:flex; flex-direction:column; gap:0; }
+.hours-row { display:flex; justify-content:space-between; padding:13px 0; border-bottom:1px solid rgba(20,17,15,0.08); font-size:14.5px; }
+.hours-row:last-child { border-bottom:none; }
+.hours-day { color:var(--ink); font-weight:600; }
+.hours-time { color:var(--charcoal); }
+.map-embed {
+  margin-top:24px; aspect-ratio:16/9; border-radius:4px; overflow:hidden;
+  background:linear-gradient(160deg, var(--cream-dim), var(--teal-lt));
+  position:relative; display:flex; align-items:center; justify-content:center;
+}
+.map-embed-label {
+  font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--charcoal); font-weight:600;
+}
+
+/* ═══════════════ CONTACT / CTA ═══════════════ */
+.contact-cta {
+  background:linear-gradient(160deg, var(--ink) 0%, var(--teal-deep) 45%, var(--ink) 100%);
+  color:var(--cream); text-align:center;
+  position:relative; overflow:hidden;
+}
+.contact-cta::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 50% 60% at 85% 15%, rgba(232,181,74,0.18) 0%, transparent 60%),
+             radial-gradient(ellipse 40% 50% at 10% 90%, rgba(241,101,79,0.16) 0%, transparent 55%);
+}
+.contact-cta > .section-inner { position:relative; z-index:1; }
+.contact-cta .section-title { color:var(--cream); margin:0 auto 20px; }
+.contact-cta p { max-width:480px; margin:0 auto 40px; color:rgba(247,242,233,0.75); font-size:15.5px; line-height:1.8; }
+.cc-ctas { display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
+.btn-cream {
+  background:var(--cream); color:var(--ink);
+  font-size:13px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600;
+  padding:17px 34px; border-radius:2px; transition:all .25s;
+}
+.btn-cream:hover { background:var(--ink); color:var(--ink); }
+.btn-outline-cream {
+  border:1.5px solid var(--cream); color:var(--cream);
+  font-size:13px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600;
+  padding:17px 34px; border-radius:2px; transition:all .25s;
+}
+.btn-outline-cream:hover { background:var(--cream); color:var(--ink); }
+
+/* ═══════════════ FOOTER ═══════════════ */
+footer { background:var(--ink); color:var(--cream); padding:70px 5vw 30px; }
+.footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:50px; max-width:1140px; margin:0 auto; padding-bottom:50px; border-bottom:1px solid rgba(247,242,233,0.1); }
+.footer-logo { font-family:'Give You Glory',cursive; font-size:32px; color:var(--ink); }
+.footer-logo-sub { font-family:'Fraunces',serif; font-weight:700; font-size:18px; letter-spacing:1px; margin-top:-4px; }
+.footer-tagline { font-size:13.5px; line-height:1.8; color:rgba(247,242,233,0.55); margin-top:16px; max-width:280px; }
+.footer-col-title { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--ink); margin-bottom:18px; font-weight:600; }
+.footer-links { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.footer-links a { font-size:14px; color:rgba(247,242,233,0.7); transition:color .2s; }
+.footer-links a:hover { color:var(--cream); }
+.footer-bottom { max-width:1140px; margin:0 auto; padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.footer-copy { font-size:12px; color:rgba(247,242,233,0.45); }
+.footer-copy span { color:var(--ink); font-weight:600; }
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media (max-width:900px) {
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .hero-inner { grid-template-columns:1fr; }
+  .hero-panel { order:-1; aspect-ratio:16/10; }
+  .about-grid, .visit-grid { grid-template-columns:1fr; gap:40px; }
+  .svc-grid { grid-template-columns:1fr; }
+  .gal-grid { grid-template-columns:repeat(2,1fr); }
+  .footer-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════ NAV ════════════ -->
+<nav>
+  <div class="nav-brand">
+    <span class="b1">Hair</span><span class="b2">VIGOROUS</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book Now</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#visit" onclick="closeMenu()">Visit</a>
+  <a href="#contact" onclick="closeMenu()">Book Now</a>
+</div>
+
+<!-- ════════════ HERO ════════════ -->
+<section class="hero">
+  <div class="salon-pattern salon-pattern-light"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="wm-eyebrow">Jonesboro's Southside · Beauty &amp; Barber</div>
+      <h1><span class="hv-script">Hair</span>VIGOROUS</h1>
+      <p class="hero-tagline">A team of stylists and barbers under one roof — natural hair care, color, weaves, wraps, and clean, precise cuts for the whole family. Fifteen minutes from the airport, three from I-75.</p>
+      <div class="hero-badges">
+        <div class="hbadge">
+          <span class="stars">★★★★★</span>
+          <span class="hbadge-text"><b>5.0</b> rating</span>
+        </div>
+        <div class="hbadge">
+          <span class="hbadge-text">Open <b>7 days a week</b></span>
+        </div>
+        <div class="hbadge">
+          <span class="hbadge-text"><b>Now hiring</b> stylists</span>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="tel:+16785190226" class="btn-primary">Call (678) 519-0226</a>
+        <a href="#services" class="btn-ghost">View Services</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="hero-panel-mark">Hair</div>
+      <div class="hero-panel-card">
+        <div class="hpc-title">Book your next appointment</div>
+        <div class="hpc-sub">Walk-ins &amp; appointments welcome</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ ABOUT ════════════ -->
+<section class="about" id="about">
+  <div class="salon-pattern salon-pattern-light"></div>
+  <div class="section-inner about-grid">
+    <div class="about-visual">
+      <div class="about-visual-tag">Est. Jonesboro, GA</div>
+    </div>
+    <div>
+      <div class="section-eyebrow">Our Story</div>
+      <h2 class="section-title">One shop, <span class="hv-script">every</span> texture.</h2>
+      <div class="about-text" style="margin-top:26px;">
+        <p>HairVigorous brings beauty and barber services together in one clean, welcoming space on the Southside of Jonesboro. Our team specializes in natural hair care, color, hydration treatments, weaves, finger waves, and wraps — alongside precise men's and women's haircuts.</p>
+        <p>Whether you're coming in for a wash day, a fresh color, or a clean lineup, our stylists and barbers take the time to get it right. No rushing, no guessing — just healthy hair and sharp cuts, every visit.</p>
+      </div>
+      <div class="about-stats">
+        <div>
+          <div class="astat-num">5.0</div>
+          <div class="astat-label">Client Rating</div>
+        </div>
+        <div>
+          <div class="astat-num">7</div>
+          <div class="astat-label">Days a Week</div>
+        </div>
+        <div>
+          <div class="astat-num">1.2K+</div>
+          <div class="astat-label">Instagram Family</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SERVICES ════════════ -->
+<section class="services" id="services">
+  <div class="salon-pattern salon-pattern-dark"></div>
+  <div class="section-inner">
+    <div class="section-eyebrow">What We Do</div>
+    <h2 class="section-title">Beauty side. Barber side. <span class="hv-script">Both</span> done right.</h2>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2c-3 4-7 6-7 12a7 7 0 0014 0c0-6-4-8-7-12z"/></svg>
+        <div class="svc-name">Natural Hair Care</div>
+        <div class="svc-desc">Healthy-hair focused care and styling built around your natural texture.</div>
+        <div class="svc-tag">Beauty</div>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 010 18"/></svg>
+        <div class="svc-name">Color</div>
+        <div class="svc-desc">Custom color services tailored to your tone, texture, and goals.</div>
+        <div class="svc-tag">Beauty</div>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+        <div class="svc-name">Hydration Treatments</div>
+        <div class="svc-desc">Deep conditioning and moisture treatments that restore hair health.</div>
+        <div class="svc-tag">Beauty</div>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3c3 3 3 15 0 18M12 3c3 3 3 15 0 18M18 3c3 3 3 15 0 18"/></svg>
+        <div class="svc-name">Weaves &amp; Wraps</div>
+        <div class="svc-desc">Sew-ins, weaves, and wraps installed with precision and care.</div>
+        <div class="svc-tag">Beauty</div>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12c2-4 4-8 7-8s5 4 7 8c-2 4-4 8-7 8s-5-4-7-8z"/></svg>
+        <div class="svc-name">Finger Waves</div>
+        <div class="svc-desc">Classic, clean finger wave sets styled for any occasion.</div>
+        <div class="svc-tag">Beauty</div>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <div class="svc-name">Men's &amp; Women's Cuts</div>
+        <div class="svc-desc">Sharp, clean haircuts for men and women, every day of the week.</div>
+        <div class="svc-tag">Barber</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ GALLERY ════════════ -->
+<section class="gallery" id="gallery">
+  <div class="section-inner">
+    <div class="section-eyebrow">Follow Along</div>
+    <h2 class="section-title">Fresh work, posted <span class="hv-script">daily</span>.</h2>
+    <div class="gal-grid">
+      <div class="gal-tile"></div>
+      <div class="gal-tile"></div>
+      <div class="gal-tile"></div>
+      <div class="gal-tile"></div>
+      <div class="gal-tile"></div>
+      <div class="gal-tile"></div>
+      <div class="gal-tile"></div>
+      <div class="gal-tile"></div>
+    </div>
+    <div class="gal-follow">See our latest work on Instagram <b>@hairvigorous_beautysalon</b></div>
+  </div>
+</section>
+
+<!-- ════════════ RATING BAND ════════════ -->
+<div class="rating-band">
+  <div class="rating-band-inner">
+    <div class="rb-stars">★★★★★</div>
+    <div class="rb-score">5.0</div>
+    <div class="rb-sub">Rated by our clients on Google</div>
+  </div>
+</div>
+
+<!-- ════════════ VISIT / HOURS ════════════ -->
+<section class="visit" id="visit">
+  <div class="salon-pattern salon-pattern-light"></div>
+  <div class="section-inner">
+    <div class="section-eyebrow">Visit The Shop</div>
+    <h2 class="section-title" style="margin-bottom:50px;">Southside Jonesboro, <span class="hv-script">open</span> daily.</h2>
+    <div class="visit-grid">
+      <div>
+        <div class="visit-card">
+          <div class="vc-row">
+            <div class="vc-label">Address</div>
+            <div class="vc-value">6592-A Tara Blvd<br>Jonesboro, GA 30236</div>
+          </div>
+          <div class="vc-row">
+            <div class="vc-label">Phone</div>
+            <div class="vc-value">(678) 519-0226<br>Call or message anytime</div>
+          </div>
+          <div class="vc-row">
+            <div class="vc-label">Nearby</div>
+            <div class="vc-value">15 min from Hartsfield-Jackson Airport<br>3 min off I-75</div>
+          </div>
+        </div>
+        <div class="map-embed"><div class="map-embed-label">Map — 6592-A Tara Blvd, Jonesboro GA</div></div>
+      </div>
+      <div class="hours-list">
+        <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">9:00 AM – 6:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">9:00 AM – 6:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">9:00 AM – 6:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">9:00 AM – 6:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">9:00 AM – 6:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00 AM – 6:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">9:00 AM – 6:30 PM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ CONTACT / CTA ════════════ -->
+<section class="contact-cta" id="contact">
+  <div class="salon-pattern salon-pattern-dark"></div>
+  <div class="section-inner">
+    <div class="section-eyebrow" style="justify-content:center; color:var(--ink);">Ready When You Are</div>
+    <h2 class="section-title">Let's get your <span class="hv-script">hair</span> vigorous.</h2>
+    <p>Walk-ins are always welcome, or reach out ahead of time to lock in your spot with a stylist or barber.</p>
+    <div class="cc-ctas">
+      <a href="tel:+16785190226" class="btn-cream">Call (678) 519-0226</a>
+      <a href="https://www.instagram.com/hairvigorous_beautysalon/" class="btn-outline-cream" target="_blank">Message on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Hair<span style="font-family:'Fraunces',serif;font-weight:700;font-size:22px;color:var(--cream);">VIGOROUS</span></div>
+      <div class="footer-tagline">Beauty &amp; Barber on Jonesboro's Southside — natural hair, color, weaves, and clean cuts, 7 days a week.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Book Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Visit Us</div>
+      <ul class="footer-links">
+        <li>6592-A Tara Blvd</li>
+        <li>Jonesboro, GA 30236</li>
+        <li>(678) 519-0226</li>
+        <li>Open 7 days · 9AM–6:30PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 HairVigorous Beauty &amp; Barber · Jonesboro, GA</div>
+    <div class="footer-copy">Built by <span>AuraLogic</span> · AI-Powered Digital Agency</div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
+</script>
+</body>
+</html>
