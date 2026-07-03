@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spinblade LLC | Junk Removal &amp; Lawn Care | Jonesboro, GA</title>
+<meta name="description" content="Spinblade LLC - Junk removal and lawn care in Jonesboro, GA. We Clean It, You Enjoy It. Furniture removal, yard waste, mowing, trimming, edging. Owner Rodney Smith.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #141412;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Anton', 'Arial Narrow', Impact, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  ul { list-style: none; }
+
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  .slash-divider {
+    height: 16px;
+    background: repeating-linear-gradient(
+      -35deg,
+      #8DD432 0px, #8DD432 30px,
+      #141412 30px, #141412 34px,
+      #F2872E 34px, #F2872E 60px,
+      #141412 60px, #141412 64px
+    );
+  }
+
+  /* ---------- NAV ---------- */
+  .nav { position: sticky; top: 0; z-index: 999; background-color: #141412; border-bottom: 4px solid #8DD432; }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 78px; }
+  .nav-brand { display: flex; align-items: center; gap: 12px; }
+  .nav-brand-text { color: #FFFFFF; font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.5px; }
+  .nav-brand-text .accent { color: #8DD432; }
+  .nav-links { display: flex; gap: 30px; align-items: center; }
+  .nav-links a { color: #FFFFFF; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s ease; }
+  .nav-links a:hover, .nav-links a:focus-visible { color: #8DD432; outline: none; }
+  .nav-cta { background-color: #8DD432; color: #141412 !important; padding: 11px 22px; border-radius: 2px; font-weight: 800 !important; }
+  .nav-cta:hover { background-color: #A6E85C; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background: linear-gradient(160deg, #141412 0%, #1E1E1B 55%, #141412 100%);
+    color: #FFFFFF;
+    padding: 90px 24px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -120px; right: -160px;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(141,212,50,0.18) 0%, transparent 70%);
+  }
+  .hero-content { position: relative; z-index: 2; text-align: center; max-width: 760px; margin: 0 auto; padding-bottom: 60px; }
+  .badge-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #8DD432; color: #141412;
+    font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+    padding: 8px 18px; border-radius: 30px; margin-bottom: 26px;
+    transform: rotate(-2deg);
+  }
+  .hero h1 { font-size: clamp(38px, 6.5vw, 68px); line-height: 1.02; margin-bottom: 18px; }
+  .hero h1 .accent { color: #8DD432; }
+  .hero h1 .accent2 { color: #F2872E; }
+  .hero-sub { font-size: 17px; color: #C9C9C4; margin-bottom: 34px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+
+  .btn {
+    display: inline-block; padding: 16px 34px; font-size: 14px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.8px; border-radius: 2px;
+    transition: transform 0.15s ease, background-color 0.2s ease;
+    font-family: 'Barlow', sans-serif;
+  }
+  .btn-green { background-color: #8DD432; color: #141412; border: 1px solid #8DD432; }
+  .btn-green:hover { background-color: #A6E85C; transform: translateY(-2px) rotate(-1deg); }
+  .btn-orange { background-color: #F2872E; color: #141412; border: 1px solid #F2872E; }
+  .btn-orange:hover { background-color: #FFA34D; transform: translateY(-2px) rotate(1deg); }
+  .btn-outline { background: transparent; color: #FFFFFF; border: 1px solid #8DD432; }
+  .btn-outline:hover { background: rgba(141,212,50,0.12); transform: translateY(-2px); }
+  .btn-dark { background-color: #141412; color: #FFFFFF; border: 1px solid #141412; }
+  .btn-dark:hover { background-color: #2A2A26; }
+
+  /* ---------- SPLIT SERVICES ---------- */
+  section { padding: 80px 0; }
+  .section-head { text-align: center; max-width: 620px; margin: 0 auto 50px; }
+  .section-eyebrow { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #8DD432; margin-bottom: 10px; background: #141412; display: inline-block; padding: 5px 14px; transform: skewX(-8deg); }
+  .section-head h2 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 14px; color: #141412; }
+  .section-head p { color: #4A4A46; font-size: 16px; }
+
+  .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .split-card { padding: 44px 38px; color: #FFFFFF; position: relative; overflow: hidden; }
+  .split-card.junk { background: linear-gradient(150deg, #F2872E 0%, #C96A1F 100%); }
+  .split-card.lawn { background: linear-gradient(150deg, #8DD432 0%, #5FA020 100%); }
+  .split-card h3 { font-size: 30px; margin-bottom: 6px; }
+  .split-card .split-sub { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; margin-bottom: 22px; }
+  .split-list { display: grid; gap: 12px; }
+  .split-list li { display: flex; gap: 10px; align-items: center; font-size: 15px; font-weight: 600; }
+  .split-list li::before { content: "\2713"; font-weight: 900; flex-shrink: 0; background: rgba(0,0,0,0.2); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+
+  /* ---------- OWNER SPOTLIGHT ---------- */
+  .owner { background-color: #141412; color: #FFFFFF; }
+  .owner .wrap { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: 56px; align-items: center; }
+  .owner-badge {
+    background: linear-gradient(160deg, #1E1E1B 0%, #141412 100%);
+    border: 2px solid #8DD432;
+    padding: 40px 28px;
+    text-align: center;
+    transform: rotate(-1.5deg);
+  }
+  .owner-badge .owner-name { font-family: 'Anton', sans-serif; font-size: 26px; color: #8DD432; margin-bottom: 6px; }
+  .owner-badge .owner-title { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #C9C9C4; }
+  .owner-badge .owner-tag { margin-top: 20px; font-size: 13px; font-weight: 800; color: #F2872E; text-transform: uppercase; letter-spacing: 1px; }
+  .owner-copy h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 18px; }
+  .owner-copy p { color: #C9C9C4; margin-bottom: 16px; font-size: 15.5px; }
+  .owner-list { margin-top: 22px; display: grid; gap: 12px; }
+  .owner-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: #C9C9C4; }
+  .owner-list li::before { content: "\25AA"; color: #8DD432; flex-shrink: 0; }
+
+  /* ---------- WHY US ---------- */
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .why-card { background: #FAFAF8; border: 2px solid #141412; padding: 30px 26px; position: relative; }
+  .why-card::before { content: ""; position: absolute; top: -4px; left: -4px; width: 100%; height: 100%; border: 2px solid #8DD432; z-index: -1; }
+  .why-num { font-family: 'Anton', sans-serif; font-size: 34px; color: #8DD432; -webkit-text-stroke: 1.5px #141412; margin-bottom: 12px; }
+  .why-card h3 { font-size: 18px; color: #141412; margin-bottom: 8px; }
+  .why-card p { font-size: 14px; color: #4A4A46; }
+
+  /* ---------- SERVICE AREA / CTA ---------- */
+  .visit { background: linear-gradient(150deg, #141412 0%, #232320 100%); color: #FFFFFF; }
+  .visit .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+  .visit-card h3 { font-size: 22px; color: #8DD432; margin-bottom: 22px; }
+  .contact-line { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-size: 15px; color: #C9C9C4; }
+  .contact-line .ico { width: 20px; height: 20px; flex-shrink: 0; color: #8DD432; }
+  .area-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .area-tag { background: rgba(141,212,50,0.12); border: 1px solid rgba(141,212,50,0.4); color: #8DD432; font-size: 13px; font-weight: 700; padding: 7px 14px; border-radius: 30px; text-transform: uppercase; }
+
+  .cta-band { background-color: #8DD432; color: #141412; text-align: center; padding: 70px 24px; position: relative; }
+  .cta-band h2 { font-size: clamp(28px, 4.5vw, 44px); margin-bottom: 8px; }
+  .cta-band .cta-sub { font-family: 'Anton', sans-serif; font-size: clamp(20px,3vw,28px); color: #FFFFFF; -webkit-text-stroke: 1px #141412; margin-bottom: 26px; }
+  .cta-band p.desc { margin-bottom: 28px; font-size: 16px; font-family: 'Barlow', sans-serif; text-transform: none; }
+
+  footer { background-color: #141412; color: #8A8A85; padding: 50px 24px 26px; text-align: center; font-size: 13px; }
+  footer .foot-brand { font-family: 'Anton', sans-serif; color: #FFFFFF; font-size: 22px; margin-bottom: 8px; }
+  footer .foot-brand .accent { color: #8DD432; }
+  footer .foot-note { margin-top: 18px; color: #56564F; font-size: 12px; }
+
+  @media (max-width: 860px) {
+    .split-grid, .why-grid { grid-template-columns: 1fr; }
+    .owner .wrap, .visit .wrap { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .nav-links { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .hero { padding: 76px 20px 0; }
+  }
+
+  :focus-visible { outline: 2px solid #8DD432; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M18 3c8 4 13 8 13 15s-5 11-13 15c-8-4-13-8-13-15s5-11 13-15z" fill="#141412" stroke="#8DD432" stroke-width="2"/>
+        <path d="M12 18c2-5 5-8 9-9-1 4-1 7 1 9-4 2-7 2-10 0z" fill="#8DD432"/>
+      </svg>
+      <div class="nav-brand-text">SPIN<span class="accent">BLADE</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#owner">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#visit">Service Area</a>
+      <a class="nav-cta" href="tel:#">Get A Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="badge-pill">Jonesboro, GA &middot; Junk Removal + Lawn Care</div>
+    <h1>We Clean It,<br><span class="accent">You</span> <span class="accent2">Enjoy It.</span></h1>
+    <p class="hero-sub">Old furniture, yard waste, construction debris, or a lawn that's gotten away from you &mdash; Spinblade handles it in one call. Owner-operated, no runaround.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-green" href="tel:#">Junk Removal Quote</a>
+      <a class="btn btn-orange" href="tel:#">Lawn Care Quote</a>
+    </div>
+  </div>
+  <div class="slash-divider"></div>
+</header>
+
+<!-- SPLIT SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Two Services, One Call</div>
+      <h2>Pick Your Problem. We'll Handle It.</h2>
+      <p>Whether it's clutter piling up or grass getting out of control, Spinblade shows up ready to work.</p>
+    </div>
+  </div>
+  <div class="split-grid">
+    <div class="split-card junk">
+      <h3>Junk Removal</h3>
+      <div class="split-sub">Old Stuff, Gone Fast</div>
+      <ul class="split-list">
+        <li>Old Furniture</li>
+        <li>Appliances</li>
+        <li>Yard Waste</li>
+        <li>Construction Debris</li>
+        <li>Garage &amp; Shed Cleanouts</li>
+      </ul>
+    </div>
+    <div class="split-card lawn">
+      <h3>Lawn Care</h3>
+      <div class="split-sub">A Yard You're Proud Of</div>
+      <ul class="split-list">
+        <li>Mowing</li>
+        <li>Trimming</li>
+        <li>Edging</li>
+        <li>Leaf &amp; Debris Removal</li>
+        <li>Seasonal Cleanups</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- OWNER SPOTLIGHT -->
+<section id="owner" class="owner">
+  <div class="wrap">
+    <div class="owner-badge">
+      <div class="owner-name">Rodney Smith</div>
+      <div class="owner-title">Owner &amp; Operator</div>
+      <div class="owner-tag">Hands-On, Every Job</div>
+    </div>
+    <div class="owner-copy">
+      <div class="section-eyebrow" style="background:#8DD432;color:#141412;">Who's Behind It</div>
+      <h2>Rodney Shows Up. Rodney Delivers.</h2>
+      <p>Spinblade isn't a call center dispatching random crews &mdash; it's owner Rodney Smith and his trailer, on-site, getting the job done. That's the difference between a company that says "we clean it, you enjoy it" and one that actually means it.</p>
+      <ul class="owner-list">
+        <li>Fully equipped trailer for junk hauling and disposal</li>
+        <li>Same crew, same standards, every visit</li>
+        <li>Lawn equipment ready for yards of any size</li>
+        <li>Straightforward pricing, no surprise add-ons</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="slash-divider"></div>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">The Spinblade Difference</div>
+      <h2>Why Jonesboro Calls Spinblade</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>One Call, Two Problems Solved</h3>
+        <p>Clear out the junk and clean up the yard in the same visit &mdash; no need to hire two different companies.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>Owner-Operated</h3>
+        <p>You're not dealing with a franchise or a call center. Rodney runs the job, start to finish.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Responsible Disposal</h3>
+        <p>Junk gets sorted and disposed of the right way &mdash; not just dumped wherever's convenient.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="visit" class="visit">
+  <div class="wrap">
+    <div class="visit-card">
+      <h3>Get In Touch</h3>
+      <div class="contact-line">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6-4 3z" stroke="currentColor" stroke-width="1.6"/></svg>
+        Call or text for a free quote
+      </div>
+      <div class="contact-line">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
+        Jonesboro, GA 30236
+      </div>
+      <div style="margin-top:26px;">
+        <a class="btn btn-green" href="tel:#">Call Spinblade</a>
+      </div>
+    </div>
+    <div class="visit-card">
+      <h3>Proudly Serving</h3>
+      <div class="area-tags">
+        <span class="area-tag">Jonesboro</span>
+        <span class="area-tag">Riverdale</span>
+        <span class="area-tag">Forest Park</span>
+        <span class="area-tag">Morrow</span>
+        <span class="area-tag">Clayton County</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2>Ready To Clean It Up?</h2>
+  <div class="cta-sub">We Clean It, You Enjoy It.</div>
+  <p class="desc">Call or text Rodney directly for a free, no-obligation quote.</p>
+  <a class="btn btn-dark" href="tel:#">Get Your Free Quote</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">SPIN<span class="accent">BLADE</span> LLC</div>
+  <div>Junk Removal &amp; Lawn Care &middot; Jonesboro, GA 30236</div>
+  <div class="foot-note">Site design &amp; build by AuraLogic &middot; auralogiccontact@gmail.com</div>
+</footer>
+
+</body>
+</html>
