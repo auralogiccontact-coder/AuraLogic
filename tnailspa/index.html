@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T-Nail Spa | Riverdale, GA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --ink: #1C1613;
+  --paper: #F3ECE1;
+  --paper-2: #EAE1D2;
+  --bronze: #A97D42;
+  --lacquer: #7D3049;
+  --sage: #6E7C5C;
+  --blush: #E8C9BE;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+/* ---------- NAV ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(243,236,225,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(28,22,19,0.1);
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto; padding: 16px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-mark { font-family: 'Bodoni Moda', serif; font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
+.nav-mark span { color: var(--lacquer); }
+.nav-links { display: flex; gap: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
+.nav-links a { opacity: 0.65; transition: opacity 0.2s; }
+.nav-links a:hover { opacity: 1; }
+.nav-cta {
+  background: var(--ink); color: var(--paper); padding: 10px 20px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  border-radius: 2px;
+}
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ---------- SWATCH RAIL (signature element) ---------- */
+.swatch-rail { display: flex; width: 100%; height: 14px; }
+.swatch-rail div { flex: 1; }
+.s1 { background: var(--lacquer); }
+.s2 { background: var(--bronze); }
+.s3 { background: var(--blush); }
+.s4 { background: var(--sage); }
+.s5 { background: var(--ink); }
+
+/* ---------- HERO ---------- */
+.hero { padding: 88px 0 64px; position: relative; }
+.hero-eyebrow {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--lacquer); margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
+}
+.hero-eyebrow::before { content:''; width: 28px; height: 1px; background: var(--lacquer); display: inline-block; }
+.hero h1 {
+  font-family: 'Bodoni Moda', serif; font-weight: 500; font-style: italic;
+  font-size: clamp(46px, 7vw, 86px); line-height: 0.98; letter-spacing: -0.01em;
+  max-width: 800px;
+}
+.hero h1 em { font-style: normal; font-weight: 800; color: var(--lacquer); }
+.hero-sub {
+  margin-top: 26px; max-width: 460px; font-size: 17px; line-height: 1.6; color: #4a3f38;
+}
+.hero-meta {
+  margin-top: 40px; display: flex; gap: 40px; flex-wrap: wrap;
+}
+.hero-meta-item { font-family: 'IBM Plex Mono', monospace; }
+.hero-meta-item .num { font-size: 26px; font-weight: 600; color: var(--ink); }
+.hero-meta-item .lbl { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #7a6d63; margin-top: 4px; }
+
+/* ---------- LACQUER STRIP DIVIDER ---------- */
+.strip {
+  margin: 0; padding: 22px 0; background: var(--ink); color: var(--paper);
+  overflow: hidden; white-space: nowrap; position: relative;
+}
+.strip-track {
+  display: inline-flex; gap: 48px; animation: scroll 26s linear infinite;
+  font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 15px; letter-spacing: 0.02em;
+}
+.strip-track span { color: var(--blush); font-style: normal; margin: 0 8px; }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .strip-track { animation: none; } }
+
+/* ---------- ARTISTS ---------- */
+.section { padding: 84px 0; }
+.section-head { max-width: 560px; margin-bottom: 48px; }
+.section-eyebrow {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 12px;
+}
+.section-head h2 { font-family: 'Bodoni Moda', serif; font-size: clamp(30px, 4vw, 42px); font-weight: 600; line-height: 1.1; }
+
+.artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 720px) { .artist-grid { grid-template-columns: 1fr; } }
+.artist-card {
+  background: var(--paper-2); border: 1px solid rgba(28,22,19,0.08); border-radius: 4px;
+  padding: 32px; position: relative;
+}
+.artist-card::before {
+  content: '“'; position: absolute; top: 18px; right: 24px; font-family: 'Bodoni Moda', serif;
+  font-size: 64px; color: rgba(125,48,73,0.15); line-height: 1;
+}
+.artist-name { font-family: 'Bodoni Moda', serif; font-size: 22px; font-weight: 700; color: var(--lacquer); }
+.artist-role { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8a7c70; margin: 4px 0 16px; }
+.artist-quote { font-size: 15px; line-height: 1.65; color: #4a3f38; }
+
+/* ---------- SERVICES ---------- */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(28,22,19,0.08); border: 1px solid rgba(28,22,19,0.08); }
+@media (max-width: 860px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+.service-cell {
+  background: var(--paper); padding: 28px 24px; transition: transform 0.25s, background 0.25s;
+}
+.service-cell:hover { transform: rotate(-0.6deg) scale(1.015); background: var(--paper-2); z-index: 2; }
+.service-cell .n { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--bronze); }
+.service-cell h3 { font-family: 'Bodoni Moda', serif; font-size: 19px; margin: 10px 0 8px; }
+.service-cell p { font-size: 13px; color: #7a6d63; line-height: 1.5; }
+
+/* ---------- GALLERY (abstract SVG nail swatches, no real photos) ---------- */
+.gallery-strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+@media (max-width: 720px) { .gallery-strip { grid-template-columns: repeat(3, 1fr); } }
+.swatch-tile { aspect-ratio: 3/4; border-radius: 3px; position: relative; overflow: hidden; }
+.swatch-tile svg { width: 100%; height: 100%; }
+
+/* ---------- BOOKING / CTA ---------- */
+.cta-panel {
+  background: var(--ink); color: var(--paper); border-radius: 6px; padding: 56px;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;
+}
+@media (max-width: 800px) { .cta-panel { grid-template-columns: 1fr; padding: 36px 28px; } }
+.cta-panel h2 { font-family: 'Bodoni Moda', serif; font-size: clamp(28px,3.4vw,38px); font-style: italic; font-weight: 500; margin-bottom: 16px; }
+.cta-panel p { color: rgba(243,236,225,0.7); font-size: 15px; line-height: 1.6; max-width: 420px; }
+.hours-box { font-family: 'IBM Plex Mono', monospace; font-size: 13px; }
+.hours-row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid rgba(243,236,225,0.12); }
+.hours-row.closed { color: var(--blush); }
+.book-btn {
+  margin-top: 26px; display: inline-flex; align-items: center; gap: 10px;
+  background: var(--lacquer); color: var(--paper); padding: 14px 26px; border-radius: 3px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  border: none; cursor: pointer;
+}
+
+/* ---------- FOOTER ---------- */
+footer { padding: 40px 0 60px; text-align: center; }
+.footer-addr { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8a7c70; line-height: 1.7; }
+.footer-credit { margin-top: 18px; font-size: 11px; color: #a89a8d; }
+.footer-credit a { color: var(--lacquer); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">T<span>·</span>NAIL SPA</div>
+    <div class="nav-links">
+      <a href="#artists">Artists</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="#visit" class="nav-cta">Book a Visit</a>
+  </div>
+</nav>
+
+<div class="swatch-rail"><div class="s1"></div><div class="s2"></div><div class="s3"></div><div class="s4"></div><div class="s5"></div></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Riverdale, GA · Hwy 85</div>
+    <h1>Every set is <em>custom-built</em>,<br>never off the rack.</h1>
+    <p class="hero-sub">T-Nail Spa has been shaping, sculpting, and designing nails on GA-85 for years — the kind of shop regulars drive across the county for, because Tony doesn't miss.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="num">4.4★</div><div class="lbl">97 Reviews</div></div>
+      <div class="hero-meta-item"><div class="num">6</div><div class="lbl">Days Open</div></div>
+      <div class="hero-meta-item"><div class="num">2</div><div class="lbl">Master Techs</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>ACRYLIC</span> · GEL EXTENSIONS · <span>DIP POWDER</span> · CUSTOM NAIL ART · <span>MANI + PEDI</span> · MEN'S GROOMING · <span>ACRYLIC</span> · GEL EXTENSIONS · <span>DIP POWDER</span> · CUSTOM NAIL ART · <span>MANI + PEDI</span> · MEN'S GROOMING ·
+  </div>
+</div>
+
+<section class="section" id="artists">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">The Chairs</div>
+      <h2>Two techs, one standard.</h2>
+    </div>
+    <div class="artist-grid">
+      <div class="artist-card">
+        <div class="artist-name">Tony</div>
+        <div class="artist-role">Nail Artist &amp; Owner</div>
+        <p class="artist-quote">Known for shaping nails exactly to reference photos and adding his own creative touch — clients say he "never misses," with some driving in from out of state to sit in his chair.</p>
+      </div>
+      <div class="artist-card">
+        <div class="artist-name">Tracy</div>
+        <div class="artist-role">Nail Artist</div>
+        <p class="artist-quote">Just as precise and just as trusted — regulars ask for her by name, and the shop's reputation for careful, unrushed work runs through both of their hands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">On The Menu</div>
+      <h2>Built around what you actually ask for.</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-cell"><div class="n">01</div><h3>Acrylic Full Set</h3><p>Custom shape and length, built from scratch to your reference.</p></div>
+      <div class="service-cell"><div class="n">02</div><h3>Gel Nail Extensions</h3><p>Lightweight, natural-looking length that lasts.</p></div>
+      <div class="service-cell"><div class="n">03</div><h3>Dip Powder</h3><p>Durable color with a glass-like finish.</p></div>
+      <div class="service-cell"><div class="n">04</div><h3>Nail Art &amp; Design</h3><p>Bring a photo — hand-painted detail work is the specialty here.</p></div>
+      <div class="service-cell"><div class="n">05</div><h3>Manicure &amp; Pedicure</h3><p>Classic care, done at an unrushed pace.</p></div>
+      <div class="service-cell"><div class="n">06</div><h3>Men's Mani/Pedi</h3><p>Grooming service built for men, same attention to detail.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Color Wall</div>
+      <h2>A shade for every appointment.</h2>
+    </div>
+    <div class="gallery-strip">
+      <div class="swatch-tile" style="background:#7D3049"></div>
+      <div class="swatch-tile" style="background:#A97D42"></div>
+      <div class="swatch-tile" style="background:#E8C9BE"></div>
+      <div class="swatch-tile" style="background:#6E7C5C"></div>
+      <div class="swatch-tile" style="background:#3A2B24"></div>
+      <div class="swatch-tile" style="background:#C79A7B"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="visit">
+  <div class="wrap">
+    <div class="cta-panel">
+      <div>
+        <h2>Walk-ins welcome.<br>Appointments preferred.</h2>
+        <p>6518 GA-85, Riverdale, GA 30274 — right on the highway, easy in and out. Call ahead during peak hours to skip the wait.</p>
+        <button class="book-btn" onclick="alert('This connects to your real booking flow once we go live — phone, Fresha, or a form, your call.')">Call (678) 519-2112 →</button>
+      </div>
+      <div class="hours-box">
+        <div class="hours-row"><span>Mon – Sat</span><span>9:30a – 7:30p</span></div>
+        <div class="hours-row closed"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-addr">T-NAIL SPA &nbsp;·&nbsp; 6518 GA-85, Riverdale, GA 30274 &nbsp;·&nbsp; (678) 519-2112</div>
+  <div class="footer-credit">Site design &amp; build by <a href="#">AuraLogic</a></div>
+</footer>
+
+</body>
+</html>
