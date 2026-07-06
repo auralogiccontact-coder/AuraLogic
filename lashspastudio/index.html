@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lash Spa Studio | Stockbridge, GA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --emerald: #1F3A34;
+  --peach: #E8A87C;
+  --cream: #FAF6F0;
+  --rose: #D98E9B;
+  --charcoal: #221F1D;
+}
+
+body { background: var(--cream); color: var(--charcoal); font-family: 'Sora', sans-serif; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(250,246,240,0.94); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(34,31,29,0.08); }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; }
+.nav-mark { font-family: 'Yeseva One', serif; font-size: 20px; color: var(--emerald); }
+.nav-links { display: flex; gap: 26px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
+.nav-links a { opacity: 0.6; }
+.nav-links a:hover { opacity: 1; }
+.nav-cta { background: var(--emerald); color: var(--cream); padding: 10px 20px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 20px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* HERO */
+.hero { padding: 88px 0 40px; text-align: center; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 20px; }
+.hero h1 { font-family: 'Yeseva One', serif; font-size: clamp(40px, 7vw, 72px); line-height: 1.05; max-width: 760px; margin: 0 auto; color: var(--emerald); }
+.hero-sub { margin-top: 22px; max-width: 460px; margin-left: auto; margin-right: auto; font-size: 16px; line-height: 1.6; color: #4a4340; }
+
+/* EYE LINE DIVIDER — signature element */
+.eye-divider { display: flex; justify-content: center; padding: 48px 0; }
+.eye-divider svg { width: 220px; height: 70px; }
+
+/* SECTION */
+.section { padding: 56px 0; }
+.section-head { max-width: 540px; margin: 0 auto 40px; text-align: center; }
+.section-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--peach); margin-bottom: 10px; }
+.section-head h2 { font-family: 'Yeseva One', serif; font-size: clamp(26px, 4vw, 36px); color: var(--emerald); line-height: 1.15; }
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 760px) { .services-grid { grid-template-columns: 1fr; } }
+.service-card { background: white; border-radius: 8px; padding: 30px 26px; box-shadow: 0 2px 14px rgba(34,31,29,0.06); }
+.service-card .tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rose); text-transform: uppercase; letter-spacing: 0.05em; }
+.service-card h3 { font-family: 'Yeseva One', serif; font-size: 21px; margin: 10px 0 8px; color: var(--emerald); }
+.service-card p { font-size: 13.5px; color: #6b635d; line-height: 1.55; }
+
+/* LUXE STRIP */
+.luxe-strip { background: var(--emerald); color: var(--cream); border-radius: 8px; padding: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+@media (max-width: 760px) { .luxe-strip { grid-template-columns: 1fr; } }
+.luxe-item .n { font-family: 'Yeseva One', serif; font-size: 26px; color: var(--peach); }
+.luxe-item .l { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; margin-top: 6px; }
+
+/* VISIT */
+.cta-panel { background: var(--rose); color: var(--charcoal); border-radius: 8px; padding: 48px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 44px; align-items: center; margin-top: 32px; }
+@media (max-width: 800px) { .cta-panel { grid-template-columns: 1fr; padding: 32px 24px; } }
+.cta-panel h2 { font-family: 'Yeseva One', serif; font-size: clamp(26px, 3.4vw, 34px); margin-bottom: 14px; color: var(--emerald); }
+.cta-panel p { font-size: 15px; line-height: 1.6; max-width: 380px; }
+.book-btn { margin-top: 22px; display: inline-block; background: var(--emerald); color: var(--cream); padding: 13px 26px; border-radius: 20px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+.hours-box { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+.hours-row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid rgba(34,31,29,0.15); }
+
+footer { padding: 40px 0 60px; text-align: center; }
+.footer-addr { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8a827a; line-height: 1.7; }
+.footer-credit { margin-top: 16px; font-size: 11px; color: #a8a098; }
+.footer-credit a { color: var(--emerald); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">Lash Spa Studio</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="#visit" class="nav-cta">Book Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Stockbridge, GA · Eagles Landing Pkwy</div>
+    <h1>Your eyes,<br>transformed.</h1>
+    <p class="hero-sub">A luxurious lash and brow spa built around one thing — making sure no one can tell you're wearing extensions, except by how good you look.</p>
+  </div>
+</header>
+
+<div class="eye-divider">
+  <svg viewBox="0 0 220 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 35 C60 5 160 5 210 35 C160 65 60 65 10 35Z" stroke="#1F3A34" stroke-width="1.6"/>
+    <circle cx="110" cy="35" r="12" stroke="#D98E9B" stroke-width="1.6"/>
+    <circle cx="110" cy="35" r="4" fill="#1F3A34"/>
+    <path d="M75 22 L60 10 M90 16 L80 2 M105 14 L100 -2 M120 14 L128 -2 M135 16 L150 2 M150 22 L165 10" stroke="#E8A87C" stroke-width="1.4" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">The Menu</div>
+      <h2>A look built to your eye shape.</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="tag">Classic</div><h3>Classic Lashes</h3><p>One extension per natural lash — subtle length and definition.</p></div>
+      <div class="service-card"><div class="tag">Hybrid</div><h3>Hybrid Set</h3><p>A blend of classic and volume for texture without the drama.</p></div>
+      <div class="service-card"><div class="tag">Volume</div><h3>Volume / Mega Volume</h3><p>Full, dramatic fullness for a bold finished look.</p></div>
+      <div class="service-card"><div class="tag">Brows</div><h3>Brow Lamination</h3><p>Fuller, more defined brows that hold their shape.</p></div>
+      <div class="service-card"><div class="tag">Fill-Ins</div><h3>Lash Fills</h3><p>Keep your set looking fresh between full appointments.</p></div>
+      <div class="service-card"><div class="tag">Removal</div><h3>Safe Removal</h3><p>Gentle, professional removal that protects your natural lashes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="luxe-strip">
+      <div class="luxe-item"><div class="n">Private</div><div class="l">Suites</div></div>
+      <div class="luxe-item"><div class="n">Licensed</div><div class="l">Estheticians</div></div>
+      <div class="luxe-item"><div class="n">Relax</div><div class="l">Spa Environment</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="visit">
+  <div class="wrap">
+    <div class="cta-panel">
+      <div>
+        <h2>Book your transformation.</h2>
+        <p>1100 Eagles Landing Pkwy, Ste A, Stockbridge, GA 30281</p>
+        <a href="tel:+16789615311" class="book-btn">Call (678) 961-5311 →</a>
+      </div>
+      <div class="hours-box">
+        <div class="hours-row"><span>By Appointment</span><span>Call to Book</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-addr">LASH SPA STUDIO &nbsp;·&nbsp; 1100 Eagles Landing Pkwy Ste A, Stockbridge, GA 30281 &nbsp;·&nbsp; (678) 961-5311</div>
+  <div class="footer-credit">Site design &amp; build by <a href="#">AuraLogic</a></div>
+</footer>
+
+</body>
+</html>
