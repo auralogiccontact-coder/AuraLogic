@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terrific N Tidy Cleaning | Nobody Cleans It Better</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --teal: #1D4E4A;
+  --aqua: #A8DAD3;
+  --butter: #F0C75E;
+  --cream: #FAFAF7;
+  --charcoal: #232323;
+}
+
+body { background: var(--cream); color: var(--charcoal); font-family: 'Figtree', sans-serif; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(250,250,247,0.94); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(35,35,35,0.08); }
+.nav-inner { max-width: 1080px; margin: 0 auto; padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; }
+.nav-mark { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 19px; color: var(--teal); }
+.nav-links { display: flex; gap: 26px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
+.nav-links a { opacity: 0.6; }
+.nav-links a:hover { opacity: 1; }
+.nav-cta { background: var(--teal); color: var(--cream); padding: 10px 20px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 20px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* HERO */
+.hero { padding: 76px 0 20px; }
+.eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; display:flex; align-items:center; gap:10px;}
+.eyebrow::before { content:''; width: 26px; height: 1px; background: var(--teal); }
+.hero h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(42px, 6.5vw, 74px); line-height: 1.02; max-width: 720px; }
+.hero h1 span { color: var(--teal); }
+.hero-sub { margin-top: 22px; max-width: 460px; font-size: 16.5px; line-height: 1.6; color: #4a4a45; }
+
+/* MISSED CALL DEMO — signature element */
+.demo-section { padding: 40px 0 60px; }
+.demo-panel { background: var(--teal); border-radius: 14px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+@media (max-width: 800px) { .demo-panel { grid-template-columns: 1fr; padding: 28px 22px; } }
+.demo-copy { color: var(--cream); }
+.demo-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--butter); margin-bottom: 14px; }
+.demo-copy h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(24px, 3vw, 32px); font-weight: 700; margin-bottom: 14px; line-height: 1.2; }
+.demo-copy p { font-size: 14.5px; line-height: 1.6; color: rgba(250,250,247,0.8); max-width: 380px; }
+
+.phone-mock { background: var(--cream); border-radius: 22px; padding: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.25); max-width: 280px; margin: 0 auto; }
+.phone-notch { width: 60px; height: 6px; background: rgba(35,35,35,0.15); border-radius: 4px; margin: 0 auto 16px; }
+.call-bubble { background: #F3EFE8; border-radius: 10px; padding: 12px 14px; font-family: 'DM Mono', monospace; font-size: 11px; color: #8a827a; margin-bottom: 10px; }
+.text-bubble { background: var(--aqua); border-radius: 10px; padding: 12px 14px; font-size: 13px; color: var(--charcoal); line-height: 1.4; animation: pop 0.5s ease; }
+.text-bubble .time { font-family: 'DM Mono', monospace; font-size: 10px; opacity: 0.6; display:block; margin-top:6px; }
+@keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .text-bubble { animation: none; } }
+
+/* TESTIMONIALS */
+.section { padding: 50px 0; }
+.section-head { max-width: 540px; margin-bottom: 36px; }
+.section-eyebrow { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--butter); margin-bottom: 10px; }
+.section-head h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(26px, 4vw, 34px); font-weight: 700; color: var(--teal); line-height: 1.15; }
+
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 800px) { .testi-grid { grid-template-columns: 1fr; } }
+.testi-card { background: white; border: 1px solid rgba(35,35,35,0.08); border-radius: 10px; padding: 26px; }
+.testi-card p { font-size: 14px; line-height: 1.6; color: #3a3a35; }
+.testi-card .who { margin-top: 14px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--teal); text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(35,35,35,0.08); border: 1px solid rgba(35,35,35,0.08); }
+@media (max-width: 820px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+.service-cell { background: var(--cream); padding: 24px 20px; }
+.service-cell h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px; margin-bottom: 6px; color: var(--teal); }
+.service-cell p { font-size: 12.5px; color: #6b635d; line-height: 1.5; }
+
+/* VISIT */
+.cta-panel { background: var(--butter); border-radius: 12px; padding: 46px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+@media (max-width: 800px) { .cta-panel { grid-template-columns: 1fr; padding: 30px 22px; } }
+.cta-panel h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; color: var(--charcoal); margin-bottom: 12px; }
+.cta-panel p { font-size: 14.5px; line-height: 1.6; color: #4a4a3a; max-width: 360px; }
+.book-btn { margin-top: 20px; display: inline-block; background: var(--teal); color: var(--cream); padding: 13px 26px; border-radius: 20px; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+footer { padding: 40px 0 60px; text-align: center; }
+.footer-addr { font-family: 'DM Mono', monospace; font-size: 12px; color: #8a827a; }
+.footer-credit { margin-top: 16px; font-size: 11px; color: #a8a098; }
+.footer-credit a { color: var(--teal); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">Terrific N Tidy</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#visit">Book</a>
+    </div>
+    <a href="#visit" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Newnan, GA · Solo &amp; Detail-Obsessed</div>
+    <h1>Nobody cleans<br>it <span>better.</span></h1>
+    <p class="hero-sub">Natavia has spent 8+ years building a reputation for showing up on time, cleaning thoroughly, and treating every home like her own. Now let's make sure no one who calls ever falls through the cracks.</p>
+  </div>
+</header>
+
+<section class="demo-section">
+  <div class="wrap">
+    <div class="demo-panel">
+      <div class="demo-copy">
+        <div class="demo-tag">The Problem This Solves</div>
+        <h2>When you're on a job, you can't answer the phone. Now you don't have to.</h2>
+        <p>Every missed call gets an instant text back — so leads don't hang up and call the next name on Google. You keep cleaning. The lead gets an answer anyway.</p>
+      </div>
+      <div class="phone-mock">
+        <div class="phone-notch"></div>
+        <div class="call-bubble">📞 Missed call from (470) 555-0199</div>
+        <div class="text-bubble">Hi! This is Terrific N Tidy — sorry I missed your call, I'm on a job right now. Text me what you need and I'll get back to you within the hour!
+          <span class="time">Sent automatically · 0:03 after missed call</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">What Clients Say</div>
+      <h2>The reputation is already there.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>Clients consistently point to how easy Natavia is to work with — fast communication, real attention to detail, and homes left smelling genuinely fresh.</p>
+        <div class="who">— Nextdoor Review</div>
+      </div>
+      <div class="testi-card">
+        <p>Described as prompt and easy to reach, with great communication from the first message through the finished clean.</p>
+        <div class="who">— Yelp Review</div>
+      </div>
+      <div class="testi-card">
+        <p>Praised for reaching the spots other cleaners skip, and for being dependable enough to book again and again.</p>
+        <div class="who">— Nextdoor Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="padding-top:0;">
+  <div class="wrap">
+    <div class="services-grid">
+      <div class="service-cell"><h3>Residential</h3><p>Recurring or one-time home cleaning, top to bottom.</p></div>
+      <div class="service-cell"><h3>Commercial</h3><p>Offices, small businesses, kept spotless on your schedule.</p></div>
+      <div class="service-cell"><h3>Airbnb Turnover</h3><p>Fast, thorough turnarounds between guests.</p></div>
+      <div class="service-cell"><h3>Sanitizing Add-On</h3><p>Full disinfecting service for extra peace of mind.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="visit">
+  <div class="wrap">
+    <div class="cta-panel">
+      <div>
+        <h2>Never miss a lead again.</h2>
+        <p>Serving Newnan and the surrounding area. Reach out for a quote — or just try calling and see the text-back in action.</p>
+        <a href="#" class="book-btn">Request a Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-addr">TERRIFIC N TIDY CLEANING &nbsp;·&nbsp; Newnan, GA &nbsp;·&nbsp; Owned &amp; Operated by Natavia Eubanks</div>
+  <div class="footer-credit">Site design &amp; build by <a href="#">AuraLogic</a></div>
+</footer>
+
+</body>
+</html>
