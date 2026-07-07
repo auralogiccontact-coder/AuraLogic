@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speak Natural Hair Design | Jonesboro, GA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Mulish:wght@400;500;600;700&family=Caveat:wght@600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #FEFCF7;
+  color: #4A453C;
+  font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #3A362E;
+}
+
+.script {
+  font-family: 'Caveat', 'Brush Script MT', cursive;
+  font-weight: 600;
+}
+
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+/* ---------- NAV ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(254,252,247,0.96);
+  border-bottom: 1px solid #EFE6D3;
+  backdrop-filter: blur(6px);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-brand img { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; }
+.nav-brand-text { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: #3A362E; }
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a { font-size: 13px; font-weight: 600; color: #9C9482; text-transform: uppercase; letter-spacing: 0.05em; }
+.nav-links a:hover { color: #3A362E; }
+.nav-cta {
+  background-color: #6FC4D2;
+  color: #FEFCF7 !important;
+  padding: 10px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 20px;
+}
+.nav-cta:hover { background-color: #59B4C3; }
+@media (max-width: 720px) { .nav-links a.nav-link-item { display: none; } }
+
+/* ---------- HERO (logo centered on top) ---------- */
+.hero {
+  padding: 80px 32px 90px;
+  text-align: center;
+}
+.hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-badge {
+  background-color: #FFFFFF;
+  border: 1px solid #EFE6D3;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  box-shadow: 0 14px 34px rgba(58,54,46,0.06);
+  margin-bottom: 32px;
+}
+.hero-badge img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+.eyebrow {
+  font-family: 'Mulish', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #D9A44F;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.eyebrow::before, .eyebrow::after { content: ""; width: 20px; height: 1px; background-color: #D9A44F; }
+.hero h1 { font-size: 52px; }
+.hero h1 .script-accent {
+  font-family: 'Caveat', cursive;
+  color: #6FC4D2;
+  font-size: 1.15em;
+  font-weight: 600;
+}
+.hero-sub { margin-top: 22px; max-width: 440px; font-size: 16px; color: #8A8171; }
+.hero-cta-row { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.btn-primary {
+  background-color: #6FC4D2;
+  color: #FEFCF7;
+  padding: 15px 30px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 24px;
+  display: inline-block;
+}
+.btn-primary:hover { background-color: #59B4C3; }
+.btn-secondary {
+  border: 1.5px solid #EFE6D3;
+  color: #3A362E;
+  padding: 15px 30px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 24px;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: #D9A44F; color: #D9A44F; }
+
+/* ---------- SERVICE STRIP ---------- */
+.strip {
+  border-top: 1px solid #EFE6D3;
+  border-bottom: 1px solid #EFE6D3;
+  background-color: #FAF3E3;
+}
+.strip-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 26px 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.strip-item {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9C9482;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.strip-item .dot { width: 6px; height: 6px; border-radius: 50%; background-color: #6FC4D2; }
+
+/* ---------- SECTIONS ---------- */
+.section { padding: 100px 32px; }
+.section-alt { background-color: #FAF3E3; }
+.section-head { margin-bottom: 52px; max-width: 600px; }
+.section-head h2 { font-size: 40px; }
+.section-head p { margin-top: 14px; color: #8A8171; font-size: 16px; }
+
+/* ---------- SERVICES GRID ---------- */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.svc-card {
+  background-color: #FFFFFF;
+  border: 1px solid #EFE6D3;
+  border-radius: 10px;
+  padding: 30px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.svc-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(58,54,46,0.06); }
+.svc-flower {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #F3D08A, #E3AE5C);
+  margin-bottom: 18px;
+}
+.svc-card h3 { font-size: 21px; margin-bottom: 8px; }
+.svc-card p { font-size: 14px; color: #8A8171; }
+.svc-note {
+  margin-top: 24px;
+  font-size: 13px;
+  color: #B3A98F;
+}
+
+/* ---------- GALLERY (lighter abstract blocks) ---------- */
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.gallery-block {
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.gallery-block span {
+  font-family: 'Mulish', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: #FEFCF7;
+  background-color: rgba(58,54,46,0.28);
+  padding: 5px 10px;
+  border-radius: 14px;
+}
+.gb-1 { background: linear-gradient(160deg, #A9A296 0%, #6FC4D2 100%); }
+.gb-2 { background: linear-gradient(160deg, #6FC4D2 0%, #F3D08A 100%); }
+.gb-3 { background: linear-gradient(160deg, #C7BFA9 0%, #E3AE5C 100%); }
+.gb-4 { background: linear-gradient(160deg, #F3D08A 0%, #6FC4D2 100%); }
+
+/* ---------- ABOUT (logo on top, centered) ---------- */
+.about-inner { text-align: center; max-width: 620px; margin: 0 auto; }
+.about-mark {
+  background-color: #FFFFFF;
+  border: 1px solid #EFE6D3;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  margin: 0 auto 28px;
+}
+.about-mark img { width: 100%; border-radius: 50%; }
+.about-copy h2 { font-size: 36px; margin-bottom: 18px; }
+.about-copy p { color: #8A8171; font-size: 16px; margin-bottom: 16px; }
+.about-copy .script { font-size: 24px; color: #6FC4D2; display: block; margin-bottom: 8px; }
+
+/* ---------- CONTACT / BOOKING ---------- */
+.contact-panel {
+  background-color: #FFFFFF;
+  border: 1px solid #EFE6D3;
+  border-radius: 16px;
+  padding: 54px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+.contact-info h3 { font-size: 25px; margin-bottom: 14px; }
+.contact-info p { color: #8A8171; font-size: 15px; margin-bottom: 24px; max-width: 340px; }
+.contact-line { display: flex; gap: 12px; margin-bottom: 14px; font-size: 14px; color: #8A8171; }
+.contact-line .k {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #D9A44F;
+  font-weight: 700;
+  min-width: 74px;
+  padding-top: 2px;
+}
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8A8171;
+  margin-bottom: 6px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  border: 1px solid #EFE6D3;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 14px;
+  background-color: #FEFCF7;
+  color: #3A362E;
+}
+.form-group textarea { resize: vertical; min-height: 70px; }
+.form-submit {
+  background-color: #6FC4D2;
+  color: #FEFCF7;
+  border: none;
+  padding: 13px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 24px;
+  cursor: pointer;
+  width: 100%;
+}
+.form-submit:hover { background-color: #59B4C3; }
+
+/* ---------- FOOTER ---------- */
+.footer-cta { padding: 90px 32px; text-align: center; }
+.footer-cta .script { font-size: 28px; color: #6FC4D2; display: block; margin-bottom: 10px; }
+.footer-cta h2 { font-size: 40px; margin-bottom: 18px; }
+.footer-cta p { color: #8A8171; max-width: 440px; margin: 0 auto 30px; }
+footer {
+  background-color: #F3EAD4;
+  color: #8A8171;
+  padding: 40px 32px;
+  border-top: 1px solid #EFE6D3;
+}
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; flex-wrap: wrap;
+  gap: 18px; align-items: center;
+}
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-brand img { height: 32px; width: 32px; border-radius: 50%; }
+.footer-brand-text { font-family: 'Fraunces', serif; font-size: 16px; color: #3A362E; }
+.footer-meta { font-size: 12px; color: #B3A98F; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+  .hero h1 { font-size: 38px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .contact-panel { grid-template-columns: 1fr; padding: 34px; }
+  .section-head h2 { font-size: 30px; }
+  .footer-cta h2 { font-size: 30px; }
+}
+@media (max-width: 560px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 64px 20px 64px; }
+  .section { padding: 64px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img src="assets/logo.png" alt="Speak Natural Hair Design logo">
+      <div class="nav-brand-text">Speak Natural Hair Design</div>
+    </div>
+    <div class="nav-links">
+      <a href="#services" class="nav-link-item">Services</a>
+      <a href="#gallery" class="nav-link-item">Gallery</a>
+      <a href="#about" class="nav-link-item">About</a>
+      <a href="#book" class="nav-cta">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <img src="assets/logo.png" alt="Speak Natural Hair Design">
+    </div>
+    <div class="eyebrow">Jonesboro, GA &middot; Natural Hair Specialist</div>
+    <h1>Hair That Knows<br>How To <span class="script-accent">Speak.</span></h1>
+    <p class="hero-sub">Natural hair styling, loc care, and healthy-hair design for clients across Jonesboro and Clayton County &mdash; every style built around what your hair actually needs.</p>
+    <div class="hero-cta-row">
+      <a href="#book" class="btn-primary">Book a Consultation</a>
+      <a href="#services" class="btn-secondary">See Services</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item"><span class="dot"></span>Natural Hair Specialist</div>
+    <div class="strip-item"><span class="dot"></span>Loc Care &amp; Maintenance</div>
+    <div class="strip-item"><span class="dot"></span>Serving Jonesboro &amp; Clayton County</div>
+    <div class="strip-item"><span class="dot"></span>All Ages Welcome</div>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:flex-start;">The Menu</div>
+      <h2>Designed For Your Hair</h2>
+      <p>A starting menu &mdash; swap in your real services, durations, and pricing before this goes live.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-flower"></div><h3>Natural Hair Styling</h3><p>Custom styling that works with your texture, not against it.</p></div>
+      <div class="svc-card"><div class="svc-flower"></div><h3>Loc Maintenance</h3><p>Retwists, retightening, and healthy loc upkeep.</p></div>
+      <div class="svc-card"><div class="svc-flower"></div><h3>Silk Press</h3><p>Smooth, healthy straightened styles without the damage.</p></div>
+      <div class="svc-card"><div class="svc-flower"></div><h3>Protective Styles</h3><p>Braids, twists, and styles built to protect your hair long-term.</p></div>
+      <div class="svc-card"><div class="svc-flower"></div><h3>Natural Transitions</h3><p>Big chop support and transitioning guidance done with care.</p></div>
+      <div class="svc-card"><div class="svc-flower"></div><h3>Consultations</h3><p>A real conversation about your hair goals before anything else.</p></div>
+    </div>
+    <p class="svc-note">Menu shown for preview purposes &mdash; final services &amp; pricing confirmed with the shop.</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:flex-start;">The Work</div>
+      <h2>Every Style Has A Story</h2>
+      <p>Real photos from the chair go here &mdash; this preview shows where your gallery will live.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-block gb-1"><span>Locs</span></div>
+      <div class="gallery-block gb-2"><span>Silk Press</span></div>
+      <div class="gallery-block gb-3"><span>Braids</span></div>
+      <div class="gallery-block gb-4"><span>Twist Out</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap about-inner">
+    <div class="about-mark">
+      <img src="assets/logo.png" alt="Speak Natural Hair Design mark">
+    </div>
+    <div class="about-copy">
+      <span class="script">healthy hair, first.</span>
+      <h2>A Salon Built Around What Your Hair Needs</h2>
+      <p>Speak Natural Hair Design specializes in natural hair care for clients across Jonesboro and the surrounding area &mdash; every appointment starts with understanding your hair's texture, history, and goals before a single style is chosen.</p>
+      <p>Whether you're maintaining locs, transitioning, or exploring a new protective style, the approach here stays the same: health first, style second, and never one without the other.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="book">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="justify-content:flex-start;">Get In Touch</div>
+      <h2>Book Your Visit</h2>
+    </div>
+    <div class="contact-panel">
+      <div class="contact-info">
+        <h3>Let's Talk Hair</h3>
+        <p>Send a message with what you're looking for and preferred days &mdash; a real booking system (online scheduling, text confirmations) will replace this form once it's live.</p>
+        <div class="contact-line"><span class="k">Location</span><span>Serving Jonesboro &amp; Clayton County, GA</span></div>
+        <div class="contact-line"><span class="k">Hours</span><span>By appointment</span></div>
+      </div>
+      <form>
+        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(xxx) xxx-xxxx"></div>
+        <div class="form-group"><label>Service Interested In</label><input type="text" placeholder="e.g. Loc retwist, silk press"></div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us a bit about your hair goals"></textarea></div>
+        <button type="button" class="form-submit">Request Appointment</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <span class="script">let your hair speak.</span>
+  <h2>Ready To Book Your Next Style?</h2>
+  <p>Reach out and let's talk about what your hair needs next.</p>
+  <a href="#book" class="btn-primary">Book a Consultation</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Speak Natural Hair Design logo">
+      <div class="footer-brand-text">Speak Natural Hair Design</div>
+    </div>
+    <div class="footer-meta">SERVING JONESBORO &amp; CLAYTON COUNTY, GA</div>
+  </div>
+</footer>
+
+</body>
+</html>
