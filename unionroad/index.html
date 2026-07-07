@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Union Road Barbers | Gastonia, NC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Libre+Franklin:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #F0E6CE;
+  color: #221F1D;
+  font-family: 'Libre Franklin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+  font-weight: 400;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+/* ---------- BARBER POLE STRIPE DIVIDER (signature) ---------- */
+.pole-stripe {
+  height: 10px;
+  width: 100%;
+  background: repeating-linear-gradient(-45deg, #A63A3A 0px, #A63A3A 22px, #F0E6CE 22px, #F0E6CE 44px, #25405A 44px, #25405A 66px, #F0E6CE 66px, #F0E6CE 88px);
+}
+.pole-stripe-thin {
+  height: 5px;
+  width: 100px;
+  background: repeating-linear-gradient(-45deg, #A63A3A 0px, #A63A3A 10px, #F0E6CE 10px, #F0E6CE 20px, #25405A 20px, #25405A 30px, #F0E6CE 30px, #F0E6CE 40px);
+  border-radius: 3px;
+}
+
+/* ---------- NAV ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background-color: rgba(34,31,29,0.96);
+  border-bottom: 3px solid #A63A3A;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 32px; max-width: 1120px; margin: 0 auto;
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-brand img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #25405A; }
+.nav-brand-text { font-family: 'Anton', Impact, sans-serif; font-size: 18px; letter-spacing: 0.02em; color: #F0E6CE; }
+.nav-brand-text span { color: #A63A3A; }
+.nav-links { display: flex; gap: 26px; align-items: center; }
+.nav-links a { font-size: 13px; font-weight: 700; color: #D9CBAE; text-transform: uppercase; letter-spacing: 0.05em; }
+.nav-links a:hover { color: #F0E6CE; }
+.nav-cta {
+  background-color: #A63A3A; color: #F0E6CE !important;
+  padding: 10px 22px; font-size: 13px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.04em; border-radius: 3px;
+}
+.nav-cta:hover { background-color: #8E2F2F; }
+@media (max-width: 760px) { .nav-links a.nav-link-item { display: none; } }
+
+/* ---------- HERO (logo centered top) ---------- */
+.hero { padding: 76px 32px 60px; text-align: center; background-color: #221F1D; }
+.hero-badge {
+  width: 168px; height: 168px; margin: 0 auto 30px; border-radius: 50%;
+  overflow: hidden; border: 4px solid #A63A3A; box-shadow: 0 0 0 4px #25405A, 0 18px 40px rgba(0,0,0,0.4);
+}
+.hero-badge img { width: 100%; height: 100%; object-fit: cover; }
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: #A63A3A;
+  margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.eyebrow::before, .eyebrow::after { content: ""; width: 22px; height: 2px; background-color: #A63A3A; }
+.hero h1 { font-size: 56px; color: #F0E6CE; max-width: 720px; margin: 0 auto; }
+.hero h1 span { color: #A63A3A; }
+.hero-sub { margin-top: 20px; max-width: 460px; margin-left: auto; margin-right: auto; font-size: 16px; color: #C7BFA9; }
+.hero-cta-row { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.btn-primary {
+  background-color: #A63A3A; color: #F0E6CE; padding: 16px 32px;
+  font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;
+  border-radius: 3px; display: inline-block;
+}
+.btn-primary:hover { background-color: #8E2F2F; }
+.btn-secondary {
+  border: 2px solid #25405A; color: #F0E6CE; padding: 14px 30px;
+  font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;
+  border-radius: 3px; display: inline-block;
+}
+.btn-secondary:hover { background-color: rgba(37,64,90,0.3); }
+
+/* ---------- TRUST STRIP ---------- */
+.trust-strip { background-color: #25405A; }
+.trust-inner {
+  max-width: 1120px; margin: 0 auto; padding: 24px 32px;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+.trust-item { display: flex; align-items: baseline; gap: 10px; }
+.trust-num { font-family: 'Anton', Impact, sans-serif; font-size: 28px; color: #F0E6CE; }
+.trust-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #B9C9D4; }
+
+/* ---------- SECTIONS ---------- */
+.section { padding: 92px 32px; }
+.section-alt { background-color: #E7DBBC; }
+.section-head { max-width: 600px; margin: 0 auto 50px; text-align: center; }
+.section-head .eyebrow { justify-content: center; }
+.section-head h2 { font-size: 42px; color: #221F1D; }
+.section-head p { margin-top: 12px; color: #5A5347; font-size: 16px; }
+
+/* ---------- SERVICES ---------- */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.svc-card {
+  background-color: #F0E6CE; border: 2px solid #D9CBAE; border-radius: 6px;
+  padding: 28px; transition: border-color 0.2s ease;
+}
+.svc-card:hover { border-color: #A63A3A; }
+.svc-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #A63A3A; margin-bottom: 14px; font-weight: 600; }
+.svc-card h3 { font-size: 20px; margin-bottom: 8px; color: #221F1D; }
+.svc-card p { font-size: 13.5px; color: #5A5347; }
+.svc-note { text-align: center; margin-top: 24px; font-size: 13px; color: #8A8271; }
+
+/* ---------- GALLERY ---------- */
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.gallery-block {
+  aspect-ratio: 3/4; border-radius: 4px; display: flex; align-items: flex-end;
+  padding: 16px; position: relative; overflow: hidden;
+}
+.gallery-block span {
+  font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+  color: #F0E6CE; background-color: rgba(34,31,29,0.4); padding: 5px 10px; border-radius: 2px;
+}
+.gb-1 { background: linear-gradient(150deg, #221F1D 0%, #A63A3A 100%); }
+.gb-2 { background: linear-gradient(150deg, #25405A 0%, #4A6E8C 100%); }
+.gb-3 { background: linear-gradient(150deg, #221F1D 0%, #25405A 100%); }
+.gb-4 { background: linear-gradient(150deg, #A63A3A 0%, #6E2323 100%); }
+
+/* ---------- HOURS + LOCATION ---------- */
+.hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.hours-table { border-top: 2px solid #D9CBAE; }
+.hours-row {
+  display: flex; justify-content: space-between; padding: 13px 0;
+  border-bottom: 1px solid #D9CBAE; font-family: 'IBM Plex Mono', monospace; font-size: 14px;
+}
+.hours-row.closed { color: #8A8271; }
+.hours-day { color: #221F1D; text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px; font-weight: 600; }
+.hours-time { color: #5A5347; }
+.contact-block h3 { font-size: 24px; margin-bottom: 16px; color: #221F1D; }
+.contact-line { display: flex; gap: 12px; margin-bottom: 14px; font-size: 15px; color: #5A5347; }
+.contact-line .k {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.06em; color: #A63A3A; font-weight: 700; min-width: 70px; padding-top: 2px;
+}
+.contact-line a { color: #221F1D; font-weight: 600; }
+.contact-line a:hover { color: #A63A3A; }
+
+/* ---------- FOOTER ---------- */
+.footer-cta { background-color: #221F1D; padding: 86px 32px; text-align: center; }
+.footer-cta h2 { font-size: 44px; color: #F0E6CE; margin-bottom: 16px; }
+.footer-cta p { color: #C7BFA9; max-width: 420px; margin: 0 auto 28px; }
+footer { background-color: #1A1815; padding: 34px 32px; }
+.footer-inner {
+  max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px; align-items: center;
+}
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-brand img { height: 34px; width: 34px; border-radius: 50%; }
+.footer-brand-text { font-family: 'Anton', Impact, sans-serif; font-size: 15px; color: #F0E6CE; letter-spacing: 0.02em; }
+.footer-meta { font-size: 12px; color: #7A7364; font-family: 'IBM Plex Mono', monospace; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+  .hero h1 { font-size: 40px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .hours-grid { grid-template-columns: 1fr; }
+  .section-head h2 { font-size: 32px; }
+  .footer-cta h2 { font-size: 32px; }
+}
+@media (max-width: 560px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 60px 20px 50px; }
+  .section { padding: 62px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img src="assets/logo.png" alt="Union Road Barbers logo">
+      <div class="nav-brand-text">UNION ROAD <span>BARBERS</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#services" class="nav-link-item">Services</a>
+      <a href="#shop" class="nav-link-item">The Shop</a>
+      <a href="#visit" class="nav-link-item">Visit</a>
+      <a href="https://booksy.com/en-us/429390_union-road-barbers_barber-shop_26689_gastonia" class="nav-cta">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">
+    <img src="assets/logo.png" alt="Union Road Barbers">
+  </div>
+  <div class="eyebrow">Gastonia, NC &middot; Union Road</div>
+  <h1>SHARP CUTS.<br><span>NO SHORTCUTS.</span></h1>
+  <p class="hero-sub">Classic barbering on Union Road — fades, line-ups, hot towel shaves, and a shop that's been getting Gastonia right for years.</p>
+  <div class="hero-cta-row">
+    <a href="https://booksy.com/en-us/429390_union-road-barbers_barber-shop_26689_gastonia" class="btn-primary">Book an Appointment</a>
+    <a href="tel:+17048669663" class="btn-secondary">Call (704) 866-9663</a>
+  </div>
+</section>
+
+<div class="pole-stripe"></div>
+
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-num">4.7</span><span class="trust-label">Star Rating</span></div>
+    <div class="trust-item"><span class="trust-num">70+</span><span class="trust-label">Client Reviews</span></div>
+    <div class="trust-item"><span class="trust-num">6</span><span class="trust-label">Days Open Weekly</span></div>
+    <div class="trust-item"><span class="trust-num">#2</span><span class="trust-label">Union Rd, Gastonia</span></div>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Menu</div>
+      <h2>What We Cut</h2>
+      <p>Every service booked online, no guessing games at the door.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-num">01</div><h3>Haircuts &amp; Fades</h3><p>Classic tapers to modern skin fades, cut clean every time.</p></div>
+      <div class="svc-card"><div class="svc-num">02</div><h3>Beard Trims</h3><p>Sharp lineups and beard shaping to finish the look.</p></div>
+      <div class="svc-card"><div class="svc-num">03</div><h3>Hot Towel Shave</h3><p>Traditional straight razor shaves, done the old way.</p></div>
+      <div class="svc-card"><div class="svc-num">04</div><h3>Line Ups</h3><p>Quick, clean edge-ups to keep you sharp between cuts.</p></div>
+      <div class="svc-card"><div class="svc-num">05</div><h3>Kids Cuts</h3><p>Patient barbers, first haircuts to regular Saturday runs.</p></div>
+      <div class="svc-card"><div class="svc-num">06</div><h3>Walk-Ins Welcome</h3><p>No appointment? Come on in and grab a chair.</p></div>
+    </div>
+    <p class="svc-note">Menu shown for preview purposes &mdash; final services &amp; pricing confirmed with the shop.</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Shop</div>
+      <h2>Union Road, Gastonia</h2>
+      <p>Real photos from the shop go here — this preview shows where your gallery will live.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-block gb-1"><span>Fade</span></div>
+      <div class="gallery-block gb-2"><span>Line Up</span></div>
+      <div class="gallery-block gb-3"><span>Beard Trim</span></div>
+      <div class="gallery-block gb-4"><span>Hot Towel</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="visit">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Get In The Chair</div>
+      <h2>Hours &amp; Location</h2>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-table">
+        <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">8:30 AM &ndash; 4:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">8:30 AM &ndash; 4:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">8:30 AM &ndash; 4:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">8:30 AM &ndash; 4:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">8:30 AM &ndash; 4:30 PM</span></div>
+        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">8:30 AM &ndash; 11:00 AM</span></div>
+        <div class="hours-row closed"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
+      </div>
+      <div class="contact-block">
+        <h3>Find the Shop</h3>
+        <div class="contact-line"><span class="k">Address</span><span>705 Union Rd #2<br>Gastonia, NC 28054</span></div>
+        <div class="contact-line"><span class="k">Phone</span><a href="tel:+17048669663">(704) 866-9663</a></div>
+        <div class="contact-line"><span class="k">Book</span><a href="https://booksy.com/en-us/429390_union-road-barbers_barber-shop_26689_gastonia">booksy.com/union-road-barbers</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="pole-stripe-thin" style="margin: 0 auto 26px;"></div>
+  <h2>READY FOR YOUR CUT?</h2>
+  <p>Book online or walk right in — either way, you're getting the same clean cut.</p>
+  <a href="https://booksy.com/en-us/429390_union-road-barbers_barber-shop_26689_gastonia" class="btn-primary">Book an Appointment</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Union Road Barbers logo">
+      <div class="footer-brand-text">UNION ROAD BARBERS</div>
+    </div>
+    <div class="footer-meta">705 UNION RD #2, GASTONIA NC 28054</div>
+  </div>
+</footer>
+
+</body>
+</html>
