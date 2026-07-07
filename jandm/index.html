@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J&amp;M Landscaping &amp; Lawncare | Gastonia, NC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #F5F1E8;
+  color: #22201B;
+  font-family: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+svg { display: block; }
+
+/* ---------- BLUEPRINT BACKGROUND (signature) ---------- */
+.blueprint {
+  background-color: #1B2A38;
+  background-image:
+    linear-gradient(rgba(245,241,232,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,241,232,0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+  position: relative;
+}
+
+/* ---------- NAV ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background-color: rgba(245,241,232,0.96);
+  border-bottom: 1px solid #DCD4C0;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 32px; max-width: 1120px; margin: 0 auto;
+}
+.nav-logo { font-family: 'Zilla Slab', serif; font-size: 19px; font-weight: 700; color: #22201B; }
+.nav-logo span { color: #C1652F; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-size: 13px; font-weight: 600; color: #6B6255; }
+.nav-links a:hover { color: #22201B; }
+.nav-cta {
+  background-color: #C1652F; color: #F5F1E8 !important;
+  padding: 10px 22px; font-size: 13px; font-weight: 700; border-radius: 3px;
+}
+.nav-cta:hover { background-color: #A9522322; background-color: #A85426; }
+@media (max-width: 760px) { .nav-links a.nav-link-item { display: none; } }
+
+/* ---------- HERO ---------- */
+.hero { padding: 110px 32px 100px; position: relative; overflow: hidden; }
+.hero-inner {
+  max-width: 1120px; margin: 0 auto; position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center;
+}
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: #C1652F;
+  margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::before { content: ""; width: 24px; height: 1px; background-color: #C1652F; }
+.hero h1 { font-size: 52px; color: #F5F1E8; }
+.hero h1 em { font-style: normal; color: #C1652F; }
+.hero-sub { margin-top: 20px; max-width: 440px; font-size: 16px; color: #C7CDCE; }
+.hero-cta-row { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  background-color: #C1652F; color: #F5F1E8; padding: 15px 28px;
+  font-size: 13px; font-weight: 700; border-radius: 3px; display: inline-block;
+}
+.btn-primary:hover { background-color: #A85426; }
+.btn-secondary {
+  border: 1.5px solid #52616B; color: #F5F1E8; padding: 15px 28px;
+  font-size: 13px; font-weight: 700; border-radius: 3px; display: inline-block;
+}
+.btn-secondary:hover { border-color: #7C9473; background-color: rgba(124,148,115,0.1); }
+
+/* ---------- BLUEPRINT LINE ART ---------- */
+.blueprint-art { position: relative; }
+.blueprint-frame {
+  border: 1px solid rgba(245,241,232,0.25);
+  border-radius: 4px;
+  padding: 20px;
+  position: relative;
+}
+.blueprint-label {
+  position: absolute; top: -11px; left: 16px; background-color: #1B2A38;
+  padding: 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: #7C9473;
+}
+
+/* ---------- TRUST STRIP ---------- */
+.trust-strip { background-color: #22201B; }
+.trust-inner {
+  max-width: 1120px; margin: 0 auto; padding: 24px 32px;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #C7CDCE; }
+.trust-item .dot { width: 6px; height: 6px; border-radius: 50%; background-color: #C1652F; }
+
+/* ---------- SECTIONS ---------- */
+.section { padding: 96px 32px; }
+.section-alt { background-color: #FFFFFF; }
+.section-head { max-width: 600px; margin: 0 auto 52px; text-align: center; }
+.section-head .eyebrow { justify-content: center; color: #7C9473; }
+.section-head .eyebrow::before { background-color: #7C9473; }
+.section-head h2 { font-size: 40px; color: #22201B; }
+.section-head p { margin-top: 14px; color: #6B6255; font-size: 16px; }
+
+/* ---------- SERVICES ---------- */
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.svc-card {
+  background-color: #F5F1E8; border: 1px solid #DCD4C0; border-radius: 8px;
+  padding: 26px; transition: border-color 0.2s ease;
+}
+.svc-card:hover { border-color: #C1652F; }
+.svc-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7C9473; margin-bottom: 14px; }
+.svc-card h3 { font-size: 18px; margin-bottom: 8px; color: #22201B; }
+.svc-card p { font-size: 13px; color: #6B6255; }
+.svc-note { margin-top: 24px; text-align: center; font-size: 13px; color: #9C9482; }
+
+/* ---------- PROCESS ---------- */
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.process-step { text-align: center; }
+.process-circle {
+  width: 56px; height: 56px; border-radius: 50%; border: 2px solid #C1652F;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;
+  font-family: 'Zilla Slab', serif; font-size: 20px; font-weight: 700; color: #C1652F;
+}
+.process-step h3 { font-size: 19px; margin-bottom: 8px; color: #22201B; }
+.process-step p { font-size: 14px; color: #6B6255; }
+
+/* ---------- CONTACT ---------- */
+.contact-panel {
+  background-color: #FFFFFF; border: 1px solid #DCD4C0; border-radius: 10px;
+  padding: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 46px;
+}
+.contact-info h3 { font-size: 24px; margin-bottom: 14px; color: #22201B; }
+.contact-info p { color: #6B6255; font-size: 15px; margin-bottom: 22px; max-width: 320px; }
+.contact-line { display: flex; gap: 12px; margin-bottom: 14px; font-size: 14px; color: #6B6255; }
+.contact-line .k {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.06em; color: #C1652F; font-weight: 700; min-width: 70px; padding-top: 2px;
+}
+.contact-line a { color: #22201B; font-weight: 600; }
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  display: block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; color: #6B6255; margin-bottom: 6px;
+}
+.form-group input, .form-group textarea {
+  width: 100%; border: 1px solid #DCD4C0; border-radius: 5px; padding: 10px 13px;
+  font-family: 'Karla', sans-serif; font-size: 14px; background-color: #F5F1E8; color: #22201B;
+}
+.form-group textarea { resize: vertical; min-height: 66px; }
+.form-submit {
+  background-color: #7C9473; color: #F5F1E8; border: none; padding: 13px 26px;
+  font-size: 13px; font-weight: 700; border-radius: 5px; cursor: pointer; width: 100%;
+}
+.form-submit:hover { background-color: #6A8262; }
+
+/* ---------- FOOTER ---------- */
+.footer-cta { padding: 90px 32px; text-align: center; }
+.footer-cta h2 { font-size: 42px; margin-bottom: 16px; color: #F5F1E8; }
+.footer-cta p { color: #C7CDCE; max-width: 430px; margin: 0 auto 28px; }
+footer { background-color: #171E27; padding: 36px 32px; }
+.footer-inner {
+  max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px; align-items: center;
+}
+.footer-logo { font-family: 'Zilla Slab', serif; font-size: 17px; font-weight: 700; color: #F5F1E8; }
+.footer-meta { font-size: 12px; color: #6B7A85; font-family: 'IBM Plex Mono', monospace; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 38px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .section-head h2 { font-size: 30px; }
+  .contact-panel { grid-template-columns: 1fr; padding: 32px; }
+  .footer-cta h2 { font-size: 32px; }
+}
+@media (max-width: 560px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .hero { padding: 90px 20px 70px; }
+  .section { padding: 64px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">J<span>&amp;</span>M LANDSCAPING</div>
+    <div class="nav-links">
+      <a href="#services" class="nav-link-item">Services</a>
+      <a href="#process" class="nav-link-item">How It Works</a>
+      <a href="#contact" class="nav-link-item">Contact</a>
+      <a href="tel:+17042078394" class="nav-cta">Call Now</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero blueprint">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Gastonia, NC &middot; Family Owned</div>
+      <h1>YOUR YARD, <em>DESIGNED</em><br>AND DELIVERED.</h1>
+      <p class="hero-sub">Landscaping and lawncare for Gastonia properties — from routine mowing to full bed redesigns, planned out before a single tool touches your yard.</p>
+      <div class="hero-cta-row">
+        <a href="tel:+17042078394" class="btn-primary">Call (704) 207-8394</a>
+        <a href="#contact" class="btn-secondary">Request a Free Quote</a>
+      </div>
+    </div>
+    <div class="blueprint-art">
+      <div class="blueprint-frame">
+        <div class="blueprint-label">Site Plan</div>
+        <svg viewBox="0 0 300 260" width="100%" height="auto">
+          <rect x="8" y="8" width="284" height="244" fill="none" stroke="#7C9473" stroke-width="1" stroke-dasharray="4 4"/>
+          <path d="M40 220 L40 120 Q40 90 70 90 L100 90" fill="none" stroke="#F5F1E8" stroke-width="1.5"/>
+          <circle cx="70" cy="70" r="26" fill="none" stroke="#7C9473" stroke-width="1.5"/>
+          <path d="M70 44v-14M70 70l18-18" stroke="#7C9473" stroke-width="1.5"/>
+          <rect x="150" y="150" width="90" height="60" fill="none" stroke="#F5F1E8" stroke-width="1.5"/>
+          <path d="M150 150l90 60M240 150l-90 60" stroke="#F5F1E8" stroke-width="0.75"/>
+          <circle cx="230" cy="60" r="18" fill="none" stroke="#7C9473" stroke-width="1.5"/>
+          <path d="M230 42v-10M230 60l14-14" stroke="#7C9473" stroke-width="1.5"/>
+          <path d="M100 210 Q160 190 240 210" fill="none" stroke="#C1652F" stroke-width="1.5" stroke-dasharray="3 3"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="dot"></span>Family Owned &amp; Operated</div>
+    <div class="trust-item"><span class="dot"></span>Based in Gastonia, NC</div>
+    <div class="trust-item"><span class="dot"></span>Free Walkthrough &amp; Quote</div>
+    <div class="trust-item"><span class="dot"></span>Fast, Direct Communication</div>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Handle</div>
+      <h2>Lawn &amp; Landscape, Start To Finish</h2>
+      <p>A starting menu — swap in your exact services before this goes live.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <h3>Lawn Mowing</h3>
+        <p>Regular mowing and edging to keep the yard consistent week to week.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <h3>Landscape Design</h3>
+        <p>Bed layouts, plantings and hardscape touches planned before we dig.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <h3>Yard Cleanup</h3>
+        <p>Seasonal cleanups that clear debris and reset the whole property.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <h3>Mulching &amp; Beds</h3>
+        <p>Fresh mulch and clean bed lines that finish off the look.</p>
+      </div>
+    </div>
+    <p class="svc-note">Final service list &amp; pricing confirmed directly with J&amp;M.</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How It Works</div>
+      <h2>Three Steps, No Surprises</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-circle">01</div>
+        <h3>We Walk The Yard</h3>
+        <p>A free on-site visit to see exactly what your property needs.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-circle">02</div>
+        <h3>You Get A Plan</h3>
+        <p>A straightforward quote and timeline before anything starts.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-circle">03</div>
+        <h3>We Get To Work</h3>
+        <p>Same crew, same standards, every visit from start to finish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Get A Quote</div>
+      <h2>Let's Talk About Your Yard</h2>
+    </div>
+    <div class="contact-panel">
+      <div class="contact-info">
+        <h3>Reach Out Directly</h3>
+        <p>Call, or send a few details below and we'll follow up with a free quote.</p>
+        <div class="contact-line"><span class="k">Phone</span><a href="tel:+17042078394">(704) 207-8394</a></div>
+        <div class="contact-line"><span class="k">Address</span><span>640 Armstrong Park Rd<br>Gastonia, NC 28054</span></div>
+        <div class="contact-line"><span class="k">Serving</span><span>Gastonia, NC &amp; surrounding areas</span></div>
+      </div>
+      <form>
+        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(xxx) xxx-xxxx"></div>
+        <div class="form-group"><label>What do you need?</label><input type="text" placeholder="e.g. Mowing, bed cleanup"></div>
+        <div class="form-group"><label>Property Details</label><textarea placeholder="Tell us a bit about your yard"></textarea></div>
+        <button type="button" class="form-submit">Request Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta blueprint">
+  <h2>LET'S PLAN YOUR YARD.</h2>
+  <p>One call gets you a free walkthrough and a straight quote.</p>
+  <a href="tel:+17042078394" class="btn-primary">Call (704) 207-8394</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">J&amp;M Landscaping &amp; Lawncare</div>
+    <div class="footer-meta">640 ARMSTRONG PARK RD, GASTONIA NC 28054</div>
+  </div>
+</footer>
+
+</body>
+</html>
