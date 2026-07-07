@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eckard's Lawn Care | Gastonia, NC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #FAFBF3;
+  color: #1C2415;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .display {
+  font-family: 'League Spartan', 'Arial Black', Impact, sans-serif;
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+svg { display: block; }
+
+/* ---------- STRIPED LAWN BACKGROUND (signature) ---------- */
+.lawn-stripes {
+  background-image: repeating-linear-gradient(115deg, #3C8C3F 0px, #3C8C3F 60px, #357C38 60px, #357C38 120px);
+  position: relative;
+}
+.lawn-stripes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28,36,21,0.15) 0%, rgba(28,36,21,0.55) 100%);
+}
+
+/* ---------- MOWER WATERMARK PATTERN ---------- */
+.mower-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.10;
+}
+.mower-icon { position: absolute; }
+
+/* ---------- NAV ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(28,36,21,0.96);
+  border-bottom: 2px solid #E8A93D;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'League Spartan', sans-serif; font-size: 20px; font-weight: 800; text-transform: uppercase; color: #FAFBF3; }
+.nav-logo span { color: #E8A93D; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-size: 13px; font-weight: 600; color: #C9D4B8; text-transform: uppercase; letter-spacing: 0.05em; }
+.nav-links a:hover { color: #FAFBF3; }
+.nav-cta {
+  background-color: #E8A93D;
+  color: #1C2415 !important;
+  padding: 10px 22px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+}
+.nav-cta:hover { background-color: #F5BC5A; }
+@media (max-width: 760px) { .nav-links a.nav-link-item { display: none; } }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  padding: 130px 32px 110px;
+  overflow: hidden;
+}
+.hero-inner { position: relative; z-index: 2; max-width: 1140px; margin: 0 auto; text-align: center; }
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #FAFBF3;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.eyebrow::before, .eyebrow::after { content: ""; width: 26px; height: 2px; background-color: #E8A93D; }
+.hero h1 { font-size: 68px; color: #FAFBF3; max-width: 820px; margin: 0 auto; text-shadow: 0 4px 18px rgba(0,0,0,0.35); }
+.hero h1 span { color: #E8A93D; }
+.hero-sub { margin-top: 22px; max-width: 520px; margin-left: auto; margin-right: auto; font-size: 17px; color: #EAEFDD; }
+.hero-cta-row { margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.btn-primary {
+  background-color: #E8A93D;
+  color: #1C2415;
+  padding: 16px 32px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  display: inline-block;
+}
+.btn-primary:hover { background-color: #F5BC5A; }
+.btn-secondary {
+  border: 2px solid #FAFBF3;
+  color: #FAFBF3;
+  padding: 14px 30px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  display: inline-block;
+}
+.btn-secondary:hover { background-color: rgba(250,251,243,0.12); }
+
+/* ---------- TRUST STRIP ---------- */
+.trust-strip { background-color: #1C2415; border-bottom: 2px solid #E8A93D; }
+.trust-inner {
+  max-width: 1140px; margin: 0 auto; padding: 26px 32px;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+}
+.trust-item { display: flex; align-items: baseline; gap: 10px; }
+.trust-num { font-family: 'League Spartan', sans-serif; font-size: 30px; color: #E8A93D; font-weight: 800; }
+.trust-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #C9D4B8; }
+
+/* ---------- SECTIONS ---------- */
+.section { padding: 100px 32px; position: relative; overflow: hidden; }
+.section-alt { background-color: #F1F4E6; }
+.section-head { max-width: 620px; margin: 0 auto 56px; text-align: center; }
+.section-head .eyebrow { color: #357C38; }
+.section-head .eyebrow::before, .section-head .eyebrow::after { background-color: #357C38; }
+.section-head h2 { font-size: 46px; color: #1C2415; }
+.section-head p { margin-top: 14px; color: #55604A; font-size: 16px; }
+
+/* ---------- SERVICES ---------- */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: relative; z-index: 2; }
+.svc-card {
+  background-color: #FAFBF3;
+  border: 2px solid #DCE4C9;
+  border-radius: 8px;
+  padding: 30px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.svc-card:hover { border-color: #3C8C3F; transform: translateY(-3px); }
+.svc-icon { width: 46px; height: 46px; margin-bottom: 16px; }
+.svc-card h3 { font-size: 19px; margin-bottom: 8px; color: #1C2415; }
+.svc-card p { font-size: 14px; color: #55604A; }
+
+/* ---------- WHY US ---------- */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.why-item { text-align: center; }
+.why-num { font-family: 'League Spartan', sans-serif; font-size: 40px; color: #3C8C3F; font-weight: 800; margin-bottom: 8px; }
+.why-item p { font-size: 14px; color: #55604A; }
+
+/* ---------- SERVICE AREA ---------- */
+.area-panel {
+  background-color: #1C2415;
+  border-radius: 10px;
+  padding: 54px;
+  text-align: center;
+}
+.area-panel h3 { color: #FAFBF3; font-size: 30px; margin-bottom: 14px; }
+.area-panel p { color: #C9D4B8; max-width: 520px; margin: 0 auto; font-size: 15px; }
+.area-tags { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.area-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #E8A93D;
+  border: 1px solid #3C8C3F;
+  padding: 7px 14px;
+  border-radius: 20px;
+}
+
+/* ---------- CONTACT ---------- */
+.contact-panel {
+  background-color: #FAFBF3;
+  border: 2px solid #DCE4C9;
+  border-radius: 10px;
+  padding: 54px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+.contact-info h3 { font-size: 26px; margin-bottom: 14px; color: #1C2415; }
+.contact-info p { color: #55604A; font-size: 15px; margin-bottom: 24px; max-width: 340px; }
+.contact-line { display: flex; gap: 12px; margin-bottom: 16px; font-size: 15px; color: #55604A; }
+.contact-line .k {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: #3C8C3F; font-weight: 700; min-width: 74px; padding-top: 2px;
+}
+.contact-line a { color: #1C2415; font-weight: 600; }
+.contact-line a:hover { color: #3C8C3F; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block; font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; color: #55604A; margin-bottom: 6px;
+}
+.form-group input, .form-group textarea {
+  width: 100%; border: 2px solid #DCE4C9; border-radius: 6px; padding: 11px 14px;
+  font-family: 'Inter', sans-serif; font-size: 14px; background-color: #F1F4E6; color: #1C2415;
+}
+.form-group textarea { resize: vertical; min-height: 70px; }
+.form-submit {
+  background-color: #3C8C3F; color: #FAFBF3; border: none; padding: 14px 28px;
+  font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+  border-radius: 6px; cursor: pointer; width: 100%;
+}
+.form-submit:hover { background-color: #357C38; }
+
+/* ---------- FOOTER CTA ---------- */
+.footer-cta { padding: 90px 32px; text-align: center; position: relative; overflow: hidden; }
+.footer-cta-inner { position: relative; z-index: 2; }
+.footer-cta h2 { font-size: 48px; color: #FAFBF3; margin-bottom: 18px; text-shadow: 0 4px 18px rgba(0,0,0,0.35); }
+.footer-cta p { color: #EAEFDD; max-width: 440px; margin: 0 auto 30px; }
+
+footer { background-color: #1C2415; padding: 40px 32px; border-top: 2px solid #E8A93D; }
+.footer-inner {
+  max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 18px; align-items: center;
+}
+.footer-logo { font-family: 'League Spartan', sans-serif; font-size: 18px; font-weight: 800; color: #FAFBF3; text-transform: uppercase; }
+.footer-meta { font-size: 12px; color: #8A9678; font-family: 'IBM Plex Mono', monospace; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+  .hero h1 { font-size: 42px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .section-head h2 { font-size: 34px; }
+  .contact-panel { grid-template-columns: 1fr; padding: 34px; }
+  .area-panel { padding: 34px; }
+  .footer-cta h2 { font-size: 34px; }
+}
+@media (max-width: 560px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 100px 20px 80px; }
+  .section { padding: 64px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="14" height="6" rx="1.5" fill="#E8A93D"/><circle cx="6" cy="20" r="2" fill="#FAFBF3"/><circle cx="14" cy="20" r="2" fill="#FAFBF3"/><path d="M10 14V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="#E8A93D" stroke-width="2" stroke-linecap="round"/></svg>
+      ECKARD'S <span>LAWN CARE</span>
+    </div>
+    <div class="nav-links">
+      <a href="#services" class="nav-link-item">Services</a>
+      <a href="#area" class="nav-link-item">Service Area</a>
+      <a href="#contact" class="nav-link-item">Contact</a>
+      <a href="tel:+17049644431" class="nav-cta">Call Now</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero lawn-stripes">
+  <div class="mower-field">
+    <svg class="mower-icon" style="top:8%; left:6%; transform:rotate(-8deg);" width="70" height="70" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="14" height="6" rx="1.5" fill="#FAFBF3"/><circle cx="6" cy="20" r="2" fill="#FAFBF3"/><circle cx="14" cy="20" r="2" fill="#FAFBF3"/><path d="M10 14V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="#FAFBF3" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="mower-icon" style="top:65%; left:80%; transform:rotate(12deg);" width="90" height="90" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="14" height="6" rx="1.5" fill="#FAFBF3"/><circle cx="6" cy="20" r="2" fill="#FAFBF3"/><circle cx="14" cy="20" r="2" fill="#FAFBF3"/><path d="M10 14V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="#FAFBF3" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="mower-icon" style="top:30%; left:88%; transform:rotate(-15deg);" width="55" height="55" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="14" height="6" rx="1.5" fill="#FAFBF3"/><circle cx="6" cy="20" r="2" fill="#FAFBF3"/><circle cx="14" cy="20" r="2" fill="#FAFBF3"/><path d="M10 14V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="#FAFBF3" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="mower-icon" style="top:75%; left:12%; transform:rotate(6deg);" width="65" height="65" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="14" height="6" rx="1.5" fill="#FAFBF3"/><circle cx="6" cy="20" r="2" fill="#FAFBF3"/><circle cx="14" cy="20" r="2" fill="#FAFBF3"/><path d="M10 14V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="#FAFBF3" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="mower-icon" style="top:12%; left:50%; transform:rotate(20deg);" width="50" height="50" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="14" height="6" rx="1.5" fill="#FAFBF3"/><circle cx="6" cy="20" r="2" fill="#FAFBF3"/><circle cx="14" cy="20" r="2" fill="#FAFBF3"/><path d="M10 14V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="#FAFBF3" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+  <div class="hero-inner">
+    <div class="eyebrow">Gastonia, NC &middot; Locally Owned Since 2006</div>
+    <h1>A PERFECT LAWN <span>ISN'T LUCK.</span><br>IT'S EIGHTEEN YEARS OF PRACTICE.</h1>
+    <p class="hero-sub">Mowing, landscaping, fertilization, gutter cleaning and pressure washing for Gastonia homeowners who want their yard handled right the first time.</p>
+    <div class="hero-cta-row">
+      <a href="tel:+17049644431" class="btn-primary">Call (704) 964-4431</a>
+      <a href="#contact" class="btn-secondary">Request a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-num">2006</span><span class="trust-label">Serving Gastonia Since</span></div>
+    <div class="trust-item"><span class="trust-num">5</span><span class="trust-label">Core Services</span></div>
+    <div class="trust-item"><span class="trust-num">100%</span><span class="trust-label">Locally Owned</span></div>
+    <div class="trust-item"><span class="trust-num">Free</span><span class="trust-label">Estimates</span></div>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Full-Service Lawn Care</h2>
+      <p>Everything your property needs to look sharp, handled by one crew you can actually reach.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none"><rect x="2" y="13" width="15" height="6" rx="1.5" fill="#3C8C3F"/><circle cx="5.5" cy="19.5" r="2" fill="#1C2415"/><circle cx="13.5" cy="19.5" r="2" fill="#1C2415"/><path d="M10 13V7a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="#3C8C3F" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Lawn Mowing</h3>
+        <p>Regular mowing and edging that keeps your yard looking sharp week after week.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none"><path d="M12 3c2 3 6 5 6 10a6 6 0 0 1-12 0c0-5 4-7 6-10z" fill="#3C8C3F"/></svg>
+        <h3>Landscaping</h3>
+        <p>Bed cleanups, shrub trimming and design work to keep the whole property polished.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" fill="none" stroke="#3C8C3F" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#3C8C3F" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Fertilizer</h3>
+        <p>Seasonal treatments that build a thicker, greener lawn year over year.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M6 6v9a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V6" stroke="#3C8C3F" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Gutter Cleaning</h3>
+        <p>Clear gutters before storm season causes water damage you didn't see coming.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none"><path d="M6 20l4-14h4l4 14M8 12h8" stroke="#3C8C3F" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Pressure Washing</h3>
+        <p>Driveways, siding and walkways washed clean and looking new again.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z" fill="#3C8C3F"/></svg>
+        <h3>Free Estimates</h3>
+        <p>We walk the property, tell you what it needs, and give you a straight number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Eckard's</div>
+      <h2>Eighteen Years On The Same Streets</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-num">01</div><p>Locally owned &amp; operated, right here in Gastonia</p></div>
+      <div class="why-item"><div class="why-num">02</div><p>Same crew, same standards, every single visit</p></div>
+      <div class="why-item"><div class="why-num">03</div><p>Free walkthroughs before any work begins</p></div>
+      <div class="why-item"><div class="why-num">04</div><p>One call handles mowing, beds, gutters &amp; more</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="area">
+  <div class="wrap">
+    <div class="area-panel">
+      <h3>Proudly Serving Gastonia, NC</h3>
+      <p>From the historic district to the newest neighborhoods off Union Road — if it's in Gastonia, we can get to it.</p>
+      <div class="area-tags">
+        <span class="area-tag">Downtown Gastonia</span>
+        <span class="area-tag">Union Road Corridor</span>
+        <span class="area-tag">South New Hope Rd</span>
+        <span class="area-tag">Franklin Blvd</span>
+        <span class="area-tag">& Surrounding Areas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Get A Quote</div>
+      <h2>Let's Look At Your Yard</h2>
+    </div>
+    <div class="contact-panel">
+      <div class="contact-info">
+        <h3>Talk To Us</h3>
+        <p>Call directly or send a few details below and we'll get back to you with a free estimate.</p>
+        <div class="contact-line"><span class="k">Phone</span><a href="tel:+17049644431">(704) 964-4431</a></div>
+        <div class="contact-line"><span class="k">Address</span><span>2001 Knotty Pine Trl<br>Gastonia, NC 28056</span></div>
+        <div class="contact-line"><span class="k">Serving</span><span>Gastonia, NC & surrounding areas</span></div>
+      </div>
+      <form>
+        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(xxx) xxx-xxxx"></div>
+        <div class="form-group"><label>Service Needed</label><input type="text" placeholder="e.g. Mowing, gutter cleaning"></div>
+        <div class="form-group"><label>Property Details</label><textarea placeholder="Tell us a bit about your yard"></textarea></div>
+        <button type="button" class="form-submit">Request Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta lawn-stripes">
+  <div class="mower-field">
+    <svg class="mower-icon" style="top:20%; left:15%; transform:rotate(-10deg);" width="60" height="60" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="14" height="6" rx="1.5" fill="#FAFBF3"/><circle cx="6" cy="20" r="2" fill="#FAFBF3"/><circle cx="14" cy="20" r="2" fill="#FAFBF3"/><path d="M10 14V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="#FAFBF3" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="mower-icon" style="top:55%; left:75%; transform:rotate(14deg);" width="75" height="75" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="14" height="6" rx="1.5" fill="#FAFBF3"/><circle cx="6" cy="20" r="2" fill="#FAFBF3"/><circle cx="14" cy="20" r="2" fill="#FAFBF3"/><path d="M10 14V8a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2" stroke="#FAFBF3" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+  <div class="footer-cta-inner">
+    <h2>READY FOR A YARD<br>YOU DON'T WORRY ABOUT?</h2>
+    <p>One call gets you a free walkthrough and a straight quote.</p>
+    <a href="tel:+17049644431" class="btn-primary">Call (704) 964-4431</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Eckard's Lawn Care</div>
+    <div class="footer-meta">2001 KNOTTY PINE TRL, GASTONIA NC 28056</div>
+  </div>
+</footer>
+
+</body>
+</html>
