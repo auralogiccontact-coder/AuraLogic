@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Perfection Lawn Care, Maintenance & Hauling LLC — professional lawn care in Hope Mills, NC. Mowing, landscaping, maintenance, and hauling. 7 years serving the community, BBB listed.">
+<title>Perfection Lawn Care, Maintenance & Hauling LLC | Hope Mills NC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: #0A0A0A;
+    color: #EDEDED;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .display {
+    font-family: 'Anton', 'Arial Narrow', Impact, sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .badge-font {
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* chrome metallic text effect */
+  .chrome {
+    background: linear-gradient(180deg, #ffffff 0%, #cfcfcf 22%, #8f8f8f 48%, #e8e8e8 62%, #6d6d6d 80%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* gold zigzag trim, echoes the logo's toothed border */
+  .zigzag {
+    height: 14px;
+    background:
+      linear-gradient(135deg, transparent 50%, #0A0A0A 50%) 0 0 / 14px 14px repeat-x,
+      linear-gradient(-135deg, transparent 50%, #0A0A0A 50%) 0 0 / 14px 14px repeat-x,
+      linear-gradient(90deg, #E8B923, #FFD65C, #E8B923);
+    background-color: #E8B923;
+  }
+  .zigzag-flip { transform: scaleY(-1); }
+
+  /* ===== NAV ===== */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 56px;
+    border-bottom: 1px solid rgba(237,237,237,0.08);
+  }
+  .nav-mark {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .nav-mark-main {
+    font-family: 'Anton', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+  .nav-mark-sub {
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 12px;
+    color: #4CAF50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .nav-links a { border-bottom: 1px solid transparent; padding-bottom: 4px; transition: border-color .2s, color .2s; }
+  .nav-links a:hover { border-color: #E8B923; color: #E8B923; }
+  .nav-call {
+    background-color: #4CAF50;
+    color: #0A0A0A;
+    padding: 11px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background-color .2s;
+  }
+  .nav-call:hover { background-color: #66C56A; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 30px 56px 0;
+    background:
+      radial-gradient(circle at 85% 10%, rgba(76,175,80,0.10) 0%, transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(232,185,35,0.08) 0%, transparent 40%),
+      #0A0A0A;
+  }
+  .hero-inner { padding: 60px 0 90px; }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4CAF50;
+    margin-bottom: 22px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 42px;
+    height: 2px;
+    background-color: #4CAF50;
+  }
+  .hero-title {
+    font-size: 92px;
+    line-height: 0.96;
+    max-width: 920px;
+  }
+  .hero-title .gold { color: #E8B923; }
+  .hero-sub {
+    max-width: 480px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #a3a3a3;
+    margin-top: 26px;
+    font-weight: 300;
+  }
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 42px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background-color: #E8B923;
+    color: #0A0A0A;
+    padding: 17px 36px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: background-color .2s;
+  }
+  .btn-primary:hover { background-color: #FFD65C; }
+  .hero-note {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6b6b6b;
+    font-weight: 600;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 60px;
+    margin-top: 70px;
+    border-top: 1px solid rgba(237,237,237,0.1);
+    padding-top: 28px;
+    max-width: 640px;
+    flex-wrap: wrap;
+  }
+  .stat-num { font-family: 'Anton', sans-serif; font-size: 30px; letter-spacing: 1px; }
+  .stat-label { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: #6b6b6b; margin-top: 6px; font-weight: 600; }
+
+  /* ===== SERVICES ===== */
+  .services {
+    background-color: #111111;
+    padding: 90px 56px 100px;
+  }
+  .services-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .services-eyebrow {
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4CAF50;
+    margin-bottom: 14px;
+  }
+  .services-title {
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: rgba(232,185,35,0.15);
+  }
+  .service-card {
+    background-color: #0A0A0A;
+    padding: 40px 28px;
+    transition: background-color .2s;
+  }
+  .service-card:hover { background-color: #151515; }
+  .service-icon {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 22px;
+  }
+  .service-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #EDEDED;
+    margin-bottom: 10px;
+  }
+  .service-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #8a8a8a;
+    font-weight: 300;
+  }
+
+  /* ===== ABOUT / CREST ===== */
+  .about {
+    padding: 100px 56px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-frame {
+    background: linear-gradient(160deg, #16321a 0%, #0d1e10 100%);
+    aspect-ratio: 4/5;
+    border: 2px solid #E8B923;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+  }
+  .about-frame-label {
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #EDEDED;
+    opacity: 0.8;
+  }
+  .about-eyebrow {
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4CAF50;
+    margin-bottom: 18px;
+  }
+  .about-title {
+    font-size: 42px;
+    line-height: 1.08;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+  .about-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #a3a3a3;
+    max-width: 500px;
+    font-weight: 300;
+  }
+  .about-body + .about-body { margin-top: 16px; }
+  .about-tags {
+    display: flex;
+    gap: 12px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+  }
+  .about-tag {
+    border: 1px solid rgba(232,185,35,0.4);
+    color: #E8B923;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    font-weight: 600;
+  }
+
+  /* ===== QUOTE STRIP ===== */
+  .quote-strip {
+    background-color: #4CAF50;
+    color: #0A0A0A;
+    padding: 72px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .quote-strip-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: 1px;
+    max-width: 560px;
+  }
+  .btn-dark {
+    background-color: #0A0A0A;
+    color: #EDEDED;
+    padding: 18px 38px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background-color .2s;
+  }
+  .btn-dark:hover { background-color: #1a1a1a; }
+
+  /* ===== INFO / FOOTER ===== */
+  .info {
+    background-color: #0A0A0A;
+    padding: 90px 56px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .info-block-label {
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #E8B923;
+    margin-bottom: 16px;
+  }
+  .info-block-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #EDEDED;
+    font-weight: 300;
+  }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(237,237,237,0.1);
+    max-width: 260px;
+    font-weight: 300;
+  }
+  .footer-bottom {
+    margin-top: 70px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(237,237,237,0.1);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #6b6b6b;
+    letter-spacing: 0.5px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 24px 24px 0; }
+    .hero-inner { padding: 40px 0 60px; }
+    .hero-title { font-size: 52px; }
+    .hero-stats { gap: 32px; flex-wrap: wrap; }
+    .services { padding: 60px 24px 70px; }
+    .services-title { font-size: 34px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .about { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+    .quote-strip { padding: 50px 24px; }
+    .quote-strip-title { font-size: 30px; }
+    .info { grid-template-columns: 1fr; padding: 60px 24px 30px; gap: 36px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-mark">
+      <div class="nav-mark-main chrome">PERFECTION</div>
+      <div class="nav-mark-sub">Lawn &amp; Hauling</div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#quote">Get A Quote</a>
+    </div>
+    <a href="tel:+19102631162" class="nav-call">(910) 263-1162</a>
+  </nav>
+  <div class="zigzag"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Complete Professional Maintenance</div>
+      <h1 class="hero-title display">Your lawn's<br><span class="gold">perfection</span> starts here.</h1>
+      <p class="hero-sub">Mowing, landscaping, maintenance, and hauling for Hope Mills homes and businesses &mdash; done right, every single visit, no contract obligation.</p>
+      <div class="hero-cta-row">
+        <a href="tel:+19102631162" class="btn-primary">Get Your Free Quote</a>
+        <span class="hero-note">Serving Hope Mills &amp; South Fayetteville</span>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num display">7 Years</div>
+          <div class="stat-label">Serving The Community</div>
+        </div>
+        <div>
+          <div class="stat-num display">BBB A+</div>
+          <div class="stat-label">Accredited Business File</div>
+        </div>
+        <div>
+          <div class="stat-num display">No Contract</div>
+          <div class="stat-label">Service On Your Terms</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="zigzag zigzag-flip"></div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-head">
+      <div>
+        <div class="services-eyebrow">What We Do</div>
+        <div class="services-title display">Full-Service Lawn Care</div>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 34 34" fill="none" stroke="#E8B923" stroke-width="2"><circle cx="17" cy="10" r="5"/><path d="M17 15 L17 30 M10 30 L24 30"/></svg>
+        <div class="service-name">Mowing &amp; Edging</div>
+        <div class="service-desc">Weekly or bi-weekly cuts, clean edges, and a lawn that stays sharp all season.</div>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 34 34" fill="none" stroke="#4CAF50" stroke-width="2"><path d="M6 28 Q10 10 17 6 Q24 10 28 28 Z"/><path d="M17 6 L17 28"/></svg>
+        <div class="service-name">Landscaping</div>
+        <div class="service-desc">Beds, mulch, shrub trimming, and full yard redesigns from the ground up.</div>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 34 34" fill="none" stroke="#E8B923" stroke-width="2"><rect x="6" y="6" width="22" height="22" rx="2"/><path d="M6 14 L28 14 M14 6 L14 28"/></svg>
+        <div class="service-name">Property Maintenance</div>
+        <div class="service-desc">Ongoing upkeep &mdash; trimming, cleanup, and seasonal care to keep it looking right.</div>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 34 34" fill="none" stroke="#4CAF50" stroke-width="2"><rect x="4" y="16" width="16" height="10" rx="1"/><path d="M20 20 L26 20 L30 24 L30 26 L20 26 Z"/><circle cx="10" cy="28" r="2"/><circle cx="25" cy="28" r="2"/></svg>
+        <div class="service-name">Hauling</div>
+        <div class="service-desc">Debris removal, yard waste, and cleanup hauling &mdash; big jobs or small.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-frame">
+      <div class="about-frame-label">Hope Mills, NC &mdash; Since 2018</div>
+    </div>
+    <div>
+      <div class="about-eyebrow">The Crew</div>
+      <h2 class="about-title display">Seven years of getting it right.</h2>
+      <p class="about-body">Perfection Lawn Care, Maintenance &amp; Hauling has been serving Hope Mills and South Fayetteville since 2018 &mdash; no contracts, no gimmicks, just reliable work and a crew that shows up when they say they will.</p>
+      <p class="about-body">BBB-listed and built on referrals: most of our clients find us through a neighbor who was already happy with the yard next door.</p>
+      <div class="about-tags">
+        <div class="about-tag">No Contract Required</div>
+        <div class="about-tag">Locally Owned</div>
+        <div class="about-tag">BBB Listed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE STRIP -->
+  <section class="quote-strip" id="quote">
+    <div class="quote-strip-title display">Ready for a lawn that turns heads?</div>
+    <a href="tel:+19102631162" class="btn-dark">Call (910) 263-1162</a>
+  </section>
+
+  <!-- INFO / FOOTER -->
+  <section class="info">
+    <div>
+      <div class="info-block-label">Service Area</div>
+      <div class="info-block-body">
+        Hope Mills, NC<br>
+        &amp; South Fayetteville
+      </div>
+    </div>
+    <div>
+      <div class="info-block-label">Hours</div>
+      <div>
+        <div class="hours-row"><span>Mon &ndash; Fri</span><span>7:00 AM &ndash; 5:00 PM</span></div>
+        <div class="hours-row"><span>Saturday</span><span>By Appointment</span></div>
+        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="info-block-label">Contact</div>
+      <div class="info-block-body">
+        (910) 263-1162<br>
+        Perfectionlawncare96@gmail.com<br>
+        Free quotes, no obligation
+      </div>
+    </div>
+    <div class="footer-bottom" style="grid-column: 1 / -1;">
+      <span>&copy; Perfection Lawn Care, Maintenance &amp; Hauling LLC &mdash; Hope Mills, NC</span>
+      <span>Concept site by AuraLogic</span>
+    </div>
+  </section>
+
+</body>
+</html>
