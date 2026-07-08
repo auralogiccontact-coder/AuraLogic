@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lab Barber and Beauty | Master Barber Tony Davis, Madison AL</title>
+<meta name="description" content="The Lab Barber and Beauty — full service master barber serving Madison and the Huntsville, Tennessee Valley area. Cuts, beard work, and grooming from Tony Davis. 4.9 stars, 225+ reviews. Now accepting new clients.">
+<meta name="keywords" content="barbershop Madison AL, master barber Huntsville, Tony Davis barber, mens haircut Madison Alabama, beard trim Madison AL">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://auralogiccontact-coder.github.io/AuraLogic/thelabbarber/">
+<meta property="og:title" content="The Lab Barber and Beauty | Madison, AL">
+<meta property="og:description" content="Full service master barber serving Madison and the Huntsville, Tennessee Valley area. 4.9 stars, 225+ reviews. Now accepting new clients.">
+<meta property="og:type" content="business.business">
+<meta name="theme-color" content="#12161C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "The Lab Barber and Beauty",
+  "image": "",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8066 Madison Blvd",
+    "addressLocality": "Madison",
+    "addressRegion": "AL",
+    "postalCode": "35758",
+    "addressCountry": "US"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "225"
+  },
+  "priceRange": "$25-$60",
+  "openingHours": "Mo-Su 10:30-22:00",
+  "employee": {
+    "@type": "Person",
+    "name": "Tony Davis",
+    "jobTitle": "Master Barber"
+  }
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #12161C;
+    color: #E8EBEF;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .display {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* background barber-tool icon field, grey-blue tint */
+  .icon-field {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  section, header { position: relative; }
+  section > *:not(.icon-field), header > *:not(.icon-field) { position: relative; z-index: 1; }
+
+  /* ===== ANIMATED CLIPPERS RAIL ===== */
+  .clippers-rail {
+    position: fixed;
+    right: 18px;
+    top: 0;
+    height: 100vh;
+    width: 60px;
+    z-index: 50;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .clipper-icon {
+    width: 34px;
+    opacity: 0.55;
+    animation: buzz 0.18s infinite;
+    transform-origin: center;
+  }
+  .clipper-icon:nth-child(2) { animation-delay: 0.05s; }
+  .clipper-icon:nth-child(3) { animation-delay: 0.09s; }
+  .clipper-icon:nth-child(4) { animation-delay: 0.03s; }
+  @keyframes buzz {
+    0% { transform: rotate(-3deg) translateX(0); }
+    50% { transform: rotate(3deg) translateX(1px); }
+    100% { transform: rotate(-3deg) translateX(0); }
+  }
+  @media (max-width: 900px) {
+    .clippers-rail { display: none; }
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 56px;
+    border-bottom: 1px solid rgba(232,235,239,0.08);
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav-logo svg { width: 38px; height: 38px; }
+  .nav-logo-text {
+    line-height: 1.05;
+  }
+  .nav-logo-main {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #E8EBEF;
+    text-transform: uppercase;
+  }
+  .nav-logo-sub {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5B7C99;
+    font-weight: 600;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .nav-links a { border-bottom: 1px solid transparent; padding-bottom: 4px; transition: border-color .2s, color .2s; }
+  .nav-links a:hover { border-color: #5B7C99; color: #7FA3C0; }
+  .nav-book {
+    background-color: #5B7C99;
+    color: #12161C;
+    padding: 11px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background-color .2s;
+  }
+  .nav-book:hover { background-color: #7FA3C0; }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 30px 56px 0;
+    background:
+      radial-gradient(circle at 88% 12%, rgba(91,124,153,0.14) 0%, transparent 45%),
+      #12161C;
+  }
+  .hero-inner { padding: 60px 0 90px; max-width: 920px; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(91,124,153,0.15);
+    border: 1px solid rgba(91,124,153,0.4);
+    color: #7FA3C0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    margin-bottom: 26px;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #6FCF7A;
+    display: inline-block;
+  }
+  .hero-title {
+    font-size: 84px;
+    line-height: 0.98;
+    color: #E8EBEF;
+  }
+  .hero-title .accent { color: #7FA3C0; }
+  .hero-sub {
+    max-width: 500px;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #9AA3AD;
+    margin-top: 24px;
+    font-weight: 300;
+  }
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background-color: #5B7C99;
+    color: #12161C;
+    padding: 17px 36px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: background-color .2s;
+  }
+  .btn-primary:hover { background-color: #7FA3C0; }
+  .hero-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #9AA3AD;
+    font-weight: 500;
+  }
+  .hero-rating strong { color: #E8EBEF; font-family: 'Barlow Condensed', sans-serif; font-size: 20px; }
+  .hero-stats {
+    display: flex;
+    gap: 56px;
+    margin-top: 70px;
+    border-top: 1px solid rgba(232,235,239,0.1);
+    padding-top: 28px;
+    flex-wrap: wrap;
+  }
+  .stat-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 0.5px; color: #E8EBEF; }
+  .stat-label { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: #6b747d; margin-top: 6px; font-weight: 600; }
+
+  /* ===== SERVICES ===== */
+  .services {
+    background-color: #171C24;
+    padding: 90px 56px 100px;
+    border-top: 1px solid rgba(232,235,239,0.08);
+    border-bottom: 1px solid rgba(232,235,239,0.08);
+  }
+  .services-head { margin-bottom: 50px; }
+  .services-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7FA3C0;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .services-title {
+    font-size: 46px;
+    line-height: 1;
+    font-weight: 700;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background-color: rgba(91,124,153,0.18);
+  }
+  .service-row {
+    background-color: #12161C;
+    padding: 32px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: background-color .2s;
+  }
+  .service-row:hover { background-color: #181e27; }
+  .service-name { font-size: 18px; font-weight: 600; color: #E8EBEF; }
+  .service-sub { font-size: 13px; color: #6b747d; margin-top: 4px; }
+  .service-price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #7FA3C0;
+    white-space: nowrap;
+  }
+
+  /* ===== REVIEWS ===== */
+  .reviews {
+    padding: 100px 56px;
+  }
+  .reviews-head { margin-bottom: 50px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
+  .reviews-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7FA3C0;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .reviews-title { font-size: 44px; font-weight: 700; line-height: 1; }
+  .reviews-score { display: flex; align-items: baseline; gap: 10px; }
+  .reviews-score-num { font-family: 'Barlow Condensed', sans-serif; font-size: 46px; font-weight: 700; color: #E8EBEF; }
+  .reviews-score-label { font-size: 13px; color: #6b747d; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .review-card {
+    background-color: #171C24;
+    border: 1px solid rgba(232,235,239,0.08);
+    padding: 30px 26px;
+  }
+  .review-stars { color: #7FA3C0; font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+  .review-text { font-size: 14px; line-height: 1.7; color: #b9c0c7; font-weight: 300; margin-bottom: 20px; }
+  .review-author { font-size: 12px; font-weight: 600; color: #E8EBEF; text-transform: uppercase; letter-spacing: 0.5px; }
+  .review-service { font-size: 11px; color: #6b747d; margin-top: 2px; }
+
+  /* ===== AMENITIES / ABOUT ===== */
+  .about {
+    background-color: #171C24;
+    padding: 90px 56px;
+    border-top: 1px solid rgba(232,235,239,0.08);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .about-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7FA3C0;
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  .about-title { font-size: 38px; line-height: 1.1; font-weight: 700; margin-bottom: 22px; }
+  .about-body { font-size: 16px; line-height: 1.8; color: #9AA3AD; max-width: 480px; font-weight: 300; }
+  .amenities-list { display: flex; flex-direction: column; gap: 18px; }
+  .amenity-row { display: flex; align-items: center; gap: 16px; }
+  .amenity-icon {
+    width: 42px; height: 42px;
+    background-color: rgba(91,124,153,0.15);
+    border: 1px solid rgba(91,124,153,0.35);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .amenity-name { font-size: 15px; font-weight: 500; color: #E8EBEF; }
+
+  /* ===== BOOK STRIP ===== */
+  .book-strip {
+    background-color: #5B7C99;
+    color: #12161C;
+    padding: 70px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .book-strip-title { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 700; line-height: 1; max-width: 560px; }
+  .btn-dark {
+    background-color: #12161C;
+    color: #E8EBEF;
+    padding: 18px 38px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background-color .2s;
+  }
+  .btn-dark:hover { background-color: #1e242d; }
+
+  /* ===== FOOTER ===== */
+  .info {
+    padding: 90px 56px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .info-block-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #7FA3C0; margin-bottom: 16px; font-weight: 700; }
+  .info-block-body { font-size: 15px; line-height: 1.8; color: #E8EBEF; font-weight: 300; }
+  .footer-bottom {
+    margin-top: 70px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(232,235,239,0.1);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #6b747d;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 24px 24px 0; }
+    .hero-inner { padding: 40px 0 60px; }
+    .hero-title { font-size: 48px; }
+    .services { padding: 60px 24px 70px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .reviews { padding: 60px 24px; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+    .book-strip { padding: 50px 24px; }
+    .info { grid-template-columns: 1fr; padding: 60px 24px 30px; gap: 30px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Animated clippers rail, right edge -->
+  <div class="clippers-rail" aria-hidden="true">
+    <svg class="clipper-icon" viewBox="0 0 24 44" fill="none" stroke="#7FA3C0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="2" width="16" height="24" rx="3"/>
+      <path d="M6 26 L18 26 L15 40 L9 40 Z"/>
+      <line x1="9" y1="7" x2="9" y2="21"/>
+      <line x1="12" y1="7" x2="12" y2="21"/>
+      <line x1="15" y1="7" x2="15" y2="21"/>
+    </svg>
+    <svg class="clipper-icon" viewBox="0 0 24 44" fill="none" stroke="#5B7C99" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="2" width="16" height="24" rx="3"/>
+      <path d="M6 26 L18 26 L15 40 L9 40 Z"/>
+      <line x1="9" y1="7" x2="9" y2="21"/>
+      <line x1="12" y1="7" x2="12" y2="21"/>
+      <line x1="15" y1="7" x2="15" y2="21"/>
+    </svg>
+    <svg class="clipper-icon" viewBox="0 0 24 44" fill="none" stroke="#7FA3C0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="2" width="16" height="24" rx="3"/>
+      <path d="M6 26 L18 26 L15 40 L9 40 Z"/>
+      <line x1="9" y1="7" x2="9" y2="21"/>
+      <line x1="12" y1="7" x2="12" y2="21"/>
+      <line x1="15" y1="7" x2="15" y2="21"/>
+    </svg>
+    <svg class="clipper-icon" viewBox="0 0 24 44" fill="none" stroke="#5B7C99" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="2" width="16" height="24" rx="3"/>
+      <path d="M6 26 L18 26 L15 40 L9 40 Z"/>
+      <line x1="9" y1="7" x2="9" y2="21"/>
+      <line x1="12" y1="7" x2="12" y2="21"/>
+      <line x1="15" y1="7" x2="15" y2="21"/>
+    </svg>
+  </div>
+
+  <!-- Barber tool icon pattern, reused as a background field -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <pattern id="labPattern" width="210" height="210" patternUnits="userSpaceOnUse" patternTransform="rotate(6)">
+        <g transform="translate(8,8)" stroke="#5B7C99" stroke-width="2" fill="none" stroke-linecap="round">
+          <circle cx="6" cy="6" r="6"/>
+          <circle cx="6" cy="32" r="6"/>
+          <line x1="10" y1="10" x2="44" y2="38"/>
+          <line x1="10" y1="28" x2="44" y2="0"/>
+        </g>
+        <g transform="translate(115,25) rotate(30)" stroke="#5B7C99" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M0,0 L44,0 L54,6 L44,12 L0,12 Z"/>
+          <line x1="54" y1="6" x2="76" y2="6"/>
+        </g>
+        <g transform="translate(45,115)" stroke="#5B7C99" stroke-width="1.8" fill="none" stroke-linecap="round">
+          <line x1="0" y1="0" x2="56" y2="0"/>
+          <line x1="0" y1="0" x2="0" y2="14"/>
+          <line x1="8" y1="0" x2="8" y2="14"/>
+          <line x1="16" y1="0" x2="16" y2="14"/>
+          <line x1="24" y1="0" x2="24" y2="14"/>
+          <line x1="32" y1="0" x2="32" y2="14"/>
+          <line x1="40" y1="0" x2="40" y2="14"/>
+          <line x1="48" y1="0" x2="48" y2="14"/>
+          <line x1="56" y1="0" x2="56" y2="14"/>
+        </g>
+        <g transform="translate(140,140)" stroke="#5B7C99" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="0" y="0" width="15" height="30" rx="3"/>
+          <path d="M2,30 L13,30 L10,38 L5,38 Z"/>
+          <line x1="4" y1="6" x2="4" y2="24"/>
+          <line x1="7.5" y1="6" x2="7.5" y2="24"/>
+          <line x1="11" y1="6" x2="11" y2="24"/>
+        </g>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-logo">
+      <svg viewBox="0 0 40 40" fill="none">
+        <rect x="1" y="1" width="38" height="38" rx="4" stroke="#5B7C99" stroke-width="1.5"/>
+        <path d="M14 10 L14 22 Q14 28 20 28 Q26 28 26 22 L26 10" stroke="#7FA3C0" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <line x1="12" y1="10" x2="28" y2="10" stroke="#7FA3C0" stroke-width="2" stroke-linecap="round"/>
+        <line x1="14" y1="30" x2="26" y2="30" stroke="#5B7C99" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="17" cy="19" r="1.6" fill="#E8EBEF"/>
+        <circle cx="21" cy="23" r="1.2" fill="#E8EBEF"/>
+        <circle cx="23" cy="17" r="1" fill="#E8EBEF"/>
+      </svg>
+      <div class="nav-logo-text">
+        <div class="nav-logo-main">The Lab</div>
+        <div class="nav-logo-sub">Barber &amp; Beauty</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+    </nav>
+    <a href="#book" class="nav-book">Book Now</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="icon-field">
+      <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#labPattern)" opacity="0.07"/></svg>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-badge">Now Accepting New Clients</div>
+      <h1 class="hero-title display">Precision cuts.<br>Lab-tested <span class="accent">results.</span></h1>
+      <p class="hero-sub">Full service master barber work from Tony Davis, serving Madison and the greater Huntsville / Tennessee Valley area. Fades, beard work, and grooming done with real attention to detail.</p>
+      <div class="hero-cta-row">
+        <a href="#book" class="btn-primary">Book Your Appointment</a>
+        <div class="hero-rating">
+          <strong>4.9</strong> &#9733;&#9733;&#9733;&#9733;&#9733; <span>225 reviews</span>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num display">Tony Davis</div>
+          <div class="stat-label">Master Barber</div>
+        </div>
+        <div>
+          <div class="stat-num display">Madison, AL</div>
+          <div class="stat-label">8066 Madison Blvd</div>
+        </div>
+        <div>
+          <div class="stat-num display">Open Late</div>
+          <div class="stat-label">Today Until 10:00 PM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="icon-field">
+      <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#labPattern)" opacity="0.05"/></svg>
+    </div>
+    <div class="services-head">
+      <div class="services-eyebrow">The Menu</div>
+      <div class="services-title display">Services &amp; Pricing</div>
+    </div>
+    <div class="services-grid">
+      <div class="service-row">
+        <div>
+          <div class="service-name">The Cut You Deserve</div>
+          <div class="service-sub">Picture perfect cut with hot towel wash &amp; enhancements</div>
+        </div>
+        <div class="service-price display">$50</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">The Cut You Deserve + Beard</div>
+          <div class="service-sub">Haircut, hot towel razor, and full beard enhancement</div>
+        </div>
+        <div class="service-price display">$60</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Basic Clean Up</div>
+          <div class="service-sub">Quick, precise maintenance cut</div>
+        </div>
+        <div class="service-price display">$25</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Beard Line</div>
+          <div class="service-sub">Sharp edges, clean shape</div>
+        </div>
+        <div class="service-price display">$40</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Premium Cut &amp; Beard</div>
+          <div class="service-sub">The full lab treatment, top to chin</div>
+        </div>
+        <div class="service-price display">$45</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Teens &amp; College Cuts</div>
+          <div class="service-sub">Student-friendly service, same attention to detail</div>
+        </div>
+        <div class="service-price display">$25+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="reviews-head">
+      <div>
+        <div class="reviews-eyebrow">What Clients Say</div>
+        <div class="reviews-title display">225+ Five Star Visits</div>
+      </div>
+      <div class="reviews-score">
+        <div class="reviews-score-num display">4.9</div>
+        <div class="reviews-score-label">average rating<br>on Booksy</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">Tony took great care of my son's haircut &mdash; patient, precise, and genuinely recommend him to anyone looking for a reliable barber.</div>
+        <div class="review-author">Neel</div>
+        <div class="review-service">Basic Clean Up</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">Great location, solid experience, and my first barber in years I'll definitely keep coming back to.</div>
+        <div class="review-author">Joseph</div>
+        <div class="review-service">Beard Line</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">Clean fade, perfectly shaped beard trim &mdash; exactly the kind of consistency that keeps clients coming back.</div>
+        <div class="review-author">Ladarrian</div>
+        <div class="review-service">Basic Cut &amp; Beard</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / AMENITIES -->
+  <section class="about" id="about">
+    <div>
+      <div class="about-eyebrow">The Barber</div>
+      <h2 class="about-title display">Full service. Lab-level precision.</h2>
+      <p class="about-body">Tony Davis brings full service master barber work to Madison, serving the greater Huntsville and Tennessee Valley area. Every cut gets the same attention to detail &mdash; whether it's a quick clean-up or the full treatment with hot towel and razor work.</p>
+      <p class="about-body" style="margin-top:16px;">Now accepting new clients. Heads up: a $10 late-night charge applies after 7pm.</p>
+    </div>
+    <div class="amenities-list">
+      <div class="amenity-row">
+        <div class="amenity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FA3C0" stroke-width="2"><path d="M5 17 L5 7 Q5 4 8 4 L16 4 Q19 4 19 7 L19 17"/><path d="M5 17 L19 17 L19 20 L5 20 Z"/></svg></div>
+        <div class="amenity-name">On-Site Parking</div>
+      </div>
+      <div class="amenity-row">
+        <div class="amenity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FA3C0" stroke-width="2"><path d="M2 8 Q12 -1 22 8"/><path d="M5.5 11.5 Q12 5.5 18.5 11.5"/><path d="M9 15 Q12 12 15 15"/><circle cx="12" cy="19" r="1.2" fill="#7FA3C0"/></svg></div>
+        <div class="amenity-name">Free WiFi</div>
+      </div>
+      <div class="amenity-row">
+        <div class="amenity-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FA3C0" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/></svg></div>
+        <div class="amenity-name">Credit Cards Accepted</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK STRIP -->
+  <section class="book-strip" id="book">
+    <div class="book-strip-title display">Ready for a fresh cut?</div>
+    <a href="#" class="btn-dark">Book Your Appointment</a>
+  </section>
+
+  <!-- INFO / FOOTER -->
+  <footer class="info">
+    <div>
+      <div class="info-block-label">Location</div>
+      <div class="info-block-body">
+        8066 Madison Blvd<br>
+        Madison, AL 35758
+      </div>
+    </div>
+    <div>
+      <div class="info-block-label">Hours</div>
+      <div class="info-block-body">
+        Daily<br>
+        10:30 AM &ndash; 10:00 PM<br>
+        <span style="color:#6b747d; font-size:12px;">$10 late charge after 7:00 PM</span>
+      </div>
+    </div>
+    <div>
+      <div class="info-block-label">Rating</div>
+      <div class="info-block-body">
+        4.9 out of 5 stars<br>
+        225+ verified reviews
+      </div>
+    </div>
+    <div class="footer-bottom" style="grid-column: 1 / -1;">
+      <span>&copy; The Lab Barber and Beauty &mdash; Madison, AL</span>
+      <span>Concept site by AuraLogic</span>
+    </div>
+  </footer>
+
+</body>
+</html>
