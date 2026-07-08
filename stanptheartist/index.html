@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stan P The Artist — master barber in Whitehall, OH. Precision fades, beard sculpting, and hot towel shaves. Book your chair time today.">
+<title>Stan P The Artist | Master Barber, Whitehall OH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: #121212;
+    color: #E8E1D3;
+    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .display {
+    font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* ===== NAV ===== */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(232,225,211,0.1);
+  }
+  .nav-mark {
+    font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+    font-size: 21px;
+    letter-spacing: 1.5px;
+    color: #E8E1D3;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .nav-mark span { color: #9C7A3C; }
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  .nav-links a { border-bottom: 1px solid transparent; padding-bottom: 4px; transition: border-color .2s, color .2s; }
+  .nav-links a:hover { border-color: #9C7A3C; color: #9C7A3C; }
+  .nav-call {
+    background-color: #9C7A3C;
+    color: #121212;
+    padding: 12px 26px;
+    border-radius: 0px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: background-color .2s;
+  }
+  .nav-call:hover { background-color: #B8935A; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 60px 60px 110px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(156,122,60,0.10) 0%, transparent 45%),
+      #121212;
+  }
+  .icon-field {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero > *:not(.icon-field) { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #9C7A3C;
+    margin-bottom: 30px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 46px;
+    height: 2px;
+    background-color: #9C7A3C;
+    display: inline-block;
+  }
+  .hero-title {
+    font-size: 96px;
+    line-height: 0.95;
+    color: #E8E1D3;
+    font-weight: 400;
+    max-width: 920px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .hero-title .accent {
+    color: #9C7A3C;
+  }
+  .hero-divider {
+    margin: 34px 0 6px;
+    width: 90px;
+    height: 3px;
+    background-color: #9C7A3C;
+  }
+  .hero-sub {
+    max-width: 470px;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #a8a094;
+    margin-top: 26px;
+    font-weight: 300;
+  }
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 46px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background-color: #9C7A3C;
+    color: #121212;
+    padding: 18px 38px;
+    border-radius: 0px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: background-color .2s;
+  }
+  .btn-primary:hover { background-color: #B8935A; }
+  .hero-note {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6b6558;
+    font-weight: 500;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 68px;
+    margin-top: 76px;
+    border-top: 1px solid rgba(232,225,211,0.12);
+    padding-top: 32px;
+    max-width: 660px;
+  }
+  .stat-num { font-family: 'Anton', Impact, 'Arial Narrow', sans-serif; font-size: 32px; color: #E8E1D3; font-weight: 700; }
+  .stat-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #6b6558; margin-top: 6px; font-weight: 500; }
+
+  /* ===== GALLERY / SERVICES ===== */
+  .gallery {
+    background-color: #0B0B0B;
+    color: #E8E1D3;
+    padding: 100px 60px 110px;
+    position: relative;
+    border-top: 1px solid rgba(232,225,211,0.1);
+    overflow: hidden;
+  }
+  .gallery > *:not(.icon-field) { position: relative; z-index: 1; }
+  .gallery-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .gallery-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #9C7A3C;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .gallery-title {
+    font-size: 46px;
+    line-height: 1.05;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+  .gallery-note {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6b6558;
+    max-width: 260px;
+    font-weight: 500;
+  }
+  .plates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background-color: rgba(156,122,60,0.2);
+  }
+  .plate {
+    background-color: #121212;
+    padding: 46px 34px;
+    position: relative;
+    transition: background-color .25s;
+    border-bottom: 3px solid transparent;
+  }
+  .plate:hover { background-color: #181818; border-bottom-color: #9C7A3C; }
+  .plate-num {
+    font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+    font-size: 13px;
+    color: #9C7A3C;
+    letter-spacing: 1.5px;
+    margin-bottom: 26px;
+    font-weight: 700;
+  }
+  .plate-title {
+    font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .plate-medium {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #6b6558;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .plate-desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #a8a094;
+    font-weight: 300;
+    margin-bottom: 24px;
+    min-height: 62px;
+  }
+  .plate-price {
+    font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+    font-size: 21px;
+    color: #9C7A3C;
+    font-weight: 700;
+  }
+
+  /* ===== ARTIST STATEMENT ===== */
+  .statement {
+    background-color: #1A150F;
+    padding: 110px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 90px;
+    align-items: center;
+    border-top: 1px solid rgba(232,225,211,0.1);
+  }
+  .statement-frame {
+    background: linear-gradient(155deg, #1F3328 0%, #121F19 100%);
+    aspect-ratio: 4/5;
+    position: relative;
+    border: 3px solid #9C7A3C;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+  }
+  .statement-frame-label {
+    color: #E8E1D3;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-weight: 600;
+  }
+  .statement-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #9C7A3C;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .statement-title {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 28px;
+    font-weight: 400;
+    color: #E8E1D3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .statement-body {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #a8a094;
+    max-width: 520px;
+    font-weight: 300;
+  }
+  .statement-body + .statement-body { margin-top: 20px; }
+  .statement-sign {
+    font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #9C7A3C;
+    margin-top: 32px;
+  }
+
+  /* ===== BOOK STRIP ===== */
+  .book-strip {
+    background-color: #9C7A3C;
+    color: #121212;
+    padding: 76px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .book-strip-title {
+    font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+    font-size: 38px;
+    line-height: 1.1;
+    max-width: 560px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+  .btn-dark {
+    background-color: #121212;
+    color: #E8E1D3;
+    padding: 20px 40px;
+    border-radius: 0px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background-color .2s;
+  }
+  .btn-dark:hover { background-color: #000; }
+
+  /* ===== INFO / FOOTER ===== */
+  .info {
+    background-color: #0B0B0B;
+    padding: 100px 60px 44px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .info > *:not(.icon-field) { position: relative; z-index: 1; }
+  .info-block-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9C7A3C;
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+  .info-block-body {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #E8E1D3;
+    font-weight: 300;
+  }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(232,225,211,0.1);
+    max-width: 260px;
+    font-weight: 300;
+    color: #E8E1D3;
+  }
+  .footer-bottom {
+    margin-top: 76px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(232,225,211,0.1);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #6b6558;
+    letter-spacing: 0.5px;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    .nav { padding: 22px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 34px 24px 64px; }
+    .hero-title { font-size: 52px; }
+    .hero-stats { gap: 36px; flex-wrap: wrap; }
+    .gallery { padding: 64px 24px 74px; }
+    .gallery-title { font-size: 32px; }
+    .plates { grid-template-columns: 1fr; }
+    .statement { grid-template-columns: 1fr; gap: 44px; padding: 64px 24px; }
+    .book-strip { padding: 54px 24px; }
+    .book-strip-title { font-size: 28px; }
+    .info { grid-template-columns: 1fr; padding: 64px 24px 34px; gap: 38px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Barber tool icon pattern, reused across sections as a subtle background field -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <pattern id="barberPattern" width="220" height="220" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+        <!-- open scissors -->
+        <g transform="translate(10,10)" stroke="#9C7A3C" stroke-width="2.5" fill="none" stroke-linecap="round">
+          <circle cx="6" cy="6" r="6"/>
+          <circle cx="6" cy="34" r="6"/>
+          <line x1="10" y1="10" x2="46" y2="40"/>
+          <line x1="10" y1="30" x2="46" y2="0"/>
+        </g>
+        <!-- straight razor -->
+        <g transform="translate(120,30) rotate(35)" stroke="#9C7A3C" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M0,0 L48,0 L58,7 L48,14 L0,14 Z"/>
+          <line x1="58" y1="7" x2="82" y2="7"/>
+        </g>
+        <!-- comb -->
+        <g transform="translate(50,120)" stroke="#9C7A3C" stroke-width="2.2" fill="none" stroke-linecap="round">
+          <line x1="0" y1="0" x2="60" y2="0"/>
+          <line x1="0" y1="0" x2="0" y2="16"/>
+          <line x1="8" y1="0" x2="8" y2="16"/>
+          <line x1="16" y1="0" x2="16" y2="16"/>
+          <line x1="24" y1="0" x2="24" y2="16"/>
+          <line x1="32" y1="0" x2="32" y2="16"/>
+          <line x1="40" y1="0" x2="40" y2="16"/>
+          <line x1="48" y1="0" x2="48" y2="16"/>
+          <line x1="60" y1="0" x2="60" y2="16"/>
+        </g>
+        <!-- clippers -->
+        <g transform="translate(150,150)" stroke="#9C7A3C" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="0" y="0" width="16" height="34" rx="3"/>
+          <path d="M2,34 L14,34 L11,44 L5,44 Z"/>
+          <line x1="4" y1="6" x2="4" y2="26"/>
+          <line x1="8" y1="6" x2="8" y2="26"/>
+          <line x1="12" y1="6" x2="12" y2="26"/>
+        </g>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-mark">STAN P <span>THE ARTIST</span></div>
+    <div class="nav-links">
+      <a href="#gallery">Gallery</a>
+      <a href="#statement">The Artist</a>
+      <a href="#book">Book</a>
+    </div>
+    <a href="tel:+12694254599" class="nav-call">(269) 425-4599</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="icon-field">
+      <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#barberPattern)" opacity="0.08"/></svg>
+    </div>
+    <div class="hero-eyebrow">Master Barber &mdash; Whitehall, Ohio</div>
+    <h1 class="hero-title display">Every fade<br>is a <span class="accent">canvas.</span></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Precision fades, sharp lineups, and beard sculpting from a barber who treats the chair like a studio. Walk in with an idea &mdash; walk out with a finished piece.</p>
+    <div class="hero-cta-row">
+      <a href="tel:+12694254599" class="btn-primary">Book Your Chair Time</a>
+      <span class="hero-note">Walk-ins welcome &mdash; call ahead</span>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num display">5.0</div>
+        <div class="stat-label">Rated on Booksy</div>
+      </div>
+      <div>
+        <div class="stat-num display">One Chair</div>
+        <div class="stat-label">Personal Attention, Every Visit</div>
+      </div>
+      <div>
+        <div class="stat-num display">Whitehall</div>
+        <div class="stat-label">825 Beechwood Rd</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY / SERVICES -->
+  <section class="gallery" id="gallery">
+    <div class="icon-field">
+      <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#barberPattern)" opacity="0.06"/></svg>
+    </div>
+    <div class="gallery-head">
+      <div>
+        <div class="gallery-eyebrow">The Collection</div>
+        <div class="gallery-title display">Services On Display</div>
+      </div>
+      <div class="gallery-note">Every piece finished with a hot towel &amp; straight-edge line-up</div>
+    </div>
+    <div class="plates">
+      <div class="plate">
+        <div class="plate-num">I.</div>
+        <div class="plate-title display">The Signature Fade</div>
+        <div class="plate-medium">Clippers &amp; Shears</div>
+        <div class="plate-desc">A precision taper or skin fade, blended and finished with a razor-sharp lineup.</div>
+        <div class="plate-price display">$35</div>
+      </div>
+      <div class="plate">
+        <div class="plate-num">II.</div>
+        <div class="plate-title display">Beard Sculpt</div>
+        <div class="plate-medium">Straight Razor &amp; Hot Towel</div>
+        <div class="plate-desc">Shape, line, and condition &mdash; a clean edge that holds its form for weeks.</div>
+        <div class="plate-price display">$20</div>
+      </div>
+      <div class="plate">
+        <div class="plate-num">III.</div>
+        <div class="plate-title display">Full Composition</div>
+        <div class="plate-medium">Cut + Beard + Hot Towel Shave</div>
+        <div class="plate-desc">The complete piece &mdash; fade, beard, and a finish that leaves you looking sharp.</div>
+        <div class="plate-price display">$50</div>
+      </div>
+      <div class="plate">
+        <div class="plate-num">IV.</div>
+        <div class="plate-title display">Kids' Cut</div>
+        <div class="plate-medium">Ages 12 &amp; Under</div>
+        <div class="plate-desc">Patient, precise, and painless &mdash; a first-class cut for the next generation.</div>
+        <div class="plate-price display">$25</div>
+      </div>
+      <div class="plate">
+        <div class="plate-num">V.</div>
+        <div class="plate-title display">Design Line-Up</div>
+        <div class="plate-medium">Freehand Detail Work</div>
+        <div class="plate-desc">Custom parts, part-lines, and freehand designs cut into the fade.</div>
+        <div class="plate-price display">+$10</div>
+      </div>
+      <div class="plate">
+        <div class="plate-num">VI.</div>
+        <div class="plate-title display">Touch-Up</div>
+        <div class="plate-medium">Between-Appointment Cleanup</div>
+        <div class="plate-desc">A quick edge-up and neckline clean to keep your fade sharp between visits.</div>
+        <div class="plate-price display">$15</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTIST STATEMENT -->
+  <section class="statement" id="statement">
+    <div class="statement-frame">
+      <div class="statement-frame-label">Studio &mdash; 825 Beechwood Rd</div>
+    </div>
+    <div>
+      <div class="statement-eyebrow">Artist Statement</div>
+      <h2 class="statement-title display">Barbering is a craft. Stan treats it like one.</h2>
+      <p class="statement-body">Every client who sits in the chair leaves with more than a haircut &mdash; they leave with a piece Stan put real thought into. No rushed cuts, no cookie-cutter fades. Just a barber who studies your hairline the way an artist studies a canvas before the first stroke.</p>
+      <p class="statement-body">Whitehall's been coming through for the consistency: same sharp lines, same steady hand, every single visit.</p>
+      <div class="statement-sign">&mdash; Stan</div>
+    </div>
+  </section>
+
+  <!-- BOOK STRIP -->
+  <section class="book-strip" id="book">
+    <div class="book-strip-title display">Ready For Your Next Piece?</div>
+    <a href="tel:+12694254599" class="btn-dark">Call (269) 425-4599</a>
+  </section>
+
+  <!-- INFO / FOOTER -->
+  <section class="info">
+    <div class="icon-field">
+      <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#barberPattern)" opacity="0.05"/></svg>
+    </div>
+    <div>
+      <div class="info-block-label">Studio</div>
+      <div class="info-block-body">
+        825 Beechwood Rd<br>
+        Whitehall, OH 43213
+      </div>
+    </div>
+    <div>
+      <div class="info-block-label">Hours</div>
+      <div>
+        <div class="hours-row"><span>Tue &ndash; Fri</span><span>9:00 AM &ndash; 6:00 PM</span></div>
+        <div class="hours-row"><span>Saturday</span><span>By Appointment</span></div>
+        <div class="hours-row"><span>Sun &ndash; Mon</span><span>Closed</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="info-block-label">Contact</div>
+      <div class="info-block-body">
+        (269) 425-4599<br>
+        Book via Booksy or call direct
+      </div>
+    </div>
+    <div class="footer-bottom" style="grid-column: 1 / -1;">
+      <span>&copy; Stan P The Artist &mdash; Whitehall, OH</span>
+      <span>Concept site by AuraLogic</span>
+    </div>
+  </section>
+
+</body>
+</html>
