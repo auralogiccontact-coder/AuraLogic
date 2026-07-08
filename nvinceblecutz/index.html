@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="N-Vince-ble Cutz — barber suite in Brandon, FL. Men's cuts, fades, beard grooming, and straight razor shaves. Call or text to book.">
+<title>N-Vince-ble Cutz | Barber Suite, Brandon FL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: #0A0A0A;
+    color: #EDEAE3;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .display {
+    font-family: 'Bebas Neue', 'Arial Narrow', Impact, sans-serif;
+    letter-spacing: 1px;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* barber pole stripe accent bar, reused as a signature divider */
+  .stripe-bar {
+    height: 6px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #A32638 0px, #A32638 14px,
+      #EDEAE3 14px, #EDEAE3 28px,
+      #1B3A5C 28px, #1B3A5C 42px
+    );
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 56px;
+    border-bottom: 1px solid rgba(237,234,227,0.08);
+  }
+  .nav-mark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #EDEAE3;
+  }
+  .nav-mark span { color: #C9A227; }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .nav-links a { border-bottom: 1px solid transparent; padding-bottom: 4px; transition: border-color .2s, color .2s; }
+  .nav-links a:hover { border-color: #C9A227; color: #C9A227; }
+  .nav-call {
+    background-color: #C9A227;
+    color: #0A0A0A;
+    padding: 11px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background-color .2s;
+  }
+  .nav-call:hover { background-color: #E0BC3C; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 90px 56px 100px;
+    background:
+      radial-gradient(circle at 88% 10%, rgba(201,162,39,0.10) 0%, transparent 45%),
+      #0A0A0A;
+  }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C9A227;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 42px;
+    height: 2px;
+    background-color: #C9A227;
+  }
+  .hero-title {
+    font-size: 116px;
+    line-height: 0.92;
+    color: #EDEAE3;
+    max-width: 900px;
+  }
+  .hero-title .accent { color: #C9A227; }
+  .hero-stripe {
+    width: 220px;
+    margin: 30px 0 8px;
+  }
+  .hero-sub {
+    max-width: 480px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #9d9a92;
+    margin-top: 24px;
+    font-weight: 300;
+  }
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 42px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background-color: #C9A227;
+    color: #0A0A0A;
+    padding: 17px 36px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: background-color .2s;
+  }
+  .btn-primary:hover { background-color: #E0BC3C; }
+  .hero-note {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6b6860;
+    font-weight: 600;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 60px;
+    margin-top: 70px;
+    border-top: 1px solid rgba(237,234,227,0.1);
+    padding-top: 28px;
+    max-width: 620px;
+  }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: #EDEAE3; letter-spacing: 1px; }
+  .stat-label { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: #6b6860; margin-top: 6px; font-weight: 600; }
+
+  /* ===== SERVICES ===== */
+  .services {
+    background-color: #111111;
+    padding: 90px 56px 100px;
+    border-top: 1px solid rgba(237,234,227,0.08);
+    border-bottom: 1px solid rgba(237,234,227,0.08);
+  }
+  .services-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .services-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C9A227;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .services-title {
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background-color: rgba(201,162,39,0.15);
+  }
+  .service-row {
+    background-color: #0A0A0A;
+    padding: 34px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: background-color .2s;
+  }
+  .service-row:hover { background-color: #141414; }
+  .service-name {
+    font-size: 19px;
+    font-weight: 600;
+    color: #EDEAE3;
+  }
+  .service-sub {
+    font-size: 12px;
+    color: #6b6860;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+  .service-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: #C9A227;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  /* ===== ABOUT / SUITE ===== */
+  .about {
+    padding: 100px 56px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-frame {
+    background: linear-gradient(160deg, #1B3A5C 0%, #0f2338 100%);
+    aspect-ratio: 4/5;
+    border: 2px solid #C9A227;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+  }
+  .about-frame-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #EDEAE3;
+    opacity: 0.8;
+    font-weight: 600;
+  }
+  .about-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C9A227;
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  .about-title {
+    font-size: 44px;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+  .about-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #9d9a92;
+    max-width: 500px;
+    font-weight: 300;
+  }
+  .about-body + .about-body { margin-top: 16px; }
+  .about-tags {
+    display: flex;
+    gap: 12px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+  }
+  .about-tag {
+    border: 1px solid rgba(201,162,39,0.4);
+    color: #C9A227;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    font-weight: 600;
+  }
+
+  /* ===== BOOK STRIP ===== */
+  .book-strip {
+    background-color: #C9A227;
+    color: #0A0A0A;
+    padding: 72px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .book-strip-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: 1px;
+    max-width: 560px;
+  }
+  .btn-dark {
+    background-color: #0A0A0A;
+    color: #EDEAE3;
+    padding: 18px 38px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background-color .2s;
+  }
+  .btn-dark:hover { background-color: #1a1a1a; }
+
+  /* ===== INFO / FOOTER ===== */
+  .info {
+    background-color: #0A0A0A;
+    padding: 90px 56px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .info-block-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C9A227;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .info-block-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #EDEAE3;
+    font-weight: 300;
+  }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(237,234,227,0.1);
+    max-width: 260px;
+    font-weight: 300;
+  }
+  .footer-bottom {
+    margin-top: 70px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(237,234,227,0.1);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #6b6860;
+    letter-spacing: 0.5px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 900px) {
+    .nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 44px 24px 60px; }
+    .hero-title { font-size: 60px; }
+    .hero-stats { gap: 32px; flex-wrap: wrap; }
+    .services { padding: 60px 24px 70px; }
+    .services-title { font-size: 36px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+    .book-strip { padding: 50px 24px; }
+    .book-strip-title { font-size: 30px; }
+    .info { grid-template-columns: 1fr; padding: 60px 24px 30px; gap: 36px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-mark">N-VINCE-BLE <span>CUTZ</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">The Suite</a>
+      <a href="#book">Book</a>
+    </div>
+    <a href="tel:+18133174007" class="nav-call">(813) 317-4007</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Barber Suite &mdash; Brandon, Florida</div>
+    <h1 class="hero-title display">Quality<br>over <span class="accent">quantity.</span></h1>
+    <div class="hero-stripe stripe-bar"></div>
+    <p class="hero-sub">Precision cuts, sharp fades, and straight razor shaves from a barber who'd rather get it right than rush you out the chair. Suite-based, appointment-driven, mobile available.</p>
+    <div class="hero-cta-row">
+      <a href="tel:+18133174007" class="btn-primary">Call or Text to Book</a>
+      <span class="hero-note">Suite #21 &mdash; mobile service available</span>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num display">Suite 21</div>
+        <div class="stat-label">1534 W Brandon Blvd</div>
+      </div>
+      <div>
+        <div class="stat-num display">Mobile</div>
+        <div class="stat-label">Cuts Available On Location</div>
+      </div>
+      <div>
+        <div class="stat-num display">Vince Gill</div>
+        <div class="stat-label">Owner &amp; Barber</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-head">
+      <div>
+        <div class="services-eyebrow">What We Do</div>
+        <div class="services-title display">Services</div>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-row">
+        <div>
+          <div class="service-name">Men's Haircut</div>
+          <div class="service-sub">Clipper or shear, your call</div>
+        </div>
+        <div class="service-price display">$30</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Fade</div>
+          <div class="service-sub">Skin, taper, or drop fade</div>
+        </div>
+        <div class="service-price display">$35</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Beard Trim</div>
+          <div class="service-sub">Shape, line, and condition</div>
+        </div>
+        <div class="service-price display">$15</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Razor Cut</div>
+          <div class="service-sub">Straight razor detail work</div>
+        </div>
+        <div class="service-price display">$40</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Straight Razor Shave</div>
+          <div class="service-sub">Hot towel finish</div>
+        </div>
+        <div class="service-price display">$25</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Cut + Beard Combo</div>
+          <div class="service-sub">The full service</div>
+        </div>
+        <div class="service-price display">$45</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / SUITE -->
+  <section class="about" id="about">
+    <div class="about-frame">
+      <div class="about-frame-label">Suite #21 &mdash; Brandon, FL</div>
+    </div>
+    <div>
+      <div class="about-eyebrow">The Barber</div>
+      <h2 class="about-title display">Here to satisfy you.</h2>
+      <p class="about-body">N-Vince-ble Cutz runs on a simple rule: quality over quantity. No rushed cuts, no packed waiting rooms &mdash; just focused, one-on-one attention every time you're in the chair.</p>
+      <p class="about-body">Based out of a private suite on W Brandon Blvd, with mobile service available for clients who need the cut to come to them. Call or text ahead to lock in your spot.</p>
+      <div class="about-tags">
+        <div class="about-tag">Suite-Based</div>
+        <div class="about-tag">Mobile Available</div>
+        <div class="about-tag">Appointment Only</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK STRIP -->
+  <section class="book-strip" id="book">
+    <div class="book-strip-title display">Ready to get right?</div>
+    <a href="tel:+18133174007" class="btn-dark">Call (813) 317-4007</a>
+  </section>
+
+  <!-- INFO / FOOTER -->
+  <section class="info">
+    <div>
+      <div class="info-block-label">Location</div>
+      <div class="info-block-body">
+        1534 W Brandon Blvd<br>
+        Suite #21<br>
+        Brandon, FL 33511
+      </div>
+    </div>
+    <div>
+      <div class="info-block-label">Hours</div>
+      <div>
+        <div class="hours-row"><span>Today</span><span>9:00&ndash;12:30, 1:30&ndash;5:00</span></div>
+        <div class="hours-row"><span>Other Days</span><span>By Appointment</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="info-block-label">Contact</div>
+      <div class="info-block-body">
+        (813) 317-4007<br>
+        nvinceblecutz@gmail.com<br>
+        Must call or text for mobile service
+      </div>
+    </div>
+    <div class="footer-bottom" style="grid-column: 1 / -1;">
+      <span>&copy; N-Vince-ble Cutz LLC &mdash; Brandon, FL</span>
+      <span>Concept site by AuraLogic</span>
+    </div>
+  </section>
+
+</body>
+</html>
