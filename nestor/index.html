@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nestor Barber Studio | Jonesboro, GA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Jost:wght@300;400;500&family=Sacramento&display=swap');
+
+  :root{
+    --black:#0d0c0b;
+    --charcoal:#19170f;
+    --charcoal-2:#221f16;
+    --gold:#c9a24b;
+    --gold-bright:#e8c876;
+    --red:#9c2b2e;
+    --ivory:#f3ecdd;
+    --ivory-dim:#cdc4ac;
+    --line:rgba(201,162,75,0.18);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--black);
+    color:var(--ivory);
+    font-family:'Jost','Helvetica Neue',Arial,sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%; display:block;}
+
+  h1,h2,h3{font-family:'Oswald',Arial,sans-serif; text-transform:uppercase;}
+
+  .script{
+    font-family:'Sacramento', cursive;
+    color:var(--gold-bright);
+    font-size:1.8rem;
+    line-height:1;
+  }
+
+  .eyebrow{
+    font-family:'Oswald',Arial,sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+  }
+
+  /* ---------- Background barbershop iconography ---------- */
+  .bg-icons{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:0.05;
+  }
+  .bg-icons svg{position:absolute;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 5%;
+    background:rgba(13,12,11,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex; align-items:center; gap:14px;}
+  .brand img{width:52px; height:52px; border-radius:50%;}
+  .brand-text{font-family:'Oswald',Arial,sans-serif; font-size:1.05rem; letter-spacing:0.08em; font-weight:600; color:var(--ivory);}
+  .brand-text span{display:block; font-family:'Sacramento',cursive; font-size:0.95rem; color:var(--gold-bright); letter-spacing:0; font-weight:400;}
+
+  nav ul{display:flex; gap:34px;}
+  nav a{
+    font-family:'Oswald',Arial,sans-serif;
+    font-size:0.82rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ivory-dim);
+    transition:color 0.2s;
+  }
+  nav a:hover, nav a:focus-visible{color:var(--gold-bright); outline:none;}
+
+  .call-btn{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--black);
+    font-family:'Oswald',Arial,sans-serif;
+    font-weight:600;
+    font-size:0.82rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:10px 22px;
+    border-radius:2px;
+    transition:background 0.2s, transform 0.2s;
+  }
+  .call-btn:hover, .call-btn:focus-visible{background:var(--gold-bright); transform:translateY(-1px);}
+
+  .menu-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; z-index:110;}
+  .menu-toggle span{width:26px; height:2px; background:var(--gold);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:140px 5% 100px;
+    position:relative;
+    z-index:1;
+    background:
+      radial-gradient(circle at 50% 20%, rgba(201,162,75,0.10), transparent 55%),
+      linear-gradient(180deg, var(--black) 0%, #100e0a 100%);
+  }
+  .hero-logo{
+    width:150px; height:150px;
+    margin-bottom:26px;
+    animation:fadeDown 0.9s ease both;
+  }
+  .hero .script{font-size:1.5rem; margin-bottom:10px; animation:fadeDown 0.9s 0.1s ease both;}
+  .hero h1{
+    font-size:clamp(3rem, 9vw, 7.2rem);
+    line-height:0.92;
+    letter-spacing:0.01em;
+    color:var(--ivory);
+    animation:fadeDown 0.9s 0.2s ease both;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold-bright);
+  }
+  .hero p.lead{
+    max-width:560px;
+    margin:26px auto 40px;
+    font-size:1.08rem;
+    color:var(--ivory-dim);
+    font-weight:300;
+    animation:fadeDown 0.9s 0.3s ease both;
+  }
+  .hero-ctas{display:flex; gap:18px; flex-wrap:wrap; justify-content:center; animation:fadeDown 0.9s 0.4s ease both;}
+  .btn-outline{
+    border:1px solid var(--gold);
+    color:var(--ivory);
+    font-family:'Oswald',Arial,sans-serif;
+    font-weight:500;
+    font-size:0.85rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:13px 28px;
+    border-radius:2px;
+    transition:all 0.2s;
+  }
+  .btn-outline:hover, .btn-outline:focus-visible{background:var(--gold); color:var(--black);}
+  .btn-solid{
+    background:var(--red);
+    color:var(--ivory);
+    font-family:'Oswald',Arial,sans-serif;
+    font-weight:500;
+    font-size:0.85rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:13px 28px;
+    border-radius:2px;
+    transition:all 0.2s;
+  }
+  .btn-solid:hover, .btn-solid:focus-visible{background:#b53337; transform:translateY(-1px);}
+
+  @keyframes fadeDown{
+    from{opacity:0; transform:translateY(-16px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* ---------- Barber pole stripe divider (signature element) ---------- */
+  .pole-divider{
+    height:34px;
+    width:100%;
+    background:repeating-linear-gradient(
+      -45deg,
+      var(--red) 0px, var(--red) 26px,
+      var(--ivory) 26px, var(--ivory) 52px,
+      var(--gold) 52px, var(--gold) 78px
+    );
+    background-size:220px 100%;
+    animation:poleScroll 6s linear infinite;
+    position:relative;
+    z-index:1;
+  }
+  @keyframes poleScroll{
+    from{background-position-x:0;}
+    to{background-position-x:220px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pole-divider{animation:none;}
+    .hero-logo,.hero .script,.hero h1,.hero p.lead,.hero-ctas{animation:none; opacity:1;}
+  }
+
+  /* ---------- Section shared ---------- */
+  section{position:relative; z-index:1; padding:110px 5%;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 60px;}
+  .section-head h2{font-size:clamp(2.2rem,4.5vw,3.4rem); margin-top:10px; color:var(--ivory);}
+  .section-head .script{display:block; margin-bottom:2px;}
+
+  /* ---------- About ---------- */
+  .about{background:var(--charcoal);}
+  .about-grid{
+    max-width:1100px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1.15fr; gap:70px; align-items:center;
+  }
+  .about-badge{
+    aspect-ratio:1; border-radius:50%;
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    padding:36px;
+  }
+  .about-badge img{border-radius:50%;}
+  .about-copy p{color:var(--ivory-dim); font-size:1.02rem; margin-bottom:20px; max-width:480px;}
+  .about-copy .script{margin-bottom:8px;}
+  .stat-row{display:flex; gap:46px; margin-top:34px;}
+  .stat-row div strong{display:block; font-family:'Bebas Neue',Arial,sans-serif; font-size:2.4rem; color:var(--gold-bright); letter-spacing:0.02em;}
+  .stat-row div span{font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ivory-dim);}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--black);}
+  .service-grid{
+    max-width:1180px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--black);
+    padding:44px 34px;
+    transition:background 0.25s;
+  }
+  .service-card:hover{background:var(--charcoal);}
+  .service-icon{width:44px; height:44px; margin-bottom:22px; color:var(--gold);}
+  .service-card h3{font-size:1.3rem; letter-spacing:0.03em; margin-bottom:10px; color:var(--ivory);}
+  .service-card p{font-size:0.92rem; color:var(--ivory-dim); margin-bottom:16px;}
+  .service-note{font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold);}
+
+  /* ---------- Hours / Location ---------- */
+  .visit{background:var(--charcoal-2);}
+  .visit-grid{
+    max-width:1100px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1fr; gap:60px;
+  }
+  .visit-card{
+    border:1px solid var(--line);
+    padding:44px;
+  }
+  .visit-card h3{
+    font-size:1rem; letter-spacing:0.14em; color:var(--gold-bright); margin-bottom:26px;
+  }
+  .hours-row{
+    display:flex; justify-content:space-between;
+    padding:11px 0;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    font-size:0.95rem;
+  }
+  .hours-row span:first-child{color:var(--ivory-dim);}
+  .hours-row:last-child{border-bottom:none;}
+  .addr-line{font-size:1.15rem; color:var(--ivory); margin-bottom:8px; line-height:1.5;}
+  .visit-card .btn-outline, .visit-card .btn-solid{margin-top:26px; display:inline-block;}
+
+  /* ---------- CTA strip ---------- */
+  .cta-strip{
+    background:var(--red);
+    text-align:center;
+    padding:80px 5%;
+  }
+  .cta-strip .script{color:var(--ivory); font-size:1.5rem; margin-bottom:8px;}
+  .cta-strip h2{font-size:clamp(1.9rem,4vw,2.8rem); color:var(--ivory); margin-bottom:30px;}
+  .cta-strip .btn-outline{border-color:var(--ivory); color:var(--ivory);}
+  .cta-strip .btn-outline:hover{background:var(--ivory); color:var(--red);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--black);
+    padding:60px 5% 30px;
+    border-top:1px solid var(--line);
+  }
+  .footer-grid{
+    max-width:1100px; margin:0 auto 40px;
+    display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;
+  }
+  .footer-brand{display:flex; align-items:center; gap:14px; margin-bottom:14px;}
+  .footer-brand img{width:44px; height:44px; border-radius:50%;}
+  footer h4{font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
+  footer p, footer li{font-size:0.9rem; color:var(--ivory-dim); margin-bottom:8px;}
+  footer li a:hover{color:var(--gold-bright);}
+  .footer-bottom{
+    max-width:1100px; margin:0 auto; padding-top:26px;
+    border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:0.78rem; color:var(--ivory-dim); letter-spacing:0.02em;
+  }
+  .footer-bottom a{color:var(--gold);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .about-grid{grid-template-columns:1fr; gap:40px;}
+    .about-badge{max-width:260px; margin:0 auto;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .visit-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr; gap:30px;}
+  }
+  @media (max-width:640px){
+    nav, .call-btn{display:none;}
+    .menu-toggle{display:flex;}
+    .service-grid{grid-template-columns:1fr;}
+    .stat-row{gap:30px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-icons" aria-hidden="true">
+  <svg width="140" height="140" viewBox="0 0 100 100" style="top:8%; left:4%;"><path d="M20 20 L80 80 M80 20 L20 80" stroke="#c9a24b" stroke-width="2" fill="none"/><circle cx="20" cy="20" r="8" stroke="#c9a24b" stroke-width="2" fill="none"/><circle cx="80" cy="20" r="8" stroke="#c9a24b" stroke-width="2" fill="none"/></svg>
+  <svg width="90" height="220" viewBox="0 0 40 220" style="top:22%; right:6%;"><rect x="10" y="0" width="20" height="220" rx="10" stroke="#c9a24b" stroke-width="2" fill="none"/><line x1="10" y1="40" x2="30" y2="60" stroke="#c9a24b" stroke-width="2"/><line x1="10" y1="70" x2="30" y2="90" stroke="#c9a24b" stroke-width="2"/><line x1="10" y1="100" x2="30" y2="120" stroke="#c9a24b" stroke-width="2"/></svg>
+  <svg width="160" height="160" viewBox="0 0 100 100" style="bottom:10%; left:8%;"><path d="M10 50 Q50 10 90 50" stroke="#c9a24b" stroke-width="2" fill="none"/><path d="M10 60 Q50 20 90 60" stroke="#c9a24b" stroke-width="2" fill="none"/></svg>
+  <svg width="120" height="120" viewBox="0 0 100 100" style="bottom:16%; right:12%;"><path d="M20 20 L80 80 M80 20 L20 80" stroke="#c9a24b" stroke-width="2" fill="none"/><circle cx="20" cy="80" r="8" stroke="#c9a24b" stroke-width="2" fill="none"/><circle cx="80" cy="80" r="8" stroke="#c9a24b" stroke-width="2" fill="none"/></svg>
+</div>
+
+<header>
+  <div class="brand">
+    <img src="logo.png" alt="Nestor Barber Studio logo">
+    <div class="brand-text">NESTOR BARBER<br><span>Studio</span></div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#visit">Hours &amp; Location</a></li>
+    </ul>
+  </nav>
+  <a class="call-btn" href="https://pocketsuite.io/book/barbernestor" target="_blank" rel="noopener">Book Now</a>
+  <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero">
+  <img class="hero-logo" src="logo.png" alt="Nestor Barber Studio badge logo">
+  <span class="script">Jonesboro, Georgia</span>
+  <h1>SHARP CUTS.<br><em>SHARPER LOOK.</em></h1>
+  <p class="lead">Clean fades, crisp lineups, and old-school barbershop craft on Tara Blvd. Walk in or call ahead — Nestor's got the chair ready.</p>
+  <div class="hero-ctas">
+    <a class="btn-solid" href="https://pocketsuite.io/book/barbernestor" target="_blank" rel="noopener">Book Now</a>
+    <a class="btn-outline" href="https://maps.google.com/?q=8053+Tara+Blvd,+Jonesboro,+GA+30236" target="_blank" rel="noopener">Get Directions</a>
+  </div>
+</section>
+
+<div class="pole-divider" role="presentation"></div>
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-badge">
+      <img src="logo.png" alt="Nestor Barber Studio emblem">
+    </div>
+    <div class="about-copy">
+      <span class="script">The Studio</span>
+      <h2 style="font-size:2.2rem; margin-bottom:20px;">Built on the chair, not the hype.</h2>
+      <p>Nestor Barber Studio is a Tara Blvd staple for the southside — a straightforward, no-nonsense shop where the focus stays on the cut. Fresh lineups, tight fades, and a steady hand, every visit.</p>
+      <p>No frills, no long waits for nothing. Just a barber who takes pride in getting it right.</p>
+      <div class="stat-row">
+        <div><strong>8AM</strong><span>Open Daily</span></div>
+        <div><strong>7</strong><span>Days a Week</span></div>
+        <div><strong>#1</strong><span>Tara Blvd</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-head">
+    <span class="script">On the Menu</span>
+    <h2>The Cuts</h2>
+  </div>
+  <div class="service-grid">
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+      <h3>Signature Haircut</h3>
+      <p>Precision cut, tailored to your style — from tight fades to classic tapers.</p>
+      <span class="service-note">Call for current pricing</span>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3v18M18 3v18M6 8h12M6 16h12"/></svg>
+      <h3>Beard Trim &amp; Shape-Up</h3>
+      <p>Clean lines and a sharp edge to finish off the look.</p>
+      <span class="service-note">Call for current pricing</span>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l16 16M20 4L4 20"/><circle cx="12" cy="12" r="9"/></svg>
+      <h3>Line Up</h3>
+      <p>Fresh edges to keep your fade looking crisp between full cuts.</p>
+      <span class="service-note">Call for current pricing</span>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 4v16M4 8h4"/></svg>
+      <h3>Kids Cuts</h3>
+      <p>Patient, easygoing cuts for the little ones in the chair.</p>
+      <span class="service-note">Call for current pricing</span>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/></svg>
+      <h3>Hot Towel Finish</h3>
+      <p>A relaxed, classic finish to close out every appointment.</p>
+      <span class="service-note">Call for current pricing</span>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-5.5-9-9.5C1.5 7.5 4 4 7.5 4c1.9 0 3.4 1.2 4.5 2.6C13.1 5.2 14.6 4 16.5 4 20 4 22.5 7.5 21 11.5c-2 4-9 9.5-9 9.5z"/></svg>
+      <h3>Walk-Ins Welcome</h3>
+      <p>No appointment? No problem — swing by, we'll get you in the chair.</p>
+      <span class="service-note">Call ahead to check wait</span>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="section-head">
+    <span class="script">Come Through</span>
+    <h2>Hours &amp; Location</h2>
+  </div>
+  <div class="visit-grid">
+    <div class="visit-card">
+      <h3>WEEKLY HOURS</h3>
+      <div class="hours-row"><span>Monday</span><span>8:00 AM – 8:00 PM</span></div>
+      <div class="hours-row"><span>Tuesday</span><span>8:00 AM – 8:00 PM</span></div>
+      <div class="hours-row"><span>Wednesday</span><span>8:00 AM – 8:00 PM</span></div>
+      <div class="hours-row"><span>Thursday</span><span>8:00 AM – 8:00 PM</span></div>
+      <div class="hours-row"><span>Friday</span><span>8:00 AM – 8:00 PM</span></div>
+      <div class="hours-row"><span>Saturday</span><span>8:00 AM – 8:00 PM</span></div>
+      <div class="hours-row"><span>Sunday</span><span>8:00 AM – 8:00 PM</span></div>
+    </div>
+    <div class="visit-card">
+      <h3>FIND US</h3>
+      <p class="addr-line">8053 Tara Blvd<br>Jonesboro, GA 30236</p>
+      <p style="color:var(--ivory-dim); font-size:0.95rem; margin-top:14px;">Right on Tara Blvd — easy in, easy out, plenty of parking.</p>
+      <a class="btn-outline" href="https://maps.google.com/?q=8053+Tara+Blvd,+Jonesboro,+GA+30236" target="_blank" rel="noopener">Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <span class="script">Ready When You Are</span>
+  <h2>Book your spot in the chair today.</h2>
+  <a class="btn-outline" href="https://pocketsuite.io/book/barbernestor" target="_blank" rel="noopener">Book Now</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="logo.png" alt="Nestor Barber Studio logo">
+        <div class="brand-text">NESTOR BARBER<br><span>Studio</span></div>
+      </div>
+      <p>Straightforward barbering on Tara Blvd — Jonesboro, GA.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#visit">Hours &amp; Location</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:4708565086">(470) 856-5086</a></li>
+        <li>8053 Tara Blvd, Jonesboro, GA 30236</li>
+        <li>Open Daily · 8AM – 8PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Nestor Barber Studio</span>
+    <span>Website by <a href="#">AuraLogic</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
