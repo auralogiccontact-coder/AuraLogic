@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gee The Barber | Morrow, GA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+  :root{
+    --asphalt:#121212;
+    --concrete:#1c1c1a;
+    --panel:#232320;
+    --orange:#ff6a1a;
+    --orange-deep:#d6520c;
+    --white:#f5f3ee;
+    --gray:#93918a;
+    --line:rgba(255,106,26,0.22);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--asphalt);
+    color:var(--white);
+    font-family:'DM Sans',Arial,sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+
+  h1,h2,h3{font-family:'Archivo Black',Arial,sans-serif; font-weight:400; text-transform:uppercase; letter-spacing:0.01em;}
+
+  .kicker{font-size:0.74rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--orange); font-weight:600;}
+
+  /* ---------- Concrete grain texture ---------- */
+  .grain{
+    position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.04;
+    background-image:
+      repeating-linear-gradient(0deg, #fff 0px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(90deg, #fff 0px, transparent 1px, transparent 3px);
+  }
+
+  /* ---------- Spray stroke underline (signature motif) ---------- */
+  .stroke-underline{
+    display:inline-block; position:relative;
+  }
+  .stroke-underline svg{position:absolute; left:0; bottom:-14px; width:100%; height:16px;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 6%;
+    background:rgba(18,18,18,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-mark{
+    width:44px; height:44px;
+    background:var(--orange);
+    transform:rotate(-6deg);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black',sans-serif; color:var(--asphalt); font-size:1.1rem;
+  }
+  .brand-text{font-family:'Archivo Black',sans-serif; font-size:1rem; letter-spacing:0.01em; color:var(--white);}
+  .brand-text span{display:block; font-family:'DM Sans',sans-serif; font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gray); margin-top:4px; font-weight:500;}
+
+  nav ul{display:flex; gap:34px;}
+  nav a{font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray); transition:color 0.2s; font-weight:500;}
+  nav a:hover, nav a:focus-visible{color:var(--orange); outline:none;}
+
+  .btn-solid{
+    background:var(--orange);
+    color:var(--asphalt);
+    font-family:'DM Sans',sans-serif; font-weight:700;
+    font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase;
+    padding:12px 26px;
+    transition:all 0.25s; display:inline-block;
+  }
+  .btn-solid:hover, .btn-solid:focus-visible{background:#ff824a; transform:translateY(-1px);}
+  .btn-outline{
+    border:1px solid var(--gray);
+    color:var(--white);
+    font-family:'DM Sans',sans-serif; font-weight:500;
+    font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase;
+    padding:12px 26px;
+    transition:all 0.25s; display:inline-block;
+  }
+  .btn-outline:hover, .btn-outline:focus-visible{border-color:var(--orange); color:var(--orange);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:150px 6% 100px;
+    position:relative; z-index:1;
+    background:
+      radial-gradient(circle at 50% 10%, rgba(255,106,26,0.10), transparent 55%),
+      linear-gradient(180deg, var(--asphalt), var(--concrete) 60%, var(--asphalt));
+  }
+  .hero-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    border:1px solid var(--line);
+    padding:8px 18px; margin-bottom:34px;
+    font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange);
+    transform:rotate(-1.5deg);
+  }
+  .hero h1{
+    font-size:clamp(2.8rem, 9vw, 6.8rem);
+    line-height:0.98;
+    color:var(--white);
+  }
+  .hero h1 .accent{color:var(--orange);}
+  .hero p.lead{max-width:520px; margin:38px auto 42px; color:var(--gray); font-size:1.05rem;}
+  .hero-ctas{display:flex; gap:18px; flex-wrap:wrap; justify-content:center;}
+
+  .stat-strip{display:flex; gap:56px; justify-content:center; flex-wrap:wrap; margin-top:60px; padding-top:34px; border-top:1px solid var(--line);}
+  .stat-strip div strong{display:block; font-family:'Archivo Black',sans-serif; font-size:2rem; color:var(--orange);}
+  .stat-strip div span{font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray);}
+
+  /* ---------- Tag divider ---------- */
+  .tag-divider{
+    height:10px; width:100%;
+    background:repeating-linear-gradient(-45deg, var(--orange) 0 18px, var(--asphalt) 18px 36px);
+    position:relative; z-index:1;
+  }
+
+  /* ---------- Section shared ---------- */
+  section{padding:110px 6%; position:relative; z-index:1;}
+  .section-head{max-width:600px; margin:0 auto 60px; text-align:center;}
+  .section-head h2{font-size:clamp(2.1rem,4.4vw,3.2rem); margin-top:10px;}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--concrete);}
+  .service-grid{max-width:1160px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .service-card{background:var(--concrete); padding:38px 26px; transition:background 0.25s;}
+  .service-card:hover{background:var(--panel);}
+  .service-icon{width:36px; height:36px; margin-bottom:18px; color:var(--orange);}
+  .service-card h3{font-size:1rem; margin-bottom:8px; color:var(--white);}
+  .service-card p{font-size:0.86rem; color:var(--gray);}
+  .service-note{font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange); margin-top:14px; display:block;}
+
+  /* ---------- Spotlight ---------- */
+  .spotlight{background:var(--asphalt);}
+  .spotlight-grid{max-width:1080px; margin:0 auto; display:grid; grid-template-columns:0.8fr 1.2fr; gap:70px; align-items:center;}
+  .spotlight-frame{
+    aspect-ratio:1; border:1px solid var(--line);
+    background:linear-gradient(150deg, var(--panel), var(--asphalt));
+    display:flex; align-items:center; justify-content:center;
+    transform:rotate(-2deg);
+  }
+  .spotlight-frame svg{width:52%; height:52%;}
+  .spotlight-copy p{color:var(--gray); font-size:1.02rem; margin-bottom:20px; max-width:480px;}
+  .spotlight-copy h2{font-size:clamp(1.9rem,4vw,2.7rem); margin-bottom:22px;}
+
+  /* ---------- Hours banner ---------- */
+  .open-banner{
+    background:var(--panel);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:56px 6%; text-align:center;
+  }
+  .open-banner h2{font-size:clamp(1.9rem,5vw,3rem); color:var(--orange);}
+  .open-banner p{color:var(--gray); margin-top:12px;}
+
+  /* ---------- Reviews ---------- */
+  .reviews{background:var(--concrete);}
+  .review-grid{max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--line); border:1px solid var(--line);}
+  .review-card{background:var(--concrete); padding:36px 30px;}
+  .review-card p{color:var(--white); font-size:1rem; margin-bottom:16px;}
+  .review-card span{font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--orange);}
+
+  /* ---------- Visit ---------- */
+  .visit{background:var(--asphalt);}
+  .visit-grid{max-width:1080px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+  .visit-card{border:1px solid var(--line); padding:42px; background:rgba(255,106,26,0.03);}
+  .visit-card h3{font-family:'DM Sans',sans-serif; font-size:0.85rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--orange); margin-bottom:24px; font-weight:700;}
+  .hours-row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.94rem;}
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row span:first-child{color:var(--gray);}
+  .addr-line{font-size:1.15rem; color:var(--white); margin-bottom:8px;}
+
+  /* ---------- CTA strip ---------- */
+  .cta-strip{background:var(--orange); text-align:center; padding:80px 6%;}
+  .cta-strip h2{font-size:clamp(2rem,4.5vw,3.1rem); color:var(--asphalt); margin-bottom:28px;}
+  .cta-strip .btn-outline{border-color:var(--asphalt); color:var(--asphalt);}
+  .cta-strip .btn-outline:hover{background:var(--asphalt); color:var(--orange); border-color:var(--asphalt);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--asphalt); padding:60px 6% 30px; border-top:1px solid var(--line); position:relative; z-index:1;}
+  .footer-grid{max-width:1080px; margin:0 auto 40px; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;}
+  .footer-brand{display:flex; align-items:center; gap:12px; margin-bottom:14px;}
+  footer h4{font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--orange); margin-bottom:16px;}
+  footer p, footer li{font-size:0.9rem; color:var(--gray); margin-bottom:8px;}
+  footer li a:hover{color:var(--orange);}
+  .footer-bottom{max-width:1080px; margin:0 auto; padding-top:26px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.75rem; color:var(--gray);}
+  .footer-bottom a{color:var(--orange);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:960px){
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .spotlight-grid{grid-template-columns:1fr; gap:36px;}
+    .spotlight-frame{max-width:260px; margin:0 auto;}
+    .review-grid{grid-template-columns:1fr;}
+    .visit-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr; gap:30px;}
+    .stat-strip{gap:34px;}
+  }
+  @media (max-width:640px){
+    nav{display:none;}
+    header .btn-outline{display:none;}
+    .service-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark">G</div>
+    <div class="brand-text">GEE THE BARBER<span>Morrow, GA</span></div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </nav>
+  <a class="btn-outline" href="tel:4049886648">(404) 988-6648</a>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">Open Late · 7 Days A Week</div>
+  <h1>FRESH CUTS.<br><span class="accent">NO CAP.</span></h1>
+  <p class="lead">Clean fades and sharp lineups on Mt Zion Rd. Gee keeps the chair ready when the rest of Morrow's closed.</p>
+  <div class="hero-ctas">
+    <a class="btn-solid" href="tel:4049886648">Call to Book</a>
+    <a class="btn-outline" href="https://maps.google.com/?q=2043+Mt+Zion+Rd,+Morrow,+GA+30260" target="_blank" rel="noopener">Get Directions</a>
+  </div>
+  <div class="stat-strip">
+    <div><strong>4.2</strong><span>Client Rating</span></div>
+    <div><strong>OPEN</strong><span>Most Days 24HR</span></div>
+    <div><strong>MT ZION</strong><span>Morrow, GA</span></div>
+  </div>
+</section>
+
+<div class="tag-divider" role="presentation"></div>
+
+<section class="services" id="services">
+  <div class="section-head">
+    <span class="kicker">The Menu</span>
+    <h2>Cuts On Deck</h2>
+  </div>
+  <div class="service-grid">
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+      <h3>Haircut</h3>
+      <p>Fades, tapers, and everything clean.</p>
+      <span class="service-note">Call for pricing</span>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3v18M18 3v18M6 8h12M6 16h12"/></svg>
+      <h3>Beard Trim</h3>
+      <p>Shaped up and edged out.</p>
+      <span class="service-note">Call for pricing</span>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l16 16M20 4L4 20"/><circle cx="12" cy="12" r="9"/></svg>
+      <h3>Line Up</h3>
+      <p>Keep the edges crisp between cuts.</p>
+      <span class="service-note">Call for pricing</span>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 4v16M4 8h4"/></svg>
+      <h3>Kids Cuts</h3>
+      <p>Easygoing cuts for the little homies.</p>
+      <span class="service-note">Call for pricing</span>
+    </div>
+  </div>
+</section>
+
+<section class="spotlight" id="about">
+  <div class="spotlight-grid">
+    <div class="spotlight-frame">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ff6a1a" stroke-width="1.4"><circle cx="50" cy="50" r="40" stroke-opacity="0.4"/><path d="M32 32 L68 68 M68 32 L32 68"/><circle cx="32" cy="32" r="6"/><circle cx="68" cy="32" r="6"/></svg>
+    </div>
+    <div class="spotlight-copy">
+      <span class="kicker">Behind The Chair</span>
+      <h2>Meet Gee.</h2>
+      <p>A neighborhood barbershop built around clean, consistent cuts — no long waits, no run-around. Just a barber who shows up and gets it right.</p>
+      <p>Open late on Mt Zion Rd, so if your schedule's not 9-to-5, neither is Gee's chair.</p>
+      <a class="btn-outline" href="tel:4049886648">Book With Gee</a>
+    </div>
+  </div>
+</section>
+
+<div class="open-banner">
+  <h2>OPEN LATE. MOST DAYS.</h2>
+  <p>24-hour access Sunday through Friday — Saturday hours run 10 AM to 9:30 PM.</p>
+</div>
+
+<section class="reviews">
+  <div class="section-head">
+    <span class="kicker">Client Word</span>
+    <h2>What Morrow Is Saying</h2>
+  </div>
+  <div class="review-grid">
+    <div class="review-card">
+      <p>Clients call it a great spot for a clean, nice cut every time.</p>
+      <span>Google Review</span>
+    </div>
+    <div class="review-card">
+      <p>Reviewers keep it simple — a great barbershop, no complaints.</p>
+      <span>Google Review</span>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="section-head">
+    <span class="kicker">Come Through</span>
+    <h2>Hours &amp; Location</h2>
+  </div>
+  <div class="visit-grid">
+    <div class="visit-card">
+      <h3>Weekly Hours</h3>
+      <div class="hours-row"><span>Monday</span><span>Open 24 Hours</span></div>
+      <div class="hours-row"><span>Tuesday</span><span>Open 24 Hours</span></div>
+      <div class="hours-row"><span>Wednesday</span><span>Open 24 Hours</span></div>
+      <div class="hours-row"><span>Thursday</span><span>Open 24 Hours</span></div>
+      <div class="hours-row"><span>Friday</span><span>Open 24 Hours</span></div>
+      <div class="hours-row"><span>Saturday</span><span>10:00 AM – 9:30 PM</span></div>
+      <div class="hours-row"><span>Sunday</span><span>Open 24 Hours</span></div>
+    </div>
+    <div class="visit-card">
+      <h3>Find Us</h3>
+      <p class="addr-line">2043 Mt Zion Rd<br>Morrow, GA 30260</p>
+      <p style="color:var(--gray); font-size:0.94rem; margin-top:12px;">Call ahead to check the chair before you pull up.</p>
+      <a class="btn-outline" href="https://maps.google.com/?q=2043+Mt+Zion+Rd,+Morrow,+GA+30260" target="_blank" rel="noopener" style="margin-top:24px; display:inline-block;">Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <h2>Pull up. Get fresh.</h2>
+  <a class="btn-outline" href="tel:4049886648">Call (404) 988-6648</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <div class="brand-mark">G</div>
+        <div class="brand-text">GEE THE BARBER<span>Morrow, GA</span></div>
+      </div>
+      <p>Clean fades and sharp lineups on Mt Zion Rd.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:4049886648">(404) 988-6648</a></li>
+        <li>2043 Mt Zion Rd, Morrow, GA 30260</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Gee The Barber</span>
+    <span>Website by <a href="#">AuraLogic</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
