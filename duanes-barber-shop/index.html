@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duane's Barber Shop | Old School Cuts in Fayetteville, NC</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600;1,700&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+  :root{
+    --red:#A32020;
+    --red-deep:#7C1717;
+    --cream:#F3EEE3;
+    --cream-warm:#EAE2D0;
+    --ink:#1C1B18;
+    --steel:#24425E;
+    --white:#FBF8F2;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height:1.6;
+  }
+
+  .script{
+    font-family:'Playfair Display', Georgia, serif;
+    font-style:italic;
+    font-weight:700;
+  }
+  .block{
+    font-family:'Oswald', Impact, 'Arial Narrow', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+
+  /* barber pole stripe divider */
+  .pole-stripe{
+    height:10px;
+    background:repeating-linear-gradient(
+      -45deg,
+      var(--red), var(--red) 14px,
+      var(--white) 14px, var(--white) 28px,
+      var(--steel) 28px, var(--steel) 42px,
+      var(--white) 42px, var(--white) 56px
+    );
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    background:var(--ink);
+    padding:0;
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:70px;
+  }
+  .nav-name{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:20px;
+    color:var(--cream);
+  }
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{
+    font-family:'Oswald',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--cream);
+    opacity:0.8;
+  }
+  .nav-links a:hover{opacity:1;}
+  .nav-phone{
+    background:var(--red);
+    padding:9px 18px;
+    opacity:1 !important;
+    border-radius:2px;
+  }
+  @media (max-width:720px){
+    .nav-links a:not(.nav-phone){display:none;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    background:var(--red);
+    color:var(--white);
+    padding:90px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    right:-140px;top:-140px;
+    width:480px;height:480px;
+    border-radius:50%;
+    border:3px solid rgba(251,248,242,0.12);
+  }
+  .hero::after{
+    content:'';
+    position:absolute;
+    right:-60px;top:-60px;
+    width:340px;height:340px;
+    border-radius:50%;
+    border:1px solid rgba(251,248,242,0.14);
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:60px;
+    align-items:center;
+  }
+
+  .est{
+    display:inline-block;
+    font-family:'Oswald',sans-serif;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:rgba(251,248,242,0.75);
+    border:1px solid rgba(251,248,242,0.35);
+    padding:6px 14px;
+    margin-bottom:26px;
+  }
+
+  .hero h1{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:clamp(42px,6vw,66px);
+    line-height:1.05;
+    color:var(--white);
+  }
+  .hero h1 .sub{
+    display:block;
+    font-family:'Oswald',sans-serif;
+    font-style:normal;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    font-size:clamp(20px,2.6vw,28px);
+    color:var(--cream);
+    margin-top:10px;
+  }
+
+  .hero p.lede{
+    margin-top:24px;
+    max-width:440px;
+    font-size:16.5px;
+    color:rgba(251,248,242,0.88);
+  }
+
+  .hero-actions{
+    margin-top:36px;
+    display:flex;gap:16px;flex-wrap:wrap;
+  }
+  .btn-white{
+    background:var(--white);
+    color:var(--red-deep);
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:13px;
+    padding:16px 28px;
+    border-radius:2px;
+    display:inline-block;
+  }
+  .btn-white:hover{background:var(--cream);}
+  .btn-outline{
+    border:1.5px solid var(--white);
+    color:var(--white);
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:13px;
+    padding:15px 28px;
+    border-radius:2px;
+  }
+
+  /* the sign badge, recreated */
+  .sign-badge{
+    width:280px;height:280px;
+    border-radius:50%;
+    background:var(--white);
+    border:8px solid var(--red-deep);
+    box-shadow:0 0 0 3px var(--white) inset, 0 20px 50px rgba(0,0,0,0.25);
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+  }
+  .sign-badge .name{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:34px;
+    color:var(--red-deep);
+    line-height:1;
+  }
+  .sign-badge .phone{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:26px;
+    color:var(--ink);
+    margin-top:10px;
+    letter-spacing:0.02em;
+  }
+  .sign-badge .barbershop{
+    margin-top:14px;
+    background:var(--red-deep);
+    color:var(--white);
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    letter-spacing:0.1em;
+    font-size:16px;
+    padding:8px 22px;
+  }
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .sign-badge{margin-top:20px;}
+  }
+
+  /* ===== TRUST STRIP ===== */
+  .trust{
+    background:var(--ink);
+    padding:26px 0;
+  }
+  .trust .wrap{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .trust-item{
+    color:var(--cream);
+    font-family:'Oswald',sans-serif;
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .trust-item strong{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:22px;
+    color:var(--red);
+    letter-spacing:0;
+    text-transform:none;
+  }
+
+  /* ===== SERVICES ===== */
+  .services{
+    padding:100px 0;
+    background:var(--cream);
+  }
+  .section-eyebrow{
+    font-family:'Oswald',sans-serif;
+    font-size:12px;font-weight:700;
+    letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--red-deep);
+    margin-bottom:16px;
+  }
+  .services h2{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:clamp(30px,4vw,42px);
+    color:var(--ink);
+    max-width:520px;
+  }
+  .services > .wrap > p{
+    margin-top:18px;
+    max-width:480px;
+    color:#4A463D;
+    font-size:16px;
+  }
+
+  .service-list{margin-top:56px;}
+  .service-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:26px 0;
+    border-top:1px solid rgba(28,27,24,0.14);
+  }
+  .service-row:last-child{border-bottom:1px solid rgba(28,27,24,0.14);}
+  .service-name{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--ink);
+  }
+  .service-desc{
+    font-size:14px;
+    color:#6B665A;
+    margin-top:4px;
+    max-width:420px;
+  }
+  .service-tag{
+    font-family:'Oswald',sans-serif;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--red-deep);
+    white-space:nowrap;
+    border:1px solid var(--red-deep);
+    padding:6px 14px;
+  }
+
+  /* ===== ABOUT ===== */
+  .about{
+    background:var(--steel);
+    color:var(--cream);
+    padding:100px 0;
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+  }
+  .about h2{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:clamp(28px,3.6vw,38px);
+  }
+  .about p{
+    margin-top:20px;
+    color:rgba(243,238,227,0.85);
+    font-size:16px;
+    max-width:440px;
+  }
+  .quote-card{
+    background:rgba(251,248,242,0.06);
+    border:1px solid rgba(251,248,242,0.18);
+    padding:38px;
+  }
+  .quote-card .stars{color:var(--red);font-size:18px;letter-spacing:3px;margin-bottom:16px;}
+  .quote-card blockquote{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:19px;
+    line-height:1.5;
+  }
+  .quote-card cite{
+    display:block;margin-top:18px;
+    font-style:normal;
+    font-family:'Oswald',sans-serif;
+    font-size:12px;letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(243,238,227,0.6);
+  }
+
+  /* ===== VISIT ===== */
+  .visit{
+    padding:100px 0 120px;
+    background:var(--cream);
+  }
+  .visit-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:70px;
+  }
+  .visit h2{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:clamp(30px,4vw,42px);
+    color:var(--ink);
+    max-width:460px;
+  }
+  .visit > .wrap > .visit-grid > div:first-child > p{
+    margin-top:18px;
+    color:#4A463D;
+    font-size:16px;
+    max-width:420px;
+  }
+  .cash-note{
+    margin-top:24px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--red);
+    color:var(--white);
+    font-family:'Oswald',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:12px 18px;
+  }
+
+  .hours-card{
+    background:var(--ink);
+    color:var(--cream);
+    padding:40px;
+  }
+  .hours-card h3{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:20px;
+    margin-bottom:22px;
+  }
+  .hours-row{
+    display:flex;justify-content:space-between;
+    padding:11px 0;
+    border-bottom:1px solid rgba(243,238,227,0.12);
+    font-size:14px;
+  }
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row span:first-child{color:rgba(243,238,227,0.6);}
+  .hours-row span:last-child{font-weight:600;}
+
+  footer{
+    padding:34px 0;
+    background:var(--red-deep);
+    color:rgba(251,248,242,0.75);
+    font-size:12.5px;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Duane's Barber Shop</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#visit">Visit</a>
+      <a href="tel:9104876089" class="nav-phone block">(910) 487-6089</a>
+    </div>
+  </div>
+</nav>
+
+<div class="pole-stripe"></div>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="est">Est. 2001 &middot; Fayetteville, NC</div>
+      <h1>Old school<span class="sub">Never went out of style</span></h1>
+      <p class="lede">Straight-razor hot lather neck shaves. Sharp flat tops. No appointment, no attitude — just walk in and wait your turn.</p>
+      <div class="hero-actions">
+        <a href="tel:9104876089" class="btn-white">Call (910) 487-6089</a>
+        <a href="#visit" class="btn-outline">Get Directions</a>
+      </div>
+    </div>
+    <div>
+      <div class="sign-badge">
+        <div class="name">Duane's</div>
+        <div class="phone">487-6089</div>
+        <div class="barbershop block">Barber Shop</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pole-stripe"></div>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-item"><strong>4.8★</strong>241 Google Reviews</div>
+    <div class="trust-item"><strong>25</strong>Years in Business</div>
+    <div class="trust-item"><strong>Cash Only</strong>ATM On Site</div>
+    <div class="trust-item"><strong>Walk-Ins</strong>Always Welcome</div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-eyebrow">What Duane Does</div>
+    <h2>Three things, done exactly right.</h2>
+    <p>No twelve-page menu. Duane's has stuck to the same core services since 2001 — the ones that keep people coming back for over a decade.</p>
+
+    <div class="service-list">
+      <div class="service-row">
+        <div>
+          <div class="service-name">Quality Haircut</div>
+          <div class="service-desc">Every cut finished the old-school way — precision, then a straight razor cleanup.</div>
+        </div>
+        <div class="service-tag">Walk-In</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Hot Lather Neck Shave</div>
+          <div class="service-desc">Traditional straight-razor neck shave to finish off the haircut right.</div>
+        </div>
+        <div class="service-tag">Straight Razor</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Full Facial Shave</div>
+          <div class="service-desc">Complete straight-razor facial shave — the real thing, not a trimmer.</div>
+        </div>
+        <div class="service-tag">Straight Razor</div>
+      </div>
+      <div class="service-row">
+        <div>
+          <div class="service-name">Flat Top</div>
+          <div class="service-desc">Duane's specialty. Ask for a top-of-the-line flat top and see why regulars drive across town for it.</div>
+        </div>
+        <div class="service-tag">Specialty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2>Been coming here for over 10 years — and it hasn't changed.</h2>
+      <p>Duane runs the kind of shop that used to be on every corner. Hometown atmosphere, straight-up conversation, and a haircut you can count on — that's the whole pitch. It's why people still drive across Fayetteville for it.</p>
+    </div>
+    <div class="quote-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"I just got a really great skin fade by Duane and he is such a nice guy. I can highly recommend this barber shop."</blockquote>
+      <cite>Google Review</cite>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <h2>Walk in. Wait your turn. That's it.</h2>
+      <p>No booking app, no online calendar — just show up. Duane's has run this way since 2001 and it still works.</p>
+      <div class="cash-note">💵 Cash Only — ATM Available On Site</div>
+    </div>
+    <div class="hours-card">
+      <h3>Visit Us</h3>
+      <div class="hours-row"><span>Address</span><span>5450 Yadkin Rd<br>Fayetteville, NC 28303</span></div>
+      <div class="hours-row"><span>Phone</span><span>(910) 487-6089</span></div>
+      <div class="hours-row"><span>Mon – Fri</span><span>9:00 AM – 6:00 PM</span></div>
+      <div class="hours-row"><span>Saturday</span><span>9:00 AM – 5:00 PM</span></div>
+      <div class="hours-row"><span>Sunday</span><span>9:00 AM – 6:00 PM</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Duane's Barber Shop · Fayetteville, NC — Mockup built by AuraLogic
+</footer>
+
+</body>
+</html>
