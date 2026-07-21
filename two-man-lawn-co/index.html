@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two-Man Lawn Co. | Concept Build — AuraLogic</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --pine: #1B3A2B;
+    --pine-dark: #12281D;
+    --grass: #6FA83E;
+    --marigold: #E8A33D;
+    --canvas: #F1EDE2;
+    --canvas-warm: #E9E2D0;
+    --charcoal: #2B2620;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--canvas);
+    color: var(--charcoal);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Oswald', 'Arial Narrow', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--pine);
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* ---------- Concept badge ---------- */
+  .concept-badge {
+    background: var(--pine-dark);
+    color: var(--canvas);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .concept-badge strong { color: var(--marigold); }
+
+  /* ---------- Header ---------- */
+  header {
+    background: var(--canvas);
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--pine);
+  }
+  .logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--pine);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+    background: var(--grass);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    transform: rotate(-4deg);
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .header-phone {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+  .btn-primary {
+    background: var(--pine);
+    color: var(--canvas);
+    padding: 12px 24px;
+    border-radius: 3px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: background 0.2s ease;
+  }
+  .btn-primary:hover { background: var(--pine-dark); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 80px 6% 100px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--grass);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--marigold);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .hero h1 {
+    font-size: 52px;
+    line-height: 1.08;
+    margin-bottom: 22px;
+  }
+  .hero h1 span { color: var(--grass); }
+  .hero p.sub {
+    font-size: 19px;
+    color: #52493C;
+    max-width: 480px;
+    margin-bottom: 32px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-secondary {
+    border: 2px solid var(--pine);
+    color: var(--pine);
+    padding: 10px 22px;
+    border-radius: 3px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- Phone demo ---------- */
+  .phone-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .phone {
+    width: 300px;
+    background: var(--charcoal);
+    border-radius: 36px;
+    padding: 14px;
+    box-shadow: 0 30px 60px -20px rgba(27, 58, 43, 0.4);
+  }
+  .phone-screen {
+    background: #F8F6F0;
+    border-radius: 24px;
+    min-height: 460px;
+    padding: 20px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .phone-status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #8A8172;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+  .call-card {
+    background: var(--pine);
+    color: var(--canvas);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    opacity: 0;
+    animation: showCall 8s infinite;
+  }
+  .call-card .missed-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--marigold);
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .call-card .caller {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .call-card .caller-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
+  .msg-bubble {
+    background: var(--grass);
+    color: var(--white);
+    border-radius: 16px 16px 16px 4px;
+    padding: 14px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 14px;
+    max-width: 92%;
+    opacity: 0;
+    animation: showMsg 8s infinite;
+  }
+  .msg-timestamp {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--grass);
+    font-weight: 600;
+    margin-top: 8px;
+    opacity: 0;
+    animation: showMsg 8s infinite;
+  }
+
+  @keyframes showCall {
+    0% { opacity: 0; transform: translateY(6px); }
+    8% { opacity: 1; transform: translateY(0); }
+    85% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+  @keyframes showMsg {
+    0%, 38% { opacity: 0; transform: translateY(6px); }
+    50% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 1; }
+  }
+
+  /* ---------- Problem section ---------- */
+  .section {
+    padding: 90px 6%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--marigold);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .problem { background: var(--pine); color: var(--canvas); }
+  .problem h2 { color: var(--canvas); font-size: 36px; max-width: 700px; margin-bottom: 24px; }
+  .problem p { font-size: 17px; color: #C9D6CB; max-width: 600px; margin-bottom: 18px; }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+  .problem-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    padding: 26px;
+  }
+  .problem-card .stat {
+    font-family: 'Oswald', sans-serif;
+    font-size: 34px;
+    color: var(--marigold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .problem-card p { font-size: 14px; color: #C9D6CB; margin: 0; }
+
+  /* ---------- Fix section (3-step) ---------- */
+  .fix h2 { font-size: 36px; margin-bottom: 14px; }
+  .fix > p { font-size: 17px; color: #52493C; max-width: 620px; margin-bottom: 60px; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .step {
+    padding: 0 24px;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -6px;
+    top: 30px;
+    font-size: 24px;
+    color: var(--grass);
+    font-family: 'Oswald', sans-serif;
+  }
+  .step-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--grass);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .step h3 { font-size: 20px; margin-bottom: 10px; }
+  .step p { font-size: 15px; color: #52493C; }
+
+  /* ---------- Services ---------- */
+  .services { background: var(--canvas-warm); }
+  .services h2 { font-size: 36px; margin-bottom: 40px; }
+  .service-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .service-item {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 28px 22px;
+    border-left: 4px solid var(--grass);
+  }
+  .service-item h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: var(--pine);
+  }
+  .service-item p { font-size: 14px; color: #6B6152; margin: 0; }
+
+  /* ---------- Testimonial ---------- */
+  .testimonial {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .testimonial-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #A39A8A;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
+  .testimonial blockquote {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--pine);
+    line-height: 1.35;
+    margin-bottom: 20px;
+    text-transform: none;
+  }
+  .testimonial cite {
+    font-family: 'Source Sans 3', sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    color: #6B6152;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta {
+    background: var(--pine);
+    text-align: center;
+    padding: 90px 6%;
+  }
+  .cta h2 { color: var(--canvas); font-size: 38px; margin-bottom: 16px; }
+  .cta p { color: #C9D6CB; font-size: 17px; margin-bottom: 32px; }
+  .cta .btn-primary { background: var(--marigold); color: var(--pine-dark); }
+  .cta .btn-primary:hover { background: #D6912E; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 40px 6%;
+    background: var(--pine-dark);
+    color: #8FA391;
+    text-align: center;
+    font-size: 13px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  footer strong { color: var(--marigold); }
+
+  @media (max-width: 880px) {
+    .hero { grid-template-columns: 1fr; padding-top: 50px; }
+    .hero h1 { font-size: 38px; }
+    .problem-grid, .steps, .service-list { grid-template-columns: 1fr; }
+    .step:not(:last-child)::after { display: none; }
+    .step { padding: 0; margin-bottom: 30px; }
+    header { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="concept-badge">CONCEPT BUILD — designed by <strong>AuraLogic</strong> to demo the missed-call text-back system · not a live business</div>
+
+  <header>
+    <div class="logo">
+      <span class="logo-mark">2M</span>
+      Two-Man Lawn Co.
+    </div>
+    <div class="header-right">
+      <span class="header-phone">(555) 019-2847</span>
+      <a href="#quote" class="btn-primary">Get a Quote</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="hero-eyebrow">Family-run · One truck · Two people</div>
+      <h1>One truck.<br>Two guys.<br><span>Every call answered.</span></h1>
+      <p class="sub">Dale and Cody run the whole operation from one truck. They can't always pick up the phone mid-job — so now the phone answers for them.</p>
+      <div class="hero-ctas">
+        <a href="#quote" class="btn-primary">Get a Free Quote</a>
+        <a href="#fix" class="btn-secondary">See How It Works</a>
+      </div>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-status">missed call · 2:14 PM</div>
+          <div class="call-card">
+            <div class="missed-label">MISSED CALL</div>
+            <div class="caller">Unknown Caller</div>
+            <div class="caller-num">(555) 083-1190</div>
+          </div>
+          <div class="msg-bubble">Hey, this is Cody with Two-Man Lawn Co — sorry we missed you, we're out on a job right now. Reply here and we'll get you on the schedule today.</div>
+          <div class="msg-timestamp">sent automatically · 8 seconds later</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section problem">
+    <div class="section-label">The Problem</div>
+    <h2>The truck doesn't have Bluetooth for a reason.</h2>
+    <p>When you're behind a mower, you're not reaching for your phone. So the call goes to voicemail — and most people don't leave one. They just call the next name on the list.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="stat">1 truck</div>
+        <p>Every job, every day. If it's out on a lawn, nobody's by a phone.</p>
+      </div>
+      <div class="problem-card">
+        <div class="stat">No VM</div>
+        <p>Most callers hang up rather than leave a voicemail — and just call someone else.</p>
+      </div>
+      <div class="problem-card">
+        <div class="stat">Same day</div>
+        <p>People calling a lawn crew usually want an answer today, not tomorrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fix" id="fix">
+    <div class="section-label">The Fix</div>
+    <h2>Every missed call gets a reply — automatically.</h2>
+    <p>No new phone, no new number, no app to check between jobs. The second a call is missed, a text goes out on its own.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">STEP 1</div>
+        <h3>A call comes in</h3>
+        <p>A homeowner calls about mowing, cleanup, or a quote — same number as always.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 2</div>
+        <h3>Nobody's free to answer</h3>
+        <p>Dale and Cody are mid-job. The call rings out, just like it always has.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 3</div>
+        <h3>A text goes out in seconds</h3>
+        <p>The caller gets a friendly reply automatically — so they wait for Two-Man Lawn Co. instead of calling someone else.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services">
+    <div class="section-label">What We Do</div>
+    <h2>Straightforward lawn care, done right.</h2>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>Weekly Mowing</h3>
+        <p>Regular cuts on a schedule you can count on.</p>
+      </div>
+      <div class="service-item">
+        <h3>Edging & Trim</h3>
+        <p>Clean lines along walks, beds, and driveways.</p>
+      </div>
+      <div class="service-item">
+        <h3>Fall Cleanup</h3>
+        <p>Leaves cleared before they pile up on you.</p>
+      </div>
+      <div class="service-item">
+        <h3>One-Time Jobs</h3>
+        <p>Selling a house or hosting? We'll get it ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="testimonial">
+      <div class="testimonial-tag">SAMPLE TESTIMONIAL — FOR DEMO PURPOSES</div>
+      <blockquote>"I called three lawn guys. Two-Man Lawn Co. was the only one who texted me back before I even finished making lunch."</blockquote>
+      <cite>— Illustrative quote, not an actual customer</cite>
+    </div>
+  </section>
+
+  <section class="cta" id="quote">
+    <h2>Get a free quote today</h2>
+    <p>Call, text, or fill out the form — either way, you'll hear back fast.</p>
+    <a href="tel:5550192847" class="btn-primary">Call (555) 019-2847</a>
+  </section>
+
+  <footer>
+    This is a <strong>concept mockup</strong> built by AuraLogic to demonstrate a missed-call text-back system for small, owner-operated service businesses. Not a real business or working phone number.
+  </footer>
+
+</body>
+</html>
