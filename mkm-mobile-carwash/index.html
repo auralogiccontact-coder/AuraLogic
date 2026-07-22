@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MKM Mobile Car Wash & Detailing | Huntsville, AL</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #E8FBFA;
+    color: #131313;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: #FFE100; color: #131313; }
+
+  a { text-decoration: none; color: inherit; }
+
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- background splash texture ---------- */
+  .splash-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* ---------- Nav ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: #E8FBFA;
+    border-bottom: 4px solid #131313;
+  }
+  nav {
+    max-width: 1160px; margin: 0 auto; padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .logo .sub { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #131313; background: #FFE100; padding: 3px 8px; border: 2px solid #131313; border-radius: 4px; }
+  .navlinks { display: flex; gap: 30px; font-weight: 700; font-size: 14px; }
+  .navlinks a { position: relative; padding-bottom: 3px; }
+  .navlinks a:hover { color: #167C89; }
+  .nav-cta {
+    background: #131313; color: #FFE100;
+    font-weight: 800; font-size: 13px;
+    padding: 11px 20px; border-radius: 40px;
+    border: 2px solid #131313;
+  }
+  @media (max-width: 720px) { .navlinks { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 76px 0 60px;
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+
+  .tag-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #FFFFFF; border: 3px solid #131313; border-radius: 40px;
+    padding: 7px 16px 7px 8px; font-weight: 800; font-size: 12.5px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    margin-bottom: 26px;
+  }
+  .tag-badge .dot { width: 10px; height: 10px; background: #2FC6D6; border-radius: 50%; border: 2px solid #131313; }
+
+  h1 {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(52px, 7vw, 92px);
+    line-height: 0.98;
+  }
+  h1 .pop { color: #167C89; }
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 500;
+    max-width: 440px;
+    margin-top: 20px;
+    color: #2A2A2A;
+  }
+  .hero-actions { margin-top: 34px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: #FFE100; border: 3px solid #131313; color: #131313;
+    font-weight: 800; font-size: 15px;
+    padding: 16px 30px; border-radius: 50px;
+    box-shadow: 5px 5px 0 #131313;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 #131313; }
+  .btn-phone { font-weight: 800; font-size: 15px; color: #131313; display: flex; align-items: center; gap: 8px; }
+  .btn-phone .ico { width: 34px; height: 34px; border-radius: 50%; background: #2FC6D6; border: 2px solid #131313; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+
+  /* Hero art: hand-drawn style car + splashes via SVG */
+  .hero-art { position: relative; }
+  .hero-art svg { width: 100%; height: auto; overflow: visible; }
+  .splash-float {
+    position: absolute;
+    animation: bob 3.4s ease-in-out infinite;
+  }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @media (prefers-reduced-motion: reduce) { .splash-float { animation: none; } }
+
+  /* ---------- Marquee strip ---------- */
+  .marquee {
+    background: #131313; color: #FFE100;
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 26px;
+    border-top: 4px solid #131313; border-bottom: 4px solid #131313;
+  }
+  .marquee-track { display: inline-block; animation: scroll 22s linear infinite; }
+  .marquee-track span { margin: 0 26px; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+  /* ---------- Services ---------- */
+  section { padding: 90px 0; }
+  .section-head { margin-bottom: 52px; }
+  .section-eyebrow {
+    font-weight: 800; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #167C89; margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Caveat', cursive; font-weight: 700;
+    font-size: clamp(38px, 5vw, 58px);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  @media (max-width: 860px) { .services-grid { grid-template-columns: 1fr; } }
+
+  .service-card {
+    background: #FFFFFF;
+    border: 3px solid #131313;
+    border-radius: 18px;
+    padding: 34px 28px;
+    box-shadow: 6px 6px 0 #131313;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .service-card:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 #131313; }
+  .service-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #2FC6D6; border: 3px solid #131313;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; margin-bottom: 18px;
+  }
+  .service-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+  .service-card p { font-size: 14.5px; color: #4A4A4A; font-weight: 500; }
+
+  /* ---------- Pick-up / drop-off banner ---------- */
+  .banner {
+    background: #FFE100;
+    border-top: 4px solid #131313; border-bottom: 4px solid #131313;
+  }
+  .banner-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap; padding: 44px 0;
+  }
+  .banner h2 {
+    font-family: 'Caveat', cursive; font-weight: 700;
+    font-size: clamp(32px, 4.4vw, 46px);
+    max-width: 560px;
+  }
+  .banner p { font-weight: 600; font-size: 14.5px; margin-top: 8px; max-width: 480px; }
+
+  /* ---------- Social / contact ---------- */
+  .contact-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  }
+  @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-card {
+    background: #FFFFFF; border: 3px solid #131313; border-radius: 18px;
+    padding: 28px; display: flex; align-items: center; gap: 16px;
+    box-shadow: 5px 5px 0 #131313;
+  }
+  .contact-card .ico {
+    width: 46px; height: 46px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0; border: 2px solid #131313;
+  }
+  .ico.ig { background: linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7); }
+  .ico.fb { background: #1877F2; color: #fff; }
+  .ico.ph { background: #FFE100; }
+  .contact-card .label { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #167C89; }
+  .contact-card .value { font-weight: 800; font-size: 15px; word-break: break-word; }
+
+  /* ---------- Trust strip ---------- */
+  .trust {
+    text-align: center;
+    font-weight: 700;
+    color: #167C89;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta { text-align: center; }
+  .final-cta h2 {
+    font-family: 'Caveat', cursive; font-weight: 700;
+    font-size: clamp(40px, 6vw, 70px);
+    margin-bottom: 24px;
+  }
+  .final-cta h2 .pop { color: #167C89; }
+
+  footer {
+    background: #131313; color: #E8FBFA;
+    padding: 40px 0; text-align: center;
+  }
+  .foot-logo { font-family: 'Caveat', cursive; font-weight: 700; font-size: 24px; color: #FFE100; margin-bottom: 10px; }
+  footer p { font-size: 12.5px; color: #9AA; }
+
+  a:focus-visible, button:focus-visible { outline: 3px solid #167C89; outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">MKM <span class="sub">Mobile Car Wash</span></div>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#pickup">Pick-up &amp; Drop-off</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="tel:2564172836" class="nav-cta">Call Now</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tag-badge"><span class="dot"></span> Huntsville, AL · Mobile Detailing</div>
+      <h1>We bring the<br>shine <span class="pop">to you.</span></h1>
+      <p class="hero-sub">Handwash, buffing &amp; waxing wherever your car's parked — plus pick-up and drop-off if you'd rather skip the wait entirely.</p>
+      <div class="hero-actions">
+        <a href="tel:2564172836" class="btn-primary">Book a Wash →</a>
+        <a href="tel:2564172836" class="btn-phone"><span class="ico">☎</span> (256) 417-2836</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="240" cy="300" rx="190" ry="18" fill="#131313" opacity="0.08"/>
+        <path d="M60 235 C 55 200, 80 175, 120 172 L 150 140 C 158 128 172 120 188 120 L 300 120 C 316 120 330 128 338 140 L 368 172 C 400 176 425 200 420 235 L 420 250 C 420 258 413 264 405 264 L 380 264 C 380 280 366 292 350 292 C 334 292 320 280 320 264 L 170 264 C 170 280 156 292 140 292 C 124 292 110 280 110 264 L 80 264 C 68 264 60 258 60 250 Z"
+          fill="#FFE100" stroke="#131313" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M175 172 L 195 132 C 199 126 206 122 213 122 L 285 122 C 293 122 300 126 304 132 L 322 172 Z" fill="#E8FBFA" stroke="#131313" stroke-width="6" stroke-linejoin="round"/>
+        <line x1="248" y1="122" x2="248" y2="172" stroke="#131313" stroke-width="5"/>
+        <circle cx="140" cy="264" r="30" fill="#131313"/>
+        <circle cx="140" cy="264" r="12" fill="#8FE9F0"/>
+        <circle cx="350" cy="264" r="30" fill="#131313"/>
+        <circle cx="350" cy="264" r="12" fill="#8FE9F0"/>
+        <path d="M100 200 L 130 200" stroke="#131313" stroke-width="5" stroke-linecap="round"/>
+        <path d="M340 200 L 370 200" stroke="#131313" stroke-width="5" stroke-linecap="round"/>
+
+        <g class="splash-float" style="animation-delay:0s;">
+          <path d="M40 60 C 30 40, 50 20, 60 40 C 65 15, 90 20, 85 45 C 100 35, 105 60, 85 65 C 95 80, 70 90, 65 70 C 55 90, 30 80, 40 60 Z" fill="#2FC6D6" stroke="#131313" stroke-width="5"/>
+        </g>
+        <g class="splash-float" style="animation-delay:0.8s;" transform="translate(390,40) scale(0.7)">
+          <path d="M40 60 C 30 40, 50 20, 60 40 C 65 15, 90 20, 85 45 C 100 35, 105 60, 85 65 C 95 80, 70 90, 65 70 C 55 90, 30 80, 40 60 Z" fill="#2FC6D6" stroke="#131313" stroke-width="5"/>
+        </g>
+        <g class="splash-float" style="animation-delay:1.4s;" transform="translate(0,150) scale(0.5)">
+          <path d="M40 60 C 30 40, 50 20, 60 40 C 65 15, 90 20, 85 45 C 100 35, 105 60, 85 65 C 95 80, 70 90, 65 70 C 55 90, 30 80, 40 60 Z" fill="#2FC6D6" stroke="#131313" stroke-width="5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>★ HANDWASH</span><span>★ BUFFING</span><span>★ WAXING</span><span>★ PICK-UP &amp; DROP-OFF</span>
+    <span>★ HANDWASH</span><span>★ BUFFING</span><span>★ WAXING</span><span>★ PICK-UP &amp; DROP-OFF</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">What we do</div>
+      <div class="section-title">The full <span style="color:#167C89;">shine-up.</span></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🧽</div>
+        <h3>Handwash</h3>
+        <p>A thorough, by-hand wash that gets the details a machine skips.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Buffing</h3>
+        <p>Smooth out scratches and swirls for a clean, even finish.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚗</div>
+        <h3>Waxing</h3>
+        <p>Lock in the shine and add a layer of protection that lasts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banner" id="pickup">
+  <div class="wrap banner-inner">
+    <div>
+      <h2>No time to wait around? We'll come get it.</h2>
+      <p>Pick-up and drop-off service means your car gets washed while you get on with your day.</p>
+    </div>
+    <a href="tel:2564172836" class="btn-primary">Schedule Pick-up →</a>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Get in touch</div>
+      <div class="section-title">Book your <span style="color:#167C89;">wash.</span></div>
+    </div>
+    <div class="contact-grid">
+      <a href="tel:2564172836" class="contact-card">
+        <div class="ico ph">☎</div>
+        <div>
+          <div class="label">Call or Text</div>
+          <div class="value">(256) 417-2836</div>
+        </div>
+      </a>
+      <a href="https://instagram.com/mkm_mobile_carwash_" class="contact-card" target="_blank" rel="noopener">
+        <div class="ico ig">📷</div>
+        <div>
+          <div class="label">Instagram</div>
+          <div class="value">@mkm_mobile_carwash_</div>
+        </div>
+      </a>
+      <a href="https://facebook.com/mkmmobile" class="contact-card" target="_blank" rel="noopener">
+        <div class="ico fb">f</div>
+        <div>
+          <div class="label">Facebook</div>
+          <div class="value">facebook.com/mkmmobile</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Huntsville's ride is<br>about to <span class="pop">shine.</span></h2>
+    <a href="tel:2564172836" class="btn-primary">Call (256) 417-2836 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">MKM Mobile Car Wash &amp; Detailing</div>
+  <p>Huntsville, AL · Handwash · Buffing · Waxing · Pick-up &amp; Drop-off · Mockup built by AuraLogic</p>
+</footer>
+
+</body>
+</html>
