@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tava's Diner | Covington, GA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Karla:wght@400;500;600;700;800&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Karla', Arial, Helvetica, sans-serif;
+  color: #2B2420;
+  background-color: #F7F1E4;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Anton', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #2B2420;
+  font-weight: 400;
+}
+.script { font-family: 'Caveat', cursive; font-weight: 700; text-transform: none; letter-spacing: 0; }
+
+a { text-decoration: none; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+/* scalloped diner-awning divider */
+.scallop {
+  height: 26px;
+  background-color: #B23A2E;
+  -webkit-mask-image: radial-gradient(circle at 15px 0, transparent 15px, black 16px);
+  mask-image: radial-gradient(circle at 15px 0, transparent 15px, black 16px);
+  -webkit-mask-size: 30px 30px;
+  mask-size: 30px 30px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+.scallop.flip { transform: rotate(180deg); }
+
+/* ===== HEADER ===== */
+header { background-color: #2B2420; }
+.header-inner {
+  max-width: 1160px; margin: 0 auto; padding: 16px 28px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand { display:flex; align-items:center; gap:12px; }
+.brand-mark {
+  width:48px; height:48px; border-radius:50%; background:#B23A2E; border:2px solid #D9A441;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.brand-name { color:#F7F1E4; font-size:26px; line-height:1; }
+.brand-sub { color:#D9A441; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-top:2px; }
+nav { display:flex; align-items:center; gap:26px; }
+nav a { color:#E9E1CE; font-size:13.5px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; }
+nav a:hover { color:#D9A441; }
+.header-cta {
+  background:#D9A441; color:#2B2420; padding:10px 20px; border-radius:3px; font-weight:800; font-size:14px;
+  letter-spacing:0.5px; display:flex; align-items:center; gap:8px;
+}
+.header-cta:hover { background:#e8b654; }
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(180deg,#2B2420 0%, #3A2F28 100%);
+  padding: 76px 0 60px; text-align:center; position:relative;
+}
+.rating-pill {
+  display:inline-flex; align-items:center; gap:8px; background:rgba(217,164,65,0.12); border:1px solid rgba(217,164,65,0.4);
+  padding:8px 18px; border-radius:30px; color:#F0DFB4; font-size:13px; font-weight:700; letter-spacing:0.5px; margin-bottom:26px;
+}
+.rating-pill .stars { color:#D9A441; }
+.hero h1 { color:#F7F1E4; font-size:30px; letter-spacing:4px; }
+.hero .script-title { color:#D9A441; font-size:78px; line-height:0.9; margin:6px 0 18px; }
+.hero-sub { color:#CBB899; font-size:16px; max-width:520px; margin:0 auto; line-height:1.6; font-weight:500; }
+.hero-meta { display:flex; justify-content:center; gap:26px; flex-wrap:wrap; margin-top:28px; }
+.meta-chip { display:flex; align-items:center; gap:8px; color:#E9E1CE; font-size:13.5px; font-weight:600; }
+.meta-chip svg { flex-shrink:0; }
+.open-dot { width:8px; height:8px; border-radius:50%; background:#5FA777; display:inline-block; }
+.hero-cta-row { margin-top:34px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
+.btn-mustard {
+  background:#D9A441; color:#2B2420; padding:15px 32px; font-family:'Anton',sans-serif; font-size:14px;
+  letter-spacing:1px; border-radius:3px; box-shadow:0 8px 22px rgba(0,0,0,0.3);
+}
+.btn-mustard:hover { background:#E8B654; }
+.btn-line {
+  border:2px solid #B23A2E; color:#F0C9C3; padding:13px 30px; font-family:'Anton',sans-serif; font-size:14px;
+  letter-spacing:1px; border-radius:3px; background:rgba(178,58,46,0.15);
+}
+.btn-line:hover { background:rgba(178,58,46,0.3); }
+
+/* ===== TRUST STRIP ===== */
+.trust-strip { background:#F0E6CB; padding:20px 0; border-bottom:1px solid #E2D5AF; }
+.trust-strip .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; text-align:center; }
+.trust-item .num { font-family:'Anton',sans-serif; color:#B23A2E; font-size:24px; }
+.trust-item .label { font-size:11.5px; letter-spacing:1.5px; text-transform:uppercase; color:#6B5D45; font-weight:700; margin-top:2px; }
+
+/* ===== SECTIONS ===== */
+section { padding:76px 0; }
+.section-head { text-align:center; max-width:600px; margin:0 auto 48px; }
+.section-head .kicker { color:#B23A2E; font-size:13px; letter-spacing:3px; text-transform:uppercase; font-weight:800; display:block; margin-bottom:10px; }
+.section-head h2 { font-size:34px; }
+.section-head p { font-family:'Karla',sans-serif; text-transform:none; letter-spacing:0.2px; color:#6B5D45; margin-top:12px; font-size:15px; line-height:1.6; font-weight:600; }
+
+/* ===== ABOUT ===== */
+.about-section .wrap { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+.about-photo {
+  background: linear-gradient(150deg,#B23A2E,#8C2D24); border-radius:12px; min-height:320px; position:relative;
+  display:flex; align-items:center; justify-content:center; overflow:hidden; border: 6px solid #F0E6CB;
+}
+.about-photo .script { color:#F7F1E4; font-size:44px; text-align:center; padding:20px; }
+.about-text p { font-family:'Karla',sans-serif; text-transform:none; letter-spacing:0.2px; color:#4A3F30; font-size:15.5px; line-height:1.75; font-weight:500; margin-bottom:16px; }
+.about-badges { display:flex; gap:14px; margin-top:24px; flex-wrap:wrap; }
+.about-badge { background:#F0E6CB; border:1px solid #E2D5AF; padding:9px 16px; border-radius:30px; font-size:12.5px; font-weight:700; color:#6B5D45; letter-spacing:0.5px; text-transform:uppercase; }
+
+/* ===== MENU ===== */
+.menu-section { background:#2B2420; }
+.menu-section .section-head .kicker { color:#D9A441; }
+.menu-section .section-head h2 { color:#F7F1E4; }
+.menu-section .section-head p { color:#CBB899; }
+.menu-note {
+  text-align:center; max-width:560px; margin:-26px auto 44px; font-size:13px; color:#B29A6F; font-style:italic; font-weight:600;
+}
+.menu-grid { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+.menu-cat h3 { color:#D9A441; font-size:20px; border-bottom:2px solid #4A3F30; padding-bottom:12px; margin-bottom:18px; letter-spacing:1px; }
+.menu-item { display:flex; justify-content:space-between; gap:16px; margin-bottom:16px; align-items:baseline; }
+.menu-item .mi-name { color:#F0E6CB; font-weight:700; font-size:15px; }
+.menu-item .mi-desc { color:#9C8A6B; font-size:12.5px; font-weight:500; margin-top:2px; display:block; }
+.menu-item .mi-price { color:#D9A441; font-family:'Anton',sans-serif; font-size:15px; white-space:nowrap; }
+.mi-leaders { flex:1; border-bottom:1.5px dotted #4A3F30; margin: 0 8px 5px; }
+
+/* ===== CALL-AHEAD ORDER WIDGET ===== */
+.order-section { background:#F0E6CB; }
+.order-shell {
+  display:grid; grid-template-columns:1fr 1.15fr; background:#FFFFFF; border-radius:12px; overflow:hidden;
+  box-shadow:0 24px 60px rgba(43,36,32,0.14); border:1px solid #E2D5AF;
+}
+.order-info { background:linear-gradient(160deg,#B23A2E,#8C2D24); padding:44px 38px; color:#F7F1E4; }
+.order-info h3 { color:#F7F1E4; font-size:24px; }
+.order-info p { font-family:'Karla',sans-serif; text-transform:none; letter-spacing:0.2px; color:#F0C9C3; margin-top:14px; font-size:14.5px; line-height:1.65; font-weight:500; }
+.order-feature { display:flex; align-items:flex-start; gap:12px; margin-top:18px; }
+.order-feature .dot { width:8px; height:8px; border-radius:50%; background:#D9A441; margin-top:7px; flex-shrink:0; }
+.order-feature span { font-family:'Karla',sans-serif; text-transform:none; letter-spacing:0.2px; font-size:14px; color:#F7ECE9; font-weight:600; }
+.order-form { padding:44px 40px; }
+.order-toggle { display:flex; gap:10px; margin-bottom:24px; }
+.toggle-btn { flex:1; text-align:center; padding:12px 6px; border-radius:6px; border:1.5px solid #E2D5AF; font-weight:800; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:#8A7A5A; cursor:pointer; }
+.toggle-btn.active { background:#2B2420; color:#F0E6CB; border-color:#2B2420; }
+.form-row { margin-bottom:16px; }
+.form-row label { display:block; font-size:11.5px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#6B5D45; margin-bottom:7px; }
+.form-row select, .form-row input { width:100%; padding:12px 14px; border-radius:6px; border:1.5px solid #E2D5AF; font-family:'Karla',sans-serif; font-size:14px; color:#2B2420; background:#FBF7EC; }
+.form-row select:focus, .form-row input:focus { outline:none; border-color:#D9A441; }
+.form-cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.order-submit { width:100%; margin-top:6px; background:#B23A2E; color:#F7F1E4; padding:14px; border:none; border-radius:6px; font-family:'Anton',sans-serif; font-size:14px; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; }
+.order-submit:hover { background:#9C332A; }
+.confirm-box { display:none; text-align:center; padding:18px 8px; }
+.confirm-box .check { width:52px; height:52px; border-radius:50%; background:#E9F3EA; color:#3D7A44; display:flex; align-items:center; justify-content:center; margin:0 auto 14px; font-size:24px; }
+.confirm-box h4 { font-size:18px; }
+.confirm-box p { font-family:'Karla',sans-serif; text-transform:none; letter-spacing:0.2px; color:#6B5D45; margin-top:8px; font-size:13.5px; font-weight:600; }
+
+/* ===== HOURS + LOCATION ===== */
+.hours-section .wrap { display:grid; grid-template-columns:1fr 1fr; gap:50px; }
+.hours-card, .location-card { background:#FFFFFF; border:1px solid #E2D5AF; border-radius:10px; padding:32px; }
+.hours-card h3, .location-card h3 { font-size:19px; margin-bottom:18px; color:#B23A2E; }
+.hours-row { display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px dashed #E2D5AF; font-size:14px; font-weight:600; }
+.hours-row:last-child { border-bottom:none; }
+.hours-row .day { color:#2B2420; }
+.hours-row .time { color:#6B5D45; }
+.location-line { display:flex; align-items:flex-start; gap:12px; margin-bottom:16px; font-size:14.5px; color:#4A3F30; font-weight:600; }
+
+/* ===== FOOTER ===== */
+footer { background:#2B2420; color:#B29A6F; padding:50px 0 26px; }
+.footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; }
+.footer-brand .name { color:#F7F1E4; font-family:'Anton',sans-serif; font-size:20px; letter-spacing:1px; }
+.footer-brand p { font-family:'Karla',sans-serif; text-transform:none; letter-spacing:0.2px; font-size:13.5px; margin-top:12px; line-height:1.6; color:#9C8A6B; font-weight:500; max-width:300px; }
+footer h4 { color:#D9A441; font-size:12.5px; letter-spacing:2px; margin-bottom:14px; }
+footer .flink { display:block; color:#CBB899; font-family:'Karla',sans-serif; text-transform:none; letter-spacing:0.2px; font-size:14px; margin-bottom:9px; font-weight:600; }
+footer .flink:hover { color:#D9A441; }
+.footer-bottom { border-top:1px solid #4A3F30; margin-top:40px; padding-top:20px; text-align:center; font-family:'Karla',sans-serif; font-size:12px; color:#8A7A5A; font-weight:600; }
+
+@media (max-width: 900px) {
+  .about-section .wrap, .order-shell, .hours-section .wrap { grid-template-columns:1fr; }
+  .menu-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 620px) {
+  nav { display:none; }
+  .hero .script-title { font-size:52px; }
+  .form-cols { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F1E4" stroke-width="1.8"><path d="M6 3v7a3 3 0 0 0 6 0V3M9 10v11M18 3c-2 0-3 2-3 4s1 4 3 4 3-2 3-4-1-4-3-4zM18 11v10"/></svg>
+      </div>
+      <div>
+        <div class="brand-name">TAVA'S DINER</div>
+        <div class="brand-sub">Covington, Georgia</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#order">Order Ahead</a>
+      <a href="#hours">Hours &amp; Location</a>
+    </nav>
+    <a class="header-cta" href="tel:6786603497">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2B2420" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (678) 660-3497
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="rating-pill"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.5 / 5 &middot; 35 Reviews</div>
+    <h1>WELCOME TO</h1>
+    <div class="script-title">Tava's Diner</div>
+    <p class="hero-sub">Classic comfort food and honest hospitality, served up on Washington St since day one. Come hungry.</p>
+    <div class="hero-meta">
+      <div class="meta-chip"><span class="open-dot"></span> Open Now &middot; Closes 8 PM</div>
+      <div class="meta-chip">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9A441" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        6154 Washington St SW, Covington, GA 30014
+      </div>
+    </div>
+    <div class="hero-cta-row">
+      <a class="btn-mustard" href="#order">Order Ahead</a>
+      <a class="btn-line" href="#menu">View Menu</a>
+    </div>
+  </div>
+</section>
+
+<div class="scallop"></div>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item"><div class="num">4.5&#9733;</div><div class="label">Google Rating</div></div>
+    <div class="trust-item"><div class="num">35</div><div class="label">Happy Reviews</div></div>
+    <div class="trust-item"><div class="num">6</div><div class="label">Days a Week</div></div>
+    <div class="trust-item"><div class="num">100%</div><div class="label">Homestyle Cooking</div></div>
+  </div>
+</div>
+
+<section class="about-section">
+  <div class="wrap">
+    <div class="about-photo">
+      <div class="script">"Good food,<br>good people,<br>good town."</div>
+    </div>
+    <div class="about-text">
+      <span class="kicker" style="color:#B23A2E; font-size:13px; letter-spacing:3px; text-transform:uppercase; font-weight:800; display:block; margin-bottom:10px;">Our Story</span>
+      <h2 style="font-size:30px; margin-bottom:16px;">A Covington Favorite</h2>
+      <p>Tava's Diner is the kind of place where the coffee's always hot and the plates are always full. We serve up scratch-made comfort food for breakfast, lunch, and everything in between, right here on Washington St SW.</p>
+      <p>Whether you're stopping in for a quick bite or settling into a booth for the morning, our team treats every guest like family — because around here, most of them are.</p>
+      <div class="about-badges">
+        <div class="about-badge">Family Owned</div>
+        <div class="about-badge">Made From Scratch</div>
+        <div class="about-badge">Locally Loved</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Fresh &amp; Made To Order</span>
+      <h2>The Menu</h2>
+      <p>A sampling of Tava's favorites — full menu available in-house and updated seasonally.</p>
+    </div>
+    <p class="menu-note">Menu items shown are placeholders for design purposes — final dish names &amp; pricing to be confirmed with Tava's before launch.</p>
+
+    <div class="menu-grid">
+      <div class="menu-cat">
+        <h3>Breakfast, All Day</h3>
+        <div class="menu-item"><span class="mi-name">The Tava's Special<span class="mi-desc">2 eggs, bacon or sausage, hash browns, toast</span></span><span class="mi-leaders"></span><span class="mi-price">$9.99</span></div>
+        <div class="menu-item"><span class="mi-name">Buttermilk Pancake Stack<span class="mi-desc">Served with warm syrup &amp; butter</span></span><span class="mi-leaders"></span><span class="mi-price">$7.99</span></div>
+        <div class="menu-item"><span class="mi-name">Country Fried Steak &amp; Eggs<span class="mi-desc">Smothered in white gravy</span></span><span class="mi-leaders"></span><span class="mi-price">$11.49</span></div>
+        <div class="menu-item"><span class="mi-name">Loaded Omelet<span class="mi-desc">Cheese, peppers, onion, ham</span></span><span class="mi-leaders"></span><span class="mi-price">$9.49</span></div>
+      </div>
+
+      <div class="menu-cat">
+        <h3>Lunch Classics</h3>
+        <div class="menu-item"><span class="mi-name">Tava's Cheeseburger<span class="mi-desc">Hand-pattied, served with fries</span></span><span class="mi-leaders"></span><span class="mi-price">$10.99</span></div>
+        <div class="menu-item"><span class="mi-name">Southern Fried Chicken Plate<span class="mi-desc">Two sides included</span></span><span class="mi-leaders"></span><span class="mi-price">$12.99</span></div>
+        <div class="menu-item"><span class="mi-name">Club Sandwich<span class="mi-desc">Triple decker, side of chips</span></span><span class="mi-leaders"></span><span class="mi-price">$9.99</span></div>
+        <div class="menu-item"><span class="mi-name">Meatloaf Dinner<span class="mi-desc">Two sides &amp; cornbread</span></span><span class="mi-leaders"></span><span class="mi-price">$11.99</span></div>
+      </div>
+
+      <div class="menu-cat">
+        <h3>Sides &amp; Extras</h3>
+        <div class="menu-item"><span class="mi-name">Buttermilk Biscuit &amp; Gravy</span><span class="mi-leaders"></span><span class="mi-price">$4.49</span></div>
+        <div class="menu-item"><span class="mi-name">Hash Browns</span><span class="mi-leaders"></span><span class="mi-price">$3.49</span></div>
+        <div class="menu-item"><span class="mi-name">Collard Greens</span><span class="mi-leaders"></span><span class="mi-price">$3.99</span></div>
+        <div class="menu-item"><span class="mi-name">Mac &amp; Cheese</span><span class="mi-leaders"></span><span class="mi-price">$3.99</span></div>
+      </div>
+
+      <div class="menu-cat">
+        <h3>Sweets &amp; Shakes</h3>
+        <div class="menu-item"><span class="mi-name">Slice of Homemade Pie<span class="mi-desc">Ask about today's flavor</span></span><span class="mi-leaders"></span><span class="mi-price">$4.99</span></div>
+        <div class="menu-item"><span class="mi-name">Old-Fashioned Milkshake</span><span class="mi-leaders"></span><span class="mi-price">$5.49</span></div>
+        <div class="menu-item"><span class="mi-name">Fresh Brewed Sweet Tea</span><span class="mi-leaders"></span><span class="mi-price">$2.49</span></div>
+        <div class="menu-item"><span class="mi-name">Bottomless Coffee</span><span class="mi-leaders"></span><span class="mi-price">$2.99</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scallop"></div>
+
+<section class="order-section" id="order">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Call-Ahead &amp; Pickup</span>
+      <h2>Order Ahead Online</h2>
+      <p>Skip the wait — place your order online and we'll have it ready when you walk in.</p>
+    </div>
+
+    <div class="order-shell">
+      <div class="order-info">
+        <h3>Fresh, Fast &amp; Ready For You</h3>
+        <p>Order for pickup or reserve a table for your next visit — no phone tag required.</p>
+        <div class="order-feature"><div class="dot"></div><span>Instant order confirmation</span></div>
+        <div class="order-feature"><div class="dot"></div><span>Pickup or dine-in reservation</span></div>
+        <div class="order-feature"><div class="dot"></div><span>Open 6 days a week</span></div>
+        <div class="order-feature"><div class="dot"></div><span>Family owned &amp; operated</span></div>
+      </div>
+      <div class="order-form">
+        <div class="order-toggle">
+          <div class="toggle-btn active" id="toggleAhead">Order Ahead</div>
+          <div class="toggle-btn" id="toggleTable">Reserve a Table</div>
+        </div>
+        <div id="orderFormBody">
+          <div class="form-row">
+            <label>What are you craving?</label>
+            <select>
+              <option>The Tava's Special</option>
+              <option>Buttermilk Pancake Stack</option>
+              <option>Southern Fried Chicken Plate</option>
+              <option>Tava's Cheeseburger</option>
+              <option>Club Sandwich</option>
+              <option>Meatloaf Dinner</option>
+              <option>Slice of Homemade Pie</option>
+            </select>
+          </div>
+          <div class="form-cols">
+            <div class="form-row"><label>Pickup Date</label><input type="date"></div>
+            <div class="form-row"><label>Pickup Time</label><input type="time"></div>
+          </div>
+          <div class="form-cols">
+            <div class="form-row"><label>Name</label><input type="text" placeholder="Your name"></div>
+            <div class="form-row"><label>Phone</label><input type="tel" placeholder="(678) 000-0000"></div>
+          </div>
+          <button class="order-submit" onclick="submitOrder()">Place Order</button>
+        </div>
+        <div class="confirm-box" id="confirmBox">
+          <div class="check">&#10003;</div>
+          <h4>Order Received!</h4>
+          <p>Tava's Diner will have your order ready at your requested time. Questions? Call (678) 660-3497.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hours-section" id="hours">
+  <div class="wrap">
+    <div class="hours-card">
+      <h3>Hours</h3>
+      <div class="hours-row"><span class="day">Monday</span><span class="time">7 AM – 8 PM</span></div>
+      <div class="hours-row"><span class="day">Tuesday</span><span class="time">7 AM – 8 PM</span></div>
+      <div class="hours-row"><span class="day">Wednesday</span><span class="time">7 AM – 8 PM</span></div>
+      <div class="hours-row"><span class="day">Thursday</span><span class="time">7 AM – 8 PM</span></div>
+      <div class="hours-row"><span class="day">Friday</span><span class="time">7 AM – 8 PM</span></div>
+      <div class="hours-row"><span class="day">Saturday</span><span class="time">7 AM – 8 PM</span></div>
+      <div class="hours-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+    </div>
+    <div class="location-card">
+      <h3>Find Us</h3>
+      <div class="location-line">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B23A2E" stroke-width="2" style="flex-shrink:0; margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>6154 Washington St SW,<br>Covington, GA 30014</span>
+      </div>
+      <div class="location-line">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B23A2E" stroke-width="2" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>(678) 660-3497</span>
+      </div>
+      <a class="btn-mustard" style="display:inline-block; margin-top:10px;" href="https://www.google.com/maps/search/?api=1&query=6154+Washington+St+SW+Covington+GA+30014">Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="name">TAVA'S DINER</div>
+        <p>Homestyle comfort food served fresh in Covington, Georgia. Come as a stranger, leave as family.</p>
+      </div>
+      <div>
+        <h4>QUICK LINKS</h4>
+        <a class="flink" href="#menu">Menu</a>
+        <a class="flink" href="#order">Order Ahead</a>
+        <a class="flink" href="#hours">Hours &amp; Location</a>
+        <a class="flink" href="tel:6786603497">Call (678) 660-3497</a>
+      </div>
+      <div>
+        <h4>VISIT US</h4>
+        <div style="font-family:'Karla',sans-serif; font-size:13.5px; color:#CBB899; line-height:1.7; font-weight:500;">
+          6154 Washington St SW<br>Covington, GA 30014<br><br>Open 7 AM – 8 PM<br>Closed Sundays
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">Copyright &copy; 2026 Tava's Diner. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('toggleTable').addEventListener('click', function() {
+    this.classList.add('active');
+    document.getElementById('toggleAhead').classList.remove('active');
+  });
+  document.getElementById('toggleAhead').addEventListener('click', function() {
+    this.classList.add('active');
+    document.getElementById('toggleTable').classList.remove('active');
+  });
+  function submitOrder() {
+    document.getElementById('orderFormBody').style.display = 'none';
+    document.getElementById('confirmBox').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
