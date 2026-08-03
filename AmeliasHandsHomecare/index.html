@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amelia's Hands Home Care Services | Covington, GA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+  color: #372A45;
+  background-color: #FBF8FC;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  color: #372A45;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+a { text-decoration: none; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+/* ===== HEADER ===== */
+header { background:#FFFFFF; border-bottom:1px solid #F0E6F2; position:sticky; top:0; z-index:20; }
+.header-inner { max-width:1160px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between; }
+.brand { display:flex; align-items:center; gap:12px; }
+.brand-mark {
+  width:48px; height:48px; border-radius:50%;
+  background: linear-gradient(150deg,#C22693,#7A57C4 55%,#4C8AE0);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.brand-name { font-family:'Fraunces',serif; font-size:19px; color:#372A45; font-weight:700; line-height:1.15; }
+.brand-sub { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#A15FA8; font-weight:700; margin-top:2px; }
+nav { display:flex; align-items:center; gap:26px; }
+nav a { color:#5C4A6B; font-size:14px; font-weight:700; }
+nav a:hover { color:#A2296B; }
+.header-cta {
+  background: linear-gradient(120deg,#A2296B,#6A4FA0);
+  color:#FFFFFF; padding:11px 22px; border-radius:30px; font-weight:800; font-size:14px; display:flex; align-items:center; gap:8px;
+}
+.header-cta:hover { opacity:0.92; }
+
+/* ===== HERO ===== */
+.hero {
+  position:relative; overflow:hidden;
+  background: linear-gradient(135deg,#C22693 0%, #8A4FBE 45%, #4C7FC7 100%);
+  padding: 90px 0 110px; text-align:center;
+}
+.hero-blob { position:absolute; border-radius:50%; filter: blur(2px); opacity:0.18; background:#FFFFFF; }
+.hero-inner { position:relative; z-index:2; }
+.eyebrow {
+  display:inline-block; color:#FFFFFF; font-size:13px; letter-spacing:3px; text-transform:uppercase; font-weight:800;
+  border:1px solid rgba(255,255,255,0.5); padding:7px 18px; border-radius:30px; margin-bottom:24px; background:rgba(255,255,255,0.08);
+}
+.hero h1 { color:#FFFFFF; font-size:50px; line-height:1.12; text-shadow:0 2px 20px rgba(0,0,0,0.15); max-width:720px; margin:0 auto; }
+.hero-sub { color:#F3E4F5; max-width:560px; margin:22px auto 0; font-size:16.5px; line-height:1.65; font-weight:600; }
+.hero-badges { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:30px; }
+.hero-badge { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.3); padding:9px 18px; border-radius:30px; color:#FFFFFF; font-size:13px; font-weight:700; }
+.hero-cta-row { margin-top:38px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
+.btn-white { background:#FFFFFF; color:#A2296B; padding:16px 32px; font-weight:800; font-size:15px; border-radius:30px; box-shadow:0 10px 26px rgba(0,0,0,0.18); }
+.btn-white:hover { background:#FBEFF7; }
+.btn-outline-w { border:2px solid #FFFFFF; color:#FFFFFF; padding:14px 30px; font-weight:800; font-size:15px; border-radius:30px; background:rgba(255,255,255,0.08); }
+.btn-outline-w:hover { background:rgba(255,255,255,0.2); }
+
+/* ===== TRUST STRIP ===== */
+.trust-strip { background:#FFFFFF; padding:22px 0; border-bottom:1px solid #F0E6F2; }
+.trust-strip .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; text-align:center; }
+.trust-item .num { font-family:'Fraunces',serif; color:#A2296B; font-size:24px; font-weight:700; }
+.trust-item .label { font-size:11.5px; letter-spacing:1.5px; text-transform:uppercase; color:#7A6A87; font-weight:700; margin-top:2px; }
+
+/* ===== SECTION GENERIC ===== */
+section { padding:84px 0; }
+.section-head { text-align:center; max-width:620px; margin:0 auto 50px; }
+.kicker { color:#A2296B; font-size:13px; letter-spacing:3px; text-transform:uppercase; font-weight:800; display:block; margin-bottom:12px; }
+.section-head h2 { font-size:34px; }
+.section-head p { font-family:'Nunito Sans',sans-serif; color:#6E5D7C; margin-top:14px; font-size:15.5px; line-height:1.65; font-weight:600; }
+
+/* ===== ABOUT ===== */
+.about-section .wrap { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+.about-visual {
+  border-radius:16px; min-height:340px; position:relative; overflow:hidden;
+  background: linear-gradient(160deg,#C22693,#6A4FA0 60%,#4C7FC7);
+  display:flex; align-items:center; justify-content:center; border:6px solid #FFFFFF; box-shadow:0 20px 50px rgba(162,41,107,0.18);
+}
+.about-visual svg { opacity:0.9; }
+.about-text p { color:#4C3E58; font-size:15.5px; line-height:1.75; font-weight:600; margin-bottom:16px; }
+.about-badges { display:flex; gap:12px; margin-top:22px; flex-wrap:wrap; }
+.about-badge { background:#F6EAF3; border:1px solid #EAD3E8; padding:9px 16px; border-radius:30px; font-size:12.5px; font-weight:800; color:#A2296B; letter-spacing:0.3px; }
+
+/* ===== SERVICES ===== */
+.services-section { background:#F9F2F8; }
+.service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.service-card { background:#FFFFFF; border:1px solid #F0E0EE; border-radius:12px; padding:30px 26px; transition:transform .2s, box-shadow .2s; }
+.service-card:hover { transform:translateY(-4px); box-shadow:0 16px 34px rgba(162,41,107,0.12); border-color:#E5B9DC; }
+.service-icon { width:54px; height:54px; border-radius:50%; background:linear-gradient(150deg,#F6E4F1,#E7E1F5); display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.service-card h3 { font-size:18px; }
+.service-card p { color:#6E5D7C; font-size:13.5px; margin-top:10px; line-height:1.6; font-weight:600; }
+
+/* ===== WHY CHOOSE ===== */
+.why-section .wrap { display:grid; grid-template-columns: 1fr 1fr; gap:50px; align-items:center; }
+.why-list { display:flex; flex-direction:column; gap:20px; }
+.why-item { display:flex; gap:16px; align-items:flex-start; }
+.why-num {
+  width:40px; height:40px; border-radius:50%; background:linear-gradient(150deg,#C22693,#4C7FC7);
+  color:#FFFFFF; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; font-size:16px; flex-shrink:0;
+}
+.why-item h4 { font-size:16.5px; margin-bottom:4px; }
+.why-item p { font-size:13.5px; color:#6E5D7C; font-weight:600; line-height:1.6; }
+.why-visual {
+  border-radius:16px; min-height:300px; background: linear-gradient(150deg,#F6E4F1,#E9E1F5,#DDEBF7);
+  display:flex; align-items:center; justify-content:center; border:1px solid #F0E0EE;
+}
+
+/* ===== CONSULT / BOOKING ===== */
+.consult-section {
+  background: linear-gradient(135deg,#C22693 0%, #8A4FBE 45%, #4C7FC7 100%);
+  text-align:center; position:relative; overflow:hidden;
+}
+.consult-section .kicker { color:#FBE4F5; }
+.consult-section h2 { color:#FFFFFF; }
+.consult-section .section-head p { color:#F3E4F5; }
+.consult-card {
+  background:#FFFFFF; border-radius:16px; max-width:640px; margin:0 auto; padding:44px 40px;
+  box-shadow:0 24px 60px rgba(0,0,0,0.2);
+}
+.consult-card h3 { font-size:22px; margin-bottom:10px; }
+.consult-card p { color:#6E5D7C; font-size:14.5px; font-weight:600; line-height:1.6; margin-bottom:26px; }
+.consult-feature-row { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; margin-bottom:28px; }
+.consult-feature { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:#5C4A6B; }
+.consult-feature .dot { width:8px; height:8px; border-radius:50%; background:#A2296B; }
+.btn-gradient {
+  display:inline-block; background:linear-gradient(120deg,#A2296B,#6A4FA0); color:#FFFFFF; padding:16px 38px;
+  border-radius:30px; font-weight:800; font-size:15px; box-shadow:0 10px 26px rgba(162,41,107,0.25);
+}
+.btn-gradient:hover { opacity:0.92; }
+.consult-alt { margin-top:18px; font-size:13.5px; color:#8A7A97; font-weight:600; }
+.consult-alt a { color:#A2296B; font-weight:800; }
+
+/* ===== TESTIMONIALS ===== */
+.reviews-section { background:#F9F2F8; }
+.review-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.review-card { background:#FFFFFF; border:1px solid #F0E0EE; border-radius:12px; padding:28px; }
+.stars { color:#C22693; font-size:16px; margin-bottom:12px; }
+.review-card p.quote { color:#4C3E58; font-size:14.5px; line-height:1.65; font-weight:600; font-style:italic; }
+.review-name { margin-top:16px; font-family:'Fraunces',serif; font-size:14.5px; color:#372A45; font-weight:700; }
+.review-loc { font-size:12.5px; color:#8A7A97; font-weight:600; }
+
+/* ===== FOOTER ===== */
+footer { background:#372A45; color:#C9BBD3; padding:56px 0 26px; }
+.footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; }
+.footer-brand .name { color:#FFFFFF; font-family:'Fraunces',serif; font-size:20px; font-weight:700; }
+.footer-brand p { font-size:13.5px; margin-top:12px; line-height:1.65; color:#B3A2BE; font-weight:500; max-width:300px; }
+footer h4 { color:#E5A8D6; font-size:12.5px; letter-spacing:2px; margin-bottom:16px; text-transform:uppercase; }
+footer .flink { display:block; color:#C9BBD3; font-size:14px; margin-bottom:10px; font-weight:600; }
+footer .flink:hover { color:#E5A8D6; }
+.footer-bottom { border-top:1px solid #4C3E58; margin-top:44px; padding-top:22px; text-align:center; font-size:12.5px; color:#9481A0; font-weight:600; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .about-section .wrap, .why-section .wrap { grid-template-columns:1fr; }
+  .service-grid, .review-grid { grid-template-columns:1fr 1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 620px) {
+  nav { display:none; }
+  .hero h1 { font-size:34px; }
+  .service-grid, .review-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr; }
+  .consult-card { padding:34px 24px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6"><path d="M12 6c-2-2.5-6-1.5-6 2 0 2.5 3 4.5 6 7 3-2.5 6-4.5 6-7 0-3.5-4-4.5-6-2z"/></svg>
+      </div>
+      <div>
+        <div class="brand-name">Amelia's Hands</div>
+        <div class="brand-sub">Home Care Services</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#consult">Book a Consult</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="header-cta" href="tel:16786685768">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (678) 668-5768
+    </a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-blob" style="width:320px; height:320px; top:-100px; left:-80px;"></div>
+  <div class="hero-blob" style="width:260px; height:260px; bottom:-80px; right:-60px;"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Covington, Georgia &middot; Licensed Home Care Provider</span>
+    <h1>Compassionate Home Care, Right Where They Belong.</h1>
+    <p class="hero-sub">Amelia's Hands provides trusted, personalized in-home care so your loved ones can stay safe, comfortable, and independent at home.</p>
+    <div class="hero-badges">
+      <div class="hero-badge">&#9829; BBB Accredited &middot; A Rated</div>
+      <div class="hero-badge">&#9829; Licensed in Georgia</div>
+      <div class="hero-badge">&#9829; Family Owned</div>
+    </div>
+    <div class="hero-cta-row">
+      <a class="btn-white" href="#consult">Schedule a Free Consultation</a>
+      <a class="btn-outline-w" href="tel:16786685768">Call (678) 668-5768</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item"><div class="num">A</div><div class="label">BBB Rating</div></div>
+    <div class="trust-item"><div class="num">GA</div><div class="label">Licensed Provider</div></div>
+    <div class="trust-item"><div class="num">1:1</div><div class="label">Personalized Care Plans</div></div>
+    <div class="trust-item"><div class="num">24/7</div><div class="label">Care Availability</div></div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about-section">
+  <div class="wrap">
+    <div class="about-visual">
+      <svg width="140" height="140" viewBox="0 0 24 24" fill="none">
+        <path d="M12 5.2c-1.6-2-4.8-1.2-4.8 1.6 0 2 2.4 3.6 4.8 5.6 2.4-2 4.8-3.6 4.8-5.6 0-2.8-3.2-3.6-4.8-1.6z" stroke="#FFFFFF" stroke-width="1.3" opacity="0.9"/>
+        <path d="M5 12l7 6 7-6-7-5-7 5z" stroke="#FFFFFF" stroke-width="1.3" opacity="0.9"/>
+        <path d="M8 13v6h8v-6" stroke="#FFFFFF" stroke-width="1.3" opacity="0.9"/>
+      </svg>
+    </div>
+    <div class="about-text">
+      <span class="kicker">Our Story</span>
+      <h2 style="font-size:30px; margin-bottom:16px;">Care That Feels Like Family</h2>
+      <p>Amelia's Hands Home Care Services was built on a simple belief: everyone deserves to age and heal in the comfort of their own home, surrounded by dignity and genuine care.</p>
+      <p>Led by CEO Nikita Farley-Thompson, our team works closely with every family to build a care plan around real needs — not a one-size-fits-all package. We treat every client the way we'd want our own family treated.</p>
+      <div class="about-badges">
+        <div class="about-badge">Founded 2024</div>
+        <div class="about-badge">Non-Medical Home Care</div>
+        <div class="about-badge">Serving Covington &amp; Surrounding Areas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services-section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">How We Help</span>
+      <h2>Our Home Care Services</h2>
+      <p>Every care plan is built around the individual — here's a look at the support we provide most often.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A2296B" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></div>
+        <h3>Personal Care</h3>
+        <p>Bathing, dressing, grooming, and mobility assistance delivered with patience and respect.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A2296B" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <h3>Companion Care</h3>
+        <p>Friendly companionship, conversation, and shared activities to fight isolation and lift spirits.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A2296B" stroke-width="1.8"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V9z"/></svg></div>
+        <h3>Homemaking &amp; Light Housekeeping</h3>
+        <p>Meal prep, laundry, tidying, and errands so the household keeps running smoothly.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A2296B" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 2v4M16 2v4M4 10h16"/></svg></div>
+        <h3>Respite Care</h3>
+        <p>Short-term relief for family caregivers, so you can rest knowing your loved one is in good hands.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A2296B" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Medication Reminders</h3>
+        <p>Gentle reminders and routine support to help keep health plans on track.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A2296B" stroke-width="1.8"><rect x="3" y="7" width="15" height="11" rx="2"/><path d="M18 10h2.5l1.5 3v4h-4"/><circle cx="7.5" cy="19.5" r="1.6"/><circle cx="17.5" cy="19.5" r="1.6"/></svg></div>
+        <h3>Transportation</h3>
+        <p>Safe rides to appointments, errands, and visits — so no one misses what matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE ============ -->
+<section class="why-section" id="why">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Why Families Choose Us</span>
+      <h2 style="font-size:30px; margin-bottom:26px;">A Team You Can Trust</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-num">1</div>
+          <div><h4>Licensed &amp; Accredited</h4><p>Licensed private home care provider in Georgia and BBB Accredited with an A rating.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">2</div>
+          <div><h4>Personalized Care Plans</h4><p>No generic packages — every plan is built around your loved one's actual needs and routine.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">3</div>
+          <div><h4>Caring, Screened Caregivers</h4><p>Our caregivers are selected for both skill and heart, then matched thoughtfully to each family.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">4</div>
+          <div><h4>Flexible Scheduling</h4><p>From a few hours a week to around-the-clock care, we build a schedule that works for your family.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <svg width="160" height="160" viewBox="0 0 24 24" fill="none">
+        <path d="M12 5.2c-1.6-2-4.8-1.2-4.8 1.6 0 2 2.4 3.6 4.8 5.6 2.4-2 4.8-3.6 4.8-5.6 0-2.8-3.2-3.6-4.8-1.6z" stroke="#A2296B" stroke-width="1.2"/>
+        <path d="M4 14c0-1.5 1-2 1-3.5V8M6 8c1-1 2 0 2 1.5v3M9 8c1-1 2 0 2 1.5v3.5" stroke="#4C7FC7" stroke-width="1.2"/>
+        <path d="M20 14c0-1.5-1-2-1-3.5V8M18 8c-1-1-2 0-2 1.5v3M15 8c-1-1-2 0-2 1.5v3.5" stroke="#4C7FC7" stroke-width="1.2"/>
+        <path d="M6 14c0 3 3 5 6 5s6-2 6-5" stroke="#6A4FA0" stroke-width="1.2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONSULT / BOOKING ============ -->
+<section class="consult-section" id="consult">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Get Started</span>
+      <h2>Schedule Your Free Consultation</h2>
+      <p>Tell us about your loved one's needs and we'll help you build a care plan that fits.</p>
+    </div>
+    <div class="consult-card">
+      <h3>30-Minute Care Consultation</h3>
+      <p>A no-obligation call to talk through your family's needs, answer questions, and see if Amelia's Hands is the right fit.</p>
+      <div class="consult-feature-row">
+        <div class="consult-feature"><div class="dot"></div>Free, no obligation</div>
+        <div class="consult-feature"><div class="dot"></div>30 minutes</div>
+        <div class="consult-feature"><div class="dot"></div>Pick a time online</div>
+      </div>
+      <a class="btn-gradient" href="https://calendly.com/ameliashandsllc/30min" target="_blank" rel="noopener">Book My Free Consultation</a>
+      <div class="consult-alt">Prefer to talk first? Call <a href="tel:16786685768">(678) 668-5768</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews-section" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Families Say It Best</span>
+      <h2>What Our Clients Say</h2>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">Nikita and her team treated my mother like she was their own family. I finally felt like I could breathe again knowing she was in good hands.</p>
+        <div class="review-name">Denise W.</div>
+        <div class="review-loc">Covington, GA</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">The care plan was built entirely around my dad's routine, not a generic checklist. That personal touch made all the difference.</p>
+        <div class="review-name">Marcus J.</div>
+        <div class="review-loc">Oxford, GA</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">Professional, warm, and always on time. Scheduling the free consultation was the easiest part of a hard decision.</p>
+        <div class="review-name">Renata S.</div>
+        <div class="review-loc">Conyers, GA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="name">Amelia's Hands Home Care Services</div>
+        <p>Licensed, compassionate in-home care serving Covington, Georgia and the surrounding area. BBB Accredited &middot; A Rated.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a class="flink" href="#services">Services</a>
+        <a class="flink" href="#why">Why Choose Us</a>
+        <a class="flink" href="#consult">Book a Consultation</a>
+        <a class="flink" href="tel:16786685768">Call (678) 668-5768</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div style="font-size:13.5px; color:#C9BBD3; line-height:1.8; font-weight:500;">
+          Covington, GA 30016<br>
+          (678) 668-5768<br>
+          nikitathompson@ameliashands.com
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">Copyright &copy; 2026 Amelia's Hands Home Care Services LLC. All Rights Reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
