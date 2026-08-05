@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iLash Boulevard by Charleslyn | Montgomery, AL</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Jost:wght@300;400;500;600&display=swap');
+
+:root{
+  --wine:#4A1228;
+  --wine-deep:#2E0A18;
+  --gold:#C9A24B;
+  --blush:#F2DCD3;
+  --cream:#FBF5F0;
+  --ink:#231016;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;}
+a{text-decoration:none;color:inherit;}
+.stripe{
+  height:10px;
+  background:repeating-linear-gradient(120deg,var(--wine) 0 24px, var(--gold) 24px 48px);
+}
+
+/* NAV */
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:22px 6%;
+  background:var(--cream);
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid rgba(74,18,40,0.1);
+}
+.logo{font-family:'Fraunces',serif;font-size:1.4rem;letter-spacing:1px;color:var(--wine);}
+.logo span{color:var(--gold);}
+.nav-links{display:flex;gap:36px;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;}
+.nav-links a{transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{
+  background:var(--wine);color:var(--cream);
+  padding:11px 26px;border-radius:2px;
+  font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;
+  transition:background .2s;
+}
+.nav-cta:hover{background:var(--wine-deep);}
+.menu-toggle{display:none;}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:88vh;
+  display:flex;align-items:center;
+  padding:0 6%;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(201,162,75,0.18), transparent 45%),
+    linear-gradient(180deg, var(--cream) 0%, var(--blush) 100%);
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-6%;bottom:-10%;
+  width:520px;height:520px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  opacity:0.35;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  right:2%;bottom:6%;
+  width:380px;height:380px;
+  border:1px solid var(--wine);
+  border-radius:50%;
+  opacity:0.2;
+}
+.hero-inner{max-width:640px;position:relative;z-index:2;}
+.eyebrow{
+  font-size:0.78rem;letter-spacing:4px;text-transform:uppercase;
+  color:var(--wine);margin-bottom:22px;display:flex;align-items:center;gap:14px;
+}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold);}
+.hero h1{
+  font-size:clamp(2.6rem,5vw,4.2rem);
+  color:var(--wine);
+  line-height:1.05;
+  margin-bottom:22px;
+}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero p{font-size:1.05rem;max-width:460px;margin-bottom:34px;color:#5a3040;}
+.hero-btns{display:flex;gap:18px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--wine);color:var(--cream);
+  padding:16px 34px;border-radius:2px;
+  font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;
+  transition:transform .2s, background .2s;
+}
+.btn-primary:hover{background:var(--wine-deep);transform:translateY(-2px);}
+.btn-ghost{
+  border:1px solid var(--wine);color:var(--wine);
+  padding:16px 34px;border-radius:2px;
+  font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;
+  transition:.2s;
+}
+.btn-ghost:hover{background:var(--wine);color:var(--cream);}
+
+/* MARQUEE */
+.marquee-wrap{
+  background:var(--wine);
+  overflow:hidden;
+  padding:16px 0;
+}
+.marquee{
+  display:flex;gap:60px;white-space:nowrap;
+  animation:scroll 26s linear infinite;
+  font-family:'Fraunces',serif;font-style:italic;
+  color:var(--gold);font-size:1.1rem;
+}
+.marquee span{opacity:.85;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ABOUT */
+.about{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:70px;
+  padding:110px 6%;max-width:1200px;margin:0 auto;
+  align-items:center;
+}
+.about-photo{
+  aspect-ratio:4/5;
+  background:
+    linear-gradient(160deg, var(--blush), var(--wine) 140%);
+  border-radius:4px;
+  position:relative;
+}
+.about-photo::before{
+  content:"EST. IN MONTGOMERY";
+  position:absolute;bottom:24px;left:24px;
+  color:var(--cream);font-size:0.75rem;letter-spacing:3px;
+}
+.about-text .eyebrow{color:var(--wine);}
+.about-text h2{font-size:2.2rem;color:var(--wine);margin-bottom:22px;}
+.about-text p{margin-bottom:18px;color:#4a2c38;max-width:480px;}
+.stat-row{display:flex;gap:46px;margin-top:34px;}
+.stat b{font-family:'Fraunces',serif;font-size:2rem;color:var(--gold);display:block;}
+.stat span{font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;color:#7a5462;}
+
+/* SERVICES */
+.services{
+  background:var(--wine);color:var(--cream);
+  padding:110px 6%;
+}
+.services-head{max-width:600px;margin:0 auto 60px;text-align:center;}
+.services-head .eyebrow{color:var(--gold);justify-content:center;}
+.services-head .eyebrow::before{display:none;}
+.services-head h2{font-size:2.4rem;}
+.svc-grid{
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:0 60px;
+}
+.svc-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:22px 0;border-bottom:1px solid rgba(255,255,255,0.15);
+}
+.svc-row h4{font-family:'Fraunces',serif;font-weight:400;font-size:1.15rem;}
+.svc-row small{display:block;color:var(--blush);font-size:0.8rem;margin-top:4px;opacity:.8;}
+.svc-row .price{color:var(--gold);font-family:'Fraunces',serif;font-size:1.15rem;white-space:nowrap;margin-left:20px;}
+
+/* GALLERY STRIP */
+.gallery{
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.gallery div{
+  aspect-ratio:1;
+}
+.gallery div:nth-child(1){background:linear-gradient(135deg,var(--blush),var(--wine));}
+.gallery div:nth-child(2){background:linear-gradient(135deg,var(--gold),var(--blush));}
+.gallery div:nth-child(3){background:linear-gradient(135deg,var(--wine),var(--gold));}
+.gallery div:nth-child(4){background:linear-gradient(135deg,var(--blush),var(--gold));}
+
+/* BOOKING CTA */
+.booking{
+  padding:120px 6%;text-align:center;
+  background:var(--cream);
+}
+.booking .eyebrow{justify-content:center;}
+.booking .eyebrow::before{display:none;}
+.booking h2{font-size:2.6rem;color:var(--wine);max-width:640px;margin:18px auto 20px;}
+.booking p{max-width:480px;margin:0 auto 36px;color:#5a3040;}
+.hours-box{
+  display:inline-flex;gap:50px;
+  margin-top:50px;padding:30px 50px;
+  border:1px solid rgba(74,18,40,0.2);
+  text-align:left;
+}
+.hours-box div b{display:block;font-family:'Fraunces',serif;color:var(--wine);margin-bottom:6px;}
+.hours-box div span{font-size:0.88rem;color:#5a3040;}
+
+/* FOOTER */
+footer{
+  background:var(--wine-deep);color:var(--blush);
+  padding:60px 6% 30px;
+}
+.footer-grid{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;
+  max-width:1200px;margin:0 auto 40px;
+}
+.footer-grid h3{color:var(--gold);font-size:1.3rem;margin-bottom:14px;}
+.footer-grid p, .footer-grid a{color:var(--blush);font-size:0.9rem;opacity:.85;display:block;margin-bottom:8px;}
+.footer-bottom{
+  text-align:center;padding-top:26px;border-top:1px solid rgba(255,255,255,0.1);
+  font-size:0.78rem;color:rgba(242,220,211,0.5);letter-spacing:1px;
+}
+
+@media(max-width:860px){
+  .nav-links{display:none;}
+  .about{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  .hours-box{flex-direction:column;gap:20px;}
+}
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+
+<nav>
+  <a href="#" class="logo">iLash <span>Boulevard</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#book">Hours</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#book" class="nav-cta">Book Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Montgomery, Alabama</div>
+    <h1>Lashes that walk<br>down their <em>own</em> boulevard.</h1>
+    <p>Custom eyelash extensions, hybrid sets & volume artistry — one chair, one artist, unhurried attention. Charleslyn has been the appointment Montgomery books ahead for.</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn-primary">Reserve Your Seat</a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>CLASSIC &nbsp;•&nbsp; HYBRID &nbsp;•&nbsp; VOLUME &nbsp;•&nbsp; WISPY &nbsp;•&nbsp; WET SET &nbsp;•&nbsp;</span>
+    <span>CLASSIC &nbsp;•&nbsp; HYBRID &nbsp;•&nbsp; VOLUME &nbsp;•&nbsp; WISPY &nbsp;•&nbsp; WET SET &nbsp;•&nbsp;</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-photo"></div>
+  <div class="about-text">
+    <div class="eyebrow">The Artist</div>
+    <h2>Charleslyn</h2>
+    <p>Every set starts with a conversation — face shape, lifestyle, how much time you actually spend on your lashes each morning. Charleslyn builds from there, not from a menu.</p>
+    <p>Suite 105 on Crossland Loop is intentionally small: one client at a time, no rush, no overlap. It's the reason clients drive across Montgomery — and stay for years.</p>
+    <div class="stat-row">
+      <div class="stat"><b>5.0</b><span>Client Rating</span></div>
+      <div class="stat"><b>18+</b><span>5-Star Reviews</span></div>
+      <div class="stat"><b>1:1</b><span>Private Suite</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-head">
+    <div class="eyebrow">Menu</div>
+    <h2>Services & Pricing</h2>
+  </div>
+  <div class="svc-grid">
+    <div>
+      <div class="svc-row"><div><h4>Classic Full Set</h4><small>Natural, one-to-one application</small></div><div class="price">$95</div></div>
+      <div class="svc-row"><div><h4>Classic Fill</h4><small>Within 2–3 weeks</small></div><div class="price">$60</div></div>
+      <div class="svc-row"><div><h4>Hybrid Full Set</h4><small>Texture + definition</small></div><div class="price">$105</div></div>
+    </div>
+    <div>
+      <div class="svc-row"><div><h4>Volume Full Set</h4><small>Full, dramatic fans</small></div><div class="price">$140</div></div>
+      <div class="svc-row"><div><h4>Volume Fill</h4><small>Within 2–3 weeks</small></div><div class="price">$80</div></div>
+      <div class="svc-row"><div><h4>Lash Removal</h4><small>Safe, gentle removal</small></div><div class="price">$30</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gallery">
+  <div></div><div></div><div></div><div></div>
+</div>
+
+<section class="booking" id="book">
+  <div class="eyebrow">Reserve</div>
+  <h2>Your seat books up fast — Charleslyn only takes six clients a day.</h2>
+  <p>Text or call to check same-week availability. New clients welcome.</p>
+  <a href="#contact" class="btn-primary">Book Your Appointment</a>
+
+  <div class="hours-box">
+    <div><b>Tue – Fri</b><span>9:00 AM – 6:00 PM</span></div>
+    <div><b>Saturday</b><span>8:00 AM – 4:00 PM</span></div>
+    <div><b>Sun – Mon</b><span>Closed</span></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <h3>iLash Boulevard</h3>
+      <p>by Charleslyn</p>
+      <p>8449 Crossland Loop, Ste 105<br>Montgomery, AL 36117</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <a href="tel:3346692594">(334) 669-2594</a>
+      <a href="#">@ilashboulevard</a>
+    </div>
+    <div>
+      <h3>Hours</h3>
+      <p>Tue–Fri: 9AM–6PM</p>
+      <p>Sat: 8AM–4PM</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 iLash Boulevard by Charleslyn. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
