@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>She' Luxe Lashes & Spa | Greenville, NC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap');
+
+:root{
+  --emerald:#1C4A3E;
+  --emerald-deep:#0F2E26;
+  --blush:#F3D9CE;
+  --cream:#FAF3ED;
+  --gold:#B8935A;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--emerald-deep);line-height:1.6;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;}
+a{text-decoration:none;color:inherit;}
+
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:24px 6%;position:sticky;top:0;z-index:50;
+  background:var(--cream);border-bottom:1px solid rgba(28,74,62,0.12);
+}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;letter-spacing:1px;}
+.logo em{font-style:italic;color:var(--gold);}
+.nav-links{display:flex;gap:36px;font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;}
+.nav-cta{
+  background:var(--emerald);color:var(--cream);
+  padding:12px 26px;border-radius:2px;font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;
+  transition:.2s;
+}
+.nav-cta:hover{background:var(--emerald-deep);}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:90vh;display:flex;align-items:center;
+  padding:0 6%;
+  background:radial-gradient(circle at 80% 30%, rgba(184,147,90,0.15), transparent 50%);
+}
+.hero::after{
+  content:"";position:absolute;right:6%;top:50%;transform:translateY(-50%);
+  width:340px;height:460px;
+  background:linear-gradient(155deg,var(--blush),var(--gold) 130%);
+  border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity:.9;
+}
+.hero-inner{max-width:600px;position:relative;z-index:2;}
+.eyebrow{font-size:0.78rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;}
+.hero h1{font-size:clamp(2.6rem,5vw,4.2rem);font-weight:600;line-height:1.08;margin-bottom:24px;}
+.hero h1 em{font-style:italic;color:var(--emerald);}
+.hero p{font-size:1.05rem;max-width:440px;margin-bottom:34px;color:#3d3229;}
+.hero-btns{display:flex;gap:18px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--emerald);color:var(--cream);padding:16px 34px;border-radius:2px;
+  font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;transition:.2s;
+}
+.btn-primary:hover{background:var(--emerald-deep);}
+.btn-ghost{
+  border:1px solid var(--emerald);padding:15px 32px;border-radius:2px;
+  font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;
+}
+
+/* STRIP */
+.strip{background:var(--emerald);padding:18px 0;overflow:hidden;}
+.strip-track{display:flex;gap:60px;white-space:nowrap;animation:mv 26s linear infinite;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;}
+@keyframes mv{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ABOUT */
+.about{max-width:1150px;margin:0 auto;padding:110px 6%;display:grid;grid-template-columns:0.9fr 1.1fr;gap:70px;align-items:center;}
+.about-visual{aspect-ratio:4/5;background:linear-gradient(160deg,var(--emerald),var(--emerald-deep));border-radius:6px;position:relative;}
+.about-visual::after{content:"S.C.";position:absolute;bottom:26px;right:26px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;}
+.about h2{font-size:2.2rem;margin-bottom:20px;}
+.about p{margin-bottom:16px;color:#3d3229;max-width:480px;}
+
+/* SERVICES */
+.services{background:var(--blush);padding:110px 6%;}
+.services-head{max-width:600px;margin:0 auto 50px;text-align:center;}
+.services-head h2{font-size:2.2rem;}
+.svc-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0 60px;}
+.svc-row{display:flex;justify-content:space-between;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(28,74,62,0.2);}
+.svc-row h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.2rem;}
+.svc-row small{display:block;font-size:0.82rem;color:#5c4a3a;margin-top:4px;}
+.svc-row .price{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--emerald);font-size:1.15rem;margin-left:20px;}
+
+/* BOOKING */
+.booking{padding:120px 6%;text-align:center;}
+.booking h2{font-size:2.4rem;max-width:620px;margin:16px auto 20px;}
+.booking p{max-width:480px;margin:0 auto 34px;color:#3d3229;}
+.hours-box{display:inline-flex;gap:0;margin-top:46px;border:1px solid rgba(28,74,62,0.2);}
+.hours-box div{padding:24px 36px;border-right:1px solid rgba(28,74,62,0.2);text-align:left;}
+.hours-box div:last-child{border-right:none;}
+.hours-box div b{display:block;font-family:'Cormorant Garamond',serif;color:var(--emerald);margin-bottom:4px;}
+.hours-box div span{font-size:0.85rem;color:#5c4a3a;}
+
+footer{background:var(--emerald-deep);color:var(--blush);padding:60px 6% 30px;}
+.footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;max-width:1150px;margin:0 auto 40px;}
+.footer-grid h3{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:12px;}
+.footer-grid p,.footer-grid a{font-size:0.9rem;opacity:.85;display:block;margin-bottom:6px;}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(243,217,206,0.15);font-size:0.78rem;opacity:.5;letter-spacing:1px;}
+
+@media(max-width:860px){
+  .nav-links{display:none;}
+  .hero::after{display:none;}
+  .about{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  .hours-box{flex-direction:column;}
+  .hours-box div{border-right:none;border-bottom:1px solid rgba(28,74,62,0.2);}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">She' <em>Luxe</em> Lashes</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#book">Hours</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#book" class="nav-cta">Book Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Greenville, North Carolina</div>
+    <h1>Beauty, done <em>luxe</em>.</h1>
+    <p>Lash lifts, lash lift & tints, and precision beauty services from Sharika Collette — 20 years as a licensed cosmetologist, 10 as a lash artist.</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn-primary">Book an Appointment</a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>LASH LIFT &nbsp;•&nbsp; LASH LIFT & TINT &nbsp;•&nbsp; SERVICE CONSULTATION &nbsp;•&nbsp; GREENVILLE, NC &nbsp;•&nbsp;</span>
+    <span>LASH LIFT &nbsp;•&nbsp; LASH LIFT & TINT &nbsp;•&nbsp; SERVICE CONSULTATION &nbsp;•&nbsp; GREENVILLE, NC &nbsp;•&nbsp;</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-visual"></div>
+  <div>
+    <div class="eyebrow">The Artist</div>
+    <h2>Sharika Collette</h2>
+    <p>Two decades in the beauty industry taught Sharika one thing: precision and warmth aren't opposites. Every appointment at She' Luxe Lashes & Spa is unhurried, detailed, and entirely about you.</p>
+    <p>Located in Greenville, NC, with services also available in Raleigh — Sharika's clients follow her wherever her chair is.</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-head">
+    <div class="eyebrow" style="display:inline-block;">The Menu</div>
+    <h2>Services</h2>
+  </div>
+  <div class="svc-grid">
+    <div>
+      <div class="svc-row"><div><h4>Lash Lift</h4><small>Semi-permanent curl, no extensions</small></div><div class="price">from $65</div></div>
+      <div class="svc-row"><div><h4>Lash Lift & Tint</h4><small>Curl plus custom color</small></div><div class="price">from $85</div></div>
+    </div>
+    <div>
+      <div class="svc-row"><div><h4>Service Consultation</h4><small>Find your perfect look first</small></div><div class="price">Free</div></div>
+      <div class="svc-row"><div><h4>Spa Training Workshops</h4><small>Available in Raleigh, NC</small></div><div class="price">Inquire</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="book">
+  <div class="eyebrow" style="justify-content:center;display:flex;">Reserve</div>
+  <h2>A non-refundable deposit secures your appointment — book with confidence.</h2>
+  <p>New clients always welcome. Cancellations within 24 hours are subject to a full cancellation fee.</p>
+  <a href="#contact" class="btn-primary">Book Now</a>
+  <div class="hours-box">
+    <div><b>Thursday</b><span>10:00 AM – 5:00 PM</span></div>
+    <div><b>Other Days</b><span>By special arrangement</span></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <h3>She' Luxe Lashes & Spa</h3>
+      <p>3105 Evans St, Unit E<br>Greenville, NC 27834</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <a href="tel:2529169733">(252) 916-9733</a>
+      <a href="mailto:sheluxelashes@gmail.com">sheluxelashes@gmail.com</a>
+    </div>
+    <div>
+      <h3>Hours</h3>
+      <p>Thursday: 10AM–5PM</p>
+      <p>Other days by arrangement</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 She' Luxe Lashes & Spa. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
