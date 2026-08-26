@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -82,8 +83,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 2rem;display:
 .mobile-nav a:hover{color:var(--gold)}
 .mobile-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.4rem}
 
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:8rem 2rem 5rem;position:relative}
-.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 50% 38%,rgba(201,168,76,0.055) 0%,transparent 65%);pointer-events:none}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 50% 38%,rgba(201,168,76,0.055) 0%,transparent 65%);pointer-events:none;z-index:2}
+.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:rgba(10,10,10,0.68);z-index:1;pointer-events:none}
+.hero-inner{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center}
 .hero-tag{display:inline-block;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-border);padding:0.35rem 1rem;margin-bottom:2rem}
 .hero h1{font-family:var(--serif);font-size:clamp(2.6rem,7vw,5.5rem);font-weight:600;line-height:1.06;max-width:860px;margin-bottom:1.5rem}
 .hero h1 em{font-style:italic;color:var(--gold)}
@@ -408,19 +412,25 @@ footer{background:var(--black3);border-top:1px solid rgba(255,255,255,0.04);padd
 
 <main>
 <section class="hero" aria-labelledby="hero-title">
-  <span class="hero-tag">Riverdale, GA · Metro Atlanta</span>
-  <h1 id="hero-title">Your business,<br/>running on <em>autopilot.</em></h1>
-  <p class="hero-sub">AuraLogic builds custom websites and AI-powered automation systems for local businesses — so you stop losing leads, missed calls, and clients to competitors who respond faster.</p>
-  <div class="hero-btns">
-    <a href="#audit" class="btn btn-gold">Get My Free Audit</a>
-    <a href="#services" class="btn btn-outline-white">See Our Services</a>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <span class="hero-tag">Riverdale, GA · Metro Atlanta</span>
+    <h1 id="hero-title">Your business,<br/>running on <em>autopilot.</em></h1>
+    <p class="hero-sub">AuraLogic builds custom websites and AI-powered automation systems for local businesses — so you stop losing leads, missed calls, and clients to competitors who respond faster.</p>
+    <div class="hero-btns">
+      <a href="#audit" class="btn btn-gold">Get My Free Audit</a>
+      <a href="#services" class="btn btn-outline-white">See Our Services</a>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-item"><div class="proof-num">48hr</div><div class="proof-label">Avg. Delivery</div></div>
+      <div class="proof-item"><div class="proof-num">$0</div><div class="proof-label">Strategy Call</div></div>
+      <div class="proof-item"><div class="proof-num">100%</div><div class="proof-label">Done-For-You</div></div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><div class="scroll-cue-line"></div><span>Scroll</span></div>
   </div>
-  <div class="hero-proof">
-    <div class="proof-item"><div class="proof-num">48hr</div><div class="proof-label">Avg. Delivery</div></div>
-    <div class="proof-item"><div class="proof-num">$0</div><div class="proof-label">Strategy Call</div></div>
-    <div class="proof-item"><div class="proof-num">100%</div><div class="proof-label">Done-For-You</div></div>
-  </div>
-  <div class="scroll-cue" aria-hidden="true"><div class="scroll-cue-line"></div><span>Scroll</span></div>
 </section>
 
 <section class="problem" aria-labelledby="problem-title">
