@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Randy's Precision Hair Cuts — Atlanta, GA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#141414;
+    --charcoal:#1E1E1C;
+    --steel:#33362F;
+    --forest:#24422F;
+    --forest-bright:#3A6B4A;
+    --gold:#B8862E;
+    --gold-bright:#D4A24E;
+    --ivory:#EDE8DC;
+    --gray:#8A8577;
+    --line: rgba(184,134,46,0.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--ivory);
+    font-family:'Barlow',sans-serif;
+    font-weight:300;
+  }
+  .display{font-family:'Oswald',sans-serif; font-weight:700; text-transform:uppercase;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit; text-decoration:none;}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity 0.8s ease, transform 0.8s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none;} html{scroll-behavior:auto;} }
+
+  /* signature element: precision ruler tick-mark divider */
+  .ruler-divider{
+    position:relative;
+    height:22px;
+    background:var(--black);
+    display:flex; align-items:flex-end; justify-content:center;
+    overflow:hidden;
+  }
+  .ruler-divider svg{ width:100%; height:100%; display:block; }
+
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:24px 6vw;
+    background:rgba(20,20,20,0);
+    transition:background 0.4s ease, box-shadow 0.4s ease;
+  }
+  nav.scrolled{ background:rgba(20,20,20,0.95); backdrop-filter:blur(6px); box-shadow:0 2px 16px rgba(0,0,0,0.35); }
+  nav .nav-mark{ font-family:'Oswald',sans-serif; font-weight:700; text-transform:uppercase; font-size:1rem; letter-spacing:0.06em; color:var(--ivory); }
+  nav .nav-mark span{ color:var(--gold-bright); }
+  nav ul{ list-style:none; display:flex; gap:32px; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.16em; color:var(--ivory); font-weight:500; }
+  nav a:focus-visible, button:focus-visible{ outline:2px solid var(--gold); outline-offset:4px; }
+  @media (max-width:820px){ nav ul{display:none;} }
+
+  .hero{
+    position:relative;
+    z-index:0;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(184,134,46,0.1) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 90%, rgba(58,107,74,0.14) 0%, transparent 55%),
+      var(--black);
+    min-height:100svh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:150px 6vw 90px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(90deg, rgba(184,134,46,0.025) 0px, transparent 1px, transparent 4px);
+    pointer-events:none;
+  }
+  .big-clipper{
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:min(70vw, 780px);
+    height:auto;
+    z-index:-1;
+    pointer-events:none;
+    opacity:0.16;
+  }
+  .hero-eyebrow{
+    font-size:0.68rem; letter-spacing:0.34em; text-transform:uppercase;
+    color:var(--gold-bright); margin-bottom:24px; font-weight:500; position:relative;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .hero h1{
+    color:var(--ivory);
+    font-size:clamp(2.4rem, 7.2vw, 5.4rem);
+    line-height:1.02;
+    letter-spacing:0.01em;
+    position:relative;
+  }
+  .hero h1 .gold{ color:var(--gold-bright); }
+  .hero .tagline{
+    margin-top:22px;
+    font-size:0.95rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gray);
+    font-weight:500;
+    position:relative;
+  }
+  .stat-row{
+    margin-top:46px;
+    display:flex; gap:0; justify-content:center; flex-wrap:wrap;
+    position:relative;
+  }
+  .stat{ text-align:center; padding:0 32px; border-left:1px solid var(--line); }
+  .stat:first-child{ border-left:none; }
+  .stat .num{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.7rem; color:var(--gold-bright); }
+  .stat .lbl{ font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gray); margin-top:6px; font-family:'JetBrains Mono',monospace; }
+
+  .cta{
+    display:inline-block;
+    margin-top:48px;
+    padding:17px 46px;
+    background:var(--gold);
+    color:var(--black);
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:0.8rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    border-radius:0px;
+    transition:background 0.3s ease, transform 0.3s ease;
+  }
+  .cta:hover{ background:var(--gold-bright); transform:translateY(-2px); }
+  .cta.outline{ background:transparent; color:var(--ivory); border:1px solid var(--gold); }
+  .cta.outline:hover{ background:var(--gold); color:var(--black); }
+
+  section{ padding:100px 6vw; position:relative; }
+  .section-head{ max-width:600px; margin:0 auto 54px; text-align:center; }
+  .section-eyebrow{ font-size:0.66rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:14px; font-weight:500; font-family:'JetBrains Mono',monospace; }
+  .section-head h2{ font-family:'Oswald',sans-serif; font-weight:700; text-transform:uppercase; font-size:clamp(1.7rem,3.4vw,2.3rem); color:var(--ivory); letter-spacing:0.01em; }
+
+  .about{ background:var(--charcoal); }
+  .about-grid{ max-width:960px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .about h2{ font-family:'Oswald',sans-serif; font-weight:700; text-transform:uppercase; font-size:clamp(1.6rem,3.4vw,2.1rem); margin-bottom:22px; text-align:left; color:var(--ivory); letter-spacing:0.01em; }
+  .about p{ font-size:0.96rem; line-height:1.9; color:#B8B3A5; font-weight:300; }
+  .about p + p{ margin-top:16px; }
+  .badge-row{ display:flex; gap:0; flex-wrap:wrap; margin-top:28px; border-top:1px solid var(--line); }
+  .badge{ padding:14px 20px 14px 0; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-bright); font-weight:600; font-family:'JetBrains Mono',monospace; }
+  .about-quote{ border-left:2px solid var(--gold); padding-left:28px; }
+  .about-quote p{ font-family:'Oswald',sans-serif; font-weight:500; font-size:1.15rem; line-height:1.55; color:var(--ivory); text-transform:none; }
+  .about-quote span{ display:block; margin-top:16px; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gray); font-weight:500; font-family:'JetBrains Mono',monospace; }
+  @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; gap:40px; } .about-quote{ order:2; } }
+
+  .services-grid{
+    max-width:900px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line);
+  }
+  .service-card{ background:var(--black); padding:42px 22px; text-align:center; }
+  .service-card .num-tag{ font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:0.75rem; letter-spacing:0.1em; margin-bottom:14px; }
+  .service-card h3{ font-family:'Oswald',sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:0.02em; font-size:1.05rem; margin-bottom:10px; color:var(--ivory); }
+  .service-card p{ font-size:0.82rem; line-height:1.6; color:var(--gray); font-weight:300; }
+  @media (max-width:640px){ .services-grid{ grid-template-columns:1fr; } }
+  .services-footnote{ text-align:center; margin-top:40px; font-size:0.8rem; color:var(--gray); font-family:'JetBrains Mono',monospace; }
+
+  .info{ background:var(--forest); color:var(--ivory); }
+  .info-grid{ max-width:900px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; }
+  .info h2{ font-family:'Oswald',sans-serif; font-weight:700; text-transform:uppercase; font-size:clamp(1.6rem,3.4vw,2.1rem); margin-bottom:20px; color:var(--ivory); letter-spacing:0.01em; }
+  .info p{ font-size:0.94rem; line-height:1.85; color:#CFDBD1; font-weight:300; }
+  .info-label{ font-size:0.64rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:14px; display:block; font-weight:500; font-family:'JetBrains Mono',monospace; }
+  .hours-table{ width:100%; border-collapse:collapse; font-size:0.86rem; }
+  .hours-table td{ padding:10px 0; border-bottom:1px solid rgba(184,134,46,0.28); color:#CFDBD1; font-weight:300; font-family:'JetBrains Mono',monospace; }
+  .hours-table tr:first-child td{ border-top:1px solid rgba(184,134,46,0.28); }
+  .hours-table td:last-child{ text-align:right; color:var(--ivory); font-weight:500; }
+  .info .cta{ margin-top:28px; }
+  .info-note{ margin-top:22px; font-size:0.8rem; color:#A9BAB0; }
+  @media (max-width:820px){ .info-grid{ grid-template-columns:1fr; gap:40px; } }
+
+  footer{
+    max-width:900px; margin:60px auto 0; padding:26px 6vw 30px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:0.66rem; letter-spacing:0.08em; color:#A9BAB0; text-transform:uppercase;
+    font-family:'JetBrains Mono',monospace;
+  }
+  footer a{ border-bottom:1px solid var(--gold); padding-bottom:2px; color:var(--gold-bright); }
+  footer a:hover{ color:var(--ivory); }
+  @media (max-width:640px){ footer{ flex-direction:column; gap:12px; text-align:center; } }
+</style>
+</head>
+<body>
+
+<nav id="siteNav">
+  <div class="nav-mark">RANDY'S <span>PRECISION</span></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <svg class="big-clipper" viewBox="0 0 300 520" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#D4A24E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- charging cap -->
+    <rect x="128" y="4" width="44" height="26" rx="7"/>
+    <!-- body -->
+    <rect x="86" y="30" width="128" height="326" rx="20"/>
+    <!-- LED indicator -->
+    <circle cx="150" cy="70" r="6" stroke-width="2"/>
+    <!-- power switch -->
+    <rect x="196" y="120" width="16" height="42" rx="4"/>
+    <!-- grip texture lines -->
+    <line x1="100" y1="150" x2="200" y2="150" stroke-width="1.5" opacity="0.7"/>
+    <line x1="100" y1="172" x2="200" y2="172" stroke-width="1.5" opacity="0.7"/>
+    <line x1="100" y1="194" x2="200" y2="194" stroke-width="1.5" opacity="0.7"/>
+    <line x1="100" y1="216" x2="200" y2="216" stroke-width="1.5" opacity="0.7"/>
+    <line x1="100" y1="238" x2="200" y2="238" stroke-width="1.5" opacity="0.7"/>
+    <line x1="100" y1="260" x2="200" y2="260" stroke-width="1.5" opacity="0.7"/>
+    <line x1="100" y1="282" x2="200" y2="282" stroke-width="1.5" opacity="0.7"/>
+    <!-- blade guard base -->
+    <line x1="80" y1="356" x2="220" y2="356"/>
+    <rect x="80" y="356" width="140" height="26" rx="4"/>
+    <!-- blade teeth -->
+    <line x1="92"  y1="382" x2="92"  y2="440"/>
+    <line x1="106" y1="382" x2="106" y2="452"/>
+    <line x1="120" y1="382" x2="120" y2="440"/>
+    <line x1="134" y1="382" x2="134" y2="452"/>
+    <line x1="148" y1="382" x2="148" y2="440"/>
+    <line x1="162" y1="382" x2="162" y2="452"/>
+    <line x1="176" y1="382" x2="176" y2="440"/>
+    <line x1="190" y1="382" x2="190" y2="452"/>
+    <line x1="204" y1="382" x2="204" y2="440"/>
+  </svg>
+  <div class="hero-eyebrow">ATLANTA, GA &middot; NEAR HARTSFIELD-JACKSON</div>
+  <h1 class="display">Randy's Precision<br><span class="gold">Hair Cuts</span></h1>
+  <div class="tagline">58 Years Behind The Chair</div>
+
+  <div class="stat-row">
+    <div class="stat"><div class="num">58</div><div class="lbl">YRS CUTTING</div></div>
+    <div class="stat"><div class="num">29</div><div class="lbl">YRS THIS SHOP</div></div>
+    <div class="stat"><div class="num">5.0</div><div class="lbl">32 REVIEWS</div></div>
+  </div>
+
+  <a href="tel:+14047620928" class="cta">Call Ahead</a>
+</header>
+
+<div class="ruler-divider">
+  <svg viewBox="0 0 1000 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#B8862E" stroke-width="1">
+      <!-- major ticks every 100, minor every 20 -->
+      <line x1="0" y1="22" x2="0" y2="4"/>
+      <line x1="100" y1="22" x2="100" y2="4"/>
+      <line x1="200" y1="22" x2="200" y2="4"/>
+      <line x1="300" y1="22" x2="300" y2="4"/>
+      <line x1="400" y1="22" x2="400" y2="4"/>
+      <line x1="500" y1="22" x2="500" y2="4"/>
+      <line x1="600" y1="22" x2="600" y2="4"/>
+      <line x1="700" y1="22" x2="700" y2="4"/>
+      <line x1="800" y1="22" x2="800" y2="4"/>
+      <line x1="900" y1="22" x2="900" y2="4"/>
+      <line x1="1000" y1="22" x2="1000" y2="4"/>
+      <g opacity="0.5" stroke-width="0.75">
+        <line x1="20" y1="22" x2="20" y2="13"/><line x1="40" y1="22" x2="40" y2="13"/><line x1="60" y1="22" x2="60" y2="13"/><line x1="80" y1="22" x2="80" y2="13"/>
+        <line x1="120" y1="22" x2="120" y2="13"/><line x1="140" y1="22" x2="140" y2="13"/><line x1="160" y1="22" x2="160" y2="13"/><line x1="180" y1="22" x2="180" y2="13"/>
+        <line x1="220" y1="22" x2="220" y2="13"/><line x1="240" y1="22" x2="240" y2="13"/><line x1="260" y1="22" x2="260" y2="13"/><line x1="280" y1="22" x2="280" y2="13"/>
+        <line x1="320" y1="22" x2="320" y2="13"/><line x1="340" y1="22" x2="340" y2="13"/><line x1="360" y1="22" x2="360" y2="13"/><line x1="380" y1="22" x2="380" y2="13"/>
+        <line x1="420" y1="22" x2="420" y2="13"/><line x1="440" y1="22" x2="440" y2="13"/><line x1="460" y1="22" x2="460" y2="13"/><line x1="480" y1="22" x2="480" y2="13"/>
+        <line x1="520" y1="22" x2="520" y2="13"/><line x1="540" y1="22" x2="540" y2="13"/><line x1="560" y1="22" x2="560" y2="13"/><line x1="580" y1="22" x2="580" y2="13"/>
+        <line x1="620" y1="22" x2="620" y2="13"/><line x1="640" y1="22" x2="640" y2="13"/><line x1="660" y1="22" x2="660" y2="13"/><line x1="680" y1="22" x2="680" y2="13"/>
+        <line x1="720" y1="22" x2="720" y2="13"/><line x1="740" y1="22" x2="740" y2="13"/><line x1="760" y1="22" x2="760" y2="13"/><line x1="780" y1="22" x2="780" y2="13"/>
+        <line x1="820" y1="22" x2="820" y2="13"/><line x1="840" y1="22" x2="840" y2="13"/><line x1="860" y1="22" x2="860" y2="13"/><line x1="880" y1="22" x2="880" y2="13"/>
+        <line x1="920" y1="22" x2="920" y2="13"/><line x1="940" y1="22" x2="940" y2="13"/><line x1="960" y1="22" x2="960" y2="13"/><line x1="980" y1="22" x2="980" y2="13"/>
+      </g>
+    </g>
+    <line x1="0" y1="22" x2="1000" y2="22" stroke="#B8862E" stroke-width="1"/>
+  </svg>
+</div>
+
+<section id="about" class="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="section-eyebrow">// The Barber</div>
+      <h2>58 Years In The Chair</h2>
+      <p>Randy's Precision Hair Cuts is a no-frills barbershop on Virginia Ave, run by a man who's been cutting hair for nearly six decades — 29 of them right here. No gimmicks, no upsells. A clean, precise cut and a straight answer on how long the wait's going to be.</p>
+      <p>Call ahead and Randy will tell you exactly when to come in. Cash only — there's an ATM next door if you need it.</p>
+      <div class="badge-row">
+        <span class="badge">CASH ONLY</span>
+        <span class="badge">CALL AHEAD</span>
+        <span class="badge">29 YRS · VIRGINIA AVE</span>
+      </div>
+    </div>
+    <div class="about-quote reveal">
+      <p>Randy is a heck of a nice guy — been here for 29 years. Call ahead and he'll tell you exactly how long the wait is.</p>
+      <span>Google Review</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head reveal">
+    <div class="section-eyebrow">// In The Chair</div>
+    <h2>Quick. Precise. No Frills.</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="num-tag">01</div>
+      <h3>Haircut</h3>
+      <p>Classic and precision cuts, in and out fast.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="num-tag">02</div>
+      <h3>Fade / Taper</h3>
+      <p>Clean lines, shaped to how you like it.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="num-tag">03</div>
+      <h3>Trim / Line-Up</h3>
+      <p>Quick pop-in trims between full cuts.</p>
+    </div>
+  </div>
+  <div class="services-footnote reveal">CASH ONLY · ATM NEXT DOOR · CALL AHEAD FOR WAIT TIME</div>
+</section>
+
+<div class="ruler-divider" style="background:var(--charcoal);">
+  <svg viewBox="0 0 1000 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#B8862E" stroke-width="1">
+      <line x1="0" y1="22" x2="0" y2="4"/><line x1="100" y1="22" x2="100" y2="4"/><line x1="200" y1="22" x2="200" y2="4"/><line x1="300" y1="22" x2="300" y2="4"/><line x1="400" y1="22" x2="400" y2="4"/><line x1="500" y1="22" x2="500" y2="4"/><line x1="600" y1="22" x2="600" y2="4"/><line x1="700" y1="22" x2="700" y2="4"/><line x1="800" y1="22" x2="800" y2="4"/><line x1="900" y1="22" x2="900" y2="4"/><line x1="1000" y1="22" x2="1000" y2="4"/>
+    </g>
+    <line x1="0" y1="22" x2="1000" y2="22" stroke="#B8862E" stroke-width="1"/>
+  </svg>
+</div>
+
+<section id="visit" class="info">
+  <div class="info-grid">
+    <div class="reveal">
+      <span class="info-label">// Visit</span>
+      <h2>Right By The Airport</h2>
+      <p>951 Virginia Ave<br>Atlanta, GA 30354</p>
+      <p style="margin-top:14px;">(404) 762-0928</p>
+      <a href="tel:+14047620928" class="cta">Call Ahead</a>
+      <div class="info-note">About a 6-minute, $14 rideshare from Hartsfield-Jackson — easy stop for anyone training at Delta or FSI.</div>
+    </div>
+    <div class="reveal">
+      <span class="info-label">// Hours</span>
+      <table class="hours-table">
+        <tr><td>MON</td><td>CLOSED</td></tr>
+        <tr><td>TUE</td><td>08:00 – 16:00</td></tr>
+        <tr><td>WED</td><td>08:00 – 16:00</td></tr>
+        <tr><td>THU</td><td>08:00 – 16:00</td></tr>
+        <tr><td>FRI</td><td>08:00 – 16:00</td></tr>
+        <tr><td>SAT</td><td>08:00 – 12:00</td></tr>
+        <tr><td>SUN</td><td>CLOSED</td></tr>
+      </table>
+    </div>
+  </div>
+  <footer>
+    <div>&copy; RANDY'S PRECISION HAIR CUTS, ATLANTA GA</div>
+    <a href="tel:+14047620928">(404) 762-0928</a>
+  </footer>
+</section>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 60){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+  });
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
