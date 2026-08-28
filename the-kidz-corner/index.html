@@ -1,0 +1,3658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | The Kidz Corner Daycare &amp; Preschool</title>
+<meta name="description" content="Learn about The Kidz Corner, a NYS licensed daycare and preschool in Holbrook, NY with 15 years of childcare experience and certified staff.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M12 56V28C12 15 20 6 32 6s20 9 20 22v28' fill='none' stroke='%238FA274' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   The Kidz Corner — Design tokens
+   Ivory #FAF5EC · Clay ink #5C4A3D · Sage #8FA274 · Blush #E9B9BC
+   Butter #F1DFA1 · Sky #B7D3DE · Deep sage (hover) #6C7E56
+   Display: Fraunces (soft optical) · Body: Karla
+   ========================================================================== */
+
+:root {
+  --ivory: #faf5ec;
+  --ivory-deep: #f3ead9;
+  --ink: #5c4a3d;
+  --ink-soft: #8a7666;
+  --sage: #8fa274;
+  --sage-deep: #6c7e56;
+  --blush: #e9b9bc;
+  --blush-deep: #d99ea1;
+  --butter: #f1dfa1;
+  --sky: #b7d3de;
+  --white: #fffdf9;
+  --shadow: 0 12px 32px rgba(92, 74, 61, 0.1);
+  --radius-arch: 999px 999px 24px 24px;
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: 'Karla', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 500; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--sage-deep); text-decoration: none; }
+
+.eyebrow {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  margin-bottom: 0.6em;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section { padding: 84px 0; }
+section.tight { padding: 56px 0; }
+
+/* -------------------- buttons -------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  text-align: center;
+}
+.btn:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.btn-primary { background: var(--sage); color: var(--white); box-shadow: var(--shadow); }
+.btn-primary:hover { background: var(--sage-deep); transform: translateY(-2px); }
+.btn-secondary { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn-secondary:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
+.btn-block { display: flex; width: 100%; justify-content: center; }
+
+/* -------------------- header / nav -------------------- */
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 245, 236, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+.brand svg { flex-shrink: 0; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 3px;
+  background: var(--blush);
+  border-radius: 3px;
+  transition: width 0.2s ease, left 0.2s ease;
+}
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  width: 100%;
+  left: 0;
+}
+.nav-links a[aria-current="page"] { color: var(--sage-deep); }
+.nav-cta { display: flex; align-items: center; gap: 18px; }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span, .nav-toggle::before, .nav-toggle::after { display: none; }
+.nav-toggle svg { width: 26px; height: 26px; }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ivory);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 14px 28px 24px;
+    border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 10px 0; width: 100%; }
+  .nav-cta .btn-primary { display: none; }
+  header.site .nav-links .btn-primary { display: inline-flex; margin-top: 8px; }
+}
+
+/* -------------------- hero -------------------- */
+.hero {
+  padding: 64px 0 40px;
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  border: 1px solid rgba(92, 74, 61, 0.12);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  box-shadow: 0 4px 14px rgba(92,74,61,0.06);
+}
+.badge svg { flex-shrink: 0; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+/* the arch — signature shape used across the site as an image/illustration frame */
+.arch {
+  position: relative;
+  border-radius: var(--radius-arch);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(233,185,188,0.9), transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(183,211,222,0.85), transparent 55%),
+    radial-gradient(circle at 60% 15%, rgba(241,223,161,0.9), transparent 45%),
+    linear-gradient(160deg, var(--sage) 0%, #a9bb8f 100%);
+  box-shadow: var(--shadow);
+}
+.arch.small { aspect-ratio: 4 / 4; }
+@supports not (aspect-ratio: 1) {
+  .arch { min-height: 380px; }
+  .arch.small { min-height: 300px; }
+  .service-row .arch { min-height: 220px; }
+  .gallery-grid .arch { min-height: 220px; }
+}
+.arch .arch-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 22px 24px 26px;
+  background: linear-gradient(0deg, rgba(92,74,61,0.55), transparent);
+  color: var(--white);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+.arch-sun {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arch-sun svg { width: 46%; height: 46%; opacity: 0.85; }
+
+/* -------------------- divider -------------------- */
+.divider {
+  display: block;
+  width: 100%;
+  height: 44px;
+}
+
+/* -------------------- trust strip -------------------- */
+.trust-strip {
+  background: var(--ivory-deep);
+  padding: 40px 0;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.trust-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.trust-item svg { width: 34px; height: 34px; color: var(--sage-deep); }
+.trust-item strong { font-family: 'Fraunces', serif; font-size: 1.05rem; }
+.trust-item span { color: var(--ink-soft); font-size: 0.9rem; }
+
+/* -------------------- journey / age groups -------------------- */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 44px;
+}
+.journey-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 0 0 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.journey-top {
+  border-radius: var(--radius-arch);
+  height: 150px;
+  margin: 18px 18px 20px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.journey-num {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+}
+.journey-card .body { padding: 0 22px; }
+.journey-card .age { color: var(--sage-deep); font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.tone-1 { background: linear-gradient(150deg, var(--blush), var(--butter)); }
+.tone-2 { background: linear-gradient(150deg, var(--sky), var(--blush)); }
+.tone-3 { background: linear-gradient(150deg, var(--butter), var(--sage)); }
+
+/* -------------------- two column / why -------------------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.check-list { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.check-list li { display: flex; gap: 12px; align-items: flex-start; }
+.check-list svg { flex-shrink: 0; margin-top: 3px; color: var(--sage-deep); }
+
+/* -------------------- service area -------------------- */
+.area-strip { background: var(--sage); color: var(--white); padding: 54px 0; }
+.area-strip h2, .area-strip .eyebrow { color: var(--white); }
+.area-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.area-pills span {
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+/* -------------------- cta banner -------------------- */
+.cta-banner {
+  background: var(--butter);
+  border-radius: 32px;
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 56px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner .opening-tag {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.cta-banner .hero-ctas { justify-content: center; }
+
+/* -------------------- footer -------------------- */
+footer.site {
+  background: var(--ink);
+  color: var(--ivory);
+  padding: 60px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+footer.site .brand { color: var(--ivory); }
+footer.site h4 { color: var(--butter); font-family: 'Fraunces', serif; font-size: 1rem; margin-bottom: 14px; }
+footer.site p, footer.site a { color: rgba(250,245,236,0.78); font-size: 0.95rem; }
+footer.site a:hover { color: var(--butter); }
+footer.site ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-bottom {
+  border-top: 1px solid rgba(250,245,236,0.14);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(250,245,236,0.55);
+}
+.footer-bottom a { color: rgba(250,245,236,0.7); }
+
+/* -------------------- generic page hero (inner pages) -------------------- */
+.page-hero { padding: 56px 0 20px; text-align: left; }
+.page-hero .wrap { max-width: 760px; }
+
+/* -------------------- services page -------------------- */
+.service-list { display: flex; flex-direction: column; gap: 26px; margin-top: 40px; }
+.service-row {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 30px;
+  align-items: center;
+  background: var(--white);
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+.service-row .arch { aspect-ratio: 3/4; }
+.service-row .tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sage-deep);
+  background: rgba(143,162,116,0.12);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.note-box {
+  background: var(--sky);
+  border-radius: 20px;
+  padding: 26px 28px;
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.note-box svg { flex-shrink: 0; margin-top: 3px; }
+
+/* -------------------- gallery page -------------------- */
+.gallery-soon {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+.gallery-grid .arch { aspect-ratio: 1/1; }
+
+/* -------------------- contact page -------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 54px;
+  align-items: start;
+}
+.info-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+.info-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.info-row svg { flex-shrink: 0; color: var(--sage-deep); margin-top: 3px; }
+.info-row strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-soft); margin-bottom: 2px; }
+.map-frame { border-radius: 20px; overflow: hidden; margin-top: 22px; border: 1px solid rgba(92,74,61,0.1); }
+.map-frame iframe { width: 100%; height: 220px; border: 0; display: block; }
+
+form.tour-form { background: var(--white); border-radius: 24px; padding: 34px; box-shadow: var(--shadow); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 7px; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(92,74,61,0.18);
+  background: var(--ivory);
+  color: var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 4px rgba(143,162,116,0.18);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.form-status { margin-top: 16px; font-weight: 700; }
+.form-status.success { color: var(--sage-deep); }
+.form-status.error { color: #b3564f; }
+
+@media (max-width: 900px) {
+  .hero .wrap, .two-col, .contact-grid { grid-template-columns: 1fr; }
+  .hero .arch { order: -1; }
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .service-row { grid-template-columns: 1fr; }
+  .service-row .arch { max-width: 200px; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-banner { padding: 44px 24px; border-radius: 24px; }
+}
+@media (max-width: 560px) {
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr; }
+  section { padding: 60px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .nav-links a::after { transition: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#8FA274" stroke-width="7" stroke-linecap="round"/></svg>
+      The Kidz Corner
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#5C4A3D" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="btn btn-primary">Schedule a Tour</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">About The Kidz Corner</span>
+      <h1>Fifteen years of caring for little ones.</h1>
+      <p style="max-width:640px">The Kidz Corner is a NYS licensed daycare &amp; preschool bringing 15 years of hands-on childcare experience to Holbrook and the surrounding community. We're opening our doors on September 3rd, and we can't wait to welcome your family.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap two-col">
+      <div>
+        <span class="eyebrow">Our story</span>
+        <h2>Built on 15 years in the daycare field.</h2>
+        <p>The Kidz Corner was created around one belief: that a daycare should feel like an extension of home. With 15 years of experience in the daycare field, our team has spent years learning how young children grow, play, and thrive &mdash; and we've brought all of that into one warm, welcoming space.</p>
+        <p>We're a NYS licensed daycare &amp; preschool with certified staff, offering care for children ages 6 weeks through 4 years old. Whether your family needs full-time or part-time care, our goal is the same: a program where your child feels safe, seen, and excited to come back each day.</p>
+      </div>
+      <div class="arch">
+        <div class="arch-sun">
+          <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round">
+            <circle cx="50" cy="38" r="14" fill="none"/>
+            <path d="M28 78c4-16 14-24 22-24s18 8 22 24" fill="none"/>
+          </svg>
+        </div>
+        <p class="arch-caption">Photos of our team &amp; classrooms coming soon!</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="wrap trust-grid">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V5z"/></svg>
+        <strong>NYS Licensed</strong>
+        <span>Daycare &amp; preschool licensed by New York State</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>
+        <strong>Certified Staff</strong>
+        <span>Great teachers who love what they do</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.6-9.5 9-9.5 9z"/></svg>
+        <strong>A Warm Welcome</strong>
+        <span>Creating a space families feel good sending their kids to</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap two-col">
+      <div class="arch small">
+        <div class="arch-sun">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="16" fill="rgba(255,255,255,0.9)"/>
+            <g stroke="rgba(255,255,255,0.75)" stroke-width="4" stroke-linecap="round">
+              <line x1="50" y1="14" x2="50" y2="24"/>
+              <line x1="50" y1="76" x2="50" y2="86"/>
+              <line x1="14" y1="50" x2="24" y2="50"/>
+              <line x1="76" y1="50" x2="86" y2="50"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Our approach</span>
+        <h2>Every child grows at their own pace.</h2>
+        <p>From our infant room through preschool, our programs are built around each child's age and stage &mdash; gentle, individual care for the youngest babies, and guided play and early learning as children grow toward kindergarten readiness.</p>
+        <p><a href="services.html" class="btn btn-secondary">Explore our programs &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta-banner">
+        <span class="opening-tag">Grand Opening &middot; September 3rd</span>
+        <h2>We'd love to meet your family.</h2>
+        <p style="max-width:520px;margin:0 auto 8px">Schedule a tour to see The Kidz Corner and ask us anything about our programs.</p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-primary">Schedule a Tour</a>
+          <a href="tel:6312565895" class="btn btn-secondary">Call (631) 256-5895</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#F1DFA1" stroke-width="7" stroke-linecap="round"/></svg>
+          The Kidz Corner
+        </a>
+        <p style="margin-top:14px;max-width:280px">A NYS licensed daycare &amp; preschool serving infants through age 4 in Holbrook, NY.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact &amp; Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit or Reach Us</h4>
+        <ul>
+          <li>630-8 Broadway Ave<br>Holbrook, NY 11741</li>
+          <li><a href="tel:6312565895">(631) 256-5895</a></li>
+          <li><a href="mailto:thekidzcornerny@gmail.com">thekidzcornerny@gmail.com</a></li>
+          <li>Mon &ndash; Fri, 7:00am &ndash; 5:00pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> The Kidz Corner. NYS Licensed Daycare &amp; Preschool.</span>
+      <span>Site by <a href="https://auralogiccontact-coder.github.io/AuraLogic/" target="_blank" rel="noopener">AuraLogic</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+// Mobile nav toggle
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// Footer year
+(function () {
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+
+// Tour request form — submits via FormSubmit.co (no backend needed)
+(function () {
+  var form = document.getElementById('tourForm');
+  if (!form) return;
+  var status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = 'Sending...';
+    status.className = 'form-status';
+
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          status.textContent = "Thank you! Your message has been sent — we'll be in touch soon to schedule your tour.";
+          status.className = 'form-status success';
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(function () {
+        status.textContent = "Something went wrong sending your message. Please call us at (631) 256-5895 or email thekidzcornerny@gmail.com directly.";
+        status.className = 'form-status error';
+      });
+  });
+})();
+
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Schedule a Tour | The Kidz Corner Daycare &amp; Preschool</title>
+<meta name="description" content="Contact The Kidz Corner in Holbrook, NY to schedule a tour. Call (631) 256-5895 or send us a message.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M12 56V28C12 15 20 6 32 6s20 9 20 22v28' fill='none' stroke='%238FA274' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   The Kidz Corner — Design tokens
+   Ivory #FAF5EC · Clay ink #5C4A3D · Sage #8FA274 · Blush #E9B9BC
+   Butter #F1DFA1 · Sky #B7D3DE · Deep sage (hover) #6C7E56
+   Display: Fraunces (soft optical) · Body: Karla
+   ========================================================================== */
+
+:root {
+  --ivory: #faf5ec;
+  --ivory-deep: #f3ead9;
+  --ink: #5c4a3d;
+  --ink-soft: #8a7666;
+  --sage: #8fa274;
+  --sage-deep: #6c7e56;
+  --blush: #e9b9bc;
+  --blush-deep: #d99ea1;
+  --butter: #f1dfa1;
+  --sky: #b7d3de;
+  --white: #fffdf9;
+  --shadow: 0 12px 32px rgba(92, 74, 61, 0.1);
+  --radius-arch: 999px 999px 24px 24px;
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: 'Karla', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 500; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--sage-deep); text-decoration: none; }
+
+.eyebrow {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  margin-bottom: 0.6em;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section { padding: 84px 0; }
+section.tight { padding: 56px 0; }
+
+/* -------------------- buttons -------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  text-align: center;
+}
+.btn:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.btn-primary { background: var(--sage); color: var(--white); box-shadow: var(--shadow); }
+.btn-primary:hover { background: var(--sage-deep); transform: translateY(-2px); }
+.btn-secondary { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn-secondary:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
+.btn-block { display: flex; width: 100%; justify-content: center; }
+
+/* -------------------- header / nav -------------------- */
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 245, 236, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+.brand svg { flex-shrink: 0; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 3px;
+  background: var(--blush);
+  border-radius: 3px;
+  transition: width 0.2s ease, left 0.2s ease;
+}
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  width: 100%;
+  left: 0;
+}
+.nav-links a[aria-current="page"] { color: var(--sage-deep); }
+.nav-cta { display: flex; align-items: center; gap: 18px; }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span, .nav-toggle::before, .nav-toggle::after { display: none; }
+.nav-toggle svg { width: 26px; height: 26px; }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ivory);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 14px 28px 24px;
+    border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 10px 0; width: 100%; }
+  .nav-cta .btn-primary { display: none; }
+  header.site .nav-links .btn-primary { display: inline-flex; margin-top: 8px; }
+}
+
+/* -------------------- hero -------------------- */
+.hero {
+  padding: 64px 0 40px;
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  border: 1px solid rgba(92, 74, 61, 0.12);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  box-shadow: 0 4px 14px rgba(92,74,61,0.06);
+}
+.badge svg { flex-shrink: 0; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+/* the arch — signature shape used across the site as an image/illustration frame */
+.arch {
+  position: relative;
+  border-radius: var(--radius-arch);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(233,185,188,0.9), transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(183,211,222,0.85), transparent 55%),
+    radial-gradient(circle at 60% 15%, rgba(241,223,161,0.9), transparent 45%),
+    linear-gradient(160deg, var(--sage) 0%, #a9bb8f 100%);
+  box-shadow: var(--shadow);
+}
+.arch.small { aspect-ratio: 4 / 4; }
+@supports not (aspect-ratio: 1) {
+  .arch { min-height: 380px; }
+  .arch.small { min-height: 300px; }
+  .service-row .arch { min-height: 220px; }
+  .gallery-grid .arch { min-height: 220px; }
+}
+.arch .arch-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 22px 24px 26px;
+  background: linear-gradient(0deg, rgba(92,74,61,0.55), transparent);
+  color: var(--white);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+.arch-sun {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arch-sun svg { width: 46%; height: 46%; opacity: 0.85; }
+
+/* -------------------- divider -------------------- */
+.divider {
+  display: block;
+  width: 100%;
+  height: 44px;
+}
+
+/* -------------------- trust strip -------------------- */
+.trust-strip {
+  background: var(--ivory-deep);
+  padding: 40px 0;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.trust-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.trust-item svg { width: 34px; height: 34px; color: var(--sage-deep); }
+.trust-item strong { font-family: 'Fraunces', serif; font-size: 1.05rem; }
+.trust-item span { color: var(--ink-soft); font-size: 0.9rem; }
+
+/* -------------------- journey / age groups -------------------- */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 44px;
+}
+.journey-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 0 0 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.journey-top {
+  border-radius: var(--radius-arch);
+  height: 150px;
+  margin: 18px 18px 20px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.journey-num {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+}
+.journey-card .body { padding: 0 22px; }
+.journey-card .age { color: var(--sage-deep); font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.tone-1 { background: linear-gradient(150deg, var(--blush), var(--butter)); }
+.tone-2 { background: linear-gradient(150deg, var(--sky), var(--blush)); }
+.tone-3 { background: linear-gradient(150deg, var(--butter), var(--sage)); }
+
+/* -------------------- two column / why -------------------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.check-list { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.check-list li { display: flex; gap: 12px; align-items: flex-start; }
+.check-list svg { flex-shrink: 0; margin-top: 3px; color: var(--sage-deep); }
+
+/* -------------------- service area -------------------- */
+.area-strip { background: var(--sage); color: var(--white); padding: 54px 0; }
+.area-strip h2, .area-strip .eyebrow { color: var(--white); }
+.area-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.area-pills span {
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+/* -------------------- cta banner -------------------- */
+.cta-banner {
+  background: var(--butter);
+  border-radius: 32px;
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 56px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner .opening-tag {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.cta-banner .hero-ctas { justify-content: center; }
+
+/* -------------------- footer -------------------- */
+footer.site {
+  background: var(--ink);
+  color: var(--ivory);
+  padding: 60px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+footer.site .brand { color: var(--ivory); }
+footer.site h4 { color: var(--butter); font-family: 'Fraunces', serif; font-size: 1rem; margin-bottom: 14px; }
+footer.site p, footer.site a { color: rgba(250,245,236,0.78); font-size: 0.95rem; }
+footer.site a:hover { color: var(--butter); }
+footer.site ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-bottom {
+  border-top: 1px solid rgba(250,245,236,0.14);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(250,245,236,0.55);
+}
+.footer-bottom a { color: rgba(250,245,236,0.7); }
+
+/* -------------------- generic page hero (inner pages) -------------------- */
+.page-hero { padding: 56px 0 20px; text-align: left; }
+.page-hero .wrap { max-width: 760px; }
+
+/* -------------------- services page -------------------- */
+.service-list { display: flex; flex-direction: column; gap: 26px; margin-top: 40px; }
+.service-row {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 30px;
+  align-items: center;
+  background: var(--white);
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+.service-row .arch { aspect-ratio: 3/4; }
+.service-row .tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sage-deep);
+  background: rgba(143,162,116,0.12);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.note-box {
+  background: var(--sky);
+  border-radius: 20px;
+  padding: 26px 28px;
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.note-box svg { flex-shrink: 0; margin-top: 3px; }
+
+/* -------------------- gallery page -------------------- */
+.gallery-soon {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+.gallery-grid .arch { aspect-ratio: 1/1; }
+
+/* -------------------- contact page -------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 54px;
+  align-items: start;
+}
+.info-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+.info-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.info-row svg { flex-shrink: 0; color: var(--sage-deep); margin-top: 3px; }
+.info-row strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-soft); margin-bottom: 2px; }
+.map-frame { border-radius: 20px; overflow: hidden; margin-top: 22px; border: 1px solid rgba(92,74,61,0.1); }
+.map-frame iframe { width: 100%; height: 220px; border: 0; display: block; }
+
+form.tour-form { background: var(--white); border-radius: 24px; padding: 34px; box-shadow: var(--shadow); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 7px; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(92,74,61,0.18);
+  background: var(--ivory);
+  color: var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 4px rgba(143,162,116,0.18);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.form-status { margin-top: 16px; font-weight: 700; }
+.form-status.success { color: var(--sage-deep); }
+.form-status.error { color: #b3564f; }
+
+@media (max-width: 900px) {
+  .hero .wrap, .two-col, .contact-grid { grid-template-columns: 1fr; }
+  .hero .arch { order: -1; }
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .service-row { grid-template-columns: 1fr; }
+  .service-row .arch { max-width: 200px; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-banner { padding: 44px 24px; border-radius: 24px; }
+}
+@media (max-width: 560px) {
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr; }
+  section { padding: 60px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .nav-links a::after { transition: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#8FA274" stroke-width="7" stroke-linecap="round"/></svg>
+      The Kidz Corner
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#5C4A3D" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a href="contact.html" class="btn btn-primary">Schedule a Tour</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Contact Us</span>
+      <h1>Let's schedule your tour.</h1>
+      <p style="max-width:640px">We'd love to meet you and your child. Reach out below, give us a call, or send an email &mdash; we'll follow up to find a tour time that works for your family.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap contact-grid">
+
+      <div>
+        <div class="info-card">
+          <div class="info-row">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Address</strong>630-8 Broadway Ave, Holbrook, NY 11741</div>
+          </div>
+          <div class="info-row">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.79.68 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.25a2 2 0 0 1 2.11-.45c.84.33 1.73.56 2.63.68A2 2 0 0 1 22 16.92z"/></svg>
+            <div><strong>Phone</strong><a href="tel:6312565895">(631) 256-5895</a></div>
+          </div>
+          <div class="info-row">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            <div><strong>Email</strong><a href="mailto:thekidzcornerny@gmail.com">thekidzcornerny@gmail.com</a></div>
+          </div>
+          <div class="info-row">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div><strong>Hours</strong>Monday &ndash; Friday, 7:00am &ndash; 5:00pm</div>
+          </div>
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps?q=630-8%20Broadway%20Ave,%20Holbrook,%20NY%2011741&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to The Kidz Corner"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form class="tour-form" id="tourForm" action="https://formsubmit.co/ajax/thekidzcornerny@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New tour request — The Kidz Corner website">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="field">
+              <label for="parentName">Parent / Guardian Name</label>
+              <input type="text" id="parentName" name="Parent Name" required>
+            </div>
+            <div class="field">
+              <label for="childAge">Child's Age</label>
+              <input type="text" id="childAge" name="Child's Age" placeholder="e.g. 8 months" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="Email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="Phone" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="program">Program You're Interested In</label>
+            <select id="program" name="Program of Interest">
+              <option value="Infant Services">Infant Services (6 weeks &ndash; 18 months)</option>
+              <option value="Toddler Services">Toddler Services (18 months &ndash; 3 years)</option>
+              <option value="Preschool">Preschool (3 &ndash; 4 years)</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" placeholder="Tell us a bit about your family and when you'd like to tour."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Request a Tour</button>
+          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#F1DFA1" stroke-width="7" stroke-linecap="round"/></svg>
+          The Kidz Corner
+        </a>
+        <p style="margin-top:14px;max-width:280px">A NYS licensed daycare &amp; preschool serving infants through age 4 in Holbrook, NY.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact &amp; Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit or Reach Us</h4>
+        <ul>
+          <li>630-8 Broadway Ave<br>Holbrook, NY 11741</li>
+          <li><a href="tel:6312565895">(631) 256-5895</a></li>
+          <li><a href="mailto:thekidzcornerny@gmail.com">thekidzcornerny@gmail.com</a></li>
+          <li>Mon &ndash; Fri, 7:00am &ndash; 5:00pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> The Kidz Corner. NYS Licensed Daycare &amp; Preschool.</span>
+      <span>Site by <a href="https://auralogiccontact-coder.github.io/AuraLogic/" target="_blank" rel="noopener">AuraLogic</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+// Mobile nav toggle
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// Footer year
+(function () {
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+
+// Tour request form — submits via FormSubmit.co (no backend needed)
+(function () {
+  var form = document.getElementById('tourForm');
+  if (!form) return;
+  var status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = 'Sending...';
+    status.className = 'form-status';
+
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          status.textContent = "Thank you! Your message has been sent — we'll be in touch soon to schedule your tour.";
+          status.className = 'form-status success';
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(function () {
+        status.textContent = "Something went wrong sending your message. Please call us at (631) 256-5895 or email thekidzcornerny@gmail.com directly.";
+        status.className = 'form-status error';
+      });
+  });
+})();
+
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | The Kidz Corner Daycare &amp; Preschool</title>
+<meta name="description" content="A look inside The Kidz Corner, a NYS licensed daycare and preschool in Holbrook, NY. Gallery coming soon.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M12 56V28C12 15 20 6 32 6s20 9 20 22v28' fill='none' stroke='%238FA274' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   The Kidz Corner — Design tokens
+   Ivory #FAF5EC · Clay ink #5C4A3D · Sage #8FA274 · Blush #E9B9BC
+   Butter #F1DFA1 · Sky #B7D3DE · Deep sage (hover) #6C7E56
+   Display: Fraunces (soft optical) · Body: Karla
+   ========================================================================== */
+
+:root {
+  --ivory: #faf5ec;
+  --ivory-deep: #f3ead9;
+  --ink: #5c4a3d;
+  --ink-soft: #8a7666;
+  --sage: #8fa274;
+  --sage-deep: #6c7e56;
+  --blush: #e9b9bc;
+  --blush-deep: #d99ea1;
+  --butter: #f1dfa1;
+  --sky: #b7d3de;
+  --white: #fffdf9;
+  --shadow: 0 12px 32px rgba(92, 74, 61, 0.1);
+  --radius-arch: 999px 999px 24px 24px;
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: 'Karla', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 500; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--sage-deep); text-decoration: none; }
+
+.eyebrow {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  margin-bottom: 0.6em;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section { padding: 84px 0; }
+section.tight { padding: 56px 0; }
+
+/* -------------------- buttons -------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  text-align: center;
+}
+.btn:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.btn-primary { background: var(--sage); color: var(--white); box-shadow: var(--shadow); }
+.btn-primary:hover { background: var(--sage-deep); transform: translateY(-2px); }
+.btn-secondary { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn-secondary:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
+.btn-block { display: flex; width: 100%; justify-content: center; }
+
+/* -------------------- header / nav -------------------- */
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 245, 236, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+.brand svg { flex-shrink: 0; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 3px;
+  background: var(--blush);
+  border-radius: 3px;
+  transition: width 0.2s ease, left 0.2s ease;
+}
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  width: 100%;
+  left: 0;
+}
+.nav-links a[aria-current="page"] { color: var(--sage-deep); }
+.nav-cta { display: flex; align-items: center; gap: 18px; }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span, .nav-toggle::before, .nav-toggle::after { display: none; }
+.nav-toggle svg { width: 26px; height: 26px; }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ivory);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 14px 28px 24px;
+    border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 10px 0; width: 100%; }
+  .nav-cta .btn-primary { display: none; }
+  header.site .nav-links .btn-primary { display: inline-flex; margin-top: 8px; }
+}
+
+/* -------------------- hero -------------------- */
+.hero {
+  padding: 64px 0 40px;
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  border: 1px solid rgba(92, 74, 61, 0.12);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  box-shadow: 0 4px 14px rgba(92,74,61,0.06);
+}
+.badge svg { flex-shrink: 0; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+/* the arch — signature shape used across the site as an image/illustration frame */
+.arch {
+  position: relative;
+  border-radius: var(--radius-arch);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(233,185,188,0.9), transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(183,211,222,0.85), transparent 55%),
+    radial-gradient(circle at 60% 15%, rgba(241,223,161,0.9), transparent 45%),
+    linear-gradient(160deg, var(--sage) 0%, #a9bb8f 100%);
+  box-shadow: var(--shadow);
+}
+.arch.small { aspect-ratio: 4 / 4; }
+@supports not (aspect-ratio: 1) {
+  .arch { min-height: 380px; }
+  .arch.small { min-height: 300px; }
+  .service-row .arch { min-height: 220px; }
+  .gallery-grid .arch { min-height: 220px; }
+}
+.arch .arch-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 22px 24px 26px;
+  background: linear-gradient(0deg, rgba(92,74,61,0.55), transparent);
+  color: var(--white);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+.arch-sun {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arch-sun svg { width: 46%; height: 46%; opacity: 0.85; }
+
+/* -------------------- divider -------------------- */
+.divider {
+  display: block;
+  width: 100%;
+  height: 44px;
+}
+
+/* -------------------- trust strip -------------------- */
+.trust-strip {
+  background: var(--ivory-deep);
+  padding: 40px 0;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.trust-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.trust-item svg { width: 34px; height: 34px; color: var(--sage-deep); }
+.trust-item strong { font-family: 'Fraunces', serif; font-size: 1.05rem; }
+.trust-item span { color: var(--ink-soft); font-size: 0.9rem; }
+
+/* -------------------- journey / age groups -------------------- */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 44px;
+}
+.journey-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 0 0 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.journey-top {
+  border-radius: var(--radius-arch);
+  height: 150px;
+  margin: 18px 18px 20px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.journey-num {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+}
+.journey-card .body { padding: 0 22px; }
+.journey-card .age { color: var(--sage-deep); font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.tone-1 { background: linear-gradient(150deg, var(--blush), var(--butter)); }
+.tone-2 { background: linear-gradient(150deg, var(--sky), var(--blush)); }
+.tone-3 { background: linear-gradient(150deg, var(--butter), var(--sage)); }
+
+/* -------------------- two column / why -------------------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.check-list { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.check-list li { display: flex; gap: 12px; align-items: flex-start; }
+.check-list svg { flex-shrink: 0; margin-top: 3px; color: var(--sage-deep); }
+
+/* -------------------- service area -------------------- */
+.area-strip { background: var(--sage); color: var(--white); padding: 54px 0; }
+.area-strip h2, .area-strip .eyebrow { color: var(--white); }
+.area-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.area-pills span {
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+/* -------------------- cta banner -------------------- */
+.cta-banner {
+  background: var(--butter);
+  border-radius: 32px;
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 56px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner .opening-tag {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.cta-banner .hero-ctas { justify-content: center; }
+
+/* -------------------- footer -------------------- */
+footer.site {
+  background: var(--ink);
+  color: var(--ivory);
+  padding: 60px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+footer.site .brand { color: var(--ivory); }
+footer.site h4 { color: var(--butter); font-family: 'Fraunces', serif; font-size: 1rem; margin-bottom: 14px; }
+footer.site p, footer.site a { color: rgba(250,245,236,0.78); font-size: 0.95rem; }
+footer.site a:hover { color: var(--butter); }
+footer.site ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-bottom {
+  border-top: 1px solid rgba(250,245,236,0.14);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(250,245,236,0.55);
+}
+.footer-bottom a { color: rgba(250,245,236,0.7); }
+
+/* -------------------- generic page hero (inner pages) -------------------- */
+.page-hero { padding: 56px 0 20px; text-align: left; }
+.page-hero .wrap { max-width: 760px; }
+
+/* -------------------- services page -------------------- */
+.service-list { display: flex; flex-direction: column; gap: 26px; margin-top: 40px; }
+.service-row {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 30px;
+  align-items: center;
+  background: var(--white);
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+.service-row .arch { aspect-ratio: 3/4; }
+.service-row .tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sage-deep);
+  background: rgba(143,162,116,0.12);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.note-box {
+  background: var(--sky);
+  border-radius: 20px;
+  padding: 26px 28px;
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.note-box svg { flex-shrink: 0; margin-top: 3px; }
+
+/* -------------------- gallery page -------------------- */
+.gallery-soon {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+.gallery-grid .arch { aspect-ratio: 1/1; }
+
+/* -------------------- contact page -------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 54px;
+  align-items: start;
+}
+.info-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+.info-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.info-row svg { flex-shrink: 0; color: var(--sage-deep); margin-top: 3px; }
+.info-row strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-soft); margin-bottom: 2px; }
+.map-frame { border-radius: 20px; overflow: hidden; margin-top: 22px; border: 1px solid rgba(92,74,61,0.1); }
+.map-frame iframe { width: 100%; height: 220px; border: 0; display: block; }
+
+form.tour-form { background: var(--white); border-radius: 24px; padding: 34px; box-shadow: var(--shadow); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 7px; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(92,74,61,0.18);
+  background: var(--ivory);
+  color: var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 4px rgba(143,162,116,0.18);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.form-status { margin-top: 16px; font-weight: 700; }
+.form-status.success { color: var(--sage-deep); }
+.form-status.error { color: #b3564f; }
+
+@media (max-width: 900px) {
+  .hero .wrap, .two-col, .contact-grid { grid-template-columns: 1fr; }
+  .hero .arch { order: -1; }
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .service-row { grid-template-columns: 1fr; }
+  .service-row .arch { max-width: 200px; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-banner { padding: 44px 24px; border-radius: 24px; }
+}
+@media (max-width: 560px) {
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr; }
+  section { padding: 60px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .nav-links a::after { transition: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#8FA274" stroke-width="7" stroke-linecap="round"/></svg>
+      The Kidz Corner
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#5C4A3D" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="btn btn-primary">Schedule a Tour</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero gallery-soon">
+    <div class="wrap">
+      <span class="eyebrow">Gallery</span>
+      <h1>Our photo gallery is on its way.</h1>
+      <p style="max-width:560px;margin:0 auto">We're putting the finishing touches on our space ahead of our September 3rd opening. Check back soon for photos of our classrooms, our team, and everyday moments at The Kidz Corner &mdash; or come see it all in person on a tour.</p>
+      <p style="margin-top:26px"><a href="contact.html" class="btn btn-primary">Schedule a Tour</a></p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="gallery-grid">
+        <div class="arch tone-1"></div>
+        <div class="arch tone-2"></div>
+        <div class="arch tone-3"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#F1DFA1" stroke-width="7" stroke-linecap="round"/></svg>
+          The Kidz Corner
+        </a>
+        <p style="margin-top:14px;max-width:280px">A NYS licensed daycare &amp; preschool serving infants through age 4 in Holbrook, NY.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact &amp; Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit or Reach Us</h4>
+        <ul>
+          <li>630-8 Broadway Ave<br>Holbrook, NY 11741</li>
+          <li><a href="tel:6312565895">(631) 256-5895</a></li>
+          <li><a href="mailto:thekidzcornerny@gmail.com">thekidzcornerny@gmail.com</a></li>
+          <li>Mon &ndash; Fri, 7:00am &ndash; 5:00pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> The Kidz Corner. NYS Licensed Daycare &amp; Preschool.</span>
+      <span>Site by <a href="https://auralogiccontact-coder.github.io/AuraLogic/" target="_blank" rel="noopener">AuraLogic</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+// Mobile nav toggle
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// Footer year
+(function () {
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+
+// Tour request form — submits via FormSubmit.co (no backend needed)
+(function () {
+  var form = document.getElementById('tourForm');
+  if (!form) return;
+  var status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = 'Sending...';
+    status.className = 'form-status';
+
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          status.textContent = "Thank you! Your message has been sent — we'll be in touch soon to schedule your tour.";
+          status.className = 'form-status success';
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(function () {
+        status.textContent = "Something went wrong sending your message. Please call us at (631) 256-5895 or email thekidzcornerny@gmail.com directly.";
+        status.className = 'form-status error';
+      });
+  });
+})();
+
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kidz Corner | NYS Licensed Daycare &amp; Preschool in Holbrook, NY</title>
+<meta name="description" content="The Kidz Corner is a NYS licensed daycare and preschool in Holbrook, NY serving infants through age 4 with 15 years of experience and certified staff. Schedule your tour today.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M12 56V28C12 15 20 6 32 6s20 9 20 22v28' fill='none' stroke='%238FA274' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   The Kidz Corner — Design tokens
+   Ivory #FAF5EC · Clay ink #5C4A3D · Sage #8FA274 · Blush #E9B9BC
+   Butter #F1DFA1 · Sky #B7D3DE · Deep sage (hover) #6C7E56
+   Display: Fraunces (soft optical) · Body: Karla
+   ========================================================================== */
+
+:root {
+  --ivory: #faf5ec;
+  --ivory-deep: #f3ead9;
+  --ink: #5c4a3d;
+  --ink-soft: #8a7666;
+  --sage: #8fa274;
+  --sage-deep: #6c7e56;
+  --blush: #e9b9bc;
+  --blush-deep: #d99ea1;
+  --butter: #f1dfa1;
+  --sky: #b7d3de;
+  --white: #fffdf9;
+  --shadow: 0 12px 32px rgba(92, 74, 61, 0.1);
+  --radius-arch: 999px 999px 24px 24px;
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: 'Karla', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 500; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--sage-deep); text-decoration: none; }
+
+.eyebrow {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  margin-bottom: 0.6em;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section { padding: 84px 0; }
+section.tight { padding: 56px 0; }
+
+/* -------------------- buttons -------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  text-align: center;
+}
+.btn:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.btn-primary { background: var(--sage); color: var(--white); box-shadow: var(--shadow); }
+.btn-primary:hover { background: var(--sage-deep); transform: translateY(-2px); }
+.btn-secondary { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn-secondary:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
+.btn-block { display: flex; width: 100%; justify-content: center; }
+
+/* -------------------- header / nav -------------------- */
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 245, 236, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+.brand svg { flex-shrink: 0; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 3px;
+  background: var(--blush);
+  border-radius: 3px;
+  transition: width 0.2s ease, left 0.2s ease;
+}
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  width: 100%;
+  left: 0;
+}
+.nav-links a[aria-current="page"] { color: var(--sage-deep); }
+.nav-cta { display: flex; align-items: center; gap: 18px; }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span, .nav-toggle::before, .nav-toggle::after { display: none; }
+.nav-toggle svg { width: 26px; height: 26px; }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ivory);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 14px 28px 24px;
+    border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 10px 0; width: 100%; }
+  .nav-cta .btn-primary { display: none; }
+  header.site .nav-links .btn-primary { display: inline-flex; margin-top: 8px; }
+}
+
+/* -------------------- hero -------------------- */
+.hero {
+  padding: 64px 0 40px;
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  border: 1px solid rgba(92, 74, 61, 0.12);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  box-shadow: 0 4px 14px rgba(92,74,61,0.06);
+}
+.badge svg { flex-shrink: 0; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+/* the arch — signature shape used across the site as an image/illustration frame */
+.arch {
+  position: relative;
+  border-radius: var(--radius-arch);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(233,185,188,0.9), transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(183,211,222,0.85), transparent 55%),
+    radial-gradient(circle at 60% 15%, rgba(241,223,161,0.9), transparent 45%),
+    linear-gradient(160deg, var(--sage) 0%, #a9bb8f 100%);
+  box-shadow: var(--shadow);
+}
+.arch.small { aspect-ratio: 4 / 4; }
+@supports not (aspect-ratio: 1) {
+  .arch { min-height: 380px; }
+  .arch.small { min-height: 300px; }
+  .service-row .arch { min-height: 220px; }
+  .gallery-grid .arch { min-height: 220px; }
+}
+.arch .arch-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 22px 24px 26px;
+  background: linear-gradient(0deg, rgba(92,74,61,0.55), transparent);
+  color: var(--white);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+.arch-sun {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arch-sun svg { width: 46%; height: 46%; opacity: 0.85; }
+
+/* -------------------- divider -------------------- */
+.divider {
+  display: block;
+  width: 100%;
+  height: 44px;
+}
+
+/* -------------------- trust strip -------------------- */
+.trust-strip {
+  background: var(--ivory-deep);
+  padding: 40px 0;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.trust-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.trust-item svg { width: 34px; height: 34px; color: var(--sage-deep); }
+.trust-item strong { font-family: 'Fraunces', serif; font-size: 1.05rem; }
+.trust-item span { color: var(--ink-soft); font-size: 0.9rem; }
+
+/* -------------------- journey / age groups -------------------- */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 44px;
+}
+.journey-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 0 0 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.journey-top {
+  border-radius: var(--radius-arch);
+  height: 150px;
+  margin: 18px 18px 20px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.journey-num {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+}
+.journey-card .body { padding: 0 22px; }
+.journey-card .age { color: var(--sage-deep); font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.tone-1 { background: linear-gradient(150deg, var(--blush), var(--butter)); }
+.tone-2 { background: linear-gradient(150deg, var(--sky), var(--blush)); }
+.tone-3 { background: linear-gradient(150deg, var(--butter), var(--sage)); }
+
+/* -------------------- two column / why -------------------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.check-list { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.check-list li { display: flex; gap: 12px; align-items: flex-start; }
+.check-list svg { flex-shrink: 0; margin-top: 3px; color: var(--sage-deep); }
+
+/* -------------------- service area -------------------- */
+.area-strip { background: var(--sage); color: var(--white); padding: 54px 0; }
+.area-strip h2, .area-strip .eyebrow { color: var(--white); }
+.area-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.area-pills span {
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+/* -------------------- cta banner -------------------- */
+.cta-banner {
+  background: var(--butter);
+  border-radius: 32px;
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 56px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner .opening-tag {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.cta-banner .hero-ctas { justify-content: center; }
+
+/* -------------------- footer -------------------- */
+footer.site {
+  background: var(--ink);
+  color: var(--ivory);
+  padding: 60px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+footer.site .brand { color: var(--ivory); }
+footer.site h4 { color: var(--butter); font-family: 'Fraunces', serif; font-size: 1rem; margin-bottom: 14px; }
+footer.site p, footer.site a { color: rgba(250,245,236,0.78); font-size: 0.95rem; }
+footer.site a:hover { color: var(--butter); }
+footer.site ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-bottom {
+  border-top: 1px solid rgba(250,245,236,0.14);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(250,245,236,0.55);
+}
+.footer-bottom a { color: rgba(250,245,236,0.7); }
+
+/* -------------------- generic page hero (inner pages) -------------------- */
+.page-hero { padding: 56px 0 20px; text-align: left; }
+.page-hero .wrap { max-width: 760px; }
+
+/* -------------------- services page -------------------- */
+.service-list { display: flex; flex-direction: column; gap: 26px; margin-top: 40px; }
+.service-row {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 30px;
+  align-items: center;
+  background: var(--white);
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+.service-row .arch { aspect-ratio: 3/4; }
+.service-row .tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sage-deep);
+  background: rgba(143,162,116,0.12);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.note-box {
+  background: var(--sky);
+  border-radius: 20px;
+  padding: 26px 28px;
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.note-box svg { flex-shrink: 0; margin-top: 3px; }
+
+/* -------------------- gallery page -------------------- */
+.gallery-soon {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+.gallery-grid .arch { aspect-ratio: 1/1; }
+
+/* -------------------- contact page -------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 54px;
+  align-items: start;
+}
+.info-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+.info-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.info-row svg { flex-shrink: 0; color: var(--sage-deep); margin-top: 3px; }
+.info-row strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-soft); margin-bottom: 2px; }
+.map-frame { border-radius: 20px; overflow: hidden; margin-top: 22px; border: 1px solid rgba(92,74,61,0.1); }
+.map-frame iframe { width: 100%; height: 220px; border: 0; display: block; }
+
+form.tour-form { background: var(--white); border-radius: 24px; padding: 34px; box-shadow: var(--shadow); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 7px; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(92,74,61,0.18);
+  background: var(--ivory);
+  color: var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 4px rgba(143,162,116,0.18);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.form-status { margin-top: 16px; font-weight: 700; }
+.form-status.success { color: var(--sage-deep); }
+.form-status.error { color: #b3564f; }
+
+@media (max-width: 900px) {
+  .hero .wrap, .two-col, .contact-grid { grid-template-columns: 1fr; }
+  .hero .arch { order: -1; }
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .service-row { grid-template-columns: 1fr; }
+  .service-row .arch { max-width: 200px; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-banner { padding: 44px 24px; border-radius: 24px; }
+}
+@media (max-width: 560px) {
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr; }
+  section { padding: 60px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .nav-links a::after { transition: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#8FA274" stroke-width="7" stroke-linecap="round"/></svg>
+      The Kidz Corner
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#5C4A3D" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="btn btn-primary">Schedule a Tour</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Now enrolling · Opening September 3rd</span>
+        <h1>Where little ones grow, learn, and belong.</h1>
+        <p>The Kidz Corner is a warm, family-owned daycare &amp; preschool in Holbrook, NY, welcoming children ages 6 weeks through 4 years with 15 years of hands-on childcare experience.</p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M8 2v4M16 2v4M3 9h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg>
+            Schedule a Tour
+          </a>
+          <a href="services.html" class="btn btn-secondary">View Our Programs</a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA274" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V5z"/></svg> NYS Licensed</span>
+          <span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA274" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg> Certified Staff</span>
+          <span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA274" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.6-9.5 9-9.5 9z"/></svg> 15 Years of Care</span>
+        </div>
+      </div>
+      <div class="arch">
+        <div class="arch-sun">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="16" fill="rgba(255,255,255,0.9)"/>
+            <g stroke="rgba(255,255,255,0.75)" stroke-width="4" stroke-linecap="round">
+              <line x1="50" y1="8" x2="50" y2="20"/>
+              <line x1="50" y1="80" x2="50" y2="92"/>
+              <line x1="8" y1="50" x2="20" y2="50"/>
+              <line x1="80" y1="50" x2="92" y2="50"/>
+              <line x1="19" y1="19" x2="27" y2="27"/>
+              <line x1="73" y1="73" x2="81" y2="81"/>
+              <line x1="81" y1="19" x2="73" y2="27"/>
+              <line x1="27" y1="73" x2="19" y2="81"/>
+            </g>
+          </svg>
+        </div>
+        <p class="arch-caption">Photos of our space &amp; classrooms coming soon!</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="wrap trust-grid">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V5z"/></svg>
+        <strong>NYS Licensed &amp; Certified</strong>
+        <span>Held to New York State's daycare &amp; preschool standards</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+        <strong>15 Years in Childcare</strong>
+        <span>Experienced teachers who know how little ones learn</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 21V12h6v9"/></svg>
+        <strong>Family-Owned &amp; Local</strong>
+        <span>Proudly serving Holbrook and the surrounding community</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Their journey with us</span>
+      <h2>A program for every age &amp; stage.</h2>
+      <p style="max-width:640px">From their very first weeks to their first day of kindergarten, our programs grow alongside your child.</p>
+      <div class="journey-grid">
+        <div class="journey-card">
+          <div class="journey-top tone-1"><span class="journey-num">01</span></div>
+          <div class="body">
+            <span class="age">6 weeks &ndash; 18 months</span>
+            <h3>Infant Care</h3>
+            <p>Gentle, attentive care built around each baby's own routine, in a soft and calming space.</p>
+          </div>
+        </div>
+        <div class="journey-card">
+          <div class="journey-top tone-2"><span class="journey-num">02</span></div>
+          <div class="body">
+            <span class="age">18 months &ndash; 3 years</span>
+            <h3>Toddler Care</h3>
+            <p>Hands-on days full of movement, exploration, and the first steps toward independence.</p>
+          </div>
+        </div>
+        <div class="journey-card">
+          <div class="journey-top tone-3"><span class="journey-num">03</span></div>
+          <div class="body">
+            <span class="age">3 &ndash; 4 years</span>
+            <h3>Preschool</h3>
+            <p>Guided play and early learning that builds confidence, curiosity, and school readiness.</p>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:26px"><a href="services.html" class="btn btn-secondary">See full program details &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap two-col">
+      <div class="arch small">
+        <div class="arch-sun">
+          <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round">
+            <path d="M20 65 C 30 30, 70 30, 80 65" fill="none"/>
+            <path d="M30 70 C 38 45, 62 45, 70 70" fill="none"/>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Why families choose us</span>
+        <h2>A warm, welcoming place to grow.</h2>
+        <p>We know choosing care for your child is one of the biggest decisions a family makes. At The Kidz Corner, our goal is simple: a warm, welcoming program where families feel confident and children feel at home.</p>
+        <ul class="check-list">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> NYS licensed daycare &amp; preschool</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Certified, experienced teaching staff</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Full-time &amp; part-time options available</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Open Monday &ndash; Friday, 7:00am &ndash; 5:00pm</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="area-strip">
+    <div class="wrap">
+      <span class="eyebrow">Proudly serving</span>
+      <h2>Holbrook &amp; the surrounding community</h2>
+      <div class="area-pills">
+        <span>Holbrook</span>
+        <span>Bayport</span>
+        <span>Blue Point</span>
+        <span>Sayville</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="cta-banner">
+        <span class="opening-tag">Grand Opening &middot; September 3rd</span>
+        <h2>Come see The Kidz Corner for yourself.</h2>
+        <p style="max-width:520px;margin:0 auto 8px">Schedule a tour and meet our team &mdash; we'd love to show you around and answer any questions.</p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-primary">Schedule a Tour</a>
+          <a href="tel:6312565895" class="btn btn-secondary">Call (631) 256-5895</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#F1DFA1" stroke-width="7" stroke-linecap="round"/></svg>
+          The Kidz Corner
+        </a>
+        <p style="margin-top:14px;max-width:280px">A NYS licensed daycare &amp; preschool serving infants through age 4 in Holbrook, NY.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact &amp; Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit or Reach Us</h4>
+        <ul>
+          <li>630-8 Broadway Ave<br>Holbrook, NY 11741</li>
+          <li><a href="tel:6312565895">(631) 256-5895</a></li>
+          <li><a href="mailto:thekidzcornerny@gmail.com">thekidzcornerny@gmail.com</a></li>
+          <li>Mon &ndash; Fri, 7:00am &ndash; 5:00pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> The Kidz Corner. NYS Licensed Daycare &amp; Preschool.</span>
+      <span>Site by <a href="https://auralogiccontact-coder.github.io/AuraLogic/" target="_blank" rel="noopener">AuraLogic</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+// Mobile nav toggle
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// Footer year
+(function () {
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+
+// Tour request form — submits via FormSubmit.co (no backend needed)
+(function () {
+  var form = document.getElementById('tourForm');
+  if (!form) return;
+  var status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = 'Sending...';
+    status.className = 'form-status';
+
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          status.textContent = "Thank you! Your message has been sent — we'll be in touch soon to schedule your tour.";
+          status.className = 'form-status success';
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(function () {
+        status.textContent = "Something went wrong sending your message. Please call us at (631) 256-5895 or email thekidzcornerny@gmail.com directly.";
+        status.className = 'form-status error';
+      });
+  });
+})();
+
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Programs | The Kidz Corner Daycare &amp; Preschool</title>
+<meta name="description" content="Infant, toddler, and preschool programs at The Kidz Corner in Holbrook, NY, with full-time and part-time options for children ages 6 weeks to 4 years.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M12 56V28C12 15 20 6 32 6s20 9 20 22v28' fill='none' stroke='%238FA274' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   The Kidz Corner — Design tokens
+   Ivory #FAF5EC · Clay ink #5C4A3D · Sage #8FA274 · Blush #E9B9BC
+   Butter #F1DFA1 · Sky #B7D3DE · Deep sage (hover) #6C7E56
+   Display: Fraunces (soft optical) · Body: Karla
+   ========================================================================== */
+
+:root {
+  --ivory: #faf5ec;
+  --ivory-deep: #f3ead9;
+  --ink: #5c4a3d;
+  --ink-soft: #8a7666;
+  --sage: #8fa274;
+  --sage-deep: #6c7e56;
+  --blush: #e9b9bc;
+  --blush-deep: #d99ea1;
+  --butter: #f1dfa1;
+  --sky: #b7d3de;
+  --white: #fffdf9;
+  --shadow: 0 12px 32px rgba(92, 74, 61, 0.1);
+  --radius-arch: 999px 999px 24px 24px;
+  --max: 1180px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: 'Karla', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 500; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--sage-deep); text-decoration: none; }
+
+.eyebrow {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--sage-deep);
+  margin-bottom: 0.6em;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section { padding: 84px 0; }
+section.tight { padding: 56px 0; }
+
+/* -------------------- buttons -------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  text-align: center;
+}
+.btn:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.btn-primary { background: var(--sage); color: var(--white); box-shadow: var(--shadow); }
+.btn-primary:hover { background: var(--sage-deep); transform: translateY(-2px); }
+.btn-secondary { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn-secondary:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
+.btn-block { display: flex; width: 100%; justify-content: center; }
+
+/* -------------------- header / nav -------------------- */
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 245, 236, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+.brand svg { flex-shrink: 0; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 3px;
+  background: var(--blush);
+  border-radius: 3px;
+  transition: width 0.2s ease, left 0.2s ease;
+}
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  width: 100%;
+  left: 0;
+}
+.nav-links a[aria-current="page"] { color: var(--sage-deep); }
+.nav-cta { display: flex; align-items: center; gap: 18px; }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span, .nav-toggle::before, .nav-toggle::after { display: none; }
+.nav-toggle svg { width: 26px; height: 26px; }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ivory);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 14px 28px 24px;
+    border-bottom: 1px solid rgba(92, 74, 61, 0.08);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 10px 0; width: 100%; }
+  .nav-cta .btn-primary { display: none; }
+  header.site .nav-links .btn-primary { display: inline-flex; margin-top: 8px; }
+}
+
+/* -------------------- hero -------------------- */
+.hero {
+  padding: 64px 0 40px;
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  border: 1px solid rgba(92, 74, 61, 0.12);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  box-shadow: 0 4px 14px rgba(92,74,61,0.06);
+}
+.badge svg { flex-shrink: 0; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+/* the arch — signature shape used across the site as an image/illustration frame */
+.arch {
+  position: relative;
+  border-radius: var(--radius-arch);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(233,185,188,0.9), transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(183,211,222,0.85), transparent 55%),
+    radial-gradient(circle at 60% 15%, rgba(241,223,161,0.9), transparent 45%),
+    linear-gradient(160deg, var(--sage) 0%, #a9bb8f 100%);
+  box-shadow: var(--shadow);
+}
+.arch.small { aspect-ratio: 4 / 4; }
+@supports not (aspect-ratio: 1) {
+  .arch { min-height: 380px; }
+  .arch.small { min-height: 300px; }
+  .service-row .arch { min-height: 220px; }
+  .gallery-grid .arch { min-height: 220px; }
+}
+.arch .arch-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 22px 24px 26px;
+  background: linear-gradient(0deg, rgba(92,74,61,0.55), transparent);
+  color: var(--white);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+.arch-sun {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arch-sun svg { width: 46%; height: 46%; opacity: 0.85; }
+
+/* -------------------- divider -------------------- */
+.divider {
+  display: block;
+  width: 100%;
+  height: 44px;
+}
+
+/* -------------------- trust strip -------------------- */
+.trust-strip {
+  background: var(--ivory-deep);
+  padding: 40px 0;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.trust-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.trust-item svg { width: 34px; height: 34px; color: var(--sage-deep); }
+.trust-item strong { font-family: 'Fraunces', serif; font-size: 1.05rem; }
+.trust-item span { color: var(--ink-soft); font-size: 0.9rem; }
+
+/* -------------------- journey / age groups -------------------- */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 44px;
+}
+.journey-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 0 0 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.journey-top {
+  border-radius: var(--radius-arch);
+  height: 150px;
+  margin: 18px 18px 20px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.journey-num {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+}
+.journey-card .body { padding: 0 22px; }
+.journey-card .age { color: var(--sage-deep); font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.tone-1 { background: linear-gradient(150deg, var(--blush), var(--butter)); }
+.tone-2 { background: linear-gradient(150deg, var(--sky), var(--blush)); }
+.tone-3 { background: linear-gradient(150deg, var(--butter), var(--sage)); }
+
+/* -------------------- two column / why -------------------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.check-list { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.check-list li { display: flex; gap: 12px; align-items: flex-start; }
+.check-list svg { flex-shrink: 0; margin-top: 3px; color: var(--sage-deep); }
+
+/* -------------------- service area -------------------- */
+.area-strip { background: var(--sage); color: var(--white); padding: 54px 0; }
+.area-strip h2, .area-strip .eyebrow { color: var(--white); }
+.area-pills { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.area-pills span {
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+/* -------------------- cta banner -------------------- */
+.cta-banner {
+  background: var(--butter);
+  border-radius: 32px;
+  margin: 0 auto;
+  max-width: var(--max);
+  padding: 56px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner .opening-tag {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.cta-banner .hero-ctas { justify-content: center; }
+
+/* -------------------- footer -------------------- */
+footer.site {
+  background: var(--ink);
+  color: var(--ivory);
+  padding: 60px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+footer.site .brand { color: var(--ivory); }
+footer.site h4 { color: var(--butter); font-family: 'Fraunces', serif; font-size: 1rem; margin-bottom: 14px; }
+footer.site p, footer.site a { color: rgba(250,245,236,0.78); font-size: 0.95rem; }
+footer.site a:hover { color: var(--butter); }
+footer.site ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-bottom {
+  border-top: 1px solid rgba(250,245,236,0.14);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(250,245,236,0.55);
+}
+.footer-bottom a { color: rgba(250,245,236,0.7); }
+
+/* -------------------- generic page hero (inner pages) -------------------- */
+.page-hero { padding: 56px 0 20px; text-align: left; }
+.page-hero .wrap { max-width: 760px; }
+
+/* -------------------- services page -------------------- */
+.service-list { display: flex; flex-direction: column; gap: 26px; margin-top: 40px; }
+.service-row {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 30px;
+  align-items: center;
+  background: var(--white);
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+.service-row .arch { aspect-ratio: 3/4; }
+.service-row .tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sage-deep);
+  background: rgba(143,162,116,0.12);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.note-box {
+  background: var(--sky);
+  border-radius: 20px;
+  padding: 26px 28px;
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.note-box svg { flex-shrink: 0; margin-top: 3px; }
+
+/* -------------------- gallery page -------------------- */
+.gallery-soon {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+.gallery-grid .arch { aspect-ratio: 1/1; }
+
+/* -------------------- contact page -------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 54px;
+  align-items: start;
+}
+.info-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+.info-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.info-row svg { flex-shrink: 0; color: var(--sage-deep); margin-top: 3px; }
+.info-row strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--ink-soft); margin-bottom: 2px; }
+.map-frame { border-radius: 20px; overflow: hidden; margin-top: 22px; border: 1px solid rgba(92,74,61,0.1); }
+.map-frame iframe { width: 100%; height: 220px; border: 0; display: block; }
+
+form.tour-form { background: var(--white); border-radius: 24px; padding: 34px; box-shadow: var(--shadow); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 7px; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(92,74,61,0.18);
+  background: var(--ivory);
+  color: var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 4px rgba(143,162,116,0.18);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.form-status { margin-top: 16px; font-weight: 700; }
+.form-status.success { color: var(--sage-deep); }
+.form-status.error { color: #b3564f; }
+
+@media (max-width: 900px) {
+  .hero .wrap, .two-col, .contact-grid { grid-template-columns: 1fr; }
+  .hero .arch { order: -1; }
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .service-row { grid-template-columns: 1fr; }
+  .service-row .arch { max-width: 200px; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-banner { padding: 44px 24px; border-radius: 24px; }
+}
+@media (max-width: 560px) {
+  .trust-grid, .journey-grid, .gallery-grid { grid-template-columns: 1fr; }
+  section { padding: 60px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .nav-links a::after { transition: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <svg width="30" height="30" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#8FA274" stroke-width="7" stroke-linecap="round"/></svg>
+      The Kidz Corner
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#5C4A3D" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" aria-current="page">Programs</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="btn btn-primary">Schedule a Tour</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Our Programs</span>
+      <h1>Care &amp; learning for every age.</h1>
+      <p style="max-width:640px">From infant care through preschool, every program at The Kidz Corner is built around your child's age and stage &mdash; with full-time and part-time options to fit your family.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="service-list">
+
+        <div class="service-row">
+          <div class="arch tone-1">
+            <div class="arch-sun">
+              <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"><path d="M30 60 q20 20 40 0" fill="none"/><circle cx="38" cy="42" r="3" fill="rgba(255,255,255,0.85)"/><circle cx="62" cy="42" r="3" fill="rgba(255,255,255,0.85)"/></svg>
+            </div>
+          </div>
+          <div>
+            <span class="tag">6 weeks &ndash; 18 months</span>
+            <h3>Infant Services</h3>
+            <p>Gentle, one-on-one attention for our youngest friends. We follow each baby's own feeding, sleeping, and play routine in a calm, nurturing environment designed just for infants.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="arch tone-2">
+            <div class="arch-sun">
+              <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"><path d="M35 65 l-8-30 M65 65 l8-30 M50 65 l0-35" fill="none"/><circle cx="27" cy="30" r="4" fill="rgba(255,255,255,0.85)" stroke="none"/><circle cx="73" cy="30" r="4" fill="rgba(255,255,255,0.85)" stroke="none"/><circle cx="50" cy="25" r="4" fill="rgba(255,255,255,0.85)" stroke="none"/></svg>
+            </div>
+          </div>
+          <div>
+            <span class="tag">18 months &ndash; 3 years</span>
+            <h3>Toddler Services</h3>
+            <p>Active, hands-on days full of movement, exploration, and early language and social skills, as toddlers build confidence and take their first steps toward independence.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="arch tone-3">
+            <div class="arch-sun">
+              <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"><path d="M25 40h50v25a25 25 0 0 1-50 0z" fill="none"/><path d="M25 40l25-15 25 15" fill="none"/></svg>
+            </div>
+          </div>
+          <div>
+            <span class="tag">3 &ndash; 4 years</span>
+            <h3>Preschool</h3>
+            <p>Guided play and early learning activities that build curiosity, focus, and school readiness &mdash; getting little ones excited and prepared for kindergarten.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="note-box">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5C4A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div>
+          <strong>Full-time &amp; part-time options available</strong>
+          <p style="margin:6px 0 0">We work with families to find the schedule that fits &mdash; contact us for current openings and tuition details for your child's age group.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta-banner">
+        <span class="opening-tag">Grand Opening &middot; September 3rd</span>
+        <h2>Find the right program for your child.</h2>
+        <p style="max-width:520px;margin:0 auto 8px">Schedule a tour or reach out with any questions about our infant, toddler, or preschool programs.</p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-primary">Schedule a Tour</a>
+          <a href="tel:6312565895" class="btn btn-secondary">Call (631) 256-5895</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" fill="none"><path d="M12 56V28C12 15 20 6 32 6s20 9 20 22v28" stroke="#F1DFA1" stroke-width="7" stroke-linecap="round"/></svg>
+          The Kidz Corner
+        </a>
+        <p style="margin-top:14px;max-width:280px">A NYS licensed daycare &amp; preschool serving infants through age 4 in Holbrook, NY.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact &amp; Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit or Reach Us</h4>
+        <ul>
+          <li>630-8 Broadway Ave<br>Holbrook, NY 11741</li>
+          <li><a href="tel:6312565895">(631) 256-5895</a></li>
+          <li><a href="mailto:thekidzcornerny@gmail.com">thekidzcornerny@gmail.com</a></li>
+          <li>Mon &ndash; Fri, 7:00am &ndash; 5:00pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> The Kidz Corner. NYS Licensed Daycare &amp; Preschool.</span>
+      <span>Site by <a href="https://auralogiccontact-coder.github.io/AuraLogic/" target="_blank" rel="noopener">AuraLogic</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+// Mobile nav toggle
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// Footer year
+(function () {
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+
+// Tour request form — submits via FormSubmit.co (no backend needed)
+(function () {
+  var form = document.getElementById('tourForm');
+  if (!form) return;
+  var status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = 'Sending...';
+    status.className = 'form-status';
+
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          status.textContent = "Thank you! Your message has been sent — we'll be in touch soon to schedule your tour.";
+          status.className = 'form-status success';
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(function () {
+        status.textContent = "Something went wrong sending your message. Please call us at (631) 256-5895 or email thekidzcornerny@gmail.com directly.";
+        status.className = 'form-status error';
+      });
+  });
+})();
+
+</script>
+</body>
+</html>
