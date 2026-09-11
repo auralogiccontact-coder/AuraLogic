@@ -82,8 +82,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 2rem;display:
 .mobile-nav a:hover{color:var(--gold)}
 .mobile-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.4rem}
 
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:8rem 2rem 5rem;position:relative}
-.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 50% 38%,rgba(201,168,76,0.055) 0%,transparent 65%);pointer-events:none}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden;background-size:cover;background-position:center 42%;background-color:var(--black)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(1.08) brightness(0.85);z-index:0}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0.78) 0%,rgba(10,10,10,0.4) 32%,rgba(10,10,10,0.55) 68%,rgba(10,10,10,0.96) 100%);pointer-events:none;z-index:1}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 50% 38%,rgba(201,168,76,0.08) 0%,transparent 65%);pointer-events:none;z-index:1}
+.hero>*{position:relative;z-index:2}
 .hero-tag{display:inline-block;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-border);padding:0.35rem 1rem;margin-bottom:2rem}
 .hero h1{font-family:var(--serif);font-size:clamp(2.6rem,7vw,5.5rem);font-weight:600;line-height:1.06;max-width:860px;margin-bottom:1.5rem}
 .hero h1 em{font-style:italic;color:var(--gold)}
@@ -408,6 +411,9 @@ footer{background:var(--black3);border-top:1px solid rgba(255,255,255,0.04);padd
 
 <main>
 <section class="hero" aria-labelledby="hero-title">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" aria-hidden="true">
+    <source src="Aura_Logic_Home_Screen.mp4" type="video/mp4"/>
+  </video>
   <span class="hero-tag">Riverdale, GA · Metro Atlanta</span>
   <h1 id="hero-title">Your business,<br/>running on <em>autopilot.</em></h1>
   <p class="hero-sub">AuraLogic builds custom websites and AI-powered automation systems for local businesses — so you stop losing leads, missed calls, and clients to competitors who respond faster.</p>
@@ -1240,6 +1246,15 @@ var observer = new IntersectionObserver(function(entries){
 document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el); });
 
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeSignupModal(); closeCheckout(); closeCart(); closePromoModal(); } });
+
+var heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  heroVideo.muted = true;
+  var tryPlayHero = function(){ heroVideo.play().catch(function(){}); };
+  tryPlayHero();
+  document.addEventListener('click', tryPlayHero, { once:true });
+  document.addEventListener('touchstart', tryPlayHero, { once:true });
+}
 </script>
 </body>
 </html>
