@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lady Boss Lash Extensions</title>
+<meta name="description" content="Certified lash artistry from Lady Boss Lash Extensions. Book your full set, fill, or complimentary consult today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blush: #F8DEE8;
+    --blush-deep: #F0C3D8;
+    --lavender: #D2B3E6;
+    --lavender-deep: #9B6FC4;
+    --lavender-darker: #7E52A8;
+    --plum: #4A2E45;
+    --plum-soft: #8A6E85;
+    --mauve: #8A5F56;
+    --teal: #2FA79C;
+    --gold: #C9A227;
+    --cream: #FFFBF9;
+    --white: #FFFFFF;
+    --max: 1180px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background: #FBEAF1;
+    color: var(--plum);
+    font-family:'Poppins', sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+
+  .wrap{ max-width: var(--max); margin:0 auto; padding:0 28px; }
+
+  :focus-visible{ outline:2px solid var(--lavender-darker); outline-offset:3px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+  }
+
+  h1,h2,h3{ color: var(--plum); font-weight:600; }
+
+  .script{
+    font-family:'Alex Brush', cursive;
+    font-weight:400;
+    line-height:1;
+  }
+
+  .label{
+    font-size:0.78rem;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color: var(--plum-soft);
+  }
+
+  .btn{
+    display:inline-block;
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:14px 30px;
+    border-radius:999px;
+    transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{
+    background: var(--lavender-darker);
+    color: var(--white);
+    box-shadow: 0 10px 24px rgba(126,82,168,0.28);
+  }
+  .btn-primary:hover{ background:#6d4491; transform: translateY(-2px); }
+  .btn-ghost{
+    border:1.5px solid var(--lavender-darker);
+    color: var(--lavender-darker);
+  }
+  .btn-ghost:hover{ background: var(--lavender-darker); color:var(--white); }
+
+  /* ---------- UTILITY BAR ---------- */
+  .utility-bar{
+    background: var(--blush);
+    border-bottom:1px solid var(--lavender);
+    position: sticky; top:0; z-index:50;
+  }
+  .utility-bar .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top:12px; padding-bottom:12px;
+  }
+  .utility-bar .mini-name{
+    font-family:'Alex Brush', cursive;
+    font-size:1.5rem;
+    color: var(--mauve);
+  }
+  .utility-links{ display:flex; align-items:center; gap:22px; }
+  .utility-links a.ig{
+    font-size:0.9rem;
+    color: var(--plum-soft);
+    border-bottom:1px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .utility-links a.ig:hover{ color: var(--lavender-darker); border-color: var(--lavender-darker); }
+  .utility-links .btn{ padding:9px 22px; font-size:0.85rem; }
+
+  /* ---------- MASTHEAD (recreated wordmark, full width) ---------- */
+  .masthead{
+    position:relative;
+    overflow:hidden;
+    background: linear-gradient(100deg, var(--blush) 0%, var(--blush-deep) 45%, var(--lavender) 100%);
+    padding: 64px 0 70px;
+    text-align:center;
+  }
+  .masthead-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: clamp(10px, 4vw, 48px);
+    width:100%;
+  }
+  .lash-swoop{
+    flex: 1 1 auto;
+    max-width: 260px;
+    color: var(--mauve);
+    opacity: 0.55;
+  }
+  .lash-swoop.right{ transform: scaleX(-1); }
+  .masthead-word{
+    flex: 0 0 auto;
+  }
+  .masthead-word .script{
+    font-size: clamp(3.4rem, 9vw, 6.6rem);
+    color: var(--mauve);
+  }
+  .masthead-word .label{
+    margin-top: 4px;
+    color: var(--lavender-darker);
+    font-size: clamp(0.72rem, 1.4vw, 0.95rem);
+  }
+  .masthead-tagline{
+    margin-top: 26px;
+    font-size: 1.05rem;
+    color: var(--plum);
+    max-width: 44ch;
+    margin-left:auto; margin-right:auto;
+  }
+  .masthead-actions{
+    margin-top: 30px;
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding: 90px 0; }
+  .section-head{
+    text-align:center;
+    max-width: 640px;
+    margin: 0 auto 52px;
+  }
+  .section-head .label{ display:block; margin-bottom:10px; }
+  .section-head h2{ font-size: clamp(2rem, 3.6vw, 2.7rem); }
+  .section-head p{ color: var(--plum-soft); margin-top:12px; }
+
+  /* ---------- BOOKING 101 ---------- */
+  .booking-101{ background: linear-gradient(160deg, #F1E1F5 0%, var(--blush) 100%); position:relative; overflow:hidden; }
+
+  /* ---------- CHECKLIST PAPER ---------- */
+  .checklist-paper{
+    position:relative;
+    max-width: 600px;
+    margin: 20px auto 0;
+    background-color: #FFFDF8;
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0 37px, #ECDDE4 37px 38px),
+      linear-gradient(to right, transparent 0 44px, #E7B8C9 44px 46px, transparent 46px 100%);
+    padding: 50px 30px 40px 62px;
+    border-radius: 6px;
+    box-shadow: 0 30px 60px rgba(74,46,69,0.20), 0 4px 10px rgba(74,46,69,0.08);
+    transform: rotate(-0.6deg);
+  }
+  .paper-clip{
+    position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+    width:92px; height:34px;
+    background: linear-gradient(180deg, var(--lavender), var(--lavender-darker));
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(74,46,69,0.28);
+  }
+  .paper-clip::after{
+    content:''; position:absolute; top:9px; left:50%; transform:translateX(-50%);
+    width:58px; height:9px; background: rgba(255,255,255,0.4); border-radius:4px;
+  }
+  .paper-header{
+    font-family:'Alex Brush', cursive;
+    font-size: 2.1rem;
+    color: var(--mauve);
+    margin-bottom: 22px;
+  }
+  .paper-list{ list-style:none; display:flex; flex-direction:column; gap:24px; }
+  .paper-item{
+    display:flex; align-items:flex-start; gap:14px;
+    opacity:0;
+    transform: translateX(-26px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .paper-item.show{ opacity:1; transform:translateX(0); }
+  .paper-box{
+    flex:0 0 auto;
+    width:26px; height:26px;
+    border:2px solid var(--lavender-darker);
+    border-radius:5px;
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .check-mark{ width:17px; height:17px; }
+  .check-mark path{
+    fill:none; stroke: var(--teal); stroke-width:3.4;
+    stroke-linecap:round; stroke-linejoin:round;
+    stroke-dasharray: 28; stroke-dashoffset: 28;
+    transition: stroke-dashoffset .4s ease;
+  }
+  .check-mark.checked path{ stroke-dashoffset: 0; }
+  .paper-text{ color: var(--plum); font-size:0.98rem; padding-top:3px; }
+
+  .pen{
+    position:absolute;
+    top:0; left:0;
+    width:36px; height:36px;
+    opacity:0;
+    transition: transform .45s ease, opacity .3s ease;
+    pointer-events:none;
+    z-index:5;
+  }
+  .pen.done{ opacity:0; }
+  .pen-svg{
+    width:100%; height:100%; display:block;
+    transform: rotate(35deg);
+    transform-origin:50% 50%;
+    transition: transform .15s ease;
+  }
+  .pen.tap .pen-svg{ transform: rotate(18deg) scale(0.9); }
+
+  /* ---------- ARTIST SPOTLIGHT ---------- */
+  .spotlight{
+    background: linear-gradient(135deg, var(--blush) 0%, var(--lavender) 100%);
+  }
+  .spotlight .wrap{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    align-items:center;
+  }
+  .spot-avatar{
+    width:200px; height:200px; border-radius:50%;
+    background: var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Alex Brush', cursive;
+    font-size:3.2rem;
+    color: var(--mauve);
+    box-shadow: 0 20px 46px rgba(74,46,69,0.18);
+    position: relative;
+  }
+  .spot-badge{
+    position:absolute;
+    bottom: -8px; right: -6px;
+    background: var(--teal);
+    color: var(--white);
+    font-size:0.72rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+    padding: 7px 14px;
+    border-radius: 999px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  }
+  .spotlight h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom:10px; }
+  .spotlight p{ color: var(--plum); max-width: 52ch; }
+  .spotlight .label{ margin-bottom:8px; }
+
+  /* ---------- PORTFOLIO TEASER ---------- */
+  .portfolio{ background: linear-gradient(160deg, var(--blush) 0%, #ECD9F2 100%); text-align:center; }
+  .portfolio-strip{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    max-width: 900px;
+    margin: 0 auto 34px;
+  }
+  .swatch{
+    aspect-ratio: 1;
+    border-radius: 14px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .swatch svg{ width:46%; height:46%; color: var(--white); opacity:0.85; }
+  .swatch:nth-child(1){ background: var(--blush-deep); }
+  .swatch:nth-child(2){ background: var(--lavender); }
+  .swatch:nth-child(3){ background: var(--lavender-darker); }
+  .swatch:nth-child(4){ background: var(--mauve); }
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background: linear-gradient(100deg, var(--lavender) 0%, var(--blush) 100%);
+    text-align:center;
+  }
+  .cta-band h2{ font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom:16px; }
+  .cta-band p{ color: var(--plum); margin-bottom: 30px; }
+  .cta-band .actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background: var(--lavender-darker);
+    border-top:1px solid var(--lavender-darker);
+    padding: 44px 0;
+    text-align:center;
+  }
+  footer .script{ font-size:1.8rem; color: var(--white); margin-bottom:10px; }
+  footer .foot-links{ display:flex; gap:26px; justify-content:center; margin-bottom:14px; flex-wrap:wrap; }
+  footer .foot-links a{ color: #F1E4F7; font-size:0.92rem; }
+  footer .foot-links a:hover{ color: var(--gold); }
+  footer .fine{ font-size:0.8rem; color: #F1E4F7; opacity:0.85; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 760px){
+    .lash-swoop{ max-width: 70px; }
+    .checklist{ grid-template-columns: 1fr; }
+    .spotlight .wrap{ grid-template-columns: 1fr; text-align:center; }
+    .spot-avatar{ margin:0 auto; }
+    .portfolio-strip{ grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="wrap">
+    <span class="mini-name">Lady Boss</span>
+    <div class="utility-links">
+      <a class="ig" href="https://www.instagram.com/ladybosslashextensions/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn btn-primary" href="https://www.instagram.com/ladybosslashextensions/" target="_blank" rel="noopener">Book Now</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead-row">
+      <svg class="lash-swoop" viewBox="0 0 260 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10,70 C60,20 140,10 250,18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M10,78 C70,40 150,32 245,40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.7"/>
+        <path d="M14,86 C80,58 155,52 240,60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <div class="masthead-word">
+        <div class="script">Lady Boss</div>
+        <div class="label">Lash Extensions</div>
+      </div>
+      <svg class="lash-swoop right" viewBox="0 0 260 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10,70 C60,20 140,10 250,18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M10,78 C70,40 150,32 245,40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.7"/>
+        <path d="M14,86 C80,58 155,52 240,60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+    </div>
+    <p class="masthead-tagline">Certified lash artistry, custom-mapped to your eyes — full sets, fills, and complimentary consults.</p>
+    <div class="masthead-actions">
+      <a class="btn btn-primary" href="https://www.instagram.com/ladybosslashextensions/" target="_blank" rel="noopener">Book Your Appointment</a>
+      <a class="btn btn-ghost" href="#spotlight">Meet Your Artist</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="booking-101">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Before you book</span>
+        <h2>What to know</h2>
+        <p>A quick checklist so your appointment goes smoothly from the first click to the chair.</p>
+      </div>
+      <div class="checklist-paper" id="checklistPaper">
+        <div class="paper-clip" aria-hidden="true"></div>
+        <div class="paper-header">Booking Checklist</div>
+        <ul class="paper-list">
+          <li class="paper-item">
+            <span class="paper-box"><svg class="check-mark" viewBox="0 0 24 24"><path d="M4,13 L9,18 L20,6"/></svg></span>
+            <span class="paper-text">Book an appointment through the website or Instagram</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-box"><svg class="check-mark" viewBox="0 0 24 24"><path d="M4,13 L9,18 L20,6"/></svg></span>
+            <span class="paper-text">Reach out for a complimentary consult first</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-box"><svg class="check-mark" viewBox="0 0 24 24"><path d="M4,13 L9,18 L20,6"/></svg></span>
+            <span class="paper-text">Review the cancellation policy &amp; procedures</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-box"><svg class="check-mark" viewBox="0 0 24 24"><path d="M4,13 L9,18 L20,6"/></svg></span>
+            <span class="paper-text">Book the appropriate fill time for your set</span>
+          </li>
+          <li class="paper-item">
+            <span class="paper-box"><svg class="check-mark" viewBox="0 0 24 24"><path d="M4,13 L9,18 L20,6"/></svg></span>
+            <span class="paper-text">Bring an inspiration picture to your appointment</span>
+          </li>
+        </ul>
+        <div class="pen" id="pen" aria-hidden="true">
+          <svg class="pen-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="2" width="9" height="25" rx="3" fill="var(--plum)" transform="rotate(35 19.5 19.5)"/>
+            <polygon points="13.5,24 25.5,24 19.5,35" fill="var(--mauve)" transform="rotate(35 19.5 19.5)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spotlight" id="spotlight">
+    <div class="wrap">
+      <div class="spot-avatar">
+        K
+        <span class="spot-badge">Certified</span>
+      </div>
+      <div>
+        <span class="label">Artist spotlight</span>
+        <h2>Meet Kelly L.</h2>
+        <p>Owner and lash artist behind Lady Boss Lash Extensions — certified in lash application and dedicated to a full set that's mapped to fit you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">The work</span>
+        <h2>Follow the full portfolio</h2>
+        <p>The freshest sets, fills, and before-and-afters live on Instagram — tap through for the full gallery.</p>
+      </div>
+      <div class="portfolio-strip">
+        <div class="swatch"><svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><path d="M5,30 C25,5 45,2 95,10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <div class="swatch"><svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><path d="M5,30 C25,5 45,2 95,10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <div class="swatch"><svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><path d="M5,30 C25,5 45,2 95,10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <div class="swatch"><svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><path d="M5,30 C25,5 45,2 95,10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div>
+      </div>
+      <a class="btn btn-ghost" href="https://www.instagram.com/ladybosslashextensions/" target="_blank" rel="noopener">View on Instagram</a>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Ready for your next set?</h2>
+      <p>Book online or send a message for a complimentary consult.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.instagram.com/ladybosslashextensions/" target="_blank" rel="noopener">Book Now</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/ladybosslashextensions/" target="_blank" rel="noopener">Message on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="script">Lady Boss</div>
+  <div class="foot-links">
+    <a href="https://www.instagram.com/ladybosslashextensions/" target="_blank" rel="noopener">Instagram</a>
+    <a href="#spotlight">Meet the Artist</a>
+    <a href="#" onclick="return false;">Book Now</a>
+  </div>
+  <p class="fine">&copy; 2026 Lady Boss Lash Extensions</p>
+</footer>
+
+<script>
+(function(){
+  function runChecklist(container, pen){
+    var items = Array.prototype.slice.call(container.querySelectorAll('.paper-item'));
+    var delay = 250;
+    items.forEach(function(item){
+      setTimeout(function(){
+        item.classList.add('show');
+
+        var box = item.querySelector('.paper-box');
+        var boxRect = box.getBoundingClientRect();
+        var contRect = container.getBoundingClientRect();
+        var top = boxRect.top - contRect.top + (boxRect.height / 2) - 18;
+        var left = boxRect.left - contRect.left + (boxRect.width / 2) - 18;
+
+        pen.style.opacity = '1';
+        pen.style.transform = 'translate(' + left + 'px, ' + top + 'px)';
+
+        setTimeout(function(){
+          var mark = box.querySelector('.check-mark');
+          mark.classList.add('checked');
+          pen.classList.add('tap');
+          setTimeout(function(){ pen.classList.remove('tap'); }, 260);
+        }, 430);
+
+      }, delay);
+      delay += 820;
+    });
+
+    setTimeout(function(){ pen.classList.add('done'); }, delay + 300);
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var container = document.getElementById('checklistPaper');
+    var pen = document.getElementById('pen');
+    if(!container || !pen) return;
+
+    if('IntersectionObserver' in window){
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            runChecklist(container, pen);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      obs.observe(container);
+    } else {
+      runChecklist(container, pen);
+    }
+  });
+})();
+</script>
+</body>
+</html>
