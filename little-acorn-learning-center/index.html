@@ -1,0 +1,371 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Little Acorn Learning Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Layout: a parent's 10-second scan — trust strip, hero with the tour button, ages + hours board, then proof and the tour form */
+:root{
+  --bg:#f6f8fc; --surface:#ffffff; --ink:#1f2340; --muted:#5a6080; --line:#e1e5f0;
+  --sun:#ffc93c; --sun-ink:#3a2a00; --leaf:#2e9e6a; --leaf-soft:#e3f5ec;
+  --sky:#3d7be0; --sky-soft:#e6eefc; --berry:#d9466e; --berry-soft:#fde8ee;
+  --tang:#f27a1a; --tang-soft:#fff0e2; --grape:#8a4fd6; --grape-soft:#f1e9fd; --teal:#16a3b5; --teal-soft:#e0f6f8;
+  --display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --radius:18px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141729; --surface:#1d2138; --ink:#eef0fb; --muted:#a6acc8; --line:#2c3150;
+  --sun:#ffcf4d; --sun-ink:#2b1f00; --leaf:#4cc28c; --leaf-soft:#173528;
+  --sky:#7aa6f5; --sky-soft:#1b2a4d; --berry:#f0789a; --berry-soft:#3a1d2a; --tang:#ff9d4d; --tang-soft:#3a2614; --grape:#b48af0; --grape-soft:#2a1f45; --teal:#4fd0df; --teal-soft:#123438; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141729; --surface:#1d2138; --ink:#eef0fb; --muted:#a6acc8; --line:#2c3150;
+  --sun:#ffcf4d; --sun-ink:#2b1f00; --leaf:#4cc28c; --leaf-soft:#173528;
+  --sky:#7aa6f5; --sky-soft:#1b2a4d; --berry:#f0789a; --berry-soft:#3a1d2a; --tang:#ff9d4d; --tang-soft:#3a2614; --grape:#b48af0; --grape-soft:#2a1f45; --teal:#4fd0df; --teal-soft:#123438; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:8px}
+
+/* concept ribbon */
+.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:7px 16px}
+
+/* trust strip */
+.trust{background:var(--surface);border-bottom:0;box-shadow:0 5px 0 -1px transparent;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.trust .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:22px;text-decoration:none}
+.brand svg{width:34px;height:34px;flex:none}
+.license{display:inline-flex;align-items:center;gap:8px;background:var(--leaf-soft);color:var(--leaf);font-weight:700;font-size:14px;padding:6px 12px 6px 8px;border-radius:999px;border:1.5px solid var(--leaf)}
+.license svg{width:20px;height:20px}
+.license small{font-weight:600;color:var(--ink);opacity:.75}
+.nav-cta{background:var(--sun);color:var(--sun-ink);font-weight:800;text-decoration:none;padding:9px 16px;border-radius:12px;font-size:15px}
+
+.rainbow{height:6px;background:linear-gradient(90deg,var(--berry) 0 16.6%,var(--tang) 0 33.3%,var(--sun) 0 50%,var(--leaf) 0 66.6%,var(--sky) 0 83.3%,var(--grape) 0)}
+.concept{background:var(--grape);color:#fff}
+
+/* hero */
+.hero{padding-block:48px 40px;position:relative;overflow:hidden;background:
+  radial-gradient(circle at 8% 20%,var(--berry-soft) 0 90px,transparent 91px),
+  radial-gradient(circle at 92% 12%,var(--sky-soft) 0 120px,transparent 121px),
+  radial-gradient(circle at 70% 95%,var(--tang-soft) 0 110px,transparent 111px),
+  radial-gradient(circle at 30% 100%,var(--grape-soft) 0 80px,transparent 81px),
+  var(--bg)}
+.hero .wrap{position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.eyebrow{font-weight:700;color:var(--berry);letter-spacing:.06em;text-transform:uppercase;font-size:13px}
+.hero h1{font-size:clamp(38px,6vw,64px);font-weight:800;margin-block:8px 16px}
+.hero h1 .c1{color:var(--berry)}.hero h1 .c2{color:var(--tang)}.hero h1 .c3{color:var(--leaf)}.hero h1 .c4{color:var(--sky)}.hero h1 .c5{color:var(--grape)}
+.hero p.lede{font-size:19px;color:var(--muted);max-width:34ch;margin:0 0 28px}
+.tour-btn{display:inline-flex;align-items:center;gap:12px;background:var(--sun);color:var(--sun-ink);font-family:var(--display);font-weight:800;font-size:24px;padding:18px 32px;border-radius:20px;text-decoration:none;box-shadow:0 6px 0 #d9a313;transition:transform .12s, box-shadow .12s}
+.tour-btn:hover{transform:translateY(2px);box-shadow:0 4px 0 #d9a313}
+.tour-btn:active{transform:translateY(6px);box-shadow:none}
+.hero-sub{display:flex;gap:18px;flex-wrap:wrap;margin-top:20px;font-size:14px;color:var(--muted);font-weight:600}
+.hero-sub span{padding:5px 12px;border-radius:999px}
+.hero-sub span:nth-child(1){background:var(--leaf-soft)}.hero-sub span:nth-child(2){background:var(--tang-soft)}.hero-sub span:nth-child(3){background:var(--grape-soft)}
+.hero-sub b{color:var(--ink)}
+
+/* hero art: a block tower */
+.blocks{position:relative;aspect-ratio:1/1;max-width:100%;width:100%}
+.blocks svg{width:100%;height:auto;display:block}
+
+/* glance board */
+.glance{padding-block:8px 48px}
+.board{background:var(--surface);border:3px solid var(--teal);border-radius:24px;padding:28px;display:grid;grid-template-columns:1.6fr 1fr;gap:28px}
+.board h2{font-size:28px;margin-bottom:16px;color:var(--teal)}
+.ages{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.age{border-radius:16px;padding:16px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.age .room{font-family:var(--display);font-weight:800;font-size:20px}
+.age .range{font-weight:700;font-size:15px}
+.age .ratio{font-size:13px;opacity:.85}
+.a1{background:var(--berry-soft);color:var(--berry)}
+.a2{background:var(--sky-soft);color:var(--sky)}
+.a3{background:var(--leaf-soft);color:var(--leaf)}
+.a4{background:var(--grape-soft);color:var(--grape)}
+.age .ratio,.age .range{color:var(--ink)}
+.hours{display:flex;flex-direction:column;gap:10px}
+.hrow{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:10px;font-variant-numeric:tabular-nums}
+.hrow:last-child{border-bottom:0}
+.hrow span:first-child{color:var(--muted);font-weight:600}
+.hrow span:last-child{font-weight:800}
+.open-now{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;margin-bottom:6px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--leaf);box-shadow:0 0 0 4px var(--leaf-soft)}
+.dot.closed{background:var(--berry);box-shadow:0 0 0 4px var(--berry-soft)}
+
+/* day */
+section h2.sec{font-size:clamp(28px,4vw,40px);margin-bottom:8px}
+.sec-lede{color:var(--muted);max-width:60ch;margin:0 0 28px}
+.day{padding-block:48px 56px;background:var(--sky-soft);margin-bottom:48px}
+.day h2.sec{color:var(--sky)}
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.slot{background:var(--surface);border-top:6px solid var(--c);border-radius:14px;padding:14px;min-width:0;box-shadow:0 2px 0 var(--line)}
+.slot[style*="--sun"] time{color:#c98a00}
+.slot time{font-family:var(--display);font-weight:800;color:var(--c);font-size:18px;font-variant-numeric:tabular-nums}
+.slot p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.slot b{display:block;color:var(--ink);font-size:15px}
+
+/* why */
+.why{padding-block:24px 56px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.why-item h3{font-size:22px;margin-bottom:6px}
+.why-item:nth-child(1) h3{color:var(--leaf)}.why-item:nth-child(2) h3{color:var(--sky)}.why-item:nth-child(3) h3{color:var(--berry)}
+.why h2.sec{color:var(--tang)}
+.why-item p{margin:0;color:var(--muted)}
+.why-item .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:12px}
+.why-item .ico svg{width:24px;height:24px}
+
+/* quote */
+.quote{background:linear-gradient(120deg,var(--sky),var(--grape));color:#fff;border-radius:24px;padding:36px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-bottom:56px}
+.quote blockquote{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(20px,2.6vw,28px);line-height:1.25}
+.quote cite{display:block;font-family:var(--body);font-style:normal;font-weight:600;font-size:15px;margin-top:10px;opacity:.9}
+.stars{font-size:28px;letter-spacing:2px;color:var(--sun)}
+
+/* tour form */
+.tour{padding-block:56px 64px;background:var(--tang-soft)}
+.tour-card h2{color:var(--tang)}
+.tour-card{background:var(--surface);border:2px solid var(--sun);border-radius:24px;padding:32px;display:grid;grid-template-columns:.9fr 1.1fr;gap:32px}
+.tour-card h2{font-size:clamp(28px,4vw,40px)}
+.tour-card ul{padding-left:20px;color:var(--muted);margin:16px 0 0}
+.tour-card li::marker{color:var(--tang)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-weight:700;font-size:14px}
+input,select{font:inherit;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+input:focus,select:focus{border-color:var(--sky);outline:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label{border:1.5px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:700;cursor:pointer;font-size:14px;font-variant-numeric:tabular-nums}
+.chips input:checked + label{background:var(--grape);border-color:var(--grape);color:#fff}
+.chips input:focus-visible + label{outline:3px solid var(--sky);outline-offset:2px}
+.submit{grid-column:1/-1;background:var(--sun);color:var(--sun-ink);border:0;font-family:var(--display);font-weight:800;font-size:22px;padding:16px;border-radius:16px;cursor:pointer;box-shadow:0 5px 0 #d9a313}
+.submit:active{transform:translateY(5px);box-shadow:none}
+.done{grid-column:1/-1;background:var(--leaf-soft);color:var(--leaf);font-weight:700;padding:14px 16px;border-radius:12px}
+
+footer{background:#1f2340;padding-block:28px;color:#d9dcef;font-size:14px;opacity:1}
+footer strong{color:#ffc93c!important}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer strong{color:var(--ink)}
+
+@media (max-width:880px){
+  .hero .wrap,.board,.tour-card{grid-template-columns:1fr}
+  .blocks{max-width:340px;margin:0 auto}
+  .timeline{grid-template-columns:repeat(3,1fr)}
+  .why-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .ages{grid-template-columns:repeat(2,1fr)}
+  .timeline{grid-template-columns:repeat(2,1fr)}
+  form{grid-template-columns:1fr}
+  .quote{grid-template-columns:1fr;padding:26px}
+  .tour-btn{width:100%;justify-content:center;font-size:22px}
+  .nav-cta{display:none}
+  .board,.tour-card{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.bob{animation:bob 4s ease-in-out infinite;transform-box:fill-box}
+</style>
+
+<div class="concept">Concept build by AuraLogic — Little Acorn is a made-up business, built to show what's possible.</div>
+
+<header class="trust">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Little Acorn Learning Center home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="var(--sun)"/><path d="M12 18c0-5 4-8 8-8s8 3 8 8z" fill="var(--ink)"/><path d="M13 18h14c0 7-3 12-7 12s-7-5-7-12z" fill="var(--leaf)"/><rect x="19" y="6" width="2" height="5" rx="1" fill="var(--ink)"/></svg>
+      Little Acorn
+    </a>
+    <span class="license">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 2.2 3.7-.2.9 3.6 3 2.2-1.5 3.4.6 3.7-3.5 1.3-2 3.1L12 20l-4.2 1.3-2-3.1-3.5-1.3.6-3.7L1.4 9.8l3-2.2.9-3.6 3.7.2z" fill="var(--leaf)"/><path d="M8 12l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      State Licensed <small>· Bright from the Start #CCLC-00000</small>
+    </span>
+    <a class="nav-cta" href="#tour">Schedule a Tour</a>
+  </div>
+  <div class="rainbow"></div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Daycare &amp; Preschool · McDonough, GA</div>
+        <h1>Where little ones <span class="c1">g</span><span class="c2">r</span><span class="c3">o</span><span class="c4">w</span> <span class="c5">big.</span></h1>
+        <p class="lede">Warm teachers, small classes, and a real curriculum for kids 6 weeks to 5 years. Come see the classrooms for yourself.</p>
+        <a class="tour-btn" href="#tour">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          Schedule a Tour
+        </a>
+        <div class="hero-sub"><span><b>GA Pre-K</b> slots available</span><span><b>CAPS</b> accepted</span><span>Tours take <b>20 minutes</b></span></div>
+      </div>
+      <div class="blocks" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <ellipse cx="200" cy="370" rx="150" ry="14" fill="var(--line)"/>
+          <g class="bob" style="animation-delay:-1s">
+            <rect x="70" y="250" width="120" height="110" rx="16" fill="var(--sky)"/>
+            <text x="130" y="330" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="84" fill="#fff">A</text>
+          </g>
+          <g class="bob" style="animation-delay:-2s">
+            <rect x="205" y="250" width="120" height="110" rx="16" fill="var(--berry)"/>
+            <text x="265" y="330" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="84" fill="#fff">B</text>
+          </g>
+          <g class="bob" style="animation-delay:-3s">
+            <rect x="138" y="132" width="120" height="110" rx="16" fill="var(--leaf)" transform="rotate(-6 198 187)"/>
+            <text x="198" y="214" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="84" fill="#fff" transform="rotate(-6 198 187)">C</text>
+          </g>
+          <g class="bob" style="animation-delay:-1.5s"><rect x="18" y="300" width="56" height="56" rx="10" fill="var(--tang)"/><text x="46" y="342" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="38" fill="#fff">1</text></g>
+          <g class="bob" style="animation-delay:-2.5s"><rect x="326" y="300" width="56" height="56" rx="10" fill="var(--grape)"/><text x="354" y="342" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="38" fill="#fff">2</text></g>
+          <circle cx="52" cy="90" r="10" fill="var(--teal)"/><circle cx="345" cy="150" r="8" fill="var(--berry)"/><circle cx="320" cy="60" r="12" fill="var(--tang)"/><circle cx="80" cy="190" r="7" fill="var(--grape)"/>
+          <g class="bob">
+            <circle cx="198" cy="78" r="44" fill="var(--sun)"/>
+            <path d="M178 76c0-14 10-22 20-22s20 8 20 22z" fill="var(--ink)"/>
+            <path d="M180 76h36c0 16-8 26-18 26s-18-10-18-26z" fill="var(--surface)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="glance" aria-labelledby="glance-h">
+    <div class="wrap">
+      <div class="board">
+        <div>
+          <h2 id="glance-h">Ages we serve</h2>
+          <div class="ages">
+            <div class="age a1"><span class="room">Sprouts</span><span class="range">6 wks – 12 mo</span><span class="ratio">1 teacher : 4 babies</span></div>
+            <div class="age a2"><span class="room">Seedlings</span><span class="range">1 – 2 yrs</span><span class="ratio">1 teacher : 6</span></div>
+            <div class="age a3"><span class="room">Saplings</span><span class="range">2 – 3 yrs</span><span class="ratio">1 teacher : 8</span></div>
+            <div class="age a4"><span class="room">Oaks Pre-K</span><span class="range">4 – 5 yrs</span><span class="ratio">GA Lottery Pre-K</span></div>
+          </div>
+        </div>
+        <div>
+          <h2>Hours</h2>
+          <div class="open-now" id="openNow"><span class="dot"></span><span>Open today</span></div>
+          <div class="hours">
+            <div class="hrow"><span>Mon – Fri</span><span>6:30 AM – 6:30 PM</span></div>
+            <div class="hrow"><span>Saturday</span><span>Closed</span></div>
+            <div class="hrow"><span>Sunday</span><span>Closed</span></div>
+            <div class="hrow"><span>Meals</span><span>Breakfast, lunch &amp; snack</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="day" aria-labelledby="day-h">
+    <div class="wrap">
+      <h2 class="sec" id="day-h">A day at Little Acorn</h2>
+      <p class="sec-lede">Parents get photo updates and a daily report through the app, so you're never wondering how nap went.</p>
+      <div class="timeline">
+        <div class="slot" style="--c:var(--berry)"><time>7:00</time><b>Breakfast</b><p>Hot meal, served family style</p></div>
+        <div class="slot" style="--c:var(--tang)"><time>8:30</time><b>Circle time</b><p>Songs, calendar, letters</p></div>
+        <div class="slot" style="--c:var(--sun)"><time>9:30</time><b>Learning centers</b><p>Art, blocks, early math</p></div>
+        <div class="slot" style="--c:var(--leaf)"><time>11:00</time><b>Outdoor play</b><p>Fenced, shaded playground</p></div>
+        <div class="slot" style="--c:var(--teal)"><time>12:30</time><b>Lunch &amp; nap</b><p>Quiet room, own cot</p></div>
+        <div class="slot" style="--c:var(--grape)"><time>3:00</time><b>Snack &amp; stories</b><p>Then free play till pickup</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <h2 class="sec" id="why-h">Why parents pick us</h2>
+      <p class="sec-lede">The three questions every parent asks on a tour, answered up front.</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="ico" style="background:var(--leaf-soft);color:var(--leaf)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Is my child safe?</h3>
+          <p>Keypad entry, cameras in every room, CPR-certified staff, and a sign-out list checked at every pickup.</p>
+        </div>
+        <div class="why-item">
+          <div class="ico" style="background:var(--sky-soft);color:var(--sky)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 012-2h12v18H6a2 2 0 01-2-2z"/><path d="M8 7h6M8 11h6"/></svg></div>
+          <h3>Will they learn?</h3>
+          <p>A play-based curriculum aligned with Georgia's early learning standards, so Pre-K kids walk into kindergarten ready.</p>
+        </div>
+        <div class="why-item">
+          <div class="ico" style="background:var(--berry-soft);color:var(--berry)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 000-7.8z"/></svg></div>
+          <h3>Will they be loved?</h3>
+          <p>Same teachers all year, small groups, and a director who knows every child's name and every parent's.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <figure class="quote" style="margin-inline:0">
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <div>
+        <blockquote>My daughter cried at drop-off for two days. By day three she was running in ahead of me.</blockquote>
+        <cite>Sample review · Little Acorn parent (concept)</cite>
+      </div>
+    </figure>
+  </div>
+
+  <section class="tour" id="tour" aria-labelledby="tour-h">
+    <div class="wrap">
+      <div class="tour-card">
+        <div>
+          <div class="eyebrow">Free · 20 minutes · No pressure</div>
+          <h2 id="tour-h">Schedule a Tour</h2>
+          <ul>
+            <li>Walk through your child's classroom</li>
+            <li>Meet the teacher and the director</li>
+            <li>Get tuition and enrollment info on the spot</li>
+          </ul>
+        </div>
+        <form id="tourForm" novalidate>
+          <div class="field"><label for="pname">Your name</label><input id="pname" name="pname" placeholder="Jasmine Carter" required></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="(678) 555-0142" required></div>
+          <div class="field"><label for="age">Child's age</label>
+            <select id="age" name="age">
+              <option>6 weeks – 12 months</option><option>1 – 2 years</option><option selected>2 – 3 years</option><option>4 – 5 years (Pre-K)</option>
+            </select></div>
+          <div class="field"><label for="start">Ideal start date</label><input id="start" name="start" type="date"></div>
+          <div class="field full">
+            <span style="font-weight:700;font-size:14px">Best tour time</span>
+            <div class="chips" role="radiogroup">
+              <input type="radio" name="time" id="t1" value="9:30 AM" checked><label for="t1">9:30 AM</label>
+              <input type="radio" name="time" id="t2" value="11:30 AM"><label for="t2">11:30 AM</label>
+              <input type="radio" name="time" id="t3" value="3:30 PM"><label for="t3">3:30 PM</label>
+              <input type="radio" name="time" id="t4" value="5:00 PM"><label for="t4">5:00 PM</label>
+            </div>
+          </div>
+          <button class="submit" type="submit">Request my tour</button>
+          <div class="done" id="done" hidden></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Little Acorn Learning Center</strong><br>Jonesboro Rd, McDonough, GA · Serving Henry County families</div>
+    <div>Concept site built by <strong>AuraLogic</strong></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Open/closed indicator based on the viewer's local time
+  var now=new Date(), d=now.getDay(), m=now.getHours()*60+now.getMinutes();
+  var open = d>=1 && d<=5 && m>=390 && m<1110;
+  var el=document.getElementById('openNow');
+  el.querySelector('.dot').classList.toggle('closed',!open);
+  el.lastElementChild.textContent = open ? 'Open now · closes 6:30 PM' : (d>=1&&d<=5&&m<390 ? 'Opens today at 6:30 AM' : 'Closed now · opens Mon 6:30 AM');
+  if(!open && d>=1 && d<=4 && m>=1110) el.lastElementChild.textContent='Closed now · opens 6:30 AM';
+
+  var f=document.getElementById('tourForm'), done=document.getElementById('done');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=f.pname.value.trim(), phone=f.phone.value.trim();
+    if(!name||!phone){done.hidden=false;done.style.color='var(--berry)';done.style.background='var(--berry-soft)';done.textContent='Add your name and phone so we can confirm your tour.';return;}
+    var t=f.querySelector('input[name="time"]:checked').value;
+    done.hidden=false;done.style.color='';done.style.background='';
+    done.textContent='Thanks, '+name.split(' ')[0]+'! This is a concept site, so nothing was sent. On a live site, the director would text '+phone+' to confirm your '+t+' tour.';
+  });
+})();
+</script>
+
+</body></html>
