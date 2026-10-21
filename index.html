@@ -180,11 +180,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 2rem;display:
 /* Promo Modal */
 .promo-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:700;align-items:center;justify-content:center;padding:1rem}
 .promo-modal-overlay.open{display:flex}
-.promo-modal-box{background:var(--black2);border:1px solid var(--gold-border);width:100%;max-width:500px;padding:2.5rem;position:relative;animation:modalIn 0.25s ease}
-.promo-modal-close{position:absolute;top:1rem;right:1.25rem;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;transition:color var(--transition)}
+.promo-modal-box{background:var(--black2);border:1px solid var(--gold-border);width:100%;max-width:520px;max-height:calc(100vh - 2rem);max-height:calc(100dvh - 2rem);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:0 1.75rem 1.5rem;position:relative;animation:modalIn 0.25s ease}
+.promo-modal-close{position:sticky;top:0;float:right;margin:0 -1rem 0 0;z-index:2;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--black2);border:1px solid var(--gold-border);color:var(--white);font-size:1.1rem;cursor:pointer;transition:color var(--transition),background var(--transition)}
+.promo-modal-close:hover{color:var(--black);background:var(--gold)}
+.pm-form-step,.pm-success-step{padding-top:1.5rem}
+.pm-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.pm-done{margin-top:1.25rem;background:var(--gold);color:var(--black);border:none;padding:0.85rem 2.5rem;font-family:var(--sans);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer}
+@media (max-width:520px){.pm-row{grid-template-columns:1fr;gap:0}.promo-modal-box{padding:0 1.25rem 1.25rem}}
 .promo-modal-close:hover{color:var(--white)}
-.promo-modal-box h2{font-family:var(--serif);font-size:1.55rem;font-weight:600;color:var(--white);margin-bottom:0.35rem}
-.promo-modal-box .pm-sub{font-size:0.85rem;color:var(--muted);font-weight:300;margin-bottom:1.5rem;line-height:1.55}
+.promo-modal-box h2{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:0.35rem}
+.promo-modal-box .pm-sub{font-size:0.85rem;color:var(--muted);font-weight:300;margin-bottom:1rem;line-height:1.5}
 
 /* Code entry step */
 .pm-code-step{}
@@ -201,12 +206,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 2rem;display:
 .pm-form-step{display:none}
 .pm-form-step.show{display:block}
 .pm-unlocked-badge{display:flex;align-items:center;gap:0.6rem;background:rgba(82,183,136,0.1);border:1px solid rgba(82,183,136,0.25);color:#52B788;font-size:0.78rem;font-weight:500;padding:0.6rem 1rem;margin-bottom:1.5rem}
-.pm-fg{margin-bottom:1rem}
+.pm-fg{margin-bottom:0.7rem}
 .pm-fg label{display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
-.pm-fg input,.pm-fg select,.pm-fg textarea{width:100%;background:var(--black3);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:0.8rem 0.9rem;font-family:var(--sans);font-size:0.875rem;font-weight:300;outline:none;transition:border-color var(--transition);border-radius:0;-webkit-appearance:none}
+.pm-fg input,.pm-fg select,.pm-fg textarea{width:100%;background:var(--black3);border:1px solid rgba(255,255,255,0.08);color:var(--white);padding:0.65rem 0.85rem;font-family:var(--sans);font-size:16px;font-weight:300;outline:none;transition:border-color var(--transition);border-radius:0;-webkit-appearance:none}
 .pm-fg select option{background:var(--black2)}
 .pm-fg input:focus,.pm-fg select:focus,.pm-fg textarea:focus{border-color:rgba(201,168,76,0.35)}
-.pm-fg textarea{resize:vertical;min-height:80px}
+.pm-fg textarea{resize:vertical;min-height:64px}
 .pm-submit{width:100%;background:var(--gold);color:var(--black);border:none;padding:1rem;font-family:var(--sans);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:var(--transition);margin-top:0.25rem}
 .pm-submit:hover{background:var(--gold-l)}
 .pm-privacy{font-size:0.7rem;color:var(--muted);text-align:center;margin-top:0.6rem}
@@ -1148,8 +1153,10 @@ footer>*{position:relative}
     <div id="pmFormStep" class="pm-form-step show">
       <h2 id="promoModalTitle">Get My Free Mockup</h2>
       <p class="pm-sub">Fill out the info below and we'll build a custom mockup of your business website and send it to you within 48 hours.</p>
-      <div class="pm-fg"><label for="pm-name">Your Name *</label><input type="text" id="pm-name" placeholder="First &amp; Last Name"/></div>
-      <div class="pm-fg"><label for="pm-biz">Business Name *</label><input type="text" id="pm-biz" placeholder="e.g. Diamond Cuts Barber Studio"/></div>
+      <div class="pm-row">
+        <div class="pm-fg"><label for="pm-name">Your Name *</label><input type="text" id="pm-name" placeholder="First &amp; Last Name"/></div>
+        <div class="pm-fg"><label for="pm-biz">Business Name *</label><input type="text" id="pm-biz" placeholder="e.g. Diamond Cuts Barber Studio"/></div>
+      </div>
       <div class="pm-fg"><label for="pm-type">Type of Business *</label>
         <select id="pm-type">
           <option value="">Select...</option>
@@ -1165,8 +1172,10 @@ footer>*{position:relative}
           <option>Other</option>
         </select>
       </div>
-      <div class="pm-fg"><label for="pm-email">Email Address *</label><input type="email" id="pm-email" placeholder="Where should we send the mockup?"/></div>
-      <div class="pm-fg"><label for="pm-phone">Phone Number *</label><input type="tel" id="pm-phone" placeholder="(xxx) xxx-xxxx"/></div>
+      <div class="pm-row">
+        <div class="pm-fg"><label for="pm-email">Email Address *</label><input type="email" id="pm-email" placeholder="Where to send the mockup?"/></div>
+        <div class="pm-fg"><label for="pm-phone">Phone Number *</label><input type="tel" id="pm-phone" placeholder="(xxx) xxx-xxxx"/></div>
+      </div>
       <div class="pm-fg"><label for="pm-ig">Instagram Handle (if you have one)</label><input type="text" id="pm-ig" placeholder="@yourbusiness"/></div>
       <div class="pm-fg"><label for="pm-notes">Anything specific you want in the mockup?</label><textarea id="pm-notes" placeholder="Colors, style, pages, services to highlight — anything helps..."></textarea></div>
       <button class="pm-submit" onclick="submitPromoForm()">Get My Free Mockup →</button>
@@ -1178,6 +1187,7 @@ footer>*{position:relative}
       <div class="pm-success-icon">✓</div>
       <h3>Request Received!</h3>
       <p>We've got your info and we're already on it. Your free mockup will be delivered to your email within 48 hours.<br/><br/>Keep an eye on your inbox — and check spam just in case.</p>
+      <button class="pm-done" onclick="closePromoModal()">Done</button>
     </div>
   </div>
 </div>
@@ -1591,7 +1601,9 @@ function submitContact() {
    PROMO MODAL
    ================================================ */
 function openPromoModal() {
-  document.getElementById('promoModal').classList.add('open');
+  var m = document.getElementById('promoModal');
+  m.classList.add('open');
+  m.querySelector('.promo-modal-box').scrollTop = 0;
   document.body.style.overflow = 'hidden';
   setTimeout(function(){ document.getElementById('pm-name').focus(); }, 100);
 }
@@ -1647,6 +1659,7 @@ var observer = new IntersectionObserver(function(entries){
 document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el); });
 
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeCheckout(); closeCart(); closePromoModal(); } });
+document.getElementById('promoModal').addEventListener('click', function(e){ if (e.target === this) closePromoModal(); });
 
 </script>
 
