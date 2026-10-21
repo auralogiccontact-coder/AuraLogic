@@ -130,15 +130,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 2rem;display:
 @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 .scroll-cue-line{width:1px;height:28px;background:linear-gradient(to bottom,var(--gold-d),transparent)}
 
-.problem{padding:6rem 0;background:var(--black2)}
+.problem{padding:6rem 0;background:radial-gradient(ellipse 55% 60% at 78% 50%,rgba(201,168,76,0.16) 0%,transparent 70%),radial-gradient(ellipse 45% 50% at 8% 15%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(160deg,#141109 0%,#0f0f0f 45%,#17130a 100%);border-top:1px solid rgba(201,168,76,0.18);border-bottom:1px solid rgba(201,168,76,0.18)}
 .problem-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .problem-body p{font-size:1rem;font-weight:300;color:var(--white2);line-height:1.8;margin-bottom:1.1rem}
 .problem-body strong{color:var(--white);font-weight:500}
-.pain-list{display:flex;flex-direction:column;gap:0.85rem}
-.pain-item{background:var(--black3);border:1px solid rgba(255,255,255,0.055);padding:1.1rem 1.25rem;display:flex;gap:1rem;align-items:flex-start}
-.pain-icon{width:34px;height:34px;background:rgba(201,168,76,0.07);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.9rem}
-.pain-item h4{font-size:0.9rem;font-weight:500;color:var(--white);margin-bottom:0.2rem}
-.pain-item p{font-size:0.8rem;color:var(--muted);line-height:1.5}
+.pain-list{display:flex;flex-direction:column;gap:1rem}
+.pain-item{position:relative;background:linear-gradient(135deg,rgba(38,32,20,0.95) 0%,rgba(22,20,16,0.95) 55%,rgba(18,18,18,0.95) 100%);border:1px solid rgba(201,168,76,0.22);border-left:3px solid var(--gold);padding:1.3rem 1.4rem;display:flex;gap:1.25rem;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,0.35);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.pain-item:hover{transform:translateX(-6px);border-color:rgba(201,168,76,0.5);box-shadow:0 14px 40px rgba(0,0,0,0.45),0 0 30px rgba(201,168,76,0.18)}
+.pain-icon{width:68px;height:68px;flex-shrink:0;border-radius:16px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 25%,#3a3122 0%,#1c1914 70%);border:1px solid rgba(201,168,76,0.4);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 6px 18px rgba(0,0,0,0.5),0 0 22px rgba(201,168,76,0.15);transition:transform .3s ease}
+.pain-icon svg{width:50px;height:50px;filter:drop-shadow(0 3px 4px rgba(0,0,0,0.45))}
+.pain-item:hover .pain-icon{transform:scale(1.08) rotate(-3deg)}
+.pain-item h4{font-size:1.02rem;font-weight:500;color:var(--white);margin-bottom:0.3rem}
+.pain-item p{font-size:0.84rem;color:var(--white2);opacity:.82;line-height:1.55}
+@media (max-width:520px){.pain-icon{width:56px;height:56px;border-radius:14px}.pain-icon svg{width:40px;height:40px}.pain-item{padding:1.1rem;gap:1rem}}
 
 .audit{padding:5rem 0;background:var(--black3);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1)}
 .audit-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
@@ -842,7 +846,7 @@ footer>*{position:relative}
 
 /* ===== line icons + hero build chip ===== */
 .li{width:20px;height:20px;fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;display:block}
-.pain-icon .li{width:17px;height:17px}
+
 .c-icon .li{width:18px;height:18px}
 .step-icon{width:46px;height:46px;display:grid;place-items:center;border:1px solid var(--gold-border);background:var(--gold-bg);font-size:0}
 .step-icon .li{width:22px;height:22px}
@@ -934,19 +938,19 @@ footer>*{position:relative}
       </div>
       <div class="pain-list fade-in">
         <div class="pain-item">
-          <div class="pain-icon" aria-hidden="true"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div class="pain-icon" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="swG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5DE8F"/><stop offset=".5" stop-color="#C9A84C"/><stop offset="1" stop-color="#7A5E1E"/></linearGradient><radialGradient id="swF" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCD6C8"/></radialGradient></defs><rect x="27" y="4" width="10" height="6" rx="2" fill="url(#swG)"/><rect x="30" y="9" width="4" height="5" fill="#9C7C2E"/><rect x="45" y="12" width="7" height="5" rx="1.5" transform="rotate(40 48 14)" fill="url(#swG)"/><circle cx="32" cy="37" r="23" fill="url(#swG)"/><circle cx="32" cy="37" r="18.5" fill="url(#swF)"/><g stroke="#3a3122" stroke-width="2" stroke-linecap="round"><path d="M32 21v3M32 50v3M16 37h3M45 37h3"/></g><g stroke="#8a8270" stroke-width="1" stroke-linecap="round"><path d="M40 23.1l-1 1.7M46 29l-1.7 1M46 45l-1.7-1M40 50.9l-1-1.7M24 50.9l1-1.7M18 45l1.7-1M18 29l1.7 1M24 23.1l1 1.7"/></g><path d="M32 37V26" stroke="#1c1914" stroke-width="2.6" stroke-linecap="round"/><path d="M32 37l9 5" stroke="#D93B3B" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="37" r="2.6" fill="#1c1914"/><path d="M19 27a17 17 0 0 1 9-7" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".7"/></svg></div>
           <div><h4>Weeks of Waiting</h4><p>Traditional agencies quote 4–8 weeks. We quote 48 hours — and build around that promise.</p></div>
         </div>
         <div class="pain-item">
-          <div class="pain-icon" aria-hidden="true"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg></div>
+          <div class="pain-icon" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="mgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5DE8F"/><stop offset="1" stop-color="#7A5E1E"/></linearGradient><radialGradient id="mgL" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#E9F4FF" stop-opacity=".95"/><stop offset=".6" stop-color="#8DB8E8" stop-opacity=".55"/><stop offset="1" stop-color="#3D6EA8" stop-opacity=".7"/></radialGradient></defs><rect x="38" y="40" width="9" height="22" rx="4" transform="rotate(-45 42.5 51)" fill="#2b2418"/><rect x="40" y="42" width="7" height="18" rx="3.5" transform="rotate(-45 43.5 51)" fill="url(#mgH)"/><circle cx="26" cy="26" r="19" fill="url(#mgH)"/><circle cx="26" cy="26" r="15" fill="url(#mgL)"/><path d="M26 15c-4.4 0-8 3.4-8 7.8 0 5.6 8 13.2 8 13.2s8-7.6 8-13.2c0-4.4-3.6-7.8-8-7.8z" fill="#D93B3B"/><text x="26" y="27.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#fff">?</text><path d="M14 20a13 13 0 0 1 8-7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".8" fill="none"/></svg></div>
           <div><h4>Hard to Find on Google</h4><p>A social profile alone doesn't give search engines much to work with. A website with local SEO basics does.</p></div>
         </div>
         <div class="pain-item">
-          <div class="pain-icon" aria-hidden="true"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.3 7.6L4 21l1.4-4.4A8.5 8.5 0 1 1 21 12z"/></svg></div>
+          <div class="pain-icon" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="bbG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5DE8F"/><stop offset="1" stop-color="#A88630"/></linearGradient><linearGradient id="bbW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9D4C7"/></linearGradient></defs><path d="M6 10h30a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5H17l-8 7v-7H6a5 5 0 0 1-5-5V15a5 5 0 0 1 5-5z" fill="url(#bbW)"/><g fill="#7a735f"><circle cx="13" cy="22" r="2.4"/><circle cx="21" cy="22" r="2.4"/><circle cx="29" cy="22" r="2.4"/></g><path d="M26 28h29a5 5 0 0 1 5 5v13a5 5 0 0 1-5 5h-2v7l-8-7H26a5 5 0 0 1-5-5V33a5 5 0 0 1 5-5z" fill="url(#bbG)"/><g stroke="#2b2418" stroke-width="2.2" stroke-linecap="round" opacity=".75"><path d="M28 36h24M28 42h16"/></g><circle cx="52" cy="12" r="9" fill="#D93B3B" stroke="#1c1914" stroke-width="2"/><text x="52" y="15.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#fff">9+</text></svg></div>
           <div><h4>Everything Happens in the DMs</h4><p>Prices, hours, directions, and booking answered one message at a time. Your website answers them for you.</p></div>
         </div>
         <div class="pain-item">
-          <div class="pain-icon" aria-hidden="true"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div>
+          <div class="pain-icon" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="phB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a5348"/><stop offset="1" stop-color="#1e1c18"/></linearGradient><linearGradient id="phS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3122"/><stop offset="1" stop-color="#1a1610"/></linearGradient><linearGradient id="lkG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5DE8F"/><stop offset="1" stop-color="#8f6f22"/></linearGradient></defs><rect x="12" y="3" width="32" height="56" rx="6" fill="url(#phB)"/><rect x="15" y="8" width="26" height="46" rx="3" fill="url(#phS)"/><rect x="24" y="5" width="8" height="1.6" rx=".8" fill="#0d0c0a"/><circle cx="28" cy="18" r="5" fill="#6b604c"/><rect x="20" y="26" width="16" height="2.5" rx="1.2" fill="#6b604c"/><g fill="#4a4234"><rect x="18" y="32" width="6" height="6" rx="1"/><rect x="25" y="32" width="6" height="6" rx="1"/><rect x="32" y="32" width="6" height="6" rx="1"/><rect x="18" y="39" width="6" height="6" rx="1"/><rect x="25" y="39" width="6" height="6" rx="1"/><rect x="32" y="39" width="6" height="6" rx="1"/></g><path d="M41 37v-5a7 7 0 0 1 14 0v5" stroke="url(#lkG)" stroke-width="3.2" fill="none"/><rect x="37" y="36" width="22" height="18" rx="3.5" fill="#D93B3B" stroke="#1c1914" stroke-width="1.6"/><circle cx="48" cy="43.5" r="2.4" fill="#fff"/><rect x="47" y="44" width="2" height="5" rx="1" fill="#fff"/></svg></div>
           <div><h4>Rented Land Is One Ban Away</h4><p>Instagram, Booksy, and Yelp can restrict your account overnight. Your website and domain are yours.</p></div>
         </div>
       </div>
